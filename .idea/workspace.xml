@@ -78,10 +78,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1582291208881">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1582291436439">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582291208881" />
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582291436439" />
     <state x="122" y="50" key="DiffContextDialog" timestamp="1582290498882">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -118,9 +118,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1582290562762" />
-    <state x="373" y="132" key="git4idea.merge.GitPullDialog" timestamp="1582291154108">
+    <state x="373" y="132" key="git4idea.merge.GitPullDialog" timestamp="1582291475536">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="373" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1582291154108" />
+    <state x="373" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1582291475536" />
   </component>
 </project>
