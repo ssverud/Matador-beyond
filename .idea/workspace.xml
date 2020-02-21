@@ -72,7 +72,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582290998400</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="new println">
+      <created>1582291722709</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582291722709</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -88,7 +95,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added Class Player" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Class Player" />
+    <MESSAGE value="new println" />
+    <option name="LAST_COMMIT_MESSAGE" value="new println" />
   </component>
   <component name="WindowStateProjectService">
     <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1582290471990">
