@@ -7,6 +7,9 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Y7OhSdtkMZuJ4o7nPcmAFiPZuN" />
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -37,5 +40,35 @@
       <updated>1582290285013</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1582290471990">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582290471990" />
+    <state x="511" y="234" key="Github.ShareDialog" timestamp="1582290330177">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="511" y="234" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1582290330177" />
+    <state x="500" y="46" key="Github.UntrackedFilesDialog" timestamp="1582290343744">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="500" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1582290343744" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1582290453800">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582290453800" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1582290453800">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582290453800" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1582290453799">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582290453799" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1582290453800">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582290453800" />
   </component>
 </project>
