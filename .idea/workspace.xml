@@ -1,16 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5fc7bae-0c86-4354-9007-b10c8023df70" name="Default Changelist" comment="" />
+    <list default="true" id="a5fc7bae-0c86-4354-9007-b10c8023df70" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Code\Matador" />
+      </set>
+    </option>
+  </component>
   <component name="ProjectId" id="1Y7OhSdtkMZuJ4o7nPcmAFiPZuN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
   </component>
@@ -39,13 +63,29 @@
       <option name="presentableId" value="Default" />
       <updated>1582290285013</updated>
     </task>
+    <task id="LOCAL-00001" summary="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10.">
+      <created>1582290556628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582290556628</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10." />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1582290471990">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1582291208881">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582290471990" />
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582291208881" />
+    <state x="122" y="50" key="DiffContextDialog" timestamp="1582290498882">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="122" y="50" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1582290498882" />
     <state x="511" y="234" key="Github.ShareDialog" timestamp="1582290330177">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -54,21 +94,33 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="500" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1582290343744" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1582290453800">
+    <state width="618" height="163" key="GridCell.Tab.0.bottom" timestamp="1582291196084">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582290453800" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1582290453800">
+    <state width="618" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582291196084" />
+    <state width="618" height="163" key="GridCell.Tab.0.center" timestamp="1582291196084">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582290453800" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1582290453799">
+    <state width="618" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582291196084" />
+    <state width="618" height="163" key="GridCell.Tab.0.left" timestamp="1582291196084">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582290453799" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1582290453800">
+    <state width="618" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582291196084" />
+    <state width="618" height="163" key="GridCell.Tab.0.right" timestamp="1582291196084">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582290453800" />
+    <state width="618" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582291196084" />
+    <state x="490" y="51" key="RollbackChangesDialog" timestamp="1582291142354">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="490" y="51" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1582291142354" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1582290562762">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1582290562762" />
+    <state x="373" y="132" key="git4idea.merge.GitPullDialog" timestamp="1582291154108">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="373" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1582291154108" />
   </component>
 </project>
