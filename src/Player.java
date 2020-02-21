@@ -6,5 +6,6 @@ public class Player {
         System.out.println("Fantastic");
         System.out.println("Fan");
         System.out.println("F");
+        System.out.println("Friday sooooon");
     }
 }
