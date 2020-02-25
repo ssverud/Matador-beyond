@@ -2,13 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f5e238f-62da-402b-93aa-aab0b5e15184" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Logik.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Raflebaeger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Braet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Braet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logik.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Spiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Spiller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Raflebaeger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Raflebaeger.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1582292268548</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Klodset forsøg på oprettelse af bræt og spiller :)">
+      <created>1582635178850</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582635178850</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -122,7 +128,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10." />
     <MESSAGE value="ekstra print" />
-    <option name="LAST_COMMIT_MESSAGE" value="ekstra print" />
+    <MESSAGE value="Klodset forsøg på oprettelse af bræt og spiller :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Klodset forsøg på oprettelse af bræt og spiller :)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1582291992355">

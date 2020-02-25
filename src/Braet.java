@@ -7,10 +7,7 @@ public class Braet {
 
     }
 
-    public int feltTyper () {
 
-
-    }
 
 
 }
