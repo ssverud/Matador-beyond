@@ -1,4 +1,16 @@
 public class Braet {
 
-    int x = 10;
+
+    public int braetFelter () {
+        int[] felter = new int[41];
+        return 0;
+
+    }
+
+    public int feltTyper () {
+
+
+    }
+
+
 }
