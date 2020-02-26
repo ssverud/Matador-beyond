@@ -1,10 +1,10 @@
 
 
-public class Raflebaeger {
+public class DiceCup {
 
     private int terning;
 
-    public Raflebaeger() {
+    public DiceCup() {
         this.terning = (int) (1 + Math.random() * 6);
     }
 

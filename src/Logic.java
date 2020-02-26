@@ -1,4 +1,4 @@
-public class Logik {
+public class Logic {
 
 
     //System.out.println("logik is live");
