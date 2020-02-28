@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2f5e238f-62da-402b-93aa-aab0b5e15184" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Braet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Logik.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Raflebaeger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceCup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Spiller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IgnoredFileRootStore">
+    <option name="generatedRoots">
+      <set>
+        <option value="C:\Code\Matador" />
+      </set>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Y7OhSdtkMZuJ4o7nPcmAFiPZuN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="Matador" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a5fc7bae-0c86-4354-9007-b10c8023df70" name="Default Changelist" comment="" />
+      <created>1582290285013</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582290285013</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10.">
+      <created>1582290556628</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1582290556628</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10.">
+      <created>1582291437202</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1582291437202</updated>
+    </task>
+    <task id="LOCAL-00003" summary="ekstra print">
+      <created>1582292268548</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1582292268548</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Klodset forsøg på oprettelse af bræt og spiller :)">
+      <created>1582635178850</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1582635178850</updated>
+    </task>
+    <task id="LOCAL-00005" summary="forbedring af main">
+      <created>1582637486063</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1582637486063</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10." />
+    <MESSAGE value="ekstra print" />
+    <MESSAGE value="Klodset forsøg på oprettelse af bræt og spiller :)" />
+    <MESSAGE value="forbedring af main" />
+    <option name="LAST_COMMIT_MESSAGE" value="forbedring af main" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1582291992355">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1582291992355" />
+    <state x="122" y="50" width="1024" height="572" key="DiffContextDialog" timestamp="1582291820047">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="122" y="50" width="1024" height="572" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1582291820047" />
+    <state x="511" y="234" key="Github.ShareDialog" timestamp="1582290330177">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="511" y="234" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1582290330177" />
+    <state x="500" y="46" key="Github.UntrackedFilesDialog" timestamp="1582290343744">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="500" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1582290343744" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1582292041413">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1582292041413" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1582292041413">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1582292041413" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1582292041413">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1582292041413" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1582292041413">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1582292041413" />
+    <state x="121" y="51" key="MergeDialog" timestamp="1582292029976">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1582292029976" />
+    <state x="354" y="57" key="MultipleFileMergeDialog" timestamp="1582292126372">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="354" y="57" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1582292126372" />
+    <state x="490" y="51" key="RollbackChangesDialog" timestamp="1582291142354">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="490" y="51" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1582291142354" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1582291997253">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1582291997253" />
+    <state x="373" y="132" key="git4idea.merge.GitPullDialog" timestamp="1582292119102">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="373" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1582292119102" />
+  </component>
+</project>
