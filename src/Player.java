@@ -1,4 +1,6 @@
-
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Player {
 
@@ -9,6 +11,11 @@ public class Player {
     private int numberOfBonuscardsOwned = 0;
 
     public Player(String playerName) {
-       this.playerName = playerName;
+        this.playerName = playerName;
+    }
+
+    @Override
+    public String toString() {
+        return  "'" + playerName + "'";
     }
 }
