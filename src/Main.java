@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -9,65 +11,55 @@ public class Main {
     }
 
 
-
     public static void createWorld() {
-        Scanner keyboardInput = new Scanner(System.in);
-        Scanner keyboardInput2 = new Scanner(System.in);
+        int numberOfPlayers = 0;
+
+
         DiceCup diceCup = new DiceCup();
+
 
         System.out.println("How many player are going to play?");
 
-        /*
-        while (String input = keyboardInput.hasNextInt()) {
-            System.out.println("hello");
-            }
-        if(keyboardInput.hasNextInt()) {
-            System.out.println("ok you want to play" + keyboardInput. + "players");
-           // int numberOfPlayers2 = keyboardInput.nextInt();
-        }*/
-        boolean correctInput = false;
-        if (keyboardInput.hasNextInt()) {
-            System.out.println("hello");
-        }else {
-            while(!keyboardInput.hasNextInt()) {
-                System.out.println("not an int");
-                System.out.println("How many player are going to play?");
-              keyboardInput2.nextInt();
-            }
+        numberOfPlayers = listenNumber();
 
+        System.out.println("Okay you are going to be playing " + numberOfPlayers + " players");
+        System.out.println("Lets start creating your chars!");
+
+        createPlayers(numberOfPlayers);
+
+     }
+
+
+    public static int listenNumber() {
+        Scanner keyboardInput = new Scanner(System.in);
+
+        try {
+            return keyboardInput.nextInt();
+        } catch (InputMismatchException e) {
+            System.err.println("That is not an int, we need the number of players for us to start the game");
+            keyboardInput.next();
         }
-            if(!keyboardInput.hasNextInt()) {
-                System.out.println("jgjhjgh");
-                int numberOfPlayers = keyboardInput.nextInt();
-                boolean error = true;
-                while(error) {
-                    System.out.println("thats not an int dude");
-                    int numberOfPlayers2 = keyboardInput.nextInt();
-                    if(keyboardInput.hasNextInt()) {
-                        break;
-                    }
-                }
-
-
-                }else {
-                System.out.println("very cool thanks");
-
-            }
-        }
-       /*
-        if(keyboardInput.hasNextInt()) {
-            System.out.println("ok you want to play" + keyboardInput. + "players");
-            // int numberOfPlayers2 = keyboardInput.nextInt();
-        }
-        System.out.println("we are not out of loop");
-        /*for (int i = 0; i < ; i++) {
-
-        }
-
-        Player player1 = new Player(scanned);
-
-        System.out.println(terning1.getTerning());
-        System.out.println(terning2.getTerning());*/
-
+        return listenNumber();
     }
+
+    public static void createPlayers(int numberOfPlayers) {
+        ArrayList<Object> listOfPlayers = new ArrayList<>();
+        // Array[] listOfPlayers = new Array[numberOfPlayers];
+        for (int i = 1; i < numberOfPlayers+1; i++) {
+            Scanner nameScanner = new Scanner(System.in);
+            System.out.println("What is the name of the " + i + ". player?");
+            String nameOfPlayer = nameScanner.nextLine();
+            Player player = new Player(nameOfPlayer);
+            listOfPlayers.add(player);
+            System.out.println("Okay the name of  the " + i + ". player is: " + nameOfPlayer);
+            System.out.println();
+        }
+        System.out.println();
+        System.out.println(listOfPlayers);
+    }
+}
+
+
+
+
 

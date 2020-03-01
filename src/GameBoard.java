@@ -1,13 +1,15 @@
+import java.lang.reflect.Array;
+import java.lang.reflect.Field;
+import java.util.ArrayList;
+
 public class GameBoard {
+    int numberOfFields = 41;
+    public GameField[] listOfFields;
 
+    // array of gameFields
 
-    public int Board () {
-        int[] GameAreas = new int[41];
-        return 0;
+    public GameBoard() {
+        System.out.println("");
 
+        }
     }
-
-
-
-
-}
