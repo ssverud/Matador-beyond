@@ -1,5 +1,10 @@
+
+
 public class Logic {
 
+    DiceCup dicecup = new DiceCup();
 
-    //System.out.println("logik is live");
+
+
+
 }
