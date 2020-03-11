@@ -9,7 +9,8 @@ public class GameBoard {
     // array of gameFields
 
     public GameBoard() {
-        System.out.println("");
 
+GameField gameField1 = new GameField("test", "raggade", 1, true);
         }
+
     }
