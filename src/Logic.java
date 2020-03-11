@@ -1,5 +1,13 @@
+
+
 public class Logic {
 
 
-    //System.out.println("logik is live");
+
+    DiceCup dicecup = new DiceCup();
+    Player player = new Player();
+
+
+
+
 }

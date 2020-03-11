@@ -10,6 +10,10 @@ public class Player {
     private int numbersOfPlotsOwned = 0;
     private int numberOfBonuscardsOwned = 0;
 
+    public Player() {
+
+    }
+
     public Player(String playerName) {
         this.playerName = playerName;
     }
