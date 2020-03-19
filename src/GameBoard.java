@@ -5,7 +5,9 @@ import java.util.ArrayList;
 
 enum Types {
     START,
-    BLUE
+    BLUE,
+    PINK,
+    CHANCEFIELD
 }
 
 public class GameBoard {
