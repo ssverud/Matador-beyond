@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b47565b1-10b0-4c64-b696-a2ab166b8f16" name="Default Changelist" comment="">
+    <list default="true" id="b47565b1-10b0-4c64-b696-a2ab166b8f16" name="Default Changelist" comment="Arbejdet på GameBoard&#10; -&gt; Lavet en HousePlot class&#10; -&gt; Lavet en TryYourLuck class&#10;    -&gt; Lavet en CardOfChance class&#10; &#10;Lavet en welcome class&#10; -&gt; Ikke arbejdet på den endnu&#10; &#10; ---&#10; I vores Gameboard class har vi lavet en ufuldstændig liste af GameFields, hvor vi i vores gameField class har lavet contructors med mulighed for at indeholde forskellige elementer såsom HousePlot &amp; Try Your Luck">
+      <change afterPath="$PROJECT_DIR$/src/CardOfChance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/HousePlot.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/TryYourLuck.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Welcome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DiceCup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DiceCup.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Logic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Logic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GameField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameField.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +51,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -149,7 +155,8 @@
     <MESSAGE value="Klodset forsøg på oprettelse af bræt og spiller :)" />
     <MESSAGE value="forbedring af main" />
     <MESSAGE value="DiceCup opdateret" />
-    <option name="LAST_COMMIT_MESSAGE" value="DiceCup opdateret" />
+    <MESSAGE value="Arbejdet på GameBoard&#10; -&gt; Lavet en HousePlot class&#10; -&gt; Lavet en TryYourLuck class&#10;    -&gt; Lavet en CardOfChance class&#10; &#10;Lavet en welcome class&#10; -&gt; Ikke arbejdet på den endnu&#10; &#10; ---&#10; I vores Gameboard class har vi lavet en ufuldstændig liste af GameFields, hvor vi i vores gameField class har lavet contructors med mulighed for at indeholde forskellige elementer såsom HousePlot &amp; Try Your Luck" />
+    <option name="LAST_COMMIT_MESSAGE" value="Arbejdet på GameBoard&#10; -&gt; Lavet en HousePlot class&#10; -&gt; Lavet en TryYourLuck class&#10;    -&gt; Lavet en CardOfChance class&#10; &#10;Lavet en welcome class&#10; -&gt; Ikke arbejdet på den endnu&#10; &#10; ---&#10; I vores Gameboard class har vi lavet en ufuldstændig liste af GameFields, hvor vi i vores gameField class har lavet contructors med mulighed for at indeholde forskellige elementer såsom HousePlot &amp; Try Your Luck" />
   </component>
   <component name="WindowStateProjectService">
     <state x="411" y="42" key="#com.intellij.ide.util.MemberChooser" />
