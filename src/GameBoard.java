@@ -22,10 +22,12 @@ public class GameBoard {
         HousePlot Rødovrevej = new HousePlot("Rødovrevej", "BLUE", 1200, 50, 1000, 600);
         HousePlot Hvidovrevej = new HousePlot("Hvidovrevej", "BLUE", 1200, 50, 1000, 600);
         HousePlot Roskildevej = new HousePlot("Roskildevej", "PINK", 2000, 100, 1000, 1000);
+        HousePlot ValbyLanggade = new HousePlot("Valby Langgade", "PINK", 2000, 100, 1000, 1000);
+        HousePlot Allegade = new HousePlot("Allégade", "PINK", 2400, 150, 1000, 1200);
 
 
 
- TryYourLuck tryYourLuck = new TryYourLuck();
+        TryYourLuck tryYourLuck = new TryYourLuck();
         gameFields.add(new GameField("START", "Start", 0));
         gameFields.add(new GameField("BLUE", "Rødovrevej", 1, Rødovrevej));
         gameFields.add(new GameField("CHANCEFIELD", "Try Your Luck#1", 2, tryYourLuck));
