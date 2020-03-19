@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b47565b1-10b0-4c64-b696-a2ab166b8f16" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GameBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GameBoard.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -85,7 +83,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1582290285013</updated>
-      <workItem from="1584624867609" duration="331000" />
+      <workItem from="1584624867609" duration="2192000" />
     </task>
     <task id="LOCAL-00001" summary="Added a new class &quot;Board&quot;&#10; - and made a ver x = 10.">
       <created>1582290556628</created>
@@ -143,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584622671107</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Added 2 gamefields for type: PINK">
+      <created>1584625249634</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1584625249634</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,7 +176,8 @@
     <MESSAGE value="DiceCup opdateret" />
     <MESSAGE value="Arbejdet på GameBoard&#10; -&gt; Lavet en HousePlot class&#10; -&gt; Lavet en TryYourLuck class&#10;    -&gt; Lavet en CardOfChance class&#10; &#10;Lavet en welcome class&#10; -&gt; Ikke arbejdet på den endnu&#10; &#10; ---&#10; I vores Gameboard class har vi lavet en ufuldstændig liste af GameFields, hvor vi i vores gameField class har lavet contructors med mulighed for at indeholde forskellige elementer såsom HousePlot &amp; Try Your Luck" />
     <MESSAGE value="Worked on the welcome class&#10; -&gt; moved stuff from Main -&gt; Welcome&#10; &#10;Created a ScanThings Class&#10; -&gt; This is where we will put all our Scan elements like scanNumber that wont allow the user to input eg a String (runs in a loop)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Worked on the welcome class&#10; -&gt; moved stuff from Main -&gt; Welcome&#10; &#10;Created a ScanThings Class&#10; -&gt; This is where we will put all our Scan elements like scanNumber that wont allow the user to input eg a String (runs in a loop)" />
+    <MESSAGE value="Added 2 gamefields for type: PINK" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added 2 gamefields for type: PINK" />
   </component>
   <component name="WindowStateProjectService">
     <state x="411" y="42" key="#com.intellij.ide.util.MemberChooser" />
