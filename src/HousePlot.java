@@ -3,7 +3,7 @@ import java.security.PrivateKey;
 public class HousePlot {
 
     private String name;
-    private String type;
+    private HousePlotType housePlotType;
     private int price;
 
     private int priceToRent;
@@ -14,9 +14,21 @@ public class HousePlot {
     private boolean hasAllTypes;
 
 
-    public HousePlot(String name, String type, int price, int priceToRent, int plotHouseExtensionPrice, int plotPledgePrice) {
+    enum HousePlotType {
+        BLUE,
+        PINK,
+        GREEN,
+        GREY,
+        RED,
+        WHITE,
+        YELLOW,
+        PURPLE
+    }
+
+
+    public HousePlot(String name, HousePlotType housePlotType, int price, int priceToRent, int plotHouseExtensionPrice, int plotPledgePrice) {
         this.name = name;
-        this.type = type;
+        this.housePlotType = housePlotType;
         this.price = price;
         this.priceToRent = priceToRent;
         this.plotHouseExtensionPrice = plotHouseExtensionPrice;

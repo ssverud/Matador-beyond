@@ -8,6 +8,7 @@ public class TryYourLuck {
 
     public TryYourLuck() {
 
+        cardsOfChance = new ArrayList<>();
         // CardOfChance(String name, String type, String textOfCard)
 
         CardOfChance card1 = new CardOfChance("Fængsel#1", "FÆNGSEL!", "Du er blevet saget for at cykle imod færdselsretningen, og bliver derfor sat i fængsel!");
