@@ -197,43 +197,47 @@
     <option name="LAST_COMMIT_MESSAGE" value="Tilføjede følgende filer til gitIgnore:&#10;/modules.xml&#10;/misc.xml" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="411" y="42" key="#com.intellij.ide.util.MemberChooser" />
-    <state x="411" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" />
-    <state x="297" y="0" key="CommitChangelistDialog2" />
-    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" />
-    <state x="122" y="50" width="1024" height="572" key="DiffContextDialog" />
-    <state x="122" y="50" width="1024" height="572" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" />
-    <state x="421" y="96" key="FileChooserDialogImpl" />
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" />
-    <state x="511" y="234" key="Github.ShareDialog" />
-    <state x="511" y="234" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" />
-    <state x="500" y="46" key="Github.UntrackedFilesDialog" />
-    <state x="500" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom" />
-    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center" />
-    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left" />
-    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right" />
-    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom" />
-    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center" />
-    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left" />
-    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right" />
-    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" />
-    <state x="121" y="51" key="MergeDialog" />
-    <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" />
-    <state x="354" y="57" key="MultipleFileMergeDialog" />
-    <state x="354" y="57" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" />
-    <state x="490" y="51" key="RollbackChangesDialog" />
-    <state x="490" y="51" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2" />
-    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" />
-    <state x="373" y="132" key="git4idea.merge.GitPullDialog" />
-    <state x="373" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" />
+    <state x="411" y="42" key="#com.intellij.ide.util.MemberChooser" timestamp="1584712479627" />
+    <state x="411" y="42" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="574" y="339" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1584712493628">
+      <screen x="0" y="23" width="1440" height="797" />
+    </state>
+    <state x="574" y="339" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.23.1440.797@0.23.1440.797" timestamp="1584712493628" />
+    <state x="297" y="0" key="CommitChangelistDialog2" timestamp="1584712479627" />
+    <state x="297" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="122" y="50" width="1024" height="572" key="DiffContextDialog" timestamp="1584712479627" />
+    <state x="122" y="50" width="1024" height="572" key="DiffContextDialog/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1584712479627" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="511" y="234" key="Github.ShareDialog" timestamp="1584712479627" />
+    <state x="511" y="234" key="Github.ShareDialog/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="500" y="46" key="Github.UntrackedFilesDialog" timestamp="1584712479627" />
+    <state x="500" y="46" key="Github.UntrackedFilesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1584712479627" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1584712479627" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1584712479627" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1584712479627" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1584712479627" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1584712479627" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1584712479627" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1584712479627" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="121" y="51" key="MergeDialog" timestamp="1584712479627" />
+    <state x="121" y="51" key="MergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="354" y="57" key="MultipleFileMergeDialog" timestamp="1584712479627" />
+    <state x="354" y="57" key="MultipleFileMergeDialog/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="490" y="51" key="RollbackChangesDialog" timestamp="1584712479627" />
+    <state x="490" y="51" key="RollbackChangesDialog/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1584712479627" />
+    <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
+    <state x="373" y="132" key="git4idea.merge.GitPullDialog" timestamp="1584712479627" />
+    <state x="373" y="132" key="git4idea.merge.GitPullDialog/0.0.1280.680@0.0.1280.680" timestamp="1584712479627" />
   </component>
 </project>
