@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b47565b1-10b0-4c64-b696-a2ab166b8f16" name="Default Changelist" comment="" />
+    <list default="true" id="b47565b1-10b0-4c64-b696-a2ab166b8f16" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +156,14 @@
       <option name="project" value="LOCAL" />
       <updated>1584710079053</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Tilføjede følgende filer til gitIgnore:&#10;/modules.xml&#10;/misc.xml">
+      <created>1584710626921</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1584710626921</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,7 +193,8 @@
     <MESSAGE value="Worked on the welcome class&#10; -&gt; moved stuff from Main -&gt; Welcome&#10; &#10;Created a ScanThings Class&#10; -&gt; This is where we will put all our Scan elements like scanNumber that wont allow the user to input eg a String (runs in a loop)" />
     <MESSAGE value="Added 2 gamefields for type: PINK" />
     <MESSAGE value="Rettede vores Arrays, som returned NULL&#10;&#10;Rettede enums&#10; -&gt; Lavede nye enums&#10; -&gt; Rykkede dem til deres rette klasser&#10;&#10;Arbejdet på Construcors&#10; -&gt; Vi har fixet vores contructors, så de tager ind vores emuns&#10; -&gt; Vi har oprette flere contructors, så vi kan oprette flere forskelige typer af GameFields" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rettede vores Arrays, som returned NULL&#10;&#10;Rettede enums&#10; -&gt; Lavede nye enums&#10; -&gt; Rykkede dem til deres rette klasser&#10;&#10;Arbejdet på Construcors&#10; -&gt; Vi har fixet vores contructors, så de tager ind vores emuns&#10; -&gt; Vi har oprette flere contructors, så vi kan oprette flere forskelige typer af GameFields" />
+    <MESSAGE value="Tilføjede følgende filer til gitIgnore:&#10;/modules.xml&#10;/misc.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tilføjede følgende filer til gitIgnore:&#10;/modules.xml&#10;/misc.xml" />
   </component>
   <component name="WindowStateProjectService">
     <state x="411" y="42" key="#com.intellij.ide.util.MemberChooser" />
