@@ -60,7 +60,7 @@ enum GameFieldType {
         case "GammelKongevej" :
             return new HousePlot("Gammel Kongevej", HousePlot.HousePlotType.GREEN, 3200, 250, 2000, 1500);
         case "Bernstorffsvej" :
-                return new HousePlot("Bernstorffsvej", HousePlot.HousePlotType.GREY, 3600, 300, 2000, 1800);
+            return new HousePlot("Bernstorffsvej", HousePlot.HousePlotType.GREY, 3600, 300, 2000, 1800);
         case "Hellerupvej" :
             return new HousePlot("Hellerupvej", HousePlot.HousePlotType.GREY, 3600, 300, 2000, 1800);
         case "Strandvej" :
@@ -73,6 +73,21 @@ enum GameFieldType {
             return new HousePlot("Grønningen", HousePlot.HousePlotType.RED, 4800, 400, 3000, 2400);
         case "Bredgade" :
             return new HousePlot("Bredgade", HousePlot.HousePlotType.WHITE, 5200, 450, 3000, 2600);
+        case "KongensNytorv" :
+            return new HousePlot("Kongens Nytorv", HousePlot.HousePlotType.WHITE, 5200, 450, 3000, 2600);
+        case "Oestergade" :
+            return new HousePlot("Østergade", HousePlot.HousePlotType.WHITE, 5600, 500, 3000, 2800);
+        case "Amagertorv" :
+            return new HousePlot("Amagertorv", HousePlot.HousePlotType.YELLOW, 6000, 550, 4000, 3000);
+        case "Vimmelskaftet" :
+            return new HousePlot("Vimmelskaftet", HousePlot.HousePlotType.YELLOW, 6000, 550, 4000, 3000);
+        case "Nygade" :
+            return new HousePlot("Nygade", HousePlot.HousePlotType.YELLOW, 6400, 600, 4000, 3200);
+        case "Frederiksberggade" :
+            return new HousePlot("Frederiksberggade", HousePlot.HousePlotType.PURPLE, 7000, 700, 4000, 3500);
+        case "Raadhuspladsen" :
+            return new HousePlot("Rådhuspladsen", HousePlot.HousePlotType.PURPLE, 8000, 1000, 4000, 4000);
+
     }
     return new HousePlot("Roedovrevej", HousePlot.HousePlotType.BLUE, 1200, 50, 1000, 600);
     }
