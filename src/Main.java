@@ -6,14 +6,13 @@ public class Main {
 
         createWorld();
 
-        System.out.println("Test dice1 = " + logic.dicecup.getDice1());
-asddsa
+        System.out.println();
+        logic.welcomeToTheGame();
+        System.out.println();
     }
 
 
     public static void createWorld() {
-        Welcome welcome = new Welcome();
-        welcome.welcomeToTheGame();
 
     }
 

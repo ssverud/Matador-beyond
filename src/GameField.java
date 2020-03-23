@@ -5,6 +5,13 @@ public class GameField {
     private HousePlot housePlot;
     private CardOfChance cardOfChance;
     private TryYourLuck tryYourLuck;
+
+    public GameFieldType getGameFieldType() {
+        return gameFieldType;
+    }
+    public String getFieldName() {
+        return fieldName;
+    }
     private GameFieldType gameFieldType;
 
 enum GameFieldType {
@@ -20,34 +27,36 @@ enum GameFieldType {
     BREWERYFIELD
 }
 
-// Mega conc:
-    public GameField(int pos, GameFieldType gameFieldType, String fieldName, HousePlot housePlot) {
-    this.gameFieldType = gameFieldType;
-    this.fieldName = fieldName;
-    this.pos = pos;
-}
-
-
     // Constructor to START type
     public GameField(int pos, GameFieldType gameFieldType, String fieldName) {
         this.gameFieldType = gameFieldType;
         this.fieldName = fieldName;
         this.pos = pos;
+        if(gameFieldType == gameFieldType.HOUSEFIELD) {
+            housePlot = getNewHousePlot(fieldName);
+        }
+        else if(gameFieldType == gameFieldType.CHANCEFIELD) {
+            TryYourLuck tryYourLuckDeck = new TryYourLuck();
+        }
+
     }
 
-    // Constructor to HOUSEFIELD type
-    public GameField(int pos, GameFieldType gameFieldType, String fieldName, HousePlot housePlot) {
-        this.gameFieldType = gameFieldType;
-        this.fieldName = fieldName;
-        this.pos = pos;
-        this.housePlot = housePlot;
+    HousePlot getNewHousePlot(String fieldName) {
+    switch (fieldName) {
+        case "Roedovrevej" :
+            return new HousePlot("Roedovrevej", HousePlot.HousePlotType.BLUE, 1200, 50, 1000, 600);
+        case "Hvidovrevej" :
+            return new HousePlot("Hvidovrevej", HousePlot.HousePlotType.BLUE, 1200, 50, 1000, 600);
+        case "Roskildevej" :
+            return new HousePlot("Roskildevej", HousePlot.HousePlotType.PINK, 2000, 100, 1000, 1000);
+        case "ValbyLanggade" :
+            return new HousePlot("Valby Langgade", HousePlot.HousePlotType.PINK, 2000, 100, 1000, 1000);
+    }
+    return new HousePlot("Roedovrevej", HousePlot.HousePlotType.BLUE, 1200, 50, 1000, 600);
     }
 
-    // Constructor to TRYYOURLUCK type
-    public GameField(int pos, GameFieldType gameFieldType, String fieldName, TryYourLuck tryYourLuck) {
-        this.gameFieldType = gameFieldType;
-        this.fieldName = fieldName;
-        this.pos = pos;
-        this.tryYourLuck = tryYourLuck;
+    @Override
+    public String toString() {
+        return getFieldName();
     }
 }
