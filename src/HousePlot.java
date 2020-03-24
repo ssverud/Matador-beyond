@@ -6,6 +6,7 @@ public class HousePlot {
     private HousePlotType housePlotType;
     private int price;
 
+
     private int priceToRent;
 
     private int plotHouseExtensionPrice;
