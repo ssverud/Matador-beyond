@@ -5,7 +5,7 @@ public class HousePlot {
     private String name;
     private HousePlotType housePlotType;
     private int price;
-
+ // HEJ i er søde
     private int priceToRent;
 
     private int plotHouseExtensionPrice;
