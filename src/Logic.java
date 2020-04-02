@@ -8,10 +8,7 @@ public class Logic {
     public void welcomeToTheGame() {
         GameBoard gameBoard = new GameBoard();
         int numberOfPlayers = 0;
-
         System.out.println(gameBoard.gameFields);
-
-        DiceCup diceCup = new DiceCup();
 
 
         System.out.println("How many player are going to play?");

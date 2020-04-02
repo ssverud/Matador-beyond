@@ -7,6 +7,7 @@ import java.util.ArrayList;
 public class GameBoard {
     int numberOfFields = 41;
     ArrayList<GameField> gameFields;
+    DiceCup diceCup = new DiceCup();
 
 
     public GameBoard() {
