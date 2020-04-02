@@ -3,12 +3,10 @@ import java.lang.reflect.Array;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-
 public class GameBoard {
     int numberOfFields = 41;
     ArrayList<GameField> gameFields;
-
-
+    
     public GameBoard() {
 
         System.out.println("Hello game board created");
@@ -64,6 +62,7 @@ public class GameBoard {
 
         gameFields.add(new GameField(0, GameField.GameFieldType.START, "START"));
         gameFields.add(new GameField(1, GameField.GameFieldType.HOUSEFIELD, "Roedovrevej"));
+        gameFields.add(new GameField( 2, GameField.GameFieldType.HOUSEFIELD,  "Hvidovrevej"));
         //   gameFields.add(new GameField(2, GameField.GameFieldType.TRYYOURLUCKFIELD,"CHANCEFIELD", tryYourLuck));
         // gameFields.add(new GameField(3, GameField.GameFieldType.HOUSEFIELD, "Rødovrevej", Hvidovrevej));
 
