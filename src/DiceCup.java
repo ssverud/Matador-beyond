@@ -1,16 +1,17 @@
-import java.util.Random;
-
 public class DiceCup {
 
-    Random random = new Random();
-
-
+    // creating two dice for our cup
     Dice dice1 = new Dice();
     Dice dice2 = new Dice();
+
+    /**
+     * Constructor for our DiceCup
+     */
     public DiceCup() {
 
     }
 
+    // shake cup method
     public int shakeDiceCup() {
 
        int result = dice1.roll() + dice2.roll();

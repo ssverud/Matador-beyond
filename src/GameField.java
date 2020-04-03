@@ -1,21 +1,26 @@
 public class GameField {
-    String fieldName;
-    String type;
-    int pos;
+    private String fieldName;
+    private String type;
+    private int pos;
     private HousePlot housePlot;
     private CardOfChance cardOfChance;
     private TryYourLuck cardsOfChanceDeck;
+    private GameFieldType gameFieldType;
 
-    public GameFieldType getGameFieldType() {
-        return gameFieldType;
-    }
+    private boolean isBuyable;
 
+
+    /**
+     * Getters and setters
+     */
+    // Getters:
     public String getFieldName() {
         return fieldName;
     }
 
-    private GameFieldType gameFieldType;
+    // setters:
 
+    // types of gameFields
     enum GameFieldType {
         START,
         HOUSEFIELD,
@@ -28,20 +33,27 @@ public class GameField {
         BREWERYFIELD
     }
 
-    // Constructor to START type
+    /**
+     * Constructor for GameField
+     */
     public GameField(int pos, GameFieldType gameFieldType, String fieldName) {
         this.gameFieldType = gameFieldType;
         this.fieldName = fieldName;
         this.pos = pos;
+
+        // Checking gameFieldType, and creating relevant stuff
         if (gameFieldType == gameFieldType.HOUSEFIELD) {
             housePlot = getNewHousePlot(fieldName);
+            isBuyable = true;
         } else if (gameFieldType == gameFieldType.CHANCEFIELD) {
             cardsOfChanceDeck = createCardsOfChanceIfNullElseReturnIt();
-        } else if(gameFieldType == gameFieldType.FERRYFIELD) {
+        } else if (gameFieldType == gameFieldType.FERRYFIELD) {
 
+            // ... to be continued
         }
     }
 
+    // compare fieldname, if fieldname matches create houseplot
     HousePlot getNewHousePlot(String fieldName) {
         switch (fieldName) {
             case "Roedovrevej":
@@ -93,13 +105,15 @@ public class GameField {
         return null;
     }
 
+    // check if deck exists, if not create !!!!!!!!! NEEDS TO BE CHANGED TO FACTORY plan/method something cant remember name
     TryYourLuck createCardsOfChanceIfNullElseReturnIt() {
         if (cardsOfChanceDeck == null) {
-           cardsOfChanceDeck = new TryYourLuck();
+            cardsOfChanceDeck = new TryYourLuck();
         }
         return cardsOfChanceDeck;
     }
 
+    // toString when printing a field you print the name of the field // idk if we need to chance it maybe not
     @Override
     public String toString() {
         return getFieldName();

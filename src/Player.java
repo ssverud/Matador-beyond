@@ -1,6 +1,5 @@
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class Player {
 
@@ -10,10 +9,9 @@ public class Player {
     private int numbersOfPlotsOwned = 0;
     private ArrayList<HousePlot> housePlotsOwned;
 
-    public Player() {
-
-    }
-
+    /**
+     * Constructor for player
+     */
     public Player(String playerName) {
         this.playerName = playerName;
     }
@@ -38,7 +36,7 @@ public class Player {
         return playerPosition;
     }
 
-
+    // toSting - when printing print player name in ' '
     @Override
     public String toString() {
         return "'" + playerName + "'";

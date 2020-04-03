@@ -1,20 +1,15 @@
-import java.security.PrivateKey;
-
 public class HousePlot {
 
     private String name;
     private HousePlotType housePlotType;
     private int price;
-
-
     private int priceToRent;
-
     private int plotHouseExtensionPrice;
     private int plotPledgePrice;
-
     private boolean hasAllTypes;
 
 
+    // types of houseplots
     enum HousePlotType {
         BLUE,
         PINK,
@@ -26,7 +21,9 @@ public class HousePlot {
         PURPLE
     }
 
-
+    /**
+     * Constructor for housePlot
+     */
     public HousePlot(String name, HousePlotType housePlotType, int price, int priceToRent, int plotHouseExtensionPrice, int plotPledgePrice) {
         this.name = name;
         this.housePlotType = housePlotType;
