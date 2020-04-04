@@ -1,4 +1,5 @@
 import java.util.InputMismatchException;
+import java.util.Scanner;
 
 public class ScanThings {
 
@@ -7,15 +8,22 @@ public class ScanThings {
 
     }
 
+    public String scanString() {
+        java.util.Scanner keyboardInput = new Scanner(System.in);
+
+        String input = keyboardInput.nextLine();
+
+        return input;
+    }
 
 
     public int scanNumber() {
-        java.util.Scanner keyboardInput = new java.util.Scanner(System.in);
+        java.util.Scanner keyboardInput = new Scanner(System.in);
 
         try {
             return keyboardInput.nextInt();
         } catch (InputMismatchException e) {
-            System.err.println("That is not an int, we need the number of players for us to start the game");
+            System.err.println("This is not an int, you need to input an int");
             keyboardInput.next();
         }
         return scanNumber();

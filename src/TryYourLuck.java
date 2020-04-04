@@ -8,9 +8,14 @@ public class TryYourLuck {
 
     public TryYourLuck() {
 
+
         cardsOfChance = new ArrayList<>();
         // CardOfChance(String name, String type, String textOfCard)
 
+        // Can be done this way
+        cardsOfChance.add(( new CardOfChance("Fængsel#1", "FÆNGSEL!", "Du er blevet saget for at cykle imod færdselsretningen, og bliver derfor sat i fængsel!")));
+
+        // Can also be done this way // Do we need the card1 name - Relevant when removeing ?? reshuffleing??? idk
         CardOfChance card1 = new CardOfChance("Fængsel#1", "FÆNGSEL!", "Du er blevet saget for at cykle imod færdselsretningen, og bliver derfor sat i fængsel!");
         CardOfChance card2 = new CardOfChance("Fængsel#2", "FÆNGSEL!", "Du er blevet saget for at cykle imod færdselsretningen, og bliver derfor sat i fængsel!");
         CardOfChance card3 = new CardOfChance("Fængsel#3", "FÆNGSEL!", "Du er blevet saget for at cykle imod færdselsretningen, og bliver derfor sat i fængsel!");
@@ -19,7 +24,6 @@ public class TryYourLuck {
 // card...
 
 
-         cardsOfChance.add(card1);
          cardsOfChance.add(card2);
     }
 

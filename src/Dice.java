@@ -6,18 +6,17 @@ public class Dice {
 
     Random random = new Random();
 
+    /**
+     * Constructor for our dice
+     */
     public Dice() {
 
     }
 
-
+    // roll method
     public int roll() {
 
-       int result = random.nextInt(6);
+       int result = random.nextInt(numberOfEyes);
         return result;
-    }
-
-    public void myNameIs() {
-        System.out.println("my name is mads");
     }
 }
