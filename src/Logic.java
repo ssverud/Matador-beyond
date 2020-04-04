@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Logic {
     // er flyttet ud fra createPlayers for at få tilgang til den i startGame
-    ArrayList<Object> listOfPlayers = new ArrayList<>();
+    ArrayList<Player> listOfPlayers = new ArrayList<>();
 
     // Creating a scanner
     ScanThings scanThings = new ScanThings();
@@ -50,7 +50,6 @@ public class Logic {
             Player player = new Player(nameOfPlayer);
             listOfPlayers.add(player);
             System.out.println("Okay the name of  the " + i + ". player is: " + nameOfPlayer);
-            System.out.println();
         }
         System.out.println("Printing out our list of players:");
         System.out.println(listOfPlayers);
@@ -66,8 +65,11 @@ public class Logic {
             scanThings.scanString();
             int diceNewPosition = diceCup.shakeDiceCup();
 
-            player.setPlayerPosition(player.getPlayerPosition() + diceNewPosition);
-            System.out.println(listOfPlayers.get(i) + "s position er: " + player.getPlayerPosition() + " på brættet. ");
+            listOfPlayers.get(i).setPlayerPosition(listOfPlayers.get(i).getPlayerPosition() + diceNewPosition);
+            //player.setPlayerPosition(player.getPlayerPosition() + diceNewPosition);
+
+            System.out.println(listOfPlayers.get(i) + "s position er: " + listOfPlayers.get(i).getPlayerPosition() + " på brættet. ");
+
             //System.out.println("Du er landet på: " +);
 
 

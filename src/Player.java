@@ -12,14 +12,13 @@ public class Player {
     /**
      * Constructor for player
      */
+
+    public Player(){
+    }
+
     public Player(String playerName) {
         this.playerName = playerName;
     }
-
-    public Player(){
-        this.playerName = playerName;
-    }
-
 
     public int getPlayerPosition() {
         return playerPosition;
