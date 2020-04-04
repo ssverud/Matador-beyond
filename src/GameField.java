@@ -7,6 +7,7 @@ public class GameField {
     private TryYourLuck cardsOfChanceDeck;
     private GameFieldType gameFieldType;
     private FerryField ferryField;
+    private BreweryField breweryField;
 
     private boolean isBuyable;
 
@@ -56,6 +57,13 @@ public class GameField {
 
     }
 
+
+
+
+    /**
+     * Prisen for at lande på rederierne fordobles for antal rederier der ejes. Dette er ikke lavet og mangler
+     */
+
     // compare fieldname, if fieldname matches create ferryField
     FerryField getNewFerryField(String fieldName) {
         switch (fieldName) {
@@ -71,6 +79,29 @@ public class GameField {
         return null;
     }
 
+
+
+
+    /**
+     * priceToRent for at lande på brewery er terningernes øjne gange 100,
+     * hvis begge tapperier ejes er det 200. Dette er ikke lavet og mangler
+     */
+
+    // compare fieldname, if fieldname matches create breweryField
+    BreweryField getNewBreweryField(String fieldName) {
+        switch (fieldName) {
+            case "Tuborg Bryggeri":
+                return new BreweryField("Tuborg Bryggeri", 3000, 500, 1500);
+            case "Coca-Cola Tapperi":
+                return new BreweryField("Coca-Cola Tapperi", 3000, 500, 1500);
+        }
+        return null;
+    }
+
+
+
+
+    
     // compare fieldname, if fieldname matches create houseplot
     HousePlot getNewHousePlot(String fieldName) {
         switch (fieldName) {
