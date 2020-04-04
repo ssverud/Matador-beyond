@@ -3,9 +3,10 @@ public class GameField {
     private String type;
     private int pos;
     private HousePlot housePlot;
-    private CardOfChance cardOfChance; // for mange navne til 'prøv lykken' feltet og kortet. umuligt at holde styr på hvad er hvad.
+    private CardOfChance cardOfChance; // for mange navne til 'prøv lykken' feltet og kortet. Svært at holde styr på hvad er hvad.
     private TryYourLuck cardsOfChanceDeck;
     private GameFieldType gameFieldType;
+    private FerryField ferryField;
 
     private boolean isBuyable;
 
@@ -48,9 +49,26 @@ public class GameField {
         } else if (gameFieldType == gameFieldType.CHANCEFIELD) {
             cardsOfChanceDeck = createCardsOfChanceIfNullElseReturnIt();
         } else if (gameFieldType == gameFieldType.FERRYFIELD) {
-
             // ... to be continued
+            ferryField = getNewFerryField(fieldName);
+            isBuyable = true;
         }
+
+    }
+
+    // compare fieldname, if fieldname matches create ferryField
+    FerryField getNewFerryField(String fieldName) {
+        switch (fieldName) {
+            case "SFL-Færgene":
+                return new FerryField("SFL-Færgene", 4000, 500, 2000);
+            case "DSB-Rederierne: Kalundborg-Århus":
+                return new FerryField("DSB-Rederierne: Kalundborg-Århus", 4000, 500, 2000);
+            case "DFDS-Seaways":
+                return new FerryField("DFDS-Seaways", 4000, 500, 2000);
+            case "DSB-Rederierne: Halsskov-Knudshoved":
+                return new FerryField("DSB-Rederierne: Halsskov-Knudshoved",4000, 500, 2000);
+        }
+        return null;
     }
 
     // compare fieldname, if fieldname matches create houseplot

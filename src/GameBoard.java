@@ -32,7 +32,7 @@ public class GameBoard {
         gameFields.add(new GameField(2,GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
         gameFields.add(new GameField(3,GameField.GameFieldType.HOUSEFIELD, "Hvidovrevej"));
         gameFields.add(new GameField(4,GameField.GameFieldType.TAXFIELD, "Betal indkomst skat"));
-        gameFields.add(new GameField(5,GameField.GameFieldType.FERRYFIELD, "SFL"));
+        gameFields.add(new GameField(5,GameField.GameFieldType.FERRYFIELD, "SFL-Færgene"));
         gameFields.add(new GameField(6,GameField.GameFieldType.HOUSEFIELD, "Roskildevej"));
         gameFields.add(new GameField(7,GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
         gameFields.add(new GameField(8,GameField.GameFieldType.HOUSEFIELD, "Valby Langgade"));
@@ -44,7 +44,7 @@ public class GameBoard {
         gameFields.add(new GameField(12,GameField.GameFieldType.BREWERYFIELD, "Tuborg"));
         gameFields.add(new GameField(13,GameField.GameFieldType.HOUSEFIELD, "Bülowsvej"));
         gameFields.add(new GameField(14,GameField.GameFieldType.HOUSEFIELD, "Gammel Kongevej"));
-        gameFields.add(new GameField(15,GameField.GameFieldType.FERRYFIELD, "DSB: Kalundborg/Århus")); //tilføj kalundborg/århus?
+        gameFields.add(new GameField(15,GameField.GameFieldType.FERRYFIELD, "DSB-Rederierne: Kalundborg-Århus"));
         gameFields.add(new GameField(16,GameField.GameFieldType.HOUSEFIELD, "Bernstorffsvej"));
         gameFields.add(new GameField(17,GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
         gameFields.add(new GameField(18,GameField.GameFieldType.HOUSEFIELD, "Hellerupvej"));
@@ -56,7 +56,7 @@ public class GameBoard {
         gameFields.add(new GameField(22,GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
         gameFields.add(new GameField(23,GameField.GameFieldType.HOUSEFIELD, "Østerbrogade"));
         gameFields.add(new GameField(24,GameField.GameFieldType.HOUSEFIELD, "Grønningen"));
-        gameFields.add(new GameField(25,GameField.GameFieldType.FERRYFIELD, "DFDS Seaways"));
+        gameFields.add(new GameField(25,GameField.GameFieldType.FERRYFIELD, "DFDS-Seaways"));
         gameFields.add(new GameField(26,GameField.GameFieldType.HOUSEFIELD, "Bredgade"));
         gameFields.add(new GameField(27,GameField.GameFieldType.HOUSEFIELD, "Kongens Nytorv"));
         gameFields.add(new GameField(28,GameField.GameFieldType.BREWERYFIELD, "Coca cola"));
@@ -68,7 +68,7 @@ public class GameBoard {
         gameFields.add(new GameField(32,GameField.GameFieldType.HOUSEFIELD, "Vimmelskaftet"));
         gameFields.add(new GameField(33,GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
         gameFields.add(new GameField(34,GameField.GameFieldType.HOUSEFIELD, "Nygade"));
-        gameFields.add(new GameField(35,GameField.GameFieldType.FERRYFIELD, "DSB: Halsskov/Knudshoved")); //tilføj kalundborg/århus?
+        gameFields.add(new GameField(35,GameField.GameFieldType.FERRYFIELD, "DSB-Rederierne: Halsskov-Knudshoved"));
         gameFields.add(new GameField(36,GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
         gameFields.add(new GameField(37,GameField.GameFieldType.HOUSEFIELD, "Frederiksborggade"));
         gameFields.add(new GameField(38,GameField.GameFieldType.TAXFIELD, "Ekstraordinær statsskat"));
