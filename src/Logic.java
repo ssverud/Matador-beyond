@@ -8,7 +8,7 @@ public class Logic {
     ScanThings scanThings = new ScanThings();
 
     DiceCup diceCup = new DiceCup();
-    Player player = new Player();
+
 
     // er flyttet ud fra createPlayers for at få tilgang til den i startGame
     int numberOfPlayers = 0;
@@ -66,11 +66,12 @@ public class Logic {
             int diceNewPosition = diceCup.shakeDiceCup();
 
             listOfPlayers.get(i).setPlayerPosition(listOfPlayers.get(i).getPlayerPosition() + diceNewPosition);
-            //player.setPlayerPosition(player.getPlayerPosition() + diceNewPosition);
+
+            if (listOfPlayers.get(i).getPlayerPosition() > 40) {
+                listOfPlayers.get(i).setPlayerPosition(listOfPlayers.get(i).getPlayerPosition() - 40);
+            }
 
             System.out.println(listOfPlayers.get(i) + "s position er: " + listOfPlayers.get(i).getPlayerPosition() + " på brættet. ");
-
-            //System.out.println("Du er landet på: " +);
 
 
 
