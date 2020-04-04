@@ -82,7 +82,8 @@ public class GameBoard {
     /**
      * Creating our players
      */
-    public void createPlayers(int numberOfPlayers) {
+    // er flyttet ind i logic for at få adgang til ArrayList listOfPlayers
+    /*public void createPlayers(int numberOfPlayers) {
         ArrayList<Object> listOfPlayers = new ArrayList<>();
         // Array[] listOfPlayers = new Array[numberOfPlayers];
 
@@ -101,6 +102,6 @@ public class GameBoard {
         }
         System.out.println("Printing out our list of players:");
         System.out.println(listOfPlayers);
-    }
+    }*/
 
 }

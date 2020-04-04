@@ -16,6 +16,18 @@ public class Player {
         this.playerName = playerName;
     }
 
+    public Player(){
+        this.playerName = playerName;
+    }
+
+
+    public int getPlayerPosition() {
+        return playerPosition;
+    }
+
+    public void setPlayerPosition(int playerPosition) {
+        this.playerPosition = playerPosition;
+    }
 
     // Pay rent - When u land on a gamefield you run the gamefield thu all players ownedgamefield array if found pay rent if not give option to buy
 

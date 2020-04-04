@@ -16,7 +16,10 @@ public class Dice {
     // roll method
     public int roll() {
 
+
        int result = random.nextInt(numberOfEyes);
-        return result;
+       System.out.println(result);
+
+       return result;
     }
 }
