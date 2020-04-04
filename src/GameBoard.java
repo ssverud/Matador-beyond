@@ -65,7 +65,8 @@ public class GameBoard {
 
         gameFields.add(new GameField(0, GameField.GameFieldType.START, "START"));
         gameFields.add(new GameField(1, GameField.GameFieldType.HOUSEFIELD, "Roedovrevej"));
-        //   gameFields.add(new GameField(2, GameField.GameFieldType.TRYYOURLUCKFIELD,"CHANCEFIELD", tryYourLuck));
+
+        // gameFields.add(new GameField(2, GameField.GameFieldType.TRYYOURLUCKFIELD,"CHANCEFIELD", tryYourLuck));
         // gameFields.add(new GameField(3, GameField.GameFieldType.HOUSEFIELD, "Rødovrevej", Hvidovrevej));
 
     }
