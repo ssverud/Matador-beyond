@@ -3,7 +3,7 @@ public class GameField {
     private String type;
     private int pos;
     private HousePlot housePlot;
-    private CardOfChance cardOfChance;
+    private CardOfChance cardOfChance; // for mange navne til 'prøv lykken' feltet og kortet. umuligt at holde styr på hvad er hvad.
     private TryYourLuck cardsOfChanceDeck;
     private GameFieldType gameFieldType;
 
@@ -57,7 +57,7 @@ public class GameField {
     HousePlot getNewHousePlot(String fieldName) {
         switch (fieldName) {
             case "Roedovrevej":
-                return new HousePlot("Roedovrevej", HousePlot.HousePlotType.BLUE, 1200, 50, 1000, 600);
+                return new HousePlot("Rødovrevej", HousePlot.HousePlotType.BLUE, 1200, 50, 1000, 600);
             case "Hvidovrevej":
                 return new HousePlot("Hvidovrevej", HousePlot.HousePlotType.BLUE, 1200, 50, 1000, 600);
             case "Roskildevej":
