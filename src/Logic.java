@@ -64,6 +64,12 @@ public class Logic {
             int diceCupResult = diceCup.shakeDiceCup();
             listOfPlayers.get(i).move(listOfPlayers.get(i), diceCupResult);
 
+
+            // tjeck hvis playerPosition er over 40 == true
+            // gi 4000 money
+            // playerPosiiton - 40
+
+
             i++;
             if(i == listOfPlayers.size()) {
                 i = 0;

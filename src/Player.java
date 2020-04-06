@@ -51,9 +51,15 @@ public class Player {
         for (int i = 0; i < diceRollResult; i++) {
 
             player.setPlayerPosition(player.getPlayerPosition() + 1);
+
+/*
+            //muligvis flyt denne del
             if(player.getPlayerPosition() > this.numberOfGameFields) {
                 player.setPlayerPosition(player.getPlayerPosition() - this.numberOfGameFields);
             }
+
+*/
+
         }
         System.out.println(player.getPlayerName() + "'s position er: " + player.getPlayerPosition() + " på brættet. ");
     }
@@ -63,6 +69,7 @@ public class Player {
     public String toString() {
         return "'" + playerName + "'";
     }
+
 
 
 
