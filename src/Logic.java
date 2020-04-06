@@ -37,12 +37,9 @@ public class Logic {
     }
 
     public void createPlayers(int numberOfPlayers) {
-        // Array[] listOfPlayers = new Array[numberOfPlayers];
-
         // for each numberOfPlayers create scanner and create a player
         for (int i = 1; i < numberOfPlayers + 1; i++) {
             System.out.println("What is the name of the " + i + ". player?");
-
             // Scans name, create player,
             // add player to listOfPlayers,
             // print out the player
@@ -59,23 +56,16 @@ public class Logic {
     public void startGame() {
         boolean keepPlaying = true;
         int i = 0;
+        // gameloop
         while(keepPlaying) {
 
-            System.out.println();
-            System.out.println("Tryk enter for at slå for spiller " + listOfPlayers.get(i));
-            scanThings.scanString();
-            int diceRoll = diceCup.shakeDiceCup();
-
-            listOfPlayers.get(i).setPlayerPosition(listOfPlayers.get(i).getPlayerPosition() + diceRoll);
-
-            if (listOfPlayers.get(i).getPlayerPosition() > 40) {
-                listOfPlayers.get(i).setPlayerPosition(listOfPlayers.get(i).getPlayerPosition() - 40);
-            }
-
-            System.out.println(listOfPlayers.get(i) + "s position er: " + listOfPlayers.get(i).getPlayerPosition() + " på brættet. ");
+            String delay = scanThings.scanString();
+            System.out.println("--------" + listOfPlayers.get(i).getPlayerName() + "'s tur --------");
+            int diceCupResult = diceCup.shakeDiceCup();
+            listOfPlayers.get(i).move(listOfPlayers.get(i), diceCupResult);
 
             i++;
-            if(i == numberOfPlayers) {
+            if(i == listOfPlayers.size()) {
                 i = 0;
             }
 

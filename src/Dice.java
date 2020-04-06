@@ -18,7 +18,7 @@ public class Dice {
 
 
        int result = random.nextInt(numberOfEyes);
-       System.out.println(result);
+
 
        return result;
     }

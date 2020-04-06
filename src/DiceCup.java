@@ -14,9 +14,16 @@ public class DiceCup {
     // shake cup method
     public int shakeDiceCup() {
 
-        System.out.println("Du slog: ");
+        System.out.println();
 
-        int result = dice1.roll() + dice2.roll();
+        int dice1Result = dice1.roll();
+        int dice2Result = dice2.roll();
+        int result = dice1Result + dice2Result;
+
+        System.out.println("Din 1. terning slog: " + dice1Result);
+        System.out.println("Din 2. terning slog: " + dice2Result);
+        System.out.println("Ialt giver det: " + result);
+
         return result;
     }
 }
