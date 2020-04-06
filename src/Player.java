@@ -8,6 +8,10 @@ public class Player {
     private int money = 0;
     private int numbersOfPlotsOwned = 0;
     private ArrayList<HousePlot> housePlotsOwned;
+    private int numberOfGameFields = 40;
+
+    ScanThings scanThings = new ScanThings();
+
 
     /**
      * Constructor for player
@@ -15,6 +19,14 @@ public class Player {
 
     public Player(String playerName) {
         this.playerName = playerName;
+    }
+
+    /**
+     * getters and setters
+     */
+
+    public String getPlayerName() {
+        return playerName;
     }
 
     public int getPlayerPosition() {
@@ -34,14 +46,16 @@ public class Player {
     // Use get out of jail card
 
     // Move pos
-    public int playerMove(DiceCup diceCup) {
+    public void playerMove(Player player, int diceRollResult) {
 
-        // dice roll
-        int resultOfShakeDiceCup = diceCup.shakeDiceCup();
+        for (int i = 0; i < diceRollResult; i++) {
 
-        playerPosition = playerPosition + resultOfShakeDiceCup;
-
-        return playerPosition;
+            player.setPlayerPosition(player.getPlayerPosition() + 1);
+            if(player.getPlayerPosition() > this.numberOfGameFields) {
+                player.setPlayerPosition(player.getPlayerPosition() - this.numberOfGameFields);
+            }
+        }
+        System.out.println(player.getPlayerName() + "s position er: " + player.getPlayerPosition() + " på brættet. ");
     }
 
     // toSting - when printing print player name in ' '
@@ -49,4 +63,7 @@ public class Player {
     public String toString() {
         return "'" + playerName + "'";
     }
+
+
+
 }

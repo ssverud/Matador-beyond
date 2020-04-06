@@ -60,20 +60,19 @@ public class Logic {
         boolean keepPlaying = true;
         int i = 0;
         while(keepPlaying) {
+
             System.out.println();
             System.out.println("Tryk enter for at slå for spiller " + listOfPlayers.get(i));
             scanThings.scanString();
-            int diceNewPosition = diceCup.shakeDiceCup();
+            int diceRoll = diceCup.shakeDiceCup();
 
-            listOfPlayers.get(i).setPlayerPosition(listOfPlayers.get(i).getPlayerPosition() + diceNewPosition);
+            listOfPlayers.get(i).setPlayerPosition(listOfPlayers.get(i).getPlayerPosition() + diceRoll);
 
             if (listOfPlayers.get(i).getPlayerPosition() > 40) {
                 listOfPlayers.get(i).setPlayerPosition(listOfPlayers.get(i).getPlayerPosition() - 40);
             }
 
             System.out.println(listOfPlayers.get(i) + "s position er: " + listOfPlayers.get(i).getPlayerPosition() + " på brættet. ");
-
-
 
             i++;
             if(i == numberOfPlayers) {
