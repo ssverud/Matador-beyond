@@ -8,19 +8,14 @@ public class GameField {
     private GameFieldType gameFieldType;
     private FerryField ferryField;
     private BreweryField breweryField;
-
     private boolean isBuyable;
-
 
     /**
      * Getters and setters
      */
-    // Getters:
     public String getFieldName() {
         return fieldName;
     }
-
-    // setters:
 
     // types of gameFields
     enum GameFieldType {

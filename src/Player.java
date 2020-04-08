@@ -47,7 +47,7 @@ public class Player {
 
     // Move pos
     public void move(Player player, int diceRollResult) {
-
+        // moving player several times on the board, for better visualization later
         for (int i = 0; i < diceRollResult; i++) {
 
             player.setPlayerPosition(player.getPlayerPosition() + 1);

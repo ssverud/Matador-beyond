@@ -8,23 +8,16 @@ public class GameBoard {
     int numberOfFields = 41;
     ArrayList<GameField> gameFields;
 
-    // Creating our Scanner
-    ScanThings scanThings = new ScanThings();
-
-    // creating our diceCup
-    DiceCup diceCup = new DiceCup();
+    ScanThings scanThings = new ScanThings(); // Creating our Scanner
+    DiceCup diceCup = new DiceCup(); // creating our diceCup
 
     /**
      * Constructor for GameBoard
      */
     public GameBoard() {
+        TryYourLuck tryYourLuck = new TryYourLuck(); // TryYourLuck Instance
 
-        // array of gameFields
-        gameFields = new ArrayList<>();
-
-        // TryYourLuck Instance
-        TryYourLuck tryYourLuck = new TryYourLuck();
-
+        gameFields = new ArrayList<>(); // array of gameFields
         // Adding to our gameField list
         // ---> (For us only - Easier to create) : public GameField(int pos, GameFieldType gameFieldType, String fieldName)
         gameFields.add(new GameField(1, GameField.GameFieldType.START, "START"));

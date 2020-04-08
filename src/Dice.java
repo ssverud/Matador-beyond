@@ -17,7 +17,7 @@ public class Dice {
     public int roll() {
 
 
-       int result = random.nextInt(numberOfEyes);
+       int result = random.nextInt(numberOfEyes) + 1;
 
 
        return result;
