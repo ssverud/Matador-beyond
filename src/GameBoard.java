@@ -75,7 +75,7 @@ public class GameBoard {
 
 
         public void setAndPlayPlayerPos(Player player) {
-            gameFields.get(player.getPlayerPosition()).playGameField();
+            gameFields.get(player.getPlayerPosition());
 
         }
 
