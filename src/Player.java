@@ -45,24 +45,6 @@ public class Player {
 
     // Use get out of jail card
 
-    // Move pos
-    public void move(Player player, int diceRollResult) {
-        // moving player several times on the board, for better visualization later
-        for (int i = 0; i < diceRollResult; i++) {
-
-            player.setPlayerPosition(player.getPlayerPosition() + 1);
-
-/*
-            //muligvis flyt denne del
-            if(player.getPlayerPosition() > this.numberOfGameFields) {
-                player.setPlayerPosition(player.getPlayerPosition() - this.numberOfGameFields);
-            }
-
-*/
-
-        }
-        System.out.println(player.getPlayerName() + "'s position er: " + player.getPlayerPosition() + " på brættet. ");
-    }
 
     // toSting - when printing print player name in ' '
     @Override

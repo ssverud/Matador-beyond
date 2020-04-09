@@ -3,6 +3,8 @@ import java.util.ArrayList;
 public class Logic {
     // er flyttet ud fra createPlayers for at få tilgang til den i startGame
     ArrayList<Player> listOfPlayers = new ArrayList<>();
+    GameBoard gameBoard;
+    Player playerWhoHasTurn;
 
     // Creating a scanner
     ScanThings scanThings = new ScanThings();
@@ -18,8 +20,8 @@ public class Logic {
     /**
      * welcomeToTheGame creates our world and creates the players
      */
-    public void welcomeToTheGame() {
-        GameBoard gameBoard = new GameBoard();
+    public void setup() {
+        gameBoard = new GameBoard();
 
 
         // Print out the gamefield list
@@ -53,17 +55,21 @@ public class Logic {
     }
 
 
-    public void startGame() {
+    public void play() {
         boolean keepPlaying = true;
         int i = 0;
         // gameloop
         while(keepPlaying) {
 
             String delay = scanThings.scanString(); // for us to press Enter before loop moves on
-            System.out.println("--------" + listOfPlayers.get(i).getPlayerName() + "'s tur --------");
+            playerWhoHasTurn = listOfPlayers.get(i);
+            System.out.println("--------" + playerWhoHasTurn.getPlayerName() + "'s tur --------");
             int diceCupResult = diceCup.shakeDiceCup();
             // calling the method move belonging to the "Player(i)"
-            listOfPlayers.get(i).move(listOfPlayers.get(i), diceCupResult);
+
+            // Skal move() ligge i Player, giver det ikke mening med første parameter.
+            // Skal den ligge i logic, giver det fin mening
+            move(playerWhoHasTurn, diceCupResult);
 
 
             // tjeck hvis playerPosition er over 40 == true
@@ -77,4 +83,24 @@ public class Logic {
             }
         }
     }
+
+    // Move pos
+    public void move(Player player, int diceRollResult) {
+        // moving player several times on the board, for better visualization later
+        for (int i = 0; i < diceRollResult; i++) {
+
+            player.setPlayerPosition(player.getPlayerPosition() + 1);
+
+/*
+            //muligvis flyt denne del
+            if(player.getPlayerPosition() > this.numberOfGameFields) {
+                player.setPlayerPosition(player.getPlayerPosition() - this.numberOfGameFields);
+            }
+
+*/
+
+        }
+        System.out.println(player.getPlayerName() + "'s position er: " + player.getPlayerPosition() + " på brættet. ");
+    }
+
 }

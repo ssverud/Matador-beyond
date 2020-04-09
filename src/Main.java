@@ -4,8 +4,8 @@ public class Main {
 
         Logic logic = new Logic();
 
-        logic.welcomeToTheGame();
-        logic.startGame();
+        logic.setup();
+        logic.play();
         System.out.println();
     }
 }
