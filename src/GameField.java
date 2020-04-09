@@ -17,6 +17,10 @@ public class GameField {
         return fieldName;
     }
 
+    public GameFieldType getGameFieldType() {
+        return gameFieldType;
+    }
+
     // types of gameFields
     enum GameFieldType {
         START,
@@ -48,21 +52,6 @@ public class GameField {
             // ... to be continued
             ferryField = getNewFerryField(fieldName);
             isBuyable = true;
-        }
-
-    }
-
-    public void checkGameField() {
-        System.out.println("You landed on" + fieldName);
-
-        if(gameFieldType == gameFieldType.HOUSEFIELD) {
-            if(isBuyable == true) {
-                System.out.println("You have the option to buy a plot on this field");
-                System.out.println("Do you want to buy the house?");
-                //Scan yes no
-                //if(scan yes no == yes ) {
-                //  player.buyTheHouse
-            } // else { move to next player or other options }
         }
 
     }

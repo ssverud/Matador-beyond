@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Logic {
     // er flyttet ud fra createPlayers for at få tilgang til den i startGame
     ArrayList<Player> listOfPlayers = new ArrayList<>();
-
+    GameBoard gameBoard;
     // Creating a scanner
     ScanThings scanThings = new ScanThings();
 
@@ -19,7 +19,7 @@ public class Logic {
      * welcomeToTheGame creates our world and creates the players
      */
     public void welcomeToTheGame() {
-        GameBoard gameBoard = new GameBoard();
+        gameBoard = new GameBoard();
 
 
         // Print out the gamefield list
@@ -81,4 +81,24 @@ public class Logic {
             }
         }
     }
+
+    // KIG PÅ DENNE
+/*
+    checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
+
+    public void checkGameField(GameField gameField) {
+        System.out.println("You landed on" + gameField.getFieldName());
+
+        if(gameField.get == gameFieldType.HOUSEFIELD) {
+            if(isBuyable == true) {
+                System.out.println("You have the option to buy a plot on this field");
+                System.out.println("Do you want to buy the house?");
+                //Scan yes no
+                //if(scan yes no == yes ) {
+                //  player.buyTheHouse
+            } // else { move to next player or other options }
+        }
+
+    }
+    */
 }
