@@ -22,7 +22,7 @@ public class ScanThings {
         Scanner keyboardInput = new Scanner(System.in);
         String input = keyboardInput.nextLine();
         input = input.toUpperCase();
-        
+
         if (input.substring(0, 1).equals("Y")) {
             return "Yes";
         } else if (input.substring(0, 1).equals("N")) {
