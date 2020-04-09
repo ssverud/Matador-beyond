@@ -31,7 +31,6 @@ public class ScanThings {
             System.out.println("Did not understand your input, enter yes or no");
         }
         return scanYesNo();
-
     }
 
 

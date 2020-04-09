@@ -52,7 +52,7 @@ public class GameField {
 
     }
 
-    public void playGameField() {
+    public void checkGameField() {
         System.out.println("You landed on" + fieldName);
 
         if(gameFieldType == gameFieldType.HOUSEFIELD) {
