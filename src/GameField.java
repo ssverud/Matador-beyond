@@ -52,8 +52,20 @@ public class GameField {
 
     }
 
+    public void playGameField() {
+        System.out.println("You landed on" + fieldName);
 
+        if(gameFieldType == gameFieldType.HOUSEFIELD) {
+            if(isBuyable == true) {
+                System.out.println("You have the option to buy a plot on this field");
+                System.out.println("Do you want to buy the house?");
+                //Scan yes no
+                //if(scan yes no == yes ) {
+                //  player.buyTheHouse
+            } // else { move to next player or other options }
+        }
 
+    }
 
     /**
      * Prisen for at lande på rederierne fordobles for antal rederier der ejes. Dette er ikke lavet og mangler
@@ -69,12 +81,10 @@ public class GameField {
             case "DFDS-Seaways":
                 return new FerryField("DFDS-Seaways", 4000, 500, 2000);
             case "DSB-Rederierne: Halsskov-Knudshoved":
-                return new FerryField("DSB-Rederierne: Halsskov-Knudshoved",4000, 500, 2000);
+                return new FerryField("DSB-Rederierne: Halsskov-Knudshoved", 4000, 500, 2000);
         }
         return null;
     }
-
-
 
 
     /**
@@ -94,9 +104,6 @@ public class GameField {
     }
 
 
-
-
-    
     // compare fieldname, if fieldname matches create houseplot
     HousePlot getNewHousePlot(String fieldName) {
         switch (fieldName) {

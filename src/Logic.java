@@ -58,6 +58,10 @@ public class Logic {
         int i = 0;
         // gameloop
         while(keepPlaying) {
+            System.out.println("would u like to start the game?");
+            scanThings.scanYesNo();
+
+
 
             String delay = scanThings.scanString(); // for us to press Enter before loop moves on
             System.out.println("--------" + listOfPlayers.get(i).getPlayerName() + "'s tur --------");
