@@ -47,9 +47,9 @@ public abstract class GameField  {
     BreweryField getNewBreweryField(String fieldName) {
         switch (fieldName) {
             case "Tuborg Bryggeri":
-                return new BreweryField("Tuborg Bryggeri", 3000, 500, 1500);
+                return new BreweryField(1,"Tuborg Bryggeri", 3000, 500, 1500);
             case "Coca-Cola Tapperi":
-                return new BreweryField("Coca-Cola Tapperi", 3000, 500, 1500);
+                return new BreweryField(1,"Coca-Cola Tapperi", 3000, 500, 1500);
         }
         return null;
     }
