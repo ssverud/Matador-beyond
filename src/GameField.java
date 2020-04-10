@@ -16,22 +16,7 @@ public abstract class GameField  {
         return fieldName;
     }
 
-    public GameFieldType getGameFieldType() {
-        return gameFieldType;
-    }
-
     // types of gameFields
-    enum GameFieldType {
-        START,
-        HOUSEFIELD,
-        FERRYFIELD,
-        PRISONFIELD,
-        TAXFIELD,
-        PARKINGFIELD,
-        VISITPRISON,
-        CHANCEFIELD,
-        BREWERYFIELD
-    }
 
     /**
      * Prisen for at lande på rederierne fordobles for antal rederier der ejes. Dette er ikke lavet og mangler

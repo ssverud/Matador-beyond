@@ -2,7 +2,11 @@ public class TaxField extends GameField {
 
     int pos;
     String name;
-    int taxPct = 2; // DONT KNOW IF IT IS TWO JUST USING A RANDOM NUMBER
+
+    public TaxField(int pos, String name) {
+        this.pos = pos;
+        this.name = name;
+    }
 
 /*
  LAVET I PLAYER!!!!!!!!!!!!!! BARE TIL NOTE
