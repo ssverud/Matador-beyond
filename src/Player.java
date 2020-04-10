@@ -6,8 +6,10 @@ public class Player {
     private String playerName;
     private int playerPosition = 0;
     private int money = 0;
+    private boolean inPrison = false;
+    private boolean hasGetOutOfJainCard = false;
     private int numbersOfPlotsOwned = 0;
-  //  private ArrayList<HousePlot> housePlotsOwned; // Skal laves om da housePlot dont exist anymore
+    //  private ArrayList<HousePlot> housePlotsOwned; // Skal laves om da housePlot dont exist anymore
     private int numberOfGameFields = 40;
 
     ScanThings scanThings = new ScanThings();
@@ -31,6 +33,14 @@ public class Player {
 
     public int getPlayerPosition() {
         return playerPosition;
+    }
+
+    public int getMoney() {
+        return this.money;
+    }
+
+    public void setMoney(int money) {
+        this.money = money;
     }
 
     public void setPlayerPosition(int playerPosition) {
@@ -65,19 +75,29 @@ public class Player {
     }
 
     public void payTax(Player player) {
-         int taxPayment = (int)(player.money*0.02);
-player.money = player.money - taxPayment;
+        int taxPayment = (int) (player.money * 0.02);
+        player.money = player.money - taxPayment;
     }
 
+    public void outOfPrisonWithMoney(Player player){
+        int paymentForPrison = 4000;
+        player.money = player.getMoney() - paymentForPrison;
+    }
 
+    public void outOfPrisonByDiceRoll(Player player, DiceCup diceCup){
+
+    }
+
+    // ask if hasGetOutOfJainCard == true
+    public void outOfPrisonByJailCard(Player player){
+
+    }
 
     // toSting - when printing print player name in ' '
     @Override
     public String toString() {
         return "'" + playerName + "'";
     }
-
-
 
 
 }

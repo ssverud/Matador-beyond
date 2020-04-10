@@ -20,8 +20,8 @@ public class GameBoard {
         gameFields = new ArrayList<>(); // array of gameFields
         // Adding to our gameField list
         // ---> (For us only - Easier to create) : public GameField(int pos, GameFieldType gameFieldType, String fieldName)
-        gameFields.add(new GameField(0, GameField.GameFieldType.START, "START"));
-        gameFields.add(new GameField(1, GameField.GameFieldType.HOUSEFIELD, "Rødovrevej"));
+        gameFields.add(new StartField(0, "START"));
+        gameFields.add(new PropertyField(1, "Rødovrevej"));
         gameFields.add(new GameField(2, GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
         gameFields.add(new GameField(3, GameField.GameFieldType.HOUSEFIELD, "Hvidovrevej"));
         gameFields.add(new GameField(4, GameField.GameFieldType.TAXFIELD, "Betal indkomst skat"));
