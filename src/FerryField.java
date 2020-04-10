@@ -1,4 +1,4 @@
-public class FerryField {
+public class FerryField extends GameField {
 
     int pos;
     String name;
