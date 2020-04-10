@@ -6,7 +6,7 @@ public class ChanceField extends GameField {
     Random random = new Random();
     int pos;
     ArrayList cardsOfChance = new ArrayList<CardOfChance>();
-
+// hej
 
     public ChanceField() {
 
