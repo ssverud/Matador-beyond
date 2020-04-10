@@ -7,7 +7,7 @@ public class Player {
     private int playerPosition = 0;
     private int money = 0;
     private int numbersOfPlotsOwned = 0;
-    private ArrayList<HousePlot> housePlotsOwned;
+  //  private ArrayList<HousePlot> housePlotsOwned; // Skal laves om da housePlot dont exist anymore
     private int numberOfGameFields = 40;
 
     ScanThings scanThings = new ScanThings();
@@ -63,6 +63,13 @@ public class Player {
         }
         System.out.println(player.getPlayerName() + "'s position er: " + player.getPlayerPosition() + " på brættet. ");
     }
+
+    public void payTax(Player player) {
+         int taxPayment = (int)(player.money*0.02);
+player.money = player.money - taxPayment;
+    }
+
+
 
     // toSting - when printing print player name in ' '
     @Override
