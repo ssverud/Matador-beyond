@@ -80,6 +80,7 @@ public class Logic {
                 i = 0;
             }
         }
+
     }
 
     // KIG PÅ DENNE

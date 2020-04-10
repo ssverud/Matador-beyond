@@ -1,2 +1,2 @@
-public class ParkingsField {
+public class ParkingsField extends GameField {
 }
