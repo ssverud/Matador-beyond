@@ -74,6 +74,13 @@ public class Player {
         System.out.println(player.getPlayerName() + "'s position er: " + player.getPlayerPosition() + " på brættet. ");
     }
 
+    public void buyProperty(PropertyField propertyField) {
+       int propertyPrice = propertyField.getPrice();
+       if(this.money > propertyPrice) {
+          this.money = this.money - propertyPrice;
+       }
+    }
+
     public void payTax(Player player) {
         int taxPayment = (int) (player.money * 0.02);
         player.money = player.money - taxPayment;

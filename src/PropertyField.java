@@ -6,6 +6,7 @@ public class PropertyField extends GameField {
     int rentPrice;
     int pledgePrice;
     int housePrice;
+    boolean isBuyable = true;
 
     public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice) {
         this.pos = pos;
@@ -17,6 +18,13 @@ public class PropertyField extends GameField {
     }
 
 
-
-
+    /**
+     * Getters and setters
+     */
+    public boolean getIsBuyable() {
+        return isBuyable;
+    }
+    public int getPrice() {
+        return price;
+    }
 }

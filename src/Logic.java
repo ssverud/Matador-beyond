@@ -4,6 +4,9 @@ public class Logic {
     // er flyttet ud fra createPlayers for at få tilgang til den i startGame
     ArrayList<Player> listOfPlayers = new ArrayList<>();
     GameBoard gameBoard;
+
+    Player playerWhoHasTurn;
+
     // Creating a scanner
     ScanThings scanThings = new ScanThings();
 
@@ -12,7 +15,6 @@ public class Logic {
 
     // er flyttet ud fra createPlayers for at få tilgang til den i startGame
     int numberOfPlayers = 0;
-
 
 
     /**
@@ -57,10 +59,9 @@ public class Logic {
         boolean keepPlaying = true;
         int i = 0;
         // gameloop
-        while(keepPlaying) {
+        while (keepPlaying) {
             System.out.println("would u like to start the game?");
             scanThings.scanYesNo();
-
 
 
             String delay = scanThings.scanString(); // for us to press Enter before loop moves on
@@ -76,30 +77,36 @@ public class Logic {
 
 
             i++;
-            if(i == listOfPlayers.size()) {
+            if (i == listOfPlayers.size()) {
                 i = 0;
             }
         }
 
     }
 
-    // KIG PÅ DENNE
-/*
-    checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
+
+    //  checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
 
     public void checkGameField(GameField gameField) {
+
         System.out.println("You landed on" + gameField.getFieldName());
 
-        if(gameField.get == gameFieldType.HOUSEFIELD) {
-            if(isBuyable == true) {
-                System.out.println("You have the option to buy a plot on this field");
-                System.out.println("Do you want to buy the house?");
-                //Scan yes no
-                //if(scan yes no == yes ) {
-                //  player.buyTheHouse
-            } // else { move to next player or other options }
+
+        if (gameField.getType == "PropertyField") {
+            optionsForPropertyField();
+        }
+    }
+
+    public void optionsForPropertyField(PropertyField propertyField, Player player) {
+        player = this.playerWhoHasTurn;
+        if (propertyField.getIsBuyable() == true) {
+            System.out.println("You have the option to buy this property, would you like to do that?");
+            if (scanThings.scanYesNo().equals("Yes")) {
+                player.buyProperty(propertyField);
+            }
+
         }
 
     }
-    */
 }
+
