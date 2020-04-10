@@ -31,7 +31,7 @@ public class GameBoard {
         gameFields.add(new TaxField(4, "Betal indkomst skat"));
         gameFields.add(new FerryField(5, "SFL-Færgene", 4000, 500, 2000));
         gameFields.add(new PropertyField(6, "Roskildevej", 2000, 100, 1000, 1000));
-        gameFields.add(new ChanceField(7, GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
+        gameFields.add(new ChanceField(7, "Prøv Lykken"));
         gameFields.add(new PropertyField(8, "Valby Langgade", 2000, 100, 1000, 1000));
         gameFields.add(new PropertyField(9, "Allégade", 2400, 150, 1000, 1200));
 
@@ -43,14 +43,14 @@ public class GameBoard {
         gameFields.add(new PropertyField(15, "Gammel Kongevej", 3200, 250, 2000, 1500));
         gameFields.add(new FerryField(16, "DSB-Rederierne: Kalundborg-Århus", 4000, 500, 2000));
         gameFields.add(new PropertyField(17, "Bernstorffsvej", 3600, 300, 2000, 1800));
-        gameFields.add(new ChanceField(18, GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
+        gameFields.add(new ChanceField(18, "Prøv Lykken"));
         gameFields.add(new PropertyField(19, "Hellerupvej", 3600, 300, 2000, 1800));
         gameFields.add(new PropertyField(20, "Strandvej", 4000, 350, 2000, 2000));
 
 
         gameFields.add(new ParkingsField(21, "Parkering"));
         gameFields.add(new PropertyField(22, "Trianglen", 4400, 350, 3000, 2200));
-        gameFields.add(new ChanceField(23, GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
+        gameFields.add(new ChanceField(23, "Prøv Lykken"));
         gameFields.add(new PropertyField(24, "Østerbrogade", 4400, 350, 3000, 2200));
         gameFields.add(new PropertyField(25, "Grønningen", 4800, 400, 3000, 2400));
         gameFields.add(new FerryField(26,"DFDS-Seaways", 4000, 500, 2000));
@@ -63,10 +63,10 @@ public class GameBoard {
         gameFields.add(new PrisonField(31, "De fængsles"));
         gameFields.add(new PropertyField(32, "Amagertorv", 6000, 550, 4000, 3000));
         gameFields.add(new PropertyField(33, "Vimmelskaftet", 6000, 550, 4000, 3000));
-        gameFields.add(new ChanceField(34, GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
+        gameFields.add(new ChanceField(34, "Prøv Lykken"));
         gameFields.add(new PropertyField(35, "Nygade", 6400, 600, 4000, 3200));
         gameFields.add(new FerryField(36, "DSB-Rederierne: Halsskov-Knudshoved", 4000, 500, 2000));
-        gameFields.add(new ChanceField(37, GameField.GameFieldType.CHANCEFIELD, "Prøv Lykken"));
+        gameFields.add(new ChanceField(37, "Prøv Lykken"));
         gameFields.add(new PropertyField(38, "Frederiksborggade", 7000, 700, 4000, 3500));
         gameFields.add(new TaxField(39, "Ekstraordinær statsskat"));
         gameFields.add(new PropertyField(40, "Rådhuspladsen", 8000, 1000, 4000, 4000));
