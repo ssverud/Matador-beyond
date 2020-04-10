@@ -6,8 +6,8 @@ public class ChanceField extends GameField {
     Random random = new Random();
     int pos;
     String name;
+    String type = "chanceField";
     ArrayList cardsOfChance = new ArrayList<CardOfChance>();
-// hej
 
     public ChanceField(int pos, String name) {
         this.pos = pos;

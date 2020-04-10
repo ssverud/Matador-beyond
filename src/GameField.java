@@ -4,7 +4,6 @@ public abstract class GameField  {
     private int pos;
     private CardOfChance cardOfChance; // for mange navne til 'prøv lykken' feltet og kortet. Svært at holde styr på hvad er hvad.
     private TryYourLuck cardsOfChanceDeck;
-    private GameFieldType gameFieldType;
     private FerryField ferryField;
     private BreweryField breweryField;
     private boolean isBuyable;
@@ -17,28 +16,20 @@ public abstract class GameField  {
         return fieldName;
     }
 
-
     public int getPos(){
         return pos;
     }
 
-    public void setPos(int pos) {
-        this.pos = pos;
-    }
-
     public String getType(){
-
             return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
     // types of gameFields
 
     /**
      * Prisen for at lande på rederierne fordobles for antal rederier der ejes. Dette er ikke lavet og mangler
      */
+
+    /* MÅSKE SLET DONT KNOW YET DEPENDING ON WHAT SUNE SAYS ;)
 
     // compare fieldname, if fieldname matches create ferryField
     FerryField getNewFerryField(String fieldName) {
@@ -54,12 +45,14 @@ public abstract class GameField  {
         }
         return null;
     }
+*/
 
 
     /**
      * priceToRent for at lande på brewery er terningernes øjne gange 100,
      * hvis begge tapperier ejes er det 200. Dette er ikke lavet og mangler
      */
+/* MÅSKE SLET DONT KNOW YET DEPENDING ON WHAT SUNE SAYS ;)
 
     // compare fieldname, if fieldname matches create breweryField
     BreweryField getNewBreweryField(String fieldName) {
@@ -71,6 +64,9 @@ public abstract class GameField  {
         }
         return null;
     }
+*/
+
+/* MÅSKE SLET DONT KNOW YET DEPENDING ON WHAT SUNE SAYS ;)
 
 
     // compare fieldname, if fieldname matches create houseplot
@@ -124,6 +120,7 @@ public abstract class GameField  {
         }
         return null;
     }
+*/
 
     // check if deck exists, if not create !!!!!!!!! NEEDS TO BE CHANGED TO FACTORY plan/method something cant remember name
     TryYourLuck createCardsOfChanceIfNullElseReturnIt() {

@@ -2,6 +2,7 @@ public class TaxField extends GameField {
 
     int pos;
     String name;
+    String type = "taxField";
 
     public TaxField(int pos, String name) {
         this.pos = pos;

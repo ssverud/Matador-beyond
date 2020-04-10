@@ -92,8 +92,8 @@ public class Logic {
         System.out.println("You landed on" + gameField.getFieldName());
 
 
-        if (gameField.getType == "PropertyField") {
-            optionsForPropertyField();
+        if (gameField.getType().equals("propertyField")) {
+            optionsForPropertyField(); // WE DONT KNOW
         }
     }
 

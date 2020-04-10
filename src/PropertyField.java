@@ -2,11 +2,13 @@ public class PropertyField extends GameField {
 
     int pos;
     String name;
+    String type = "propertyField";
     int price;
     int rentPrice;
     int pledgePrice;
     int housePrice;
     boolean isBuyable = true;
+
 
     public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice) {
         this.pos = pos;
