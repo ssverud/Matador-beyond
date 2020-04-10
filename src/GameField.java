@@ -12,6 +12,7 @@ public abstract class GameField  {
     /**
      * Getters and setters
      */
+    
     public String getFieldName() {
         return fieldName;
     }
