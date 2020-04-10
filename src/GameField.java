@@ -16,6 +16,23 @@ public abstract class GameField  {
         return fieldName;
     }
 
+
+    public int getPos(){
+        return pos;
+    }
+
+    public void setPos(int pos) {
+        this.pos = pos;
+    }
+
+    public String getType(){
+
+            return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
     // types of gameFields
 
     /**
