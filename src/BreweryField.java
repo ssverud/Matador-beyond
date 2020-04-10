@@ -1,18 +1,17 @@
 public class BreweryField {
 
-    private String name;
-    private int price;
-    private int priceToRent;
-    private int plotPledgePrice;
+    int pos;
+    String name;
+    int price;
+    int rentPrice; // skal laves en udregning et eller adnet sted?
+    int pledgePrice;
 
-    private boolean hasAllTypes;
-
-
-
-    public BreweryField(String name, int price, int priceToRent, int plotPledgePrice) {
+    public BreweryField(int pos, String name, int price, int rentPrice, int pledgePrice) {
+        this.pos = pos;
         this.name = name;
         this.price = price;
-        this.priceToRent = priceToRent;
-        this.plotPledgePrice = plotPledgePrice;
+        this.rentPrice = rentPrice;
+        this.pledgePrice = pledgePrice;
     }
 }
+

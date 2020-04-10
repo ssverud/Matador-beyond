@@ -1,18 +1,16 @@
 public class FerryField {
 
-    private String name;
-    private int price;
-    private int priceToRent;
+    int pos;
+    String name;
+    int price;
+    int rentPrice;  // skal laves en udregning et eller adnet sted?
+    int pledgePrice;
 
-    private int plotPledgePrice;
-
-    private boolean hasAllTypes;
-
-
-    public FerryField(String name, int price, int priceToRent, int plotPledgePrice) {
+    public FerryField(int pos, String name, int price, int rentPrice, int pledgePrice) {
+        this.pos = pos;
         this.name = name;
         this.price = price;
-        this.priceToRent = priceToRent;
-        this.plotPledgePrice = plotPledgePrice;
+        this.rentPrice = rentPrice;
+        this.pledgePrice = pledgePrice;
     }
 }

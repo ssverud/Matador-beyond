@@ -1,8 +1,7 @@
-public class GameField {
+public abstract class GameField  {
     private String fieldName;
     private String type;
     private int pos;
-    private HousePlot housePlot;
     private CardOfChance cardOfChance; // for mange navne til 'prøv lykken' feltet og kortet. Svært at holde styr på hvad er hvad.
     private TryYourLuck cardsOfChanceDeck;
     private GameFieldType gameFieldType;
@@ -32,28 +31,6 @@ public class GameField {
         VISITPRISON,
         CHANCEFIELD,
         BREWERYFIELD
-    }
-
-    /**
-     * Constructor for GameField
-     */
-    public GameField(int pos, GameFieldType gameFieldType, String fieldName) {
-        this.gameFieldType = gameFieldType;
-        this.fieldName = fieldName;
-        this.pos = pos;
-
-        // Checking gameFieldType, and creating relevant stuff
-        if (gameFieldType == gameFieldType.HOUSEFIELD) {
-            housePlot = getNewHousePlot(fieldName);
-            isBuyable = true;
-        } else if (gameFieldType == gameFieldType.CHANCEFIELD) {
-            cardsOfChanceDeck = createCardsOfChanceIfNullElseReturnIt();
-        } else if (gameFieldType == gameFieldType.FERRYFIELD) {
-            // ... to be continued
-            ferryField = getNewFerryField(fieldName);
-            isBuyable = true;
-        }
-
     }
 
     /**
