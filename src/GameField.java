@@ -11,7 +11,7 @@ public abstract class GameField  {
     /**
      * Getters and setters
      */
-    
+    //getters
     public String getFieldName() {
         return fieldName;
     }
@@ -23,8 +23,12 @@ public abstract class GameField  {
     public String getType(){
             return type;
     }
-    // types of gameFields
+    //setters
+    public void setType(String type) {
+        this.type = type;
+    }
 
+    // types of gameFields
     /**
      * Prisen for at lande på rederierne fordobles for antal rederier der ejes. Dette er ikke lavet og mangler
      */
