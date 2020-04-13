@@ -35,7 +35,6 @@ public class GameBoard {
         gameFields.add(new PropertyField(8, "Valby Langgade", 2000, 100, 1000, 1000));
         gameFields.add(new PropertyField(9, "Allégade", 2400, 150, 1000, 1200));
 
-
         gameFields.add(new VisitPrisonField(11, "Besøg i fængsel"));
         gameFields.add(new PropertyField(12, "Frederiksberg Alle", 2800, 200, 2000, 1400));
         gameFields.add(new BreweryField(13, "Tuborg", 3000, 500, 1500));
@@ -47,8 +46,7 @@ public class GameBoard {
         gameFields.add(new PropertyField(19, "Hellerupvej", 3600, 300, 2000, 1800));
         gameFields.add(new PropertyField(20, "Strandvej", 4000, 350, 2000, 2000));
 
-
-        gameFields.add(new ParkingsField(21, "Parkering"));
+        gameFields.add(new ParkeringsField(21, "Parkering"));
         gameFields.add(new PropertyField(22, "Trianglen", 4400, 350, 3000, 2200));
         gameFields.add(new ChanceField(23, "Prøv Lykken"));
         gameFields.add(new PropertyField(24, "Østerbrogade", 4400, 350, 3000, 2200));
@@ -58,7 +56,6 @@ public class GameBoard {
         gameFields.add(new PropertyField(28, "Kongens Nytorv", 5200, 450, 3000, 2600));
         gameFields.add(new BreweryField(29, "Coca Cola", 3000, 500, 1500));
         gameFields.add(new PropertyField(30, "Østergade", 5600, 500, 3000, 2800));
-
 
         gameFields.add(new PrisonField(31, "De fængsles"));
         gameFields.add(new PropertyField(32, "Amagertorv", 6000, 550, 4000, 3000));
@@ -70,7 +67,6 @@ public class GameBoard {
         gameFields.add(new PropertyField(38, "Frederiksborggade", 7000, 700, 4000, 3500));
         gameFields.add(new TaxField(39, "Ekstraordinær statsskat"));
         gameFields.add(new PropertyField(40, "Rådhuspladsen", 8000, 1000, 4000, 4000));
-
     }
 
     public void playRecursive(GameField gamefield) {
