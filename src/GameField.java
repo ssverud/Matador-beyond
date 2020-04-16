@@ -78,7 +78,7 @@ public class GameField  {
 
     public void checkGameField() {
 
-        System.out.println("You landed on" + this.getName());
+        System.out.println("You landed on " + this.getName());
 
     }
 

@@ -1,10 +1,7 @@
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-
 public class Player {
 
-    private String playerName;
-    private int playerPosition = 0;
+    private String name;
+    private int pos = 0;
     private int money = 0;
     private boolean inPrison = false;
     private boolean hasGetOutOfJainCard = false;
@@ -19,20 +16,20 @@ public class Player {
      * Constructor for player
      */
 
-    public Player(String playerName) {
-        this.playerName = playerName;
+    public Player(String name) {
+        this.name = name;
     }
 
     /**
      * getters and setters
      */
 
-    public String getPlayerName() {
-        return playerName;
+    public String getName() {
+        return name;
     }
 
-    public int getPlayerPosition() {
-        return playerPosition;
+    public int getPos() {
+        return pos;
     }
 
     public int getMoney() {
@@ -43,8 +40,8 @@ public class Player {
         this.money = money;
     }
 
-    public void setPlayerPosition(int playerPosition) {
-        this.playerPosition = playerPosition;
+    public void setPos(int playerPosition) {
+        this.pos = playerPosition;
     }
 
     // Pay rent - When u land on a gamefield you run the gamefield thu all players ownedgamefield array if found pay rent if not give option to buy
@@ -56,11 +53,14 @@ public class Player {
     // Use get out of jail card
 
     // Move pos
-    public void move(Player player, int diceRollResult) {
+    public void move(int diceRollResult) {
         // moving player several times on the board, for better visualization later
         for (int i = 0; i < diceRollResult; i++) {
 
-            player.setPlayerPosition(player.getPlayerPosition() + 1);
+           setPos(getPos() + 1);
+
+            // implement checkoutfield to see if you pass start or similar things
+
 
 /*
             //muligvis flyt denne del
@@ -69,9 +69,7 @@ public class Player {
             }
 
 */
-
         }
-        System.out.println(player.getPlayerName() + "'s position er: " + player.getPlayerPosition() + " på brættet. ");
     }
 
     public void buyProperty(PropertyField propertyField) {
@@ -103,7 +101,7 @@ public class Player {
     // toSting - when printing print player name in ' '
     @Override
     public String toString() {
-        return "'" + playerName + "'";
+        return "'" + name + "'";
     }
 
 

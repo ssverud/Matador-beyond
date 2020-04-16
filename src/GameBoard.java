@@ -20,12 +20,10 @@ public class GameBoard {
 
 
         //grundpris, rentprice, huspris, pantsætning
-        System.out.println("HELLLLLLLLLLLLLLO" + new StartField(0, "START"));
-
         gameFields = new ArrayList<>(); // array of gameFields
         // Adding to our gameField list
         // ---> (For us only - Easier to create) : public GameField(int pos, GameFieldType gameFieldType, String fieldName)
-    //    gameFields.add(new StartField(0, "START"));
+        gameFields.add(new StartField(0, "START"));
         gameFields.add(new PropertyField(1, "Rødovrevej",1200, 50, 1000, 600));
         gameFields.add(new ChanceField(2, "Prøv Lykken"));
         gameFields.add(new PropertyField(3, "Hvidovrevej",1200, 50, 1000, 600));
@@ -76,7 +74,7 @@ public class GameBoard {
 
 
         public void setAndPlayPlayerPos(Player player) {
-            gameFields.get(player.getPlayerPosition());
+            gameFields.get(player.getPos());
 
         }
 
