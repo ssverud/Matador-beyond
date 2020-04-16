@@ -8,28 +8,73 @@ public class GameField  {
     private BreweryField breweryField;
     private boolean isBuyable;
 
-
     /**
      * Getters and setters
      */
-    //getters
+
     public String getName() {
         return Name;
     }
 
-    public int getPos(){
+    public String getType() {
+        return type;
+    }
+
+    public int getPos() {
         return pos;
     }
 
-    public String getType(){
-            return type;
+    public CardOfChance getCardOfChance() {
+        return cardOfChance;
     }
-    //setters
+
+    public TryYourLuck getCardsOfChanceDeck() {
+        return cardsOfChanceDeck;
+    }
+
+    public FerryField getFerryField() {
+        return ferryField;
+    }
+
+    public BreweryField getBreweryField() {
+        return breweryField;
+    }
+
+    public boolean isBuyable() {
+        return isBuyable;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
     public void setType(String type) {
         this.type = type;
     }
 
+    public void setPos(int pos) {
+        this.pos = pos;
+    }
 
+    public void setCardOfChance(CardOfChance cardOfChance) {
+        this.cardOfChance = cardOfChance;
+    }
+
+    public void setCardsOfChanceDeck(TryYourLuck cardsOfChanceDeck) {
+        this.cardsOfChanceDeck = cardsOfChanceDeck;
+    }
+
+    public void setFerryField(FerryField ferryField) {
+        this.ferryField = ferryField;
+    }
+
+    public void setBreweryField(BreweryField breweryField) {
+        this.breweryField = breweryField;
+    }
+
+    public void setBuyable(boolean buyable) {
+        isBuyable = buyable;
+    }
 
     public void checkGameField() {
 
