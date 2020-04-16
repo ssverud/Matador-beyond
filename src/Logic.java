@@ -58,23 +58,27 @@ public class Logic {
 
     public void startGame() {
         boolean keepPlaying = true;
+
+        int numberOfPlayers = listOfPlayers.size();
+
         int i = 0;
+
         int diceCupResult;
         // gameloop
         while (keepPlaying) {
             playerWhoHasTurn = listOfPlayers.get(i);
             delay(); // for us to press Enter before loop moves on
 
-            print.printPlayerTurn(playerWhoHasTurn);
+            print.printPlayerTurnSplit(playerWhoHasTurn);
             diceCupResult = diceCup.shakeDiceCup();
 
             // calling the method move belonging to the "Player(i)"
             playerWhoHasTurn.move(diceCupResult);
 
+            //   GameField activeGameField = gameBoard.gameFields.get(listOfPlayers.get(i).getPlayerPosition());
 
-         //   GameField activeGameField = gameBoard.gameFields.get(listOfPlayers.get(i).getPlayerPosition());
-
-           activeGameField = gameBoard.gameFields.get(playerWhoHasTurn.getPos());
+            activeGameField = gameBoard.gameFields.get(playerWhoHasTurn.getPos());
+            print.printField(playerWhoHasTurn, activeGameField);
             activeGameField.checkGameField();
 
             // tjeck hvis playerPosition er over 40 == true
@@ -83,7 +87,7 @@ public class Logic {
 
 
             i++;
-            if (i == listOfPlayers.size()) {
+            if (i == numberOfPlayers) {
                 i = 0;
             }
         }
@@ -92,7 +96,6 @@ public class Logic {
 
 
     //  checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
-
 
 
     public void optionsForPropertyField(PropertyField propertyField, Player player) {
@@ -107,7 +110,7 @@ public class Logic {
 
     }
 
-    public void delay(){
+    public void delay() {
         scanThings.scanString();
     }
 }

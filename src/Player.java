@@ -59,6 +59,11 @@ public class Player {
 
            setPos(getPos() + 1);
 
+            // Her sune :-)
+           if(i < diceRollResult-1) {
+               // print gamefield passed method thing
+           }
+           // System.out.println(fieldname);
             // implement checkoutfield to see if you pass start or similar things
 
 
