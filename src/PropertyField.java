@@ -19,6 +19,13 @@ public class PropertyField extends GameField {
         this.housePrice = housePrice;
     }
 
+    public void checkGameField() {
+
+        System.out.println("You landed on" + this.getFieldName());
+
+
+    }
+
 
     /**
      * Getters and setters

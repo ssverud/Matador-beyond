@@ -70,6 +70,7 @@ public class Logic {
             // calling the method move belonging to the "Player(i)"
             listOfPlayers.get(i).move(listOfPlayers.get(i), diceCupResult);
 
+            GameField activeGameField = gameBoard.gameFields(listOfPlayers(i))
 
             // tjeck hvis playerPosition er over 40 == true
             // gi 4000 money
@@ -87,15 +88,7 @@ public class Logic {
 
     //  checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
 
-    public void checkGameField(GameField gameField) {
 
-        System.out.println("You landed on" + gameField.getFieldName());
-
-
-        if (gameField.getType().equals("propertyField")) {
-            optionsForPropertyField(); // WE DONT KNOW
-        }
-    }
 
     public void optionsForPropertyField(PropertyField propertyField, Player player) {
         player = this.playerWhoHasTurn;

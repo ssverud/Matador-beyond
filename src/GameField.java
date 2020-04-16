@@ -28,11 +28,20 @@ public abstract class GameField  {
         this.type = type;
     }
 
+
+
+    public void checkGameField(GameField gameField) {
+
+        System.out.println("You landed on" + this.getFieldName());
+
+    }
+
+
+
     // types of gameFields
     /**
      * Prisen for at lande på rederierne fordobles for antal rederier der ejes. Dette er ikke lavet og mangler
      */
-
     /* MÅSKE SLET DONT KNOW YET DEPENDING ON WHAT SUNE SAYS ;)
 
     // compare fieldname, if fieldname matches create ferryField
