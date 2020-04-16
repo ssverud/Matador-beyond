@@ -64,13 +64,18 @@ public class Logic {
             scanThings.scanYesNo();
 
 
+
             String delay = scanThings.scanString(); // for us to press Enter before loop moves on
             System.out.println("--------" + listOfPlayers.get(i).getPlayerName() + "'s tur --------");
             int diceCupResult = diceCup.shakeDiceCup();
             // calling the method move belonging to the "Player(i)"
             listOfPlayers.get(i).move(listOfPlayers.get(i), diceCupResult);
 
-            GameField activeGameField = gameBoard.gameFields(listOfPlayers(i))
+         //   GameField activeGameField = gameBoard.gameFields.get(listOfPlayers.get(i).getPlayerPosition());
+
+            GameField activeGameField = gameBoard.gameFields.get(11);
+
+            activeGameField.checkGameField();
 
             // tjeck hvis playerPosition er over 40 == true
             // gi 4000 money

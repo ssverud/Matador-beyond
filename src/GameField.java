@@ -1,5 +1,5 @@
-public abstract class GameField  {
-    private String fieldName;
+public class GameField  {
+    private String Name;
     private String type;
     private int pos;
     private CardOfChance cardOfChance; // for mange navne til 'prøv lykken' feltet og kortet. Svært at holde styr på hvad er hvad.
@@ -8,12 +8,13 @@ public abstract class GameField  {
     private BreweryField breweryField;
     private boolean isBuyable;
 
+
     /**
      * Getters and setters
      */
     //getters
-    public String getFieldName() {
-        return fieldName;
+    public String getName() {
+        return Name;
     }
 
     public int getPos(){
@@ -30,9 +31,9 @@ public abstract class GameField  {
 
 
 
-    public void checkGameField(GameField gameField) {
+    public void checkGameField() {
 
-        System.out.println("You landed on" + this.getFieldName());
+        System.out.println("You landed on" + this.getName());
 
     }
 
@@ -146,6 +147,6 @@ public abstract class GameField  {
     // toString when printing a field you print the name of the field // idk if we need to chance it maybe not
     @Override
     public String toString() {
-        return getFieldName();
+        return getName();
     }
 }

@@ -8,4 +8,11 @@ public class VisitPrisonField extends GameField {
         this.pos = pos;
         this.name = name;
     }
+
+    public void checkGameField() {
+
+        System.out.println("You landed on" + this.getFieldName());
+
+        System.out.println("and you are now stuck until you hit ...");
+    }
 }
