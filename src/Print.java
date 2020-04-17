@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Print {
 
     public Print() {
@@ -14,6 +16,10 @@ public class Print {
 
     public void printField(Player player, GameField gameField) {
         System.out.println(player.getName() + " Du har passeret " + gameField.getName());
+    }
+
+    public void printGameFields(ArrayList list ){
+        System.out.println(list);
     }
 
 }

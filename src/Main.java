@@ -3,10 +3,8 @@ public class Main {
 
 
         Logic logic = new Logic();
-
         logic.welcomeToTheGame();
         logic.startGame();
-        System.out.println();
     }
 }
 

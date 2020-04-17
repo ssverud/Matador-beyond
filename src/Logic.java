@@ -1,42 +1,35 @@
 import java.util.ArrayList;
 
 public class Logic {
-    // er flyttet ud fra createPlayers for at få tilgang til den i startGame
-    ArrayList<Player> listOfPlayers = new ArrayList<>();
-    GameBoard gameBoard;
-    Print print = new Print();
+
     GameField activeGameField;
     Player playerWhoHasTurn;
+    int numberOfPlayers;
 
-    // Creating a scanner
+    /**
+     * Instantiator
+     */
+    ArrayList<Player> listOfPlayers = new ArrayList<>();
+    GameBoard gameBoard = new GameBoard();
+    Print print = new Print();
     ScanThings scanThings = new ScanThings();
-
-    DiceCup diceCup = new DiceCup();
-
-
-    // er flyttet ud fra createPlayers for at få tilgang til den i startGame
-    int numberOfPlayers = 0;
-
 
     /**
      * welcomeToTheGame creates our world and creates the players
      */
     public void welcomeToTheGame() {
-        gameBoard = new GameBoard();
-
 
         // Print out the gamefield list
         System.out.println("printing the gamefield list:");
-        System.out.println(gameBoard.gameFields);
+        print.printGameFields(gameBoard.gameFields);
 
         System.out.println("How many player are going to play?");
 
-        numberOfPlayers = scanThings.scanNumber();
+        numberOfPlayers = scanThings.scanNumber(); //Catch exception 0 skal laves
 
         System.out.println("Okay you are going to be playing " + numberOfPlayers + " players");
         System.out.println("Lets start creating your chars!");
         createPlayers(numberOfPlayers);
-
     }
 
     public void createPlayers(int numberOfPlayers) {
@@ -55,7 +48,6 @@ public class Logic {
         System.out.println(listOfPlayers);
     }
 
-
     public void startGame() {
         boolean keepPlaying = true;
 
@@ -66,11 +58,14 @@ public class Logic {
         int diceCupResult;
         // gameloop
         while (keepPlaying) {
+            //using temp playertype to track which player has turn
             playerWhoHasTurn = listOfPlayers.get(i);
             delay(); // for us to press Enter before loop moves on
 
             print.printPlayerTurnSplit(playerWhoHasTurn);
-            diceCupResult = diceCup.shakeDiceCup();
+
+            //Der slås med terningerne og resultatet gemmes i dicecupResult
+            diceCupResult = gameBoard.diceCup.shakeDiceCup();
 
             // calling the method move belonging to the "Player(i)"
             playerWhoHasTurn.move(diceCupResult);
