@@ -20,7 +20,6 @@ public class GameBoard {
 
 
         //grundpris, rentprice, huspris, pantsætning
-
         gameFields = new ArrayList<>(); // array of gameFields
         // Adding to our gameField list
         // ---> (For us only - Easier to create) : public GameField(int pos, GameFieldType gameFieldType, String fieldName)
@@ -75,7 +74,7 @@ public class GameBoard {
 
 
         public void setAndPlayPlayerPos(Player player) {
-            gameFields.get(player.getPlayerPosition());
+            gameFields.get(player.getPos());
 
         }
 

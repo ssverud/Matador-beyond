@@ -4,7 +4,8 @@ public class Logic {
     // er flyttet ud fra createPlayers for at få tilgang til den i startGame
     ArrayList<Player> listOfPlayers = new ArrayList<>();
     GameBoard gameBoard;
-
+    Print print = new Print();
+    GameField activeGameField;
     Player playerWhoHasTurn;
 
     // Creating a scanner
@@ -57,19 +58,28 @@ public class Logic {
 
     public void startGame() {
         boolean keepPlaying = true;
+
+        int numberOfPlayers = listOfPlayers.size();
+
         int i = 0;
+
+        int diceCupResult;
         // gameloop
         while (keepPlaying) {
-            System.out.println("would u like to start the game?");
-            scanThings.scanYesNo();
+            playerWhoHasTurn = listOfPlayers.get(i);
+            delay(); // for us to press Enter before loop moves on
 
+            print.printPlayerTurnSplit(playerWhoHasTurn);
+            diceCupResult = diceCup.shakeDiceCup();
 
-            String delay = scanThings.scanString(); // for us to press Enter before loop moves on
-            System.out.println("--------" + listOfPlayers.get(i).getPlayerName() + "'s tur --------");
-            int diceCupResult = diceCup.shakeDiceCup();
             // calling the method move belonging to the "Player(i)"
-            listOfPlayers.get(i).move(listOfPlayers.get(i), diceCupResult);
+            playerWhoHasTurn.move(diceCupResult);
 
+            //   GameField activeGameField = gameBoard.gameFields.get(listOfPlayers.get(i).getPlayerPosition());
+
+            activeGameField = gameBoard.gameFields.get(playerWhoHasTurn.getPos());
+            print.printField(playerWhoHasTurn, activeGameField);
+            activeGameField.checkGameField();
 
             // tjeck hvis playerPosition er over 40 == true
             // gi 4000 money
@@ -77,7 +87,7 @@ public class Logic {
 
 
             i++;
-            if (i == listOfPlayers.size()) {
+            if (i == numberOfPlayers) {
                 i = 0;
             }
         }
@@ -87,15 +97,6 @@ public class Logic {
 
     //  checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
 
-    public void checkGameField(GameField gameField) {
-
-        System.out.println("You landed on" + gameField.getFieldName());
-
-
-        if (gameField.getType().equals("propertyField")) {
-            optionsForPropertyField(); // WE DONT KNOW
-        }
-    }
 
     public void optionsForPropertyField(PropertyField propertyField, Player player) {
         player = this.playerWhoHasTurn;
@@ -107,6 +108,10 @@ public class Logic {
 
         }
 
+    }
+
+    public void delay() {
+        scanThings.scanString();
     }
 }
 

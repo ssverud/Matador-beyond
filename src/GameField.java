@@ -1,5 +1,5 @@
-public abstract class GameField  {
-    private String fieldName;
+public class GameField  {
+    private String Name;
     private String type;
     private int pos;
     private CardOfChance cardOfChance; // for mange navne til 'prøv lykken' feltet og kortet. Svært at holde styr på hvad er hvad.
@@ -12,23 +12,82 @@ public abstract class GameField  {
      * Getters and setters
      */
 
-    public String getFieldName() {
-        return fieldName;
+    public String getName() {
+        return Name;
     }
 
-    public int getPos(){
+    public String getType() {
+        return type;
+    }
+
+    public int getPos() {
         return pos;
     }
 
-    public String getType(){
-            return type;
+    public CardOfChance getCardOfChance() {
+        return cardOfChance;
     }
-    // types of gameFields
 
+    public TryYourLuck getCardsOfChanceDeck() {
+        return cardsOfChanceDeck;
+    }
+
+    public FerryField getFerryField() {
+        return ferryField;
+    }
+
+    public BreweryField getBreweryField() {
+        return breweryField;
+    }
+
+    public boolean isBuyable() {
+        return isBuyable;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setPos(int pos) {
+        this.pos = pos;
+    }
+
+    public void setCardOfChance(CardOfChance cardOfChance) {
+        this.cardOfChance = cardOfChance;
+    }
+
+    public void setCardsOfChanceDeck(TryYourLuck cardsOfChanceDeck) {
+        this.cardsOfChanceDeck = cardsOfChanceDeck;
+    }
+
+    public void setFerryField(FerryField ferryField) {
+        this.ferryField = ferryField;
+    }
+
+    public void setBreweryField(BreweryField breweryField) {
+        this.breweryField = breweryField;
+    }
+
+    public void setBuyable(boolean buyable) {
+        isBuyable = buyable;
+    }
+
+    public void checkGameField() {
+
+        System.out.println("You landed on " + this.getName());
+
+    }
+
+
+
+    // types of gameFields
     /**
      * Prisen for at lande på rederierne fordobles for antal rederier der ejes. Dette er ikke lavet og mangler
      */
-
     /* MÅSKE SLET DONT KNOW YET DEPENDING ON WHAT SUNE SAYS ;)
 
     // compare fieldname, if fieldname matches create ferryField
@@ -133,6 +192,6 @@ public abstract class GameField  {
     // toString when printing a field you print the name of the field // idk if we need to chance it maybe not
     @Override
     public String toString() {
-        return getFieldName();
+        return getName();
     }
 }

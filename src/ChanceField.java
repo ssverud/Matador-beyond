@@ -4,14 +4,12 @@ import java.util.Random;
 public class ChanceField extends GameField {
     TryYourLuck tryYourLuck = new TryYourLuck();
     Random random = new Random();
-    int pos;
-    String name;
     String type = "chanceField";
     CardOfChance cardsOfChance = new CardOfChance();
 
     public ChanceField(int pos, String name) {
-        this.pos = pos;
-        this.name = name;
+        setPos(pos);
+        setName(name);
     }
 
         public void rollCard(){

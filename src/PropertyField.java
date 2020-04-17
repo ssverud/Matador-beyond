@@ -1,8 +1,5 @@
 public class PropertyField extends GameField {
 
-    int pos;
-    String name;
-    String type = "propertyField";
     int price;
     int rentPrice;
     int pledgePrice;
@@ -11,8 +8,9 @@ public class PropertyField extends GameField {
 
 
     public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice) {
-        this.pos = pos;
-        this.name = name;
+        setPos(pos);
+        setName(name);
+        setType("propertyField");
         this.price = price;
         this.rentPrice = rentPrice;
         this.pledgePrice = pledgePrice;
