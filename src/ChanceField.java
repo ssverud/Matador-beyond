@@ -7,7 +7,7 @@ public class ChanceField extends GameField {
     int pos;
     String name;
     String type = "chanceField";
-    ArrayList cardsOfChance = new ArrayList<CardOfChance>();
+    CardOfChance cardsOfChance = new CardOfChance();
 
     public ChanceField(int pos, String name) {
         this.pos = pos;
@@ -17,7 +17,7 @@ public class ChanceField extends GameField {
         public void rollCard(){
             int roll;
             roll = random.nextInt(tryYourLuck.cardsOfChance.size());
-            System.out.println(tryYourLuck.cardsOfChance.get(roll));
+            System.out.println(cardsOfChance.cards.get(roll).getTextOfCard());
 
         }
 
