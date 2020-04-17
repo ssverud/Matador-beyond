@@ -68,12 +68,11 @@ public class Logic {
             diceCupResult = gameBoard.diceCup.shakeDiceCup();
 
             // calling the method move belonging to the "Player(i)"
-            playerWhoHasTurn.move(diceCupResult);
+            movePlayer(playerWhoHasTurn, diceCupResult);
 
             //   GameField activeGameField = gameBoard.gameFields.get(listOfPlayers.get(i).getPlayerPosition());
 
             activeGameField = gameBoard.gameFields.get(playerWhoHasTurn.getPos());
-            print.printField(playerWhoHasTurn, activeGameField);
             activeGameField.checkGameField();
 
             // tjeck hvis playerPosition er over 40 == true
@@ -88,8 +87,19 @@ public class Logic {
         }
     }
 
-    public void movePlayer(Player player, int diceCupResult){
+    public void movePlayer(Player player, int diceCupRollResult){
 
+        playerWhoHasTurn = player;
+        print.printGameFields(gameBoard.gameFields);
+
+        for (int i = 0; i < diceCupRollResult; i++) {
+            playerWhoHasTurn.setPos(playerWhoHasTurn.getPos() + 1);
+            activeGameField = gameBoard.gameFields.get(playerWhoHasTurn.getPos());
+
+            if(i < diceCupRollResult -1){
+                print.printPassedField(playerWhoHasTurn, activeGameField);
+            }
+        }
     }
 
     //  checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
