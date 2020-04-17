@@ -86,24 +86,13 @@ public class Logic {
                 i = 0;
             }
         }
-
     }
 
+    public void movePlayer(Player player, int diceCupResult){
+        
+    }
 
     //  checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
-
-
-    public void optionsForPropertyField(PropertyField propertyField, Player player) {
-        player = this.playerWhoHasTurn;
-        if (propertyField.getIsBuyable() == true) {
-            System.out.println("You have the option to buy this property, would you like to do that?");
-            if (scanThings.scanYesNo().equals("Yes")) {
-                player.buyProperty(propertyField);
-            }
-
-        }
-
-    }
 
     public void delay() {
         scanThings.scanString();

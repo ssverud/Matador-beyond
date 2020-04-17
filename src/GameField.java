@@ -2,13 +2,12 @@ public class GameField  {
     private String Name;
     private String type;
     private int pos;
-    private boolean isBuyable;
     private GameFieldType gameFieldType;
 
     // types of gameFields
     enum GameFieldType {
         START,
-        HOUSEFIELD,
+        PROPERTYFIELD,
         FERRYFIELD,
         PRISONFIELD,
         TAXFIELD,
@@ -39,10 +38,6 @@ public class GameField  {
         return pos;
     }
 
-    public boolean isBuyable() {
-        return isBuyable;
-    }
-
     public void setName(String name) {
         Name = name;
     }
@@ -53,10 +48,6 @@ public class GameField  {
 
     public void setPos(int pos) {
         this.pos = pos;
-    }
-
-    public void setBuyable(boolean buyable) {
-        isBuyable = buyable;
     }
 
     public GameFieldType getGameFieldType() {

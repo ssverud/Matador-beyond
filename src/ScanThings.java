@@ -3,7 +3,6 @@ import java.util.Scanner;
 
 public class ScanThings {
 
-
     public ScanThings() {
 
     }
@@ -15,7 +14,6 @@ public class ScanThings {
 
         return input;
     }
-
 
     // Create yes,no input scanner
     public String scanYesNo() {
@@ -32,7 +30,6 @@ public class ScanThings {
         }
         return scanYesNo();
     }
-
 
     public int scanNumber() {
         Scanner keyboardInput = new Scanner(System.in);

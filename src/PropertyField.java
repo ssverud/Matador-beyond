@@ -1,16 +1,16 @@
 public class PropertyField extends GameField {
 
-    int price;
-    int rentPrice;
-    int pledgePrice;
-    int housePrice;
-    boolean isBuyable = true;
+    private int price;
+    private int rentPrice;
+    private int pledgePrice;
+    private int housePrice;
+    private boolean isBuyable = true;
 
 
     public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice) {
         setPos(pos);
         setName(name);
-        setType("propertyField");
+        setGameFieldType(GameFieldType.PROPERTYFIELD);
         this.price = price;
         this.rentPrice = rentPrice;
         this.pledgePrice = pledgePrice;
@@ -21,10 +21,43 @@ public class PropertyField extends GameField {
     /**
      * Getters and setters
      */
-    public boolean getIsBuyable() {
-        return isBuyable;
-    }
     public int getPrice() {
         return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+    public int getRentPrice() {
+        return rentPrice;
+    }
+
+    public void setRentPrice(int rentPrice) {
+        this.rentPrice = rentPrice;
+    }
+
+    public int getPledgePrice() {
+        return pledgePrice;
+    }
+
+    public void setPledgePrice(int pledgePrice) {
+        this.pledgePrice = pledgePrice;
+    }
+
+    public int getHousePrice() {
+        return housePrice;
+    }
+
+    public void setHousePrice(int housePrice) {
+        this.housePrice = housePrice;
+    }
+
+    public boolean isBuyable() {
+        return isBuyable;
+    }
+
+    public void setBuyable(boolean buyable) {
+        isBuyable = buyable;
     }
 }

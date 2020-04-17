@@ -21,5 +21,4 @@ public class Print {
     public void printGameFields(ArrayList list ){
         System.out.println(list);
     }
-
 }
