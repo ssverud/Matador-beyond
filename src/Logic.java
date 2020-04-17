@@ -89,7 +89,7 @@ public class Logic {
     }
 
     public void movePlayer(Player player, int diceCupResult){
-        
+
     }
 
     //  checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
