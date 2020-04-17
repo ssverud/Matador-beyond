@@ -11,7 +11,7 @@ public class BreweryField extends GameField{
         this.price = price;
         this.rentPrice = rentPrice;
         this.pledgePrice = pledgePrice;
-        setType("breweryField");
+
     }
 }
 
