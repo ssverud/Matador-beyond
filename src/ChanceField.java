@@ -9,5 +9,4 @@ public class ChanceField extends GameField {
         setPos(pos);
         setName(name);
     }
-
 }
