@@ -3,6 +3,12 @@ import java.util.Collections;
 
 public class CardOfChanceDeck {
 
+    static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
+    //Creates the deck as a singleton, so all chancefields uses the same deck
+    public static CardOfChanceDeck getInstance(){
+        return cardOfChanceDeck;
+    }
+
 
     private String type;
 
