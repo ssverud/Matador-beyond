@@ -2,10 +2,6 @@ import java.util.ArrayList;
 
 public class Logic {
 
-    GameField activeGameField;
-    Player playerWhoHasTurn;
-    int numberOfPlayers;
-
     /**
      * Instantiator
      */
@@ -13,6 +9,13 @@ public class Logic {
     GameBoard gameBoard = new GameBoard();
     Print print = new Print();
     ScanThings scanThings = new ScanThings();
+
+
+    GameField activeGameField;
+    Player playerWhoHasTurn;
+    int numberOfPlayers;
+    int numberOfGameFields = gameBoard.gameFields.size();
+
 
     /**
      * welcomeToTheGame creates our world and creates the players
@@ -55,30 +58,18 @@ public class Logic {
 
         int i = 0;
 
-        int diceCupResult;
+
         // gameloop
         while (keepPlaying) {
             //using temp playertype to track which player has turn
             playerWhoHasTurn = listOfPlayers.get(i);
+
             delay(); // for us to press Enter before loop moves on
 
             print.printPlayerTurnSplit(playerWhoHasTurn);
 
-            //Der slås med terningerne og resultatet gemmes i dicecupResult
-            diceCupResult = gameBoard.diceCup.shakeDiceCup();
-
-            // calling the method move belonging to the "Player(i)"
-            movePlayer(playerWhoHasTurn, diceCupResult);
-
-            //   GameField activeGameField = gameBoard.gameFields.get(listOfPlayers.get(i).getPlayerPosition());
-
-            activeGameField = gameBoard.gameFields.get(playerWhoHasTurn.getPos());
-            activeGameField.checkGameField();
-
-            // tjeck hvis playerPosition er over 40 == true
-            // gi 4000 money
-            // playerPosiiton - 40
-
+            // Starts the players turn
+            playerTurn(playerWhoHasTurn);
 
             i++;
             if (i == numberOfPlayers) {
@@ -87,22 +78,72 @@ public class Logic {
         }
     }
 
-    public void movePlayer(Player player, int diceCupRollResult){
+    public void playerTurn(Player player) {
+
+        int diceCupRollResult;
+        int playerWhoHasTurnPos;
+        int playerWhoHasTurnMoney;
+
 
         playerWhoHasTurn = player;
+
         print.printGameFields(gameBoard.gameFields);
 
-        for (int i = 0; i < diceCupRollResult; i++) {
-            playerWhoHasTurn.setPos(playerWhoHasTurn.getPos() + 1);
-            activeGameField = gameBoard.gameFields.get(playerWhoHasTurn.getPos());
+        diceCupRollResult = gameBoard.diceCup.shakeDiceCup();
 
-            if(i < diceCupRollResult -1){
+        for (int i = 0; i < diceCupRollResult; i++) {
+            playerWhoHasTurnPos = playerWhoHasTurn.getPos();
+
+            playerWhoHasTurn.setPos(playerWhoHasTurnPos + 1);
+
+            // Checking if player is out of bounce, is so go back to start
+            if (playerWhoHasTurnPos > numberOfGameFields) {
+                playerWhoHasTurn.setPos(0);
+
+                playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
+                playerWhoHasTurn.setMoney(playerWhoHasTurnMoney + 4000);
+                System.out.println("4000 has been added to the player for passing start");
+            }
+
+            activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
+
+
+            if (i < diceCupRollResult - 1) {
                 print.printPassedField(playerWhoHasTurn, activeGameField);
             }
         }
+        System.out.println("You landed on " + activeGameField.getName());
+
+        checkGameFieldType(activeGameField);
+
+        // now changing the actual players info to the playerWhoHasTurn info
+        player = playerWhoHasTurn;
     }
 
-    //  checkGameField(gameBoard.gameFields[playerHasTurn.getPos]);
+    public void checkGameFieldType(GameField gameField) {
+
+
+
+        if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
+            System.out.println("this is a START!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
+            System.out.println("this is a property!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } else if (gameField.getGameFieldType() == GameField.GameFieldType.FERRYFIELD) {
+            System.out.println("this is a FERRYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } else if (gameField.getGameFieldType() == GameField.GameFieldType.PRISONFIELD) {
+            System.out.println("this is a PRISONFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } else if (gameField.getGameFieldType() == GameField.GameFieldType.TAXFIELD) {
+            System.out.println("this is a TAXFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } else if (gameField.getGameFieldType() == GameField.GameFieldType.PARKINGFIELD) {
+            System.out.println("this is a PARKINGFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } else if (gameField.getGameFieldType() == GameField.GameFieldType.VISITPRISON) {
+            System.out.println("this is a VISITPRISON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } else if (gameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD) {
+            System.out.println("this is a CHANCEFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        } else if (gameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD) {
+            System.out.println("this is a BREWERYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        }
+    }
 
     public void delay() {
         scanThings.scanString();
