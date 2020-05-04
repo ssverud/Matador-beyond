@@ -1,8 +1,29 @@
-public class GameField  {
+public class GameField {
     private String Name;
     private String type;
     private int pos;
     private GameFieldType gameFieldType;
+
+    private Player boughtBy;
+
+    private boolean isBought;
+
+    public boolean isBought() {
+        return isBought;
+    }
+
+    public void setBought(boolean bought) {
+        isBought = bought;
+    }
+
+    public Player getBoughtBy() {
+        return boughtBy;
+    }
+
+    public void setBoughtBy(Player boughtBy) {
+        this.boughtBy = boughtBy;
+    }
+
 
     // types of gameFields
     enum GameFieldType {

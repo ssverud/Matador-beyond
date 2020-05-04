@@ -122,7 +122,14 @@ public class Logic {
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
             System.out.println("this is a START!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
-            System.out.println("This is a Propertyfield, you have the option to buy dis, if you want :)");
+        //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
+            System.out.println("This is a Propertyfield");
+
+            if(activeGameField.isBought()) {
+
+          //      playerWhoHasTurn.payRent();
+            }
+
             /*    logic.presentBuyOptions(Player player);
 
                   make new method called something like "presentpropertyfieldoptions"

@@ -16,7 +16,7 @@ public class Player {
     }
 
     // Pay rent
-    public void payRent(GameField gameField) {
+    public void payRent(int amount, Player player) {
     }
 
     // Use get out of jail card
