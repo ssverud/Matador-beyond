@@ -14,8 +14,6 @@ public class DiceCup {
     // shake cup method
     public int shakeDiceCup() {
 
-        System.out.println();
-
         int dice1Result = dice1.roll();
         int dice2Result = dice2.roll();
         int result = dice1Result + dice2Result;

@@ -66,8 +66,6 @@ public class Logic {
 
             delay(); // for us to press Enter before loop moves on
 
-            print.printPlayerTurnSplit(playerWhoHasTurn);
-
             // Starts the players turn
             playerTurn(playerWhoHasTurn);
 
@@ -84,20 +82,22 @@ public class Logic {
         int playerWhoHasTurnPos;
         int playerWhoHasTurnMoney;
 
-
         playerWhoHasTurn = player;
 
-        print.printGameFields(gameBoard.gameFields);
+        print.printPlayerTurnSplit(playerWhoHasTurn);
 
         diceCupRollResult = gameBoard.diceCup.shakeDiceCup();
 
+        // Loop for player move (Move 1 field per iteration)
         for (int i = 0; i < diceCupRollResult; i++) {
+
             playerWhoHasTurnPos = playerWhoHasTurn.getPos();
 
-            playerWhoHasTurn.setPos(playerWhoHasTurnPos + 1);
+            playerWhoHasTurnPos = playerWhoHasTurnPos + 1;
+            playerWhoHasTurn.setPos(playerWhoHasTurnPos);
 
             // Checking if player is out of bounce, is so go back to start
-            if (playerWhoHasTurnPos > numberOfGameFields) {
+            if (playerWhoHasTurnPos > numberOfGameFields - 1) {
                 playerWhoHasTurn.setPos(0);
 
                 playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
@@ -115,19 +115,27 @@ public class Logic {
         System.out.println("You landed on " + activeGameField.getName());
 
         checkGameFieldType(activeGameField);
-
-        // now changing the actual players info to the playerWhoHasTurn info
-        player = playerWhoHasTurn;
     }
 
     public void checkGameFieldType(GameField gameField) {
 
-
-
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
             System.out.println("this is a START!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
-            System.out.println("this is a property!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("This is a Propertyfield, you have the option to buy dis, if you want :)");
+            /*    logic.presentBuyOptions(Player player);
+
+                  make new method called something like "presentpropertyfieldoptions"
+                  create a var in propertyField called Player ownedBy, that can be set to the player who buys it
+
+                     in presentpropertyfieldoptions:
+                         Check if the property is already bought
+                             if bought == true
+                                 playerwhohasturn.payrent(getpropertyrent, getownedby)
+                         if bought == false
+                             presentbuy options for field
+             */
+
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.FERRYFIELD) {
             System.out.println("this is a FERRYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PRISONFIELD) {
@@ -144,6 +152,9 @@ public class Logic {
             System.out.println("this is a BREWERYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
     }
+
+
+
 
     public void delay() {
         scanThings.scanString();
