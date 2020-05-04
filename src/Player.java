@@ -15,7 +15,7 @@ public class Player {
         this.name = name;
     }
 
-    // Pay rent - When u land on a gamefield you run the gamefield thu all players ownedgamefield array if found pay rent if not give option to buy
+    // Pay rent
     public void payRent(GameField gameField) {
     }
 
@@ -30,32 +30,6 @@ public class Player {
         int paymentToGetOutOfPrison = 1000;
         money = money - paymentToGetOutOfPrison;
     }
-
-  /*  // Move pos
-    public void move(int diceRollResult) {
-        // moving player several times on the board, for better visualization later
-        for (int i = 0; i < diceRollResult; i++) {
-
-            setPos(getPos() + 1);
-
-            // Her sune :-)
-            if (i < diceRollResult - 1) {
-                // print gamefield passed method thing
-            }
-            // System.out.println(fieldname);
-            // implement checkoutfield to see if you pass start or similar things
-
-
-
-            //muligvis flyt denne del
-            if(player.getPlayerPosition() > this.numberOfGameFields) {
-                player.setPlayerPosition(player.getPlayerPosition() - this.numberOfGameFields);
-            }
-
-
-        }
-    }  */
-
 
     public void buyProperty(PropertyField propertyField) {
         int propertyPrice = propertyField.getPrice();
