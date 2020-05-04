@@ -17,11 +17,6 @@ public class GameField  {
         BREWERYFIELD
     }
 
-    public void checkGameField() {
-
-        System.out.println("You landed on " + this.getName());
-    }
-
     /**
      * Getters and setters
      */
