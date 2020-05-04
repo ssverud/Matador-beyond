@@ -11,7 +11,7 @@ public class TestingDice {
         Dice dice = new Dice();
         int lowest = 1;
         int highest = 6; //10
-
+//
         //Act - invoke the method that needs testing with the variables
         //int actual = dice.roll();
 
