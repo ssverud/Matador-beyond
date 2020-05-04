@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Logic {
+public class Logic implements Runnable {
 
     /**
      * Instantiator
@@ -51,7 +51,12 @@ public class Logic {
         System.out.println(listOfPlayers);
     }
 
-    public void startGame() {
+    // kommer fra implements Runable øverst i Logic
+    @Override
+    public void run() {
+        
+        welcomeToTheGame();
+
         boolean keepPlaying = true;
 
         int numberOfPlayers = listOfPlayers.size();
