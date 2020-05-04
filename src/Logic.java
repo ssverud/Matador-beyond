@@ -120,7 +120,7 @@ public class Logic {
     public void checkGameFieldType(GameField gameField) {
 
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
-            System.out.println("this is a START!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("Dette er Start feltet. Du starter nu på en ny runde");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
         //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
             System.out.println("This is a Propertyfield");
@@ -148,11 +148,45 @@ public class Logic {
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PRISONFIELD) {
             System.out.println("this is a PRISONFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.TAXFIELD) {
+            int playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
+
+            if (gameField.getPos() == 4){
+
+                System.out.println("Vælg 1: at betale kr. 4000. Eller 2: at betale 10% af dine samlede værdier. Hvad vælger du?");
+                int taxChoice = scanThings.scanNumber();
+
+                switch (taxChoice) {
+                    case 1:
+                        playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - 4000);
+                        break;
+                    case 2:
+                        /*
+                        udrregning af værdier: kontanter, huse, trykte pris af: propertyfield, breweryfield og ferryfield
+
+                        int tax;
+                        int percentage = 10;
+                        int totalValues = playerWhoHasTurnMoney +  houseBuildingPrice(for all buildings) +
+                        propertyFieldPrice + breweryFieldPrice + ferryFieldPrice;
+
+                        tax = totalValues/percentage;
+                        system.out.println("Du betaler: " + tax + " i indkomstskat"):
+
+                        playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - tax);
+
+
+                         */
+                        break;
+                }
+            }
+                if (gameField.getPos() == 38){
+                    System.out.println("Betal kr. 2000 i ekstraordinær statsskat.");
+                    playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - 2000);
+                }
             System.out.println("this is a TAXFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PARKINGFIELD) {
-            System.out.println("this is a PARKINGFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("Dette er et parkingsfelt.");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.VISITPRISON) {
-            System.out.println("this is a VISITPRISON!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            System.out.println("Du er nu på besøg i fængsel.");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD) {
             System.out.println("this is a CHANCEFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD) {
