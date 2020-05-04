@@ -14,4 +14,3 @@ public class BreweryField extends GameField{
         setGameFieldType(GameFieldType.BREWERYFIELD);
     }
 }
-
