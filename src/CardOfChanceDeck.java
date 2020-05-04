@@ -81,7 +81,4 @@ public class CardOfChanceDeck {
         cards.add(cards.get(0));
         cards.remove(cards.get(0));
     }
-
-
-
 }
