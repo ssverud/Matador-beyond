@@ -163,6 +163,7 @@ public class Logic implements Runnable {
             System.out.println("this is a FERRYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PRISONFIELD) {
 
+            presentPrisonOptions(playerWhoHasTurn);
 
             System.out.println("this is a PRISONFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.TAXFIELD) {
