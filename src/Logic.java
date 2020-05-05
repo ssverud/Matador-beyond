@@ -221,17 +221,16 @@ public class Logic implements Runnable {
         if (chosenOption == 1) {
             player.setMoney(player.getMoney() - 2000);
         } else if (chosenOption == 2) {
-            int dice1NumberOfEyes = gameBoard.diceCup.dice1.getNumberOfEyes();
-            int dice2NumberOfEyes = gameBoard.diceCup.dice2.getNumberOfEyes();
 
             for (int i = 0; i < 3; i++) {
-
                 gameBoard.diceCup.shakeDiceCup();
+                int dice1NumberOfEyes = gameBoard.diceCup.dice1.getNumberOfEyes();
+                int dice2NumberOfEyes = gameBoard.diceCup.dice2.getNumberOfEyes();
+
                 if (dice1NumberOfEyes == dice2NumberOfEyes) {
                     System.out.println("you hit 2 of the same number of eyes, you are free");
                     break;
-                }
-                else if (dice1NumberOfEyes != dice2NumberOfEyes) {
+                } else if (dice1NumberOfEyes != dice2NumberOfEyes) {
                     System.out.println("you missed");
                 }
             }
