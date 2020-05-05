@@ -12,24 +12,15 @@ public class Main extends Application {
         primaryStage.setTitle("Hello World");
         primaryStage.setScene(new Scene(root, 600, 600));
         primaryStage.show();
-        int test = 44;
+
     }
 
     public static void main(String[] args) { launch(args); }
 
+        
 }
 
-/*
-public class Main {
-    public static void main(String[] args) {
 
-
-        Logic logic = new Logic();
-        logic.welcomeToTheGame();
-        logic.startGame();
-    }
-}
- */
 
 
 
