@@ -122,6 +122,13 @@ public class Logic implements Runnable {
         checkGameFieldType(activeGameField);
     }
 
+    public void checkPlayerMoney(Player player) {
+
+        if(player.getMoney() < 0) {
+            listOfPlayers.remove(player);
+        }
+    }
+
     public void checkGameFieldType(GameField gameField) {
 
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
