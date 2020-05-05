@@ -97,6 +97,7 @@ public class Logic implements Runnable {
         for (int i = 0; i < diceCupRollResult; i++) {
 
             playerWhoHasTurnPos = playerWhoHasTurn.getPos();
+            playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
 
             playerWhoHasTurnPos = playerWhoHasTurnPos + 1;
             playerWhoHasTurn.setPos(playerWhoHasTurnPos);
@@ -105,8 +106,7 @@ public class Logic implements Runnable {
             if (playerWhoHasTurnPos > numberOfGameFields - 1) {
                 playerWhoHasTurn.setPos(0);
 
-                playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
-                playerWhoHasTurn.setMoney(playerWhoHasTurnMoney + 4000);
+                playerWhoHasTurnMoney = playerWhoHasTurnMoney + 4000;
                 System.out.println("4000 has been added to the player for passing start");
             }
 
@@ -116,10 +116,21 @@ public class Logic implements Runnable {
             if (i < diceCupRollResult - 1) {
                 print.printPassedField(playerWhoHasTurn, activeGameField);
             }
+
+            playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
+            checkPlayerMoney(playerWhoHasTurn);
         }
+
         System.out.println("You landed on " + activeGameField.getName());
 
         checkGameFieldType(activeGameField);
+    }
+
+    public void checkPlayerMoney(Player player) {
+
+        if (player.getMoney() < 0) {
+            listOfPlayers.remove(player);
+        }
     }
 
     public void checkGameFieldType(GameField gameField) {
@@ -127,12 +138,12 @@ public class Logic implements Runnable {
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
             System.out.println("Dette er Start feltet. Du starter nu på en ny runde");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
-        //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
+            //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
             System.out.println("This is a Propertyfield");
 
-            if(activeGameField.isBought()) {
+            if (activeGameField.isBought()) {
 
-          //      playerWhoHasTurn.payRent();
+                //      playerWhoHasTurn.payRent();
             }
 
             /*    logic.presentBuyOptions(Player player);
@@ -151,11 +162,13 @@ public class Logic implements Runnable {
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.FERRYFIELD) {
             System.out.println("this is a FERRYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PRISONFIELD) {
+
+
             System.out.println("this is a PRISONFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.TAXFIELD) {
             int playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
 
-            if (gameField.getPos() == 4){
+            if (gameField.getPos() == 4) {
 
                 System.out.println("Vælg 1: at betale kr. 4000. Eller 2: at betale 10% af dine samlede værdier. Hvad vælger du?");
                 int taxChoice = scanThings.scanNumber();
@@ -183,10 +196,10 @@ public class Logic implements Runnable {
                         break;
                 }
             }
-                if (gameField.getPos() == 38){
-                    System.out.println("Betal kr. 2000 i ekstraordinær statsskat.");
-                    playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - 2000);
-                }
+            if (gameField.getPos() == 38) {
+                System.out.println("Betal kr. 2000 i ekstraordinær statsskat.");
+                playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - 2000);
+            }
             System.out.println("this is a TAXFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PARKINGFIELD) {
             System.out.println("Dette er et parkingsfelt.");
@@ -199,7 +212,15 @@ public class Logic implements Runnable {
         }
     }
 
+    public void presentPrisonOptions(Player player) {
+        System.out.println("You have been put in prison you have two options:");
+        System.out.println("1. pay yourself out with 2000");
+        System.out.println("2. Try to roll yourself out by hitting 2 of the same number of eyes");
+        int chosenOption = scanThings.scanNumber();
+        if (chosenOption == 1) {
 
+        }
+    }
 
 
     public void delay() {
