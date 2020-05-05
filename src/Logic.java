@@ -54,7 +54,7 @@ public class Logic implements Runnable {
     // kommer fra implements Runable øverst i Logic
     @Override
     public void run() {
-        
+
         welcomeToTheGame();
 
         boolean keepPlaying = true;
