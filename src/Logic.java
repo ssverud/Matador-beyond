@@ -145,7 +145,7 @@ public class Logic implements Runnable {
          //   if (activeGameField.isBought()) {
 
                 //      playerWhoHasTurn.payRent();
-            
+
 
             /*    logic.presentBuyOptions(Player player);
 
