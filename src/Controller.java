@@ -9,13 +9,18 @@ import javafx.scene.shape.Rectangle;
 
 import java.awt.*;
 
-import static javafx.scene.paint.Color.BLACK;
-import static javafx.scene.paint.Color.BLUE;
+import static javafx.scene.paint.Color.*;
 
 public class Controller {
 
 
+    public void initialize() {
+
+    }
+
     public void drawLine () {
+
+        // code der gentager sig selv flere gange, skal fikses
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
 
@@ -31,13 +36,13 @@ public class Controller {
             line.setFill(BLACK);
             // tilføjer den nye linje til øverste AnchorPane i scene builder træet
             anchorpane.getChildren().add(line);
-
         }
 
     }
 
     public void drawCircle () {
 
+        // code der gentager sig selv flere gange, skal fikses
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
 
@@ -55,25 +60,42 @@ public class Controller {
         anchorpane.getChildren().add(innerCircle);
     }
 
-    public void initialize() {
+        int tempPlasserRykket = 1;
+    public void movePlayer() {
 
+        // code der gentager sig selv flere gange, skal fikses
+        double width = anchorpane.getWidth();
+        double hight = anchorpane.getHeight();
+
+        double endX = (width / 2) + (hight / 2) * Math.sin((tempPlasserRykket * 9) * (Math.PI / 180));
+        double endY = (hight / 2) + (hight / 2) * Math.cos((tempPlasserRykket * 9) * (Math.PI / 180));
+
+        tempPlasserRykket = tempPlasserRykket + 1;
+
+        Circle circle = new Circle(endX, endY, 5);
+        circle.setFill(RED);
+
+        anchorpane.getChildren().add(circle);
     }
 
 
     @FXML
     private AnchorPane anchorpane;
 
+    @FXML
+    void movePlayerTestButton (ActionEvent event) {
+        System.out.println("MOVE PLAYER TEST BUTTON");
+        movePlayer();
+    }
+
 
     @FXML
     void testButton(ActionEvent event) {
-
         anchorpane.getChildren().clear();
         drawCircle();
         drawLine();
 
     }
-
-
 
     @FXML
     void startGameButton(ActionEvent event) {
