@@ -62,5 +62,6 @@
     </orderEntry>
     <orderEntry type="library" scope="TEST" name="fx" level="project" />
     <orderEntry type="library" name="lib1" level="project" />
+    <orderEntry type="library" name="JavaFX" level="project" />
   </component>
 </module>

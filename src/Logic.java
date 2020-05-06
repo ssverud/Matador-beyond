@@ -12,6 +12,7 @@ public class Logic implements Runnable {
 
 
     GameField activeGameField;
+    GameField tempActiveGameField;
     Player playerWhoHasTurn;
     int numberOfPlayers;
     int numberOfGameFields = gameBoard.gameFields.size();
@@ -84,7 +85,7 @@ public class Logic implements Runnable {
     public void playerTurn(Player player) {
 
         int diceCupRollResult;
-        int playerWhoHasTurnPos;
+        int playerWhoHasTurnPos = 0;
         int playerWhoHasTurnMoney;
 
         playerWhoHasTurn = player;
@@ -104,26 +105,33 @@ public class Logic implements Runnable {
 
             // Checking if player is out of bounce, is so go back to start
             if (playerWhoHasTurnPos > numberOfGameFields - 1) {
-                playerWhoHasTurn.setPos(0);
+                playerWhoHasTurnPos = 0;
+                System.out.println("we set playerwhohasturnpos = 0");
+
 
                 playerWhoHasTurnMoney = playerWhoHasTurnMoney + 4000;
                 System.out.println("4000 has been added to the player for passing start");
             }
 
-            activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
+            tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
+           // activeGameField.landedOn(playerWhoHasTurn);
 
             if (i < diceCupRollResult - 1) {
-                print.printPassedField(playerWhoHasTurn, activeGameField);
+                print.printPassedField(playerWhoHasTurn, tempActiveGameField);
             }
 
+            playerWhoHasTurn.setPos(playerWhoHasTurnPos);
             playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
             checkPlayerMoney(playerWhoHasTurn);
         }
+        activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
+
+        activeGameField.landedOn(playerWhoHasTurn);
 
         System.out.println("You landed on " + activeGameField.getName());
 
-        checkGameFieldType(activeGameField);
+
     }
 
     public void checkPlayerMoney(Player player) {
@@ -139,12 +147,14 @@ public class Logic implements Runnable {
             System.out.println("Dette er Start feltet. Du starter nu på en ny runde");
 
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
-            //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
+
+            //  PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
             System.out.println("This is a Propertyfield");
 
-         //   if (activeGameField.isBought()) {
+            // if (gameBoard.gameFields.get(activeGameField.getPos().isBought()) {
 
-                //      playerWhoHasTurn.payRent();
+
+            //      playerWhoHasTurn.payRent();
 
 
             /*    logic.presentBuyOptions(Player player);
@@ -212,6 +222,7 @@ public class Logic implements Runnable {
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD) {
             System.out.println("this is a BREWERYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
+
     }
 
     public void presentPrisonOptions(Player player) {
