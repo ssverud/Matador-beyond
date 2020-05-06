@@ -7,13 +7,17 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
    <bottom>
-      <ButtonBar prefHeight="86.0" prefWidth="420.0" BorderPane.alignment="CENTER">
-        <buttons>
-            <Button mnemonicParsing="false" onAction="#startGameButton" text="Start game" />
-            <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="85.0" text="Exit" />
-            <Button mnemonicParsing="false" onAction="#testButton" text="Test" />
-        </buttons>
-      </ButtonBar>
+      <AnchorPane prefHeight="58.0" prefWidth="218.0" BorderPane.alignment="CENTER">
+         <children>
+            <ButtonBar AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0">
+              <buttons>
+                  <Button mnemonicParsing="false" onAction="#startGameButton" text="Start game" />
+                  <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="85.0" text="Exit" />
+                  <Button mnemonicParsing="false" onAction="#testButton" text="Test" />
+              </buttons>
+            </ButtonBar>
+         </children>
+      </AnchorPane>
    </bottom>
    <center>
       <AnchorPane fx:id="anchorpane" />
