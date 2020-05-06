@@ -10,7 +10,6 @@ public class Controller {
 
         double tempX;
 
-
     public void initialize() {
 
     }
@@ -26,6 +25,7 @@ public class Controller {
         tempX = tempX + 10;
         System.out.println(tempX);
         player1.setLayoutX(tempX);
+
 
 
 
