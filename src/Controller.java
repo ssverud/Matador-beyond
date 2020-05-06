@@ -21,6 +21,7 @@ public class Controller {
 
         int degrees = 0;
 
+        // tegner 39 linjer med 9 grader imellem hver linje
         for(int i = 0 ; i < 40 ; i++) {
             //              centerX   +  radius                        + convertering fra radion til grader
             double endX = (width / 2) + (hight / 2) * Math.sin(degrees * (Math.PI / 180));
@@ -28,21 +29,23 @@ public class Controller {
             degrees = degrees + 9;
             Line line = new Line(width / 2, hight / 2, endX, endY);
             line.setFill(BLACK);
+            // tilføjer den nye linje til øverste AnchorPane i scene builder træet
             anchorpane.getChildren().add(line);
 
         }
 
-        //System.out.println(endX);
-        //System.out.println(endY);
     }
 
     public void drawCircle () {
 
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
+
         Circle outerCircle = new Circle(width / 2, hight / 2, hight / 2);
 
         outerCircle.setFill(BLUE);
+
+        // tilføjer den nye circle til øverste AnchorPane i scene builder træet
         anchorpane.getChildren().add(outerCircle);
 
         System.out.println(width);
@@ -51,8 +54,6 @@ public class Controller {
         Circle innerCircle = new Circle(width / 2, hight / 2, (hight / 2) - (hight * 0.2));
         anchorpane.getChildren().add(innerCircle);
     }
-
-
 
     public void initialize() {
 
@@ -69,10 +70,6 @@ public class Controller {
         anchorpane.getChildren().clear();
         drawCircle();
         drawLine();
-
-
-
-
 
     }
 
