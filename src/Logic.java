@@ -137,14 +137,15 @@ public class Logic implements Runnable {
 
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
             System.out.println("Dette er Start feltet. Du starter nu på en ny runde");
+
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
             //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
             System.out.println("This is a Propertyfield");
 
-            if (activeGameField.isBought()) {
+         //   if (activeGameField.isBought()) {
 
                 //      playerWhoHasTurn.payRent();
-            }
+            
 
             /*    logic.presentBuyOptions(Player player);
 
