@@ -12,6 +12,7 @@ public class Logic implements Runnable {
 
 
     GameField activeGameField;
+    GameField tempActiveGameField;
     Player playerWhoHasTurn;
     int numberOfPlayers;
     int numberOfGameFields = gameBoard.gameFields.size();
@@ -84,7 +85,7 @@ public class Logic implements Runnable {
     public void playerTurn(Player player) {
 
         int diceCupRollResult;
-        int playerWhoHasTurnPos;
+        int playerWhoHasTurnPos = 0;
         int playerWhoHasTurnMoney;
 
         playerWhoHasTurn = player;
@@ -104,26 +105,33 @@ public class Logic implements Runnable {
 
             // Checking if player is out of bounce, is so go back to start
             if (playerWhoHasTurnPos > numberOfGameFields - 1) {
-                playerWhoHasTurn.setPos(0);
+                playerWhoHasTurnPos = 0;
+                System.out.println("we set playerwhohasturnpos = 0");
+
 
                 playerWhoHasTurnMoney = playerWhoHasTurnMoney + 4000;
                 System.out.println("4000 has been added to the player for passing start");
             }
 
-            activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
+            tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
+           // activeGameField.landedOn(playerWhoHasTurn);
 
             if (i < diceCupRollResult - 1) {
-                print.printPassedField(playerWhoHasTurn, activeGameField);
+                print.printPassedField(playerWhoHasTurn, tempActiveGameField);
             }
 
+            playerWhoHasTurn.setPos(playerWhoHasTurnPos);
             playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
             checkPlayerMoney(playerWhoHasTurn);
         }
+        activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
+
+        activeGameField.landedOn(playerWhoHasTurn);
 
         System.out.println("You landed on " + activeGameField.getName());
 
-        checkGameFieldType(activeGameField);
+
     }
 
     public void checkPlayerMoney(Player player) {
@@ -137,14 +145,17 @@ public class Logic implements Runnable {
 
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
             System.out.println("Dette er Start feltet. Du starter nu på en ny runde");
+
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
-            //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
+
+            //  PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
             System.out.println("This is a Propertyfield");
 
-            if (activeGameField.isBought()) {
+            // if (gameBoard.gameFields.get(activeGameField.getPos().isBought()) {
 
-                //      playerWhoHasTurn.payRent();
-            }
+
+            //      playerWhoHasTurn.payRent();
+
 
             /*    logic.presentBuyOptions(Player player);
 
@@ -167,40 +178,7 @@ public class Logic implements Runnable {
 
             System.out.println("this is a PRISONFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.TAXFIELD) {
-            int playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
-
-            if (gameField.getPos() == 4) {
-
-                System.out.println("Vælg 1: at betale kr. 4000. Eller 2: at betale 10% af dine samlede værdier. Hvad vælger du?");
-                int taxChoice = scanThings.scanNumber();
-
-                switch (taxChoice) {
-                    case 1:
-                        playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - 4000);
-                        break;
-                    case 2:
-                        /*
-                        udrregning af værdier: kontanter, huse, trykte pris af: propertyfield, breweryfield og ferryfield
-
-                        int tax;
-                        int percentage = 10;
-                        int totalValues = playerWhoHasTurnMoney +  houseBuildingPrice(for all buildings) +
-                        propertyFieldPrice + breweryFieldPrice + ferryFieldPrice;
-
-                        tax = totalValues/percentage;
-                        system.out.println("Du betaler: " + tax + " i indkomstskat"):
-
-                        playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - tax);
-
-
-                         */
-                        break;
-                }
-            }
-            if (gameField.getPos() == 38) {
-                System.out.println("Betal kr. 2000 i ekstraordinær statsskat.");
-                playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - 2000);
-            }
+            presentTaxOptions(playerWhoHasTurn, activeGameField);
             System.out.println("this is a TAXFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PARKINGFIELD) {
             System.out.println("Dette er et parkingsfelt.");
@@ -211,6 +189,7 @@ public class Logic implements Runnable {
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD) {
             System.out.println("this is a BREWERYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         }
+
     }
 
     public void presentPrisonOptions(Player player) {
@@ -234,6 +213,71 @@ public class Logic implements Runnable {
                     System.out.println("you missed");
                 }
             }
+        }
+    }
+
+    public void presentTaxOptions(Player player, GameField gameField) {
+        //int playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
+
+        /*
+                        udrregning af værdier: kontanter, huse, trykte pris af: propertyfield, breweryfield og ferryfield
+
+                        int tax;
+                        int percentage = 10;
+                        int totalValues = playerWhoHasTurnMoney +  houseBuildingPrice(for all buildings) +
+                        propertyFieldPrice + breweryFieldPrice + ferryFieldPrice;
+
+                        tax = totalValues/percentage;
+                        system.out.println("Du betaler: " + tax + " i indkomstskat"):
+
+                        playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - tax);
+
+
+                         */
+
+        if (gameField.getPos() == 4) {
+            System.out.println("Vælg 1: at betale kr. 4000. Eller 2: at betale 10% af dine samlede værdier. Hvad vælger du?");
+            int taxChoice = scanThings.scanNumber();
+
+            int tax;
+            int percentage = 10;
+            int totalPlayerValues;
+            int propertyValues = 0;
+
+            /*
+            switch (taxChoice) {
+                case 1:
+                    player.setMoney(player.getMoney() - 4000);
+                    System.out.println("Kr. 4000 er blevet fratrukket din konto.");
+                    break;
+                case 2:
+
+                    for (int i = 0; i < player.ownedProperties.size(); i++) {
+
+                        propertyValues += player.ownedProperties(i).getPrice();
+                        if(player.ownedProperties(i).hasHouse){
+
+                            for (int j = 0; j < player.ownedProperties(i).house.size(); j++) {
+                                        propertyValues += player.ownedProperties(i).house.getHousePrice();
+                            }
+                        }
+                    }
+                    //hvis breweryfield og ferryfield ikke hører inde under property field lav yderligere for loop for dem
+
+                    totalPlayerValues = player.getMoney() + propertyValues;
+                    tax = totalPlayerValues / percentage;
+
+                    System.out.println("Du betaler: " + tax + " i indkomstsskat!");
+                    player.setMoney(player.getMoney() - tax);
+                    break;
+            }
+
+             */
+
+        }
+        if (gameField.getPos() == 38) {
+            System.out.println("Betal kr. 2000 i ekstraordinær statsskat.");
+            playerWhoHasTurn.setMoney(player.getMoney() - 2000);
         }
     }
 

@@ -4,8 +4,9 @@ public class GameField {
     private int pos;
     private GameFieldType gameFieldType;
 
-    private Player boughtBy;
+   // private Player boughtBy;
 
+/*
     private boolean isBought;
 
     public boolean isBought() {
@@ -23,7 +24,7 @@ public class GameField {
     public void setBoughtBy(Player boughtBy) {
         this.boughtBy = boughtBy;
     }
-
+    */
 
     // types of gameFields
     enum GameFieldType {
@@ -36,6 +37,11 @@ public class GameField {
         VISITPRISON,
         CHANCEFIELD,
         BREWERYFIELD
+    }
+
+    // meant to be overwritten
+    public void landedOn(Player player) {
+        System.out.println("HAS NOT BEEN OVERWRITTEN, please fix in the current gamefield - playerPos: " + player.getPos());
     }
 
     /**

@@ -4,7 +4,7 @@ public class PropertyField extends GameField {
     private int rentPrice;
     private int pledgePrice;
     private int housePrice;
-   // private boolean isBought = false;
+    private boolean isBought = false;
 
     public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice) {
         setPos(pos);
@@ -14,6 +14,10 @@ public class PropertyField extends GameField {
         this.rentPrice = rentPrice;
         this.pledgePrice = pledgePrice;
         this.housePrice = housePrice;
+    }
+
+    public void landedOn(Player player) {
+        System.out.println("This is a propertyfield");
     }
 
 
@@ -50,5 +54,14 @@ public class PropertyField extends GameField {
 
     public void setHousePrice(int housePrice) {
         this.housePrice = housePrice;
+    }
+
+
+    public boolean isBought() {
+        return isBought;
+    }
+
+    public void setBought(boolean bought) {
+        isBought = bought;
     }
 }
