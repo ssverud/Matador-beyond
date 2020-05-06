@@ -10,25 +10,17 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 500, 400));
+        primaryStage.setScene(new Scene(root, 600, 600));
         primaryStage.show();
+
     }
 
     public static void main(String[] args) { launch(args); }
 
+
 }
 
-/*
-public class Main {
-    public static void main(String[] args) {
 
-
-        Logic logic = new Logic();
-        logic.welcomeToTheGame();
-        logic.startGame();
-    }
-}
- */
 
 
 
