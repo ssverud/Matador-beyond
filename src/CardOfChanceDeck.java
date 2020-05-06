@@ -19,7 +19,7 @@ public class CardOfChanceDeck {
      */
 
 
-    public CardOfChanceDeck(){
+    private CardOfChanceDeck(){
         cards.add(new Card("FÆNGSEL","Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer “Start”, indkasserer de ikke kr. 4.000." ));
         cards.add(new Card("FÆNGSEL","Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer “Start”, indkasserer de ikke kr. 4.000." ));
         cards.add(new Card("REPERATION","Betal kr. 3.000 for reparation af Deres vogn." ));
