@@ -122,13 +122,13 @@ public class Logic {
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
             System.out.println("this is a START!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
-        //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
+            //    PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
             System.out.println("This is a Propertyfield");
 
-            if(activeGameField.isBought()) {
+            //    if(activeGameField.isBought()) {
 
-          //      playerWhoHasTurn.payRent();
-            }
+            //      playerWhoHasTurn.payRent();
+
 
             /*    logic.presentBuyOptions(Player player);
 

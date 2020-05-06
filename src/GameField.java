@@ -4,6 +4,7 @@ public class GameField {
     private int pos;
     private GameFieldType gameFieldType;
 
+    /*
     private Player boughtBy;
 
     private boolean isBought;
@@ -23,7 +24,7 @@ public class GameField {
     public void setBoughtBy(Player boughtBy) {
         this.boughtBy = boughtBy;
     }
-
+*/
 
     // types of gameFields
     enum GameFieldType {
