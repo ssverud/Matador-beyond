@@ -5,6 +5,8 @@ public class Player {
     private int money = 0;
     private boolean inPrison = false;
     private boolean hasGetOutOfJainCard = false;
+    private int totalValues = 0;
+
     //Lav arrayliste over owned properties
 
     /**
@@ -85,6 +87,11 @@ public class Player {
     public void setHasGetOutOfJainCard(boolean hasGetOutOfJainCard) {
         this.hasGetOutOfJainCard = hasGetOutOfJainCard;
     }
+
+    public int getTotalValues() { return totalValues; }
+
+    public void setTotalValues(int totalValues) { this.totalValues = totalValues; }
+
 
     // toSting - when printing print player name in ' '
     @Override

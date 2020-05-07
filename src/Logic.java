@@ -280,6 +280,22 @@ public class Logic implements Runnable {
             playerWhoHasTurn.setMoney(player.getMoney() - 2000);
         }
     }
+/*
+    public void calculateTotalValues(GameField gamefield){
+
+        int totalValues = 0;
+
+        for (int i = 0; i <= numberOfGameFields; i++) {
+
+            if(gameBoard.gameFields.get(i) == GameField.GameFieldType.PROPERTYFIELD){
+                totalValues += Gameboard.Gamefield.getHousePrice();
+            }
+
+            playerWhoHasTurn.setTotalValues(totalValues);
+        }
+    }
+    
+ */
 
 
     public void delay() {
