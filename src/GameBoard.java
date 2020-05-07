@@ -21,7 +21,7 @@ public class GameBoard {
         gameFields.add(new StartField(0, "START"));
         gameFields.add(new PropertyField(1, "Rødovrevej", 1200, 50, 1000, 600));
         gameFields.add(new ChanceField(2, "Prøv Lykken"));
-        gameFields.add(new PropertyField(3, "Hvidovrevej", 1200,  50, 1000, 600));
+        gameFields.add(new PropertyField(3, "Hvidovrevej", 1200, 50, 1000, 600));
         gameFields.add(new TaxField(4, "Betal indkomst skat"));
         gameFields.add(new FerryField(5, "SFL-Færgene", 4000, 500, 2000));
         gameFields.add(new PropertyField(6, "Roskildevej", 2000, 100, 1000, 1000));

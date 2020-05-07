@@ -43,6 +43,11 @@ public class Player {
         money = money - ferryPrice;
     }
 
+    public void buyHouseOnProperty(){
+
+        //method add house to property.
+    }
+
 
     public void payToBank(int amount) {
         money = money - amount;
