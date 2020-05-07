@@ -5,6 +5,7 @@ public class PropertyField extends GameField {
     private int pledgePrice;
     private int housePrice;
     private Player ownedBy = null;
+    private int value = price;
 
     ScanThings scanThings = new ScanThings();
 
@@ -35,6 +36,8 @@ public class PropertyField extends GameField {
                 System.out.println(player.getMoney());
                 if (player.getMoney() > price) {
                     player.buyProperty(this);
+                    player.updateTotalValue(price);
+                    System.out.println("This is " + player.getName() + "s total value: " + player.getTotalValue());
 
                     setOwnedBy(player);
 

@@ -3,6 +3,7 @@ public class GameField {
     private String type;
     private int pos;
     private GameFieldType gameFieldType;
+    private int value = 0;
 
    // private Player boughtBy;
 
@@ -80,6 +81,14 @@ public class GameField {
         this.gameFieldType = gameFieldType;
     }
 
+
+    public int getValue() {
+        return value;
+    }
+
+    public void setValue(int value) {
+        this.value = value;
+    }
     // toString when printing a field you print the name of the field // idk if we need to chance it maybe not
     @Override
     public String toString() {
