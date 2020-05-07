@@ -296,7 +296,7 @@ public class Logic implements Runnable {
             playerWhoHasTurn.setTotalValues(totalValues);
         }
     }
-    
+
  */
 
 
