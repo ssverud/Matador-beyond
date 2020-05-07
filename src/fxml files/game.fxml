@@ -15,9 +15,9 @@
       </AnchorPane>
    </center>
    <bottom>
-      <AnchorPane BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="27.0" prefWidth="350.0" BorderPane.alignment="CENTER">
          <children>
-            <ButtonBar prefWidth="400.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0">
+            <ButtonBar layoutX="-27.0" prefHeight="40.0" prefWidth="310.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
               <buttons>
                   <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="85.0" text="Exit" />
                   <Button mnemonicParsing="false" onAction="#resizeButton" text="Resize" />
