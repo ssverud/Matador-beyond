@@ -11,6 +11,9 @@ public class GameBoard {
      * Instantiator
      */
     ArrayList<GameField> gameFields = new ArrayList<>(); // array of gameFields
+    CardOfChanceDeck cardDeck = CardOfChanceDeck.getInstance();
+
+
     DiceCup diceCup = new DiceCup(); // creating our diceCup
 
     /**
@@ -59,6 +62,8 @@ public class GameBoard {
         gameFields.add(new TaxField(38, "Ekstraordinær statsskat"));
         gameFields.add(new PropertyField(39, "Rådhuspladsen", 8000, 1000, 4000, 4000));
     }
+
+
 
     public void playRecursive(GameField gamefield) {
 

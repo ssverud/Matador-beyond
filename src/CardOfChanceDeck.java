@@ -3,25 +3,12 @@ import java.util.Collections;
 
 public class CardOfChanceDeck {
 
-    static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
+    //static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
 
     //Creates the deck as a singleton, so all chancefields uses the same deck
-    public static CardOfChanceDeck getInstance() {
-        return cardOfChanceDeck;
-    }
-
-    private int numberOfDraws = 0;
-
-    private String textOfCard;
-    ArrayList<Card> cards;
-    ArrayList<Card> emptyDeck;
-
-    /**
-     * Constructor for the full deck with cards.
-     */
-
-
+    private static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
     private CardOfChanceDeck() {
+
         cards.add(new Card("FÆNGSEL", "Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer “Start”, indkasserer de ikke kr. 4.000."));
         cards.add(new Card("FÆNGSEL", "Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer “Start”, indkasserer de ikke kr. 4.000."));
         cards.add(new Card("REPERATION", "Betal kr. 3.000 for reparation af Deres vogn."));
@@ -55,11 +42,27 @@ public class CardOfChanceDeck {
         cards.add(new Card("BØDE", "De har kørt frem for “Fuld Stop”. Betal kr. 1.000 i bøde."));
         cards.add(new Card("AVL", "Værdien af egen avl fra nyttehaven udgør kr. 200, som De modtager af banken."));
         cards.add(new Card("FØDSELSDAG", "Det er Deres fødselsdag. Modtag af hver medspiller kr. 200."));
-
     }
 
+
+    public static CardOfChanceDeck getInstance(){
+        return cardOfChanceDeck;
+    }
+
+    private int numberOfDraws = 0;
+
+     String textOfCard;
+    ArrayList<Card> cards;
+    ArrayList<Card> emptyDeck;
+
+    /**
+     * Constructor for the full deck with cards.
+     */
+
+
     //uses java collections to shuffle the deck of chance cards.
-    public void shuffle(ArrayList<>) {
+    public void shuffle(ArrayList<Card> cards) {
+        this.cards = cards;
         Collections.shuffle(cards);
     }
 
@@ -67,8 +70,14 @@ public class CardOfChanceDeck {
         return cards.get(0).getTextOfCard();
     }
 
+    public String getType(){
+        return cards.get(0).getType();
+    }
+
+
+
     //Removes a card from the deck and adds it to the new deck, so the cards don't come in the same order every time.
-    private void putToEmptyDeck() {
+    public void putToEmptyDeck() {
         while (!cards.isEmpty()) {
             emptyDeck.add(cards.get(0));
             cards.remove(cards.get(0));
@@ -76,8 +85,7 @@ public class CardOfChanceDeck {
 
     }
 
-
-    private void changeDeck() {
+    public void changeDeck() {
         if (cards.isEmpty()) {
             for (int i = 0; i < emptyDeck.size(); i++) {
                 cards.add(emptyDeck.get(i));
