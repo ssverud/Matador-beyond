@@ -9,4 +9,9 @@ public class ChanceField extends GameField {
         setPos(pos);
         setName(name);
     }
+
+    public void landedOn(Player player){
+        System.out.println("You landed on a chance field! Draw a card.");
+
+    }
 }
