@@ -5,7 +5,6 @@ public class PropertyField extends GameField {
     private int pledgePrice;
     private int housePrice;
     private Player ownedBy = null;
-    private int value = price;
 
     ScanThings scanThings = new ScanThings();
 
@@ -25,7 +24,7 @@ public class PropertyField extends GameField {
         if (ownedBy != null) {
             player.payRent(rentPrice, ownedBy);
             System.out.println("you paied " + rentPrice + " to " + ownedBy);
-        } else if(ownedBy == null){
+        } else if (ownedBy == null) {
             System.out.println("This property is not bought");
             System.out.println("Would you like to buy it? - Press 1 or 2");
             System.out.println("1. Yes");
@@ -33,25 +32,35 @@ public class PropertyField extends GameField {
 
             int answer = scanThings.scanNumber();
             if (answer == 1) {
-                System.out.println(player.getMoney());
+                System.out.println(" player money: " + player.getMoney());
                 if (player.getMoney() > price) {
                     player.buyProperty(this);
+                    setOwnedBy(player);
+                    System.out.println("this property is now owned by: " + ownedBy);
+
+                    System.out.println("Would u like to buy a house on this property?");
+                    System.out.println("1 - Yes");
+                    System.out.println("2 - no");
+                    answer = scanThings.scanNumber();
+
+                    if(answer == 1) {
+
+                       // INSERT MOETHOD
+                        System.out.println("METHOD MISSING TO add houses to property - PropertyField, landedOn!!!!!!!!!!!!");
+                        //addHouseToProperty()
+                    } else if(answer == 2) {
+                        System.out.println("ok do do not want to add any houses to your property at this moment");
+                    }
+
                     player.updateTotalValue(price);
                     System.out.println("This is " + player.getName() + "s total value: " + player.getTotalValue());
-
-                    setOwnedBy(player);
-
-                    System.out.println("this property is now owned by: " + ownedBy);
-                    System.out.println(player.getMoney());
-                }else if (player.getMoney() < price){
+                    System.out.println(" player money: " + player.getMoney());
+                } else if (player.getMoney() < price) {
                     System.out.println("You do not have the funds for this property");
                 }
-            } else if(answer == 2) {
+            } else if (answer == 2) {
                 System.out.println("ok you would not like to buy it");
             }
-
-        } else {
-
         }
     }
 

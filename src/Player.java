@@ -38,6 +38,11 @@ public class Player {
         money = money - propertyPrice;
     }
 
+    public void buyFerry(FerryField ferryField) {
+        int ferryPrice = ferryField.getPrice();
+        money = money - ferryPrice;
+    }
+
 
     public void payToBank(int amount) {
         money = money - amount;
