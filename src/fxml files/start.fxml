@@ -6,11 +6,12 @@
 
 <BorderPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerStart">
    <center>
-      <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+      <VBox prefHeight="459.0" prefWidth="438.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" onAction="#startButton" prefHeight="27.0" prefWidth="122.0" text="Start" />
-            <Button mnemonicParsing="false" onAction="#rulesButton" prefHeight="27.0" prefWidth="106.0" text="Regler" />
-            <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="124.0" text="Exit" />
+            <Button mnemonicParsing="false" onAction="#startButton" prefHeight="27.0" prefWidth="137.0" text="Start" />
+            <Button mnemonicParsing="false" onAction="#rulesButton" prefHeight="27.0" prefWidth="137.0" text="Regler" />
+            <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="136.0" text="Exit" />
+            <Button mnemonicParsing="false" onAction="#oldStartButton" prefHeight="27.0" prefWidth="137.0" text="Old start" />
          </children>
       </VBox>
    </center>

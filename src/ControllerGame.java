@@ -8,7 +8,7 @@ import javafx.scene.shape.Line;
 import static java.lang.StrictMath.min;
 import static javafx.scene.paint.Color.*;
 
-public class Controller {
+public class ControllerGame {
 
 
     public void initialize() {

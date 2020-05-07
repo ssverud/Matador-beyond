@@ -32,6 +32,16 @@ public class ControllerStart {
 
     }
 
+    @FXML
+    void oldStartButton (ActionEvent event) {
+
+        Logic logic = new Logic();
+        new Thread(logic).start();
+        System.out.println("oldStartButton pressed");
+
+
+    }
+
 
 
 }
