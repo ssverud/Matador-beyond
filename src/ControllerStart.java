@@ -18,8 +18,6 @@ public class ControllerStart {
         Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageWindow.setScene(homePagePlayerSetupScene);
         stageWindow.show();
-        System.out.println("go to player setup");
-
     }
 
     @FXML
@@ -29,8 +27,6 @@ public class ControllerStart {
         Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageWindow.setScene(homePageRulesScene);
         stageWindow.show();
-        System.out.println("go to rules");
-
     }
 
     @FXML
@@ -44,11 +40,5 @@ public class ControllerStart {
 
         Logic logic = new Logic();
         new Thread(logic).start();
-        System.out.println("oldStartButton pressed");
-
-
     }
-
-
-
 }
