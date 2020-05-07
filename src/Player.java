@@ -43,8 +43,6 @@ public class Player {
         money = money - ferryPrice;
     }
 
-    public void buyHouseOnProperty(){
-
     public void buyHouseOnProperty(PropertyField propertyField){
         int housePrice = propertyField.getHousePrice();
         money = money - housePrice;
