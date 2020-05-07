@@ -22,7 +22,7 @@ public class FerryField extends GameField {
         if (getOwnedBy() != null) {
 
             rentPrice = (int) Math.pow(rentPrice, getOwnedBy().getNumberOfFerriesOwned());
-            
+
             player.payRent(rentPrice, getOwnedBy());
             System.out.println("you paied " + (int) Math.pow(rentPrice, getOwnedBy().getNumberOfFerriesOwned()) + " to " + getOwnedBy());
         } else if (getOwnedBy() == null) {
