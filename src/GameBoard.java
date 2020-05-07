@@ -12,6 +12,7 @@ public class GameBoard {
      */
     ArrayList<GameField> gameFields = new ArrayList<>(); // array of gameFields
     DiceCup diceCup = new DiceCup(); // creating our diceCup
+    CardOfChanceDeck cardDeck = CardOfChanceDeck.getInstance();
 
     /**
      * Constructor for GameBoard
