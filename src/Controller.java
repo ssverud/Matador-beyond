@@ -73,16 +73,18 @@ public class Controller {
         // tilføjer den nye circle til øverste AnchorPane i scene builder træet
         anchorpane.getChildren().add(outerCircle);
 
+        /*
         System.out.print(width);
         System.out.print(" : ");
         System.out.println(hight);
-
+        */
 
         Circle innerCircle = new Circle(width / 2, hight / 2, diameter / 2 - diameter * 0.2);
         anchorpane.getChildren().add(innerCircle);
     }
 
-        int tempPlasserRykket = 1;
+        double tempFieldsMoved = 0.5;
+        // distance from board edge
         int playerPosOnBoard = 15;
     public void movePlayer() {
 
@@ -91,15 +93,18 @@ public class Controller {
         double hight = anchorpane.getHeight();
         double diameter = min(hight, width) - playerPosOnBoard;
 
-        double endX = (width / 2) + (diameter / 2) * Math.sin((tempPlasserRykket * 9) * (Math.PI / 180));
-        double endY = (hight / 2) + (diameter / 2) * Math.cos((tempPlasserRykket * 9) * (Math.PI / 180));
+        double endX = (width / 2) + (diameter / 2) * Math.sin((tempFieldsMoved * 9) * (Math.PI / 180));
+        double endY = (hight / 2) + (diameter / 2) * Math.cos((tempFieldsMoved * 9) * (Math.PI / 180));
 
-        tempPlasserRykket = tempPlasserRykket + 1;
+        tempFieldsMoved = tempFieldsMoved + 1;
 
         Circle circle = new Circle(endX, endY , 5);
         circle.setFill(RED);
-
         anchorpane.getChildren().add(circle);
+
+        System.out.print(width);
+        System.out.print(" : ");
+        System.out.println(hight);
     }
 
 

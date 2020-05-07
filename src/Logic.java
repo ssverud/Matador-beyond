@@ -127,9 +127,10 @@ public class Logic implements Runnable {
         }
         activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
+        System.out.println("You landed on " + activeGameField.getName());
+
         activeGameField.landedOn(playerWhoHasTurn);
 
-        System.out.println("You landed on " + activeGameField.getName());
 
 
     }
@@ -140,7 +141,7 @@ public class Logic implements Runnable {
             listOfPlayers.remove(player);
         }
     }
-
+/*
     public void checkGameFieldType(GameField gameField) {
 
         if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
@@ -168,7 +169,7 @@ public class Logic implements Runnable {
                                  playerwhohasturn.payrent(getpropertyrent, getownedby)
                          if bought == false
                              presentbuy options for field
-             */
+
 
         } else if (gameField.getGameFieldType() == GameField.GameFieldType.FERRYFIELD) {
             System.out.println("this is a FERRYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
@@ -191,6 +192,7 @@ public class Logic implements Runnable {
         }
 
     }
+    */
 
     public void presentPrisonOptions(Player player) {
         System.out.println("You have been put in prison you have two options:");

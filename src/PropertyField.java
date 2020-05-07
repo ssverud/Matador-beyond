@@ -4,7 +4,10 @@ public class PropertyField extends GameField {
     private int rentPrice;
     private int pledgePrice;
     private int housePrice;
-    private boolean isBought = false;
+    private Player ownedBy = null;
+
+    ScanThings scanThings = new ScanThings();
+
 
     public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice) {
         setPos(pos);
@@ -18,6 +21,35 @@ public class PropertyField extends GameField {
 
     public void landedOn(Player player) {
         System.out.println("This is a propertyfield");
+        if (ownedBy != null) {
+            player.payRent(rentPrice, ownedBy);
+            System.out.println("you paied " + rentPrice + " to " + ownedBy);
+        } else if(ownedBy == null){
+            System.out.println("This property is not bought");
+            System.out.println("Would you like to buy it? - Press 1 or 2");
+            System.out.println("1. Yes");
+            System.out.println("2. No");
+
+            int answer = scanThings.scanNumber();
+            if (answer == 1) {
+                System.out.println(player.getMoney());
+                if (player.getMoney() > price) {
+                    player.buyProperty(this);
+
+                    setOwnedBy(player);
+
+                    System.out.println("this property is now owned by: " + ownedBy);
+                    System.out.println(player.getMoney());
+                }else if (player.getMoney() < price){
+                    System.out.println("You do not have the funds for this property");
+                }
+            } else if(answer == 2) {
+                System.out.println("ok you would not like to buy it");
+            }
+
+        } else {
+
+        }
     }
 
 
@@ -56,12 +88,11 @@ public class PropertyField extends GameField {
         this.housePrice = housePrice;
     }
 
-
-    public boolean isBought() {
-        return isBought;
+    public Player getOwnedBy() {
+        return ownedBy;
     }
 
-    public void setBought(boolean bought) {
-        isBought = bought;
+    public void setOwnedBy(Player ownedBy) {
+        this.ownedBy = ownedBy;
     }
 }
