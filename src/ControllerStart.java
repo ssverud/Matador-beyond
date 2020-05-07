@@ -8,17 +8,17 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Start {
+public class ControllerStart {
 
     @FXML
     void startButton (ActionEvent event) {
-        
+
 
     }
 
     @FXML
     void rulesButton (ActionEvent event) throws IOException {
-        Parent homePageRules = FXMLLoader.load(getClass().getResource("rules.fxml"));
+        Parent homePageRules = FXMLLoader.load(getClass().getResource("fxml files/rules.fxml"));
         Scene homePageRulesScene = new Scene(homePageRules);
         Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageWindow.setScene(homePageRulesScene);

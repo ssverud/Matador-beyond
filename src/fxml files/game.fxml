@@ -19,7 +19,7 @@
          <children>
             <ButtonBar prefWidth="400.0" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="20.0">
               <buttons>
-                  <Button minWidth="16.0" mnemonicParsing="false" onAction="#startGameButton" prefHeight="27.0" prefWidth="139.0" text="Start game" />
+                  <Button minWidth="16.0" mnemonicParsing="false" onAction="#startGameButton" prefHeight="27.0" prefWidth="139.0" text="ControllerStart game" />
                   <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="85.0" text="Exit" />
                   <Button mnemonicParsing="false" onAction="#resizeButton" text="Resize" />
                   <Button mnemonicParsing="false" onAction="#movePlayerTestButton" prefHeight="27.0" prefWidth="94.0" text="M.Player" />
