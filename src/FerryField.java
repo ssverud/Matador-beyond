@@ -20,8 +20,11 @@ public class FerryField extends GameField {
     public void landedOn(Player player) {
         System.out.println("This is a FerryField");
         if (getOwnedBy() != null) {
-            player.payRent(getRentPrice(), getOwnedBy());
-            System.out.println("you paied " + getRentPrice() + " to " + getOwnedBy());
+
+            rentPrice = (int) Math.pow(rentPrice, getOwnedBy().getNumberOfFerriesOwned());
+            
+            player.payRent(rentPrice, getOwnedBy());
+            System.out.println("you paied " + (int) Math.pow(rentPrice, getOwnedBy().getNumberOfFerriesOwned()) + " to " + getOwnedBy());
         } else if (getOwnedBy() == null) {
             System.out.println("This Ferry is not bought");
             System.out.println("Would you like to buy it? - Press 1 or 2");
@@ -35,9 +38,6 @@ public class FerryField extends GameField {
                     player.buyFerry(this);
                     setOwnedBy(player);
                     System.out.println("This Ferry is now owned by: " + getOwnedBy());
-
-                   // IMPLEMTENT SOMETHING TO CHECK HOW MANY FERRIES THIS PLAYER HAS
-                    System.out.println("METHOD MISSING TO CHECK AMOUNT OF FERRIES - Ferryfield, landedOn!!!!!!!!!!!!");
 
                     player.updateTotalValue(getPrice());
                     System.out.println("This is " + player.getName() + "s total value: " + player.getTotalValue());

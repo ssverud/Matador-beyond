@@ -1,7 +1,12 @@
 public class PropertyField extends GameField {
 
     private int price;
-    private int rentPrice;
+    private int rentPrice0H;
+    private int rentPrice1H;
+    private int rentPrice2H;
+    private int rentPrice3H;
+    private int rentPrice4H;
+
     private int pledgePrice;
     private int housePrice;
     private Player ownedBy = null;
@@ -14,7 +19,7 @@ public class PropertyField extends GameField {
         setName(name);
         setGameFieldType(GameFieldType.PROPERTYFIELD);
         this.price = price;
-        this.rentPrice = rentPrice;
+        this.rentPrice0H = rentPrice;
         this.pledgePrice = pledgePrice;
         this.housePrice = housePrice;
     }
@@ -22,8 +27,8 @@ public class PropertyField extends GameField {
     public void landedOn(Player player) {
         System.out.println("This is a propertyfield");
         if (ownedBy != null) {
-            player.payRent(rentPrice, ownedBy);
-            System.out.println("you paied " + rentPrice + " to " + ownedBy);
+            player.payRent(rentPrice0H, ownedBy);
+            System.out.println("you paied " + rentPrice0H + " to " + ownedBy);
         } else if (ownedBy == null) {
             System.out.println("This property is not bought");
             System.out.println("Would you like to buy it? - Press 1 or 2");
@@ -76,12 +81,12 @@ public class PropertyField extends GameField {
         this.price = price;
     }
 
-    public int getRentPrice() {
-        return rentPrice;
+    public int getRentPrice0H() {
+        return rentPrice0H;
     }
 
-    public void setRentPrice(int rentPrice) {
-        this.rentPrice = rentPrice;
+    public void setRentPrice0H(int rentPrice0H) {
+        this.rentPrice0H = rentPrice0H;
     }
 
     public int getPledgePrice() {

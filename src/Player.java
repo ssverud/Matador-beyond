@@ -4,6 +4,7 @@ public class Player {
     private int pos = 0;
     private int money = 30000;
     private boolean inPrison = false;
+    private int numberOfFerriesOwned = 0;
     private boolean hasGetOutOfJainCard = false;
     private int totalValue = 0;
 
@@ -112,5 +113,13 @@ public class Player {
     @Override
     public String toString() {
         return "'" + name + "'";
+    }
+
+    public int getNumberOfFerriesOwned() {
+        return numberOfFerriesOwned;
+    }
+
+    public void setNumberOfFerriesOwned(int numberOfFerriesOwned) {
+        this.numberOfFerriesOwned = numberOfFerriesOwned;
     }
 }
