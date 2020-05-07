@@ -2,9 +2,12 @@ public class Player {
 
     private String name;
     private int pos = 0;
-    private int money = 0;
+    private int money = 30000;
     private boolean inPrison = false;
+    private int numberOfFerriesOwned = 0;
     private boolean hasGetOutOfJainCard = false;
+    private int totalValue = 0;
+
     //Lav arrayliste over owned properties
 
     /**
@@ -33,13 +36,28 @@ public class Player {
 
     public void buyProperty(PropertyField propertyField) {
         int propertyPrice = propertyField.getPrice();
-        if (this.money > propertyPrice) {
-            this.money = this.money - propertyPrice;
-        }
+        money = money - propertyPrice;
     }
+
+    public void buyFerry(FerryField ferryField) {
+        int ferryPrice = ferryField.getPrice();
+        money = money - ferryPrice;
+    }
+
+    public void buyHouseOnProperty(PropertyField propertyField){
+        int housePrice = propertyField.getHousePrice();
+        money = money - housePrice;
+        //
+        //method add house to property.
+    }
+
 
     public void payToBank(int amount) {
         money = money - amount;
+    }
+
+    public void updateTotalValue(int amount){
+        setTotalValue(getTotalValue() + amount);
     }
 
     /**
@@ -86,9 +104,22 @@ public class Player {
         this.hasGetOutOfJainCard = hasGetOutOfJainCard;
     }
 
+    public int getTotalValue() { return totalValue; }
+
+    public void setTotalValue(int totalValue) { this.totalValue = totalValue; }
+
+
     // toSting - when printing print player name in ' '
     @Override
     public String toString() {
         return "'" + name + "'";
+    }
+
+    public int getNumberOfFerriesOwned() {
+        return numberOfFerriesOwned;
+    }
+
+    public void setNumberOfFerriesOwned(int numberOfFerriesOwned) {
+        this.numberOfFerriesOwned = numberOfFerriesOwned;
     }
 }
