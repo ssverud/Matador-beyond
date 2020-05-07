@@ -4,15 +4,15 @@ public class ChanceField extends GameField {
 
     Random random = new Random();
     String type = "chanceField";
-    CardOfChanceDeck cardDeck = CardOfChanceDeck.getInstance();
+    //CardOfChanceDeck cardDeck = new CardOfChanceDeck();
 
     public ChanceField(int pos, String name) {
         setPos(pos);
         setName(name);
     }
 
-    public void landedOn(Player player) {
-        System.out.println("You landed on a chance field! Draw a card.");
+   // public void landedOn(Player player) {
+      /*  System.out.println("You landed on a chance field! Draw a card.");
         cardDeck.draw();
         type = cardDeck.getType();
 
@@ -119,10 +119,10 @@ public class ChanceField extends GameField {
             case ("FØDSELSDAG"):
                 //modtag 200 af alle andre spillere
                 break;
-        }
+        } */
 
 
     }
 
-}
+//}
 
