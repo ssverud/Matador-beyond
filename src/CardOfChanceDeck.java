@@ -59,7 +59,7 @@ public class CardOfChanceDeck {
     }
 
     //uses java collections to shuffle the deck of chance cards.
-    public void shuffle() {
+    public void shuffle(ArrayList<>) {
         Collections.shuffle(cards);
     }
 
