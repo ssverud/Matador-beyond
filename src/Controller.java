@@ -1,13 +1,9 @@
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.Rectangle;
-
-import java.awt.*;
 
 import static java.lang.StrictMath.min;
 import static javafx.scene.paint.Color.*;
@@ -85,13 +81,13 @@ public class Controller {
 
         double tempFieldsMoved = 0.5;
         // distance from board edge
-        int playerPosOnBoard = 15;
+        int playerDistFromEdge = 15;
     public void movePlayer() {
 
         // code der gentager sig selv flere gange, skal fikses
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
-        double diameter = min(hight, width) - playerPosOnBoard;
+        double diameter = min(hight, width) - playerDistFromEdge;
 
         double endX = (width / 2) + (diameter / 2) * Math.sin((tempFieldsMoved * 9) * (Math.PI / 180));
         double endY = (hight / 2) + (diameter / 2) * Math.cos((tempFieldsMoved * 9) * (Math.PI / 180));
@@ -146,3 +142,4 @@ public class Controller {
 
 
 }
+
