@@ -2,7 +2,7 @@ public class Player {
 
     private String name;
     private int pos = 0;
-    private int money = 0;
+    private int money = 30000;
     private boolean inPrison = false;
     private boolean hasGetOutOfJainCard = false;
     //Lav arrayliste over owned properties
@@ -33,10 +33,9 @@ public class Player {
 
     public void buyProperty(PropertyField propertyField) {
         int propertyPrice = propertyField.getPrice();
-        if (this.money > propertyPrice) {
-            this.money = this.money - propertyPrice;
-        }
+        money = money - propertyPrice;
     }
+
 
     public void payToBank(int amount) {
         money = money - amount;
