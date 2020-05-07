@@ -1,26 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 
 <BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
-   <bottom>
-      <AnchorPane prefHeight="58.0" prefWidth="454.0" BorderPane.alignment="CENTER">
-         <children>
-            <ButtonBar prefWidth="330.0" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="20.0">
-              <buttons>
-                  <Button mnemonicParsing="false" onAction="#startGameButton" text="Start game" />
-                  <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="85.0" text="Exit" />
-                  <Button mnemonicParsing="false" onAction="#testButton" text="Resize" />
-                  <Button mnemonicParsing="false" onAction="#movePlayerTestButton" prefHeight="27.0" prefWidth="94.0" text="M.Player" />
-              </buttons>
-            </ButtonBar>
-         </children>
-      </AnchorPane>
-   </bottom>
    <center>
-      <AnchorPane fx:id="anchorpane" prefHeight="500.0" prefWidth="500.0" />
+      <AnchorPane fx:id="anchorpane" prefHeight="500.0" prefWidth="500.0">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </AnchorPane>
    </center>
+   <bottom>
+      <ButtonBar prefWidth="400.0" BorderPane.alignment="CENTER">
+        <buttons>
+            <Button minWidth="16.0" mnemonicParsing="false" onAction="#startGameButton" prefHeight="27.0" prefWidth="139.0" text="Start game" />
+            <Button mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="85.0" text="Exit" />
+            <Button mnemonicParsing="false" onAction="#resizeButton" text="Resize" />
+            <Button mnemonicParsing="false" onAction="#movePlayerTestButton" prefHeight="27.0" prefWidth="94.0" text="M.Player" />
+        </buttons>
+      </ButtonBar>
+   </bottom>
 </BorderPane>

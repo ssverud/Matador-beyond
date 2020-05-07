@@ -9,6 +9,7 @@ import javafx.scene.shape.Rectangle;
 
 import java.awt.*;
 
+import static java.lang.StrictMath.min;
 import static javafx.scene.paint.Color.*;
 
 public class Controller {
@@ -23,17 +24,35 @@ public class Controller {
         // code der gentager sig selv flere gange, skal fikses
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
+        double diameter = min(width, hight);
 
         int degrees = 0;
 
         // tegner 39 linjer med 9 grader imellem hver linje
         for(int i = 0 ; i < 40 ; i++) {
             //              centerX   +  radius                        + convertering fra radion til grader
-            double endX = (width / 2) + (hight / 2) * Math.sin(degrees * (Math.PI / 180));
-            double endY = (hight / 2) + (hight / 2) * Math.cos(degrees * (Math.PI / 180));
+            double endX = (width / 2) + (diameter / 2) * Math.sin(degrees * (Math.PI / 180));
+            double endY = (hight / 2) + (diameter / 2) * Math.cos(degrees * (Math.PI / 180));
             degrees = degrees + 9;
-            Line line = new Line(width / 2, hight / 2, endX, endY);
+
+            Line line = new Line(width / 2, hight / 2, endX - 1, endY - 1 );
             line.setFill(BLACK);
+
+            /*
+            System.out.print((diameter / 2));
+            System.out.print(" : ");
+            System.out.println((diameter / 2));
+
+            System.out.print(Math.sin(degrees * (Math.PI / 180)));
+            System.out.print(" : ");
+            System.out.println(Math.cos(degrees * (Math.PI / 180)));
+
+            System.out.print((diameter / 2) * Math.sin(degrees * (Math.PI / 180)));
+            System.out.print(" : ");
+            System.out.println((diameter / 2) * Math.cos(degrees * (Math.PI / 180)));
+            */
+
+
             // tilføjer den nye linje til øverste AnchorPane i scene builder træet
             anchorpane.getChildren().add(line);
         }
@@ -43,36 +62,41 @@ public class Controller {
     public void drawCircle () {
 
         // code der gentager sig selv flere gange, skal fikses
-        double width = anchorpane.getWidth();
+        double width =  anchorpane.getWidth();
         double hight = anchorpane.getHeight();
+        double diameter = min(hight, width);
 
-        Circle outerCircle = new Circle(width / 2, hight / 2, hight / 2);
+        Circle outerCircle = new Circle(width / 2.0, hight / 2.0, diameter / 2);
 
         outerCircle.setFill(BLUE);
 
         // tilføjer den nye circle til øverste AnchorPane i scene builder træet
         anchorpane.getChildren().add(outerCircle);
 
-        System.out.println(width);
+        System.out.print(width);
+        System.out.print(" : ");
         System.out.println(hight);
 
-        Circle innerCircle = new Circle(width / 2, hight / 2, (hight / 2) - (hight * 0.2));
+
+        Circle innerCircle = new Circle(width / 2, hight / 2, diameter / 2 - diameter * 0.2);
         anchorpane.getChildren().add(innerCircle);
     }
 
         int tempPlasserRykket = 1;
+        int playerPosOnBoard = 15;
     public void movePlayer() {
 
         // code der gentager sig selv flere gange, skal fikses
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
+        double diameter = min(hight, width) - playerPosOnBoard;
 
-        double endX = (width / 2) + (hight / 2) * Math.sin((tempPlasserRykket * 9) * (Math.PI / 180));
-        double endY = (hight / 2) + (hight / 2) * Math.cos((tempPlasserRykket * 9) * (Math.PI / 180));
+        double endX = (width / 2) + (diameter / 2) * Math.sin((tempPlasserRykket * 9) * (Math.PI / 180));
+        double endY = (hight / 2) + (diameter / 2) * Math.cos((tempPlasserRykket * 9) * (Math.PI / 180));
 
         tempPlasserRykket = tempPlasserRykket + 1;
 
-        Circle circle = new Circle(endX, endY, 5);
+        Circle circle = new Circle(endX, endY , 5);
         circle.setFill(RED);
 
         anchorpane.getChildren().add(circle);
@@ -84,13 +108,15 @@ public class Controller {
 
     @FXML
     void movePlayerTestButton (ActionEvent event) {
-        System.out.println("MOVE PLAYER TEST BUTTON");
+        anchorpane.getChildren().clear();
+        drawCircle();
+        drawLine();
         movePlayer();
     }
 
 
     @FXML
-    void testButton(ActionEvent event) {
+    void resizeButton(ActionEvent event) {
         anchorpane.getChildren().clear();
         drawCircle();
         drawLine();
