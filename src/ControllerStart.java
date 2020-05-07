@@ -12,8 +12,13 @@ import java.io.IOException;
 public class ControllerStart {
 
     @FXML
-    void startButton (ActionEvent event) {
-
+    void startButton (ActionEvent event) throws IOException {
+        Parent homePagePlayerSetup = FXMLLoader.load(getClass().getResource("fxml files/playerSetup.fxml"));
+        Scene homePagePlayerSetupScene = new Scene(homePagePlayerSetup);
+        Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stageWindow.setScene(homePagePlayerSetupScene);
+        stageWindow.show();
+        System.out.println("go to player setup");
 
     }
 
@@ -39,7 +44,7 @@ public class ControllerStart {
 
         Logic logic = new Logic();
         new Thread(logic).start();
-        //System.out.println("oldStartButton pressed");
+        System.out.println("oldStartButton pressed");
 
 
     }
