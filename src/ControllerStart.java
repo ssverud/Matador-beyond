@@ -1,3 +1,4 @@
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +30,8 @@ public class ControllerStart {
 
     @FXML
     void exitButton (ActionEvent event) {
-
+        System.out.println("EXIT");
+        Platform.exit();
     }
 
     @FXML
@@ -37,7 +39,7 @@ public class ControllerStart {
 
         Logic logic = new Logic();
         new Thread(logic).start();
-        System.out.println("oldStartButton pressed");
+        //System.out.println("oldStartButton pressed");
 
 
     }
