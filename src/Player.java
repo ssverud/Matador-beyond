@@ -45,6 +45,10 @@ public class Player {
 
     public void buyHouseOnProperty(){
 
+    public void buyHouseOnProperty(PropertyField propertyField){
+        int housePrice = propertyField.getHousePrice();
+        money = money - housePrice;
+        //
         //method add house to property.
     }
 
