@@ -11,7 +11,7 @@ public class GameBoard {
      * Instantiator
      */
     ArrayList<GameField> gameFields = new ArrayList<>(); // array of gameFields
-    //CardOfChanceDeck cardDeck = new CardOfChanceDeck();
+    
 
 
     DiceCup diceCup = new DiceCup(); // creating our diceCup

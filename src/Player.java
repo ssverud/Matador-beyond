@@ -29,6 +29,7 @@ public class Player {
     public void useGetOutOfJailCard() {
         //use free from jail method
         setHasGetOutOfJainCard(false);
+
     }
 
     public void outOfPrisonWithMoney() {
@@ -39,26 +40,18 @@ public class Player {
     public void buyProperty(PropertyField propertyField) {
         int propertyPrice = propertyField.getPrice();
         money = money - propertyPrice;
-        ownedFields.add(propertyField);
-
     }
 
     public void buyFerry(FerryField ferryField) {
         int ferryPrice = ferryField.getPrice();
         money = money - ferryPrice;
-        ownedFields.add(ferryField);
-    }
-
-    public void buyBrewery(BreweryField breweryField) {
-        int breweryPrice = breweryField.getPrice();
-        money = money - breweryPrice;
-        ownedFields.add(breweryField);
     }
 
     public void buyHouseOnProperty(PropertyField propertyField){
         int housePrice = propertyField.getHousePrice();
         money = money - housePrice;
-        propertyField.setHouses(propertyField.getHouses() +1);
+        //
+        //method add house to property.
     }
 
 
