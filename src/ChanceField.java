@@ -34,7 +34,6 @@ public class ChanceField extends GameField {
 
             case ("TIPNING"):
                 //modtag 1000 kr
-                //1000 kr fra banken
                 player.setMoney(player.getMoney()+1000);
                 break;
 
@@ -124,6 +123,7 @@ public class ChanceField extends GameField {
                 //modtag 200 af alle andre spillere
                 break;
         }
+        cardDeck.putToEmptyDeck();
 
 
     }
