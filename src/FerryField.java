@@ -16,7 +16,7 @@ public class FerryField extends GameField {
         setGameFieldType(GameFieldType.FERRYFIELD);
     }
 
-
+/*
     public void landedOn(Player player) {
         System.out.println("This is a FerryField");
         if (getOwnedBy() != null) {
@@ -51,6 +51,8 @@ public class FerryField extends GameField {
         }
     }
 
+
+ */
 
     public int getPrice() {
         return price;

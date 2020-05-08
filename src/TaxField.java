@@ -8,8 +8,10 @@ public class TaxField extends GameField {
 
     }
 
-
+/*
     public void landedOn(Player player) {
         System.out.println("THIS IS A TAXFIELD MOTHER FUCKER");
     }
+
+ */
 }

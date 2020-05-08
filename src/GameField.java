@@ -39,10 +39,16 @@ public class GameField {
         BREWERYFIELD
     }
 
+
     // meant to be overwritten
-    public void landedOn(Player player) {
+    public GameField landedOn(Player player) {
         System.out.println("HAS NOT BEEN OVERWRITTEN, please fix in the current gamefield - playerPos: " + player.getPos());
+        return this;
     }
+
+
+
+
 
     /**
      * Getters and setters
