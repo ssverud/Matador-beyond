@@ -7,7 +7,7 @@ public class Player {
     private int money = 30000;
     private boolean inPrison = false;
     private int numberOfFerriesOwned = 0;
-    private boolean hasGetOutOfJainCard = false;
+    private boolean hasGetOutOfJailCard = false;
     private int totalValue = 0;
 
     //Lav arrayliste over owned properties
@@ -28,7 +28,7 @@ public class Player {
     // Use get out of jail card
     public void useGetOutOfJailCard() {
         //use free from jail method
-        setHasGetOutOfJainCard(false);
+        setHasGetOutOfJailCard(false);
 
     }
 
@@ -99,12 +99,12 @@ public class Player {
         this.inPrison = inPrison;
     }
 
-    public boolean isHasGetOutOfJainCard() {
-        return hasGetOutOfJainCard;
+    public boolean isHasGetOutOfJailCard() {
+        return hasGetOutOfJailCard;
     }
 
-    public void setHasGetOutOfJainCard(boolean hasGetOutOfJainCard) {
-        this.hasGetOutOfJainCard = hasGetOutOfJainCard;
+    public void setHasGetOutOfJailCard(boolean hasGetOutOfJailCard) {
+        this.hasGetOutOfJailCard = hasGetOutOfJailCard;
     }
 
     public int getTotalValue() { return totalValue; }

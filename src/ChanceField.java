@@ -17,7 +17,7 @@ public class ChanceField extends GameField {
         setName(name);
     }
 
-    public void landedOn(Player player) {
+    public GameField landedOn(Player player) {
         System.out.println("You landed on a chance field! Draw a card.");
         System.out.println(cardDeck.cards.size());
         System.out.println(cardDeck.cards.get(0).getTextOfCard());
@@ -36,13 +36,8 @@ public class ChanceField extends GameField {
                 player.setMoney(player.getMoney()-3000);
                 break;
 
-            case ("AKTIER"):
+            case ("AKTIER"): case ("DYRTIDEN"): case ("PRÆMIE"): case ("TIPNING"):
 
-            case ("DYRTIDEN"):
-
-            case ("PRÆMIE"):
-
-            case ("TIPNING"):
                 //modtag 1000 kr
                 player.setMoney(player.getMoney()+1000);
                 break;
@@ -61,9 +56,8 @@ public class ChanceField extends GameField {
                 //et eller andet bullshit
                 break;
 
-            case ("PARKERINGSBØDE"):
+            case ("PARKERINGSBØDE"): case ("CIGARRETTER"):
 
-            case ("CIGARRETTER"):
                 //betal 200 kr
                 player.setMoney(player.getMoney()-200);
                 break;
@@ -73,11 +67,8 @@ public class ChanceField extends GameField {
                 //player.setPos(player.getPos()-3);
                 break;
 
-            case ("FORSIKRING"):
+            case ("FORSIKRING"): case ("BØDE"): case ("TANDLÆGEREGNING"):
 
-            case ("BØDE"):
-
-            case ("TANDLÆGEREGNING"):
                 //betal 1000 kr
                 player.setMoney(player.getMoney()-1000);
                 break;
@@ -103,7 +94,6 @@ public class ChanceField extends GameField {
             case ("START"):
                 //ryk til start
                 player.setPos(0);
-                System.out.println("Du er nu på " + player.getPos());
                 break;
 
             case ("EFTERSKAT"):
@@ -136,7 +126,7 @@ public class ChanceField extends GameField {
         }
 
 
-
+        return null;
     }
 
 }
