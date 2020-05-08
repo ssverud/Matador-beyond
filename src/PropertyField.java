@@ -102,7 +102,8 @@ public class PropertyField extends GameField {
     }
 
     public boolean checkIfPropertyPairExistTest(PropertyField propertyField, Player player) {
-        return;
+        if(player.ownedFields.contains(propertyField)){}
+        return false;
     }
 
 
