@@ -4,7 +4,13 @@ public class ChanceField extends GameField {
 
     Random random = new Random();
     String type = "chanceField";
-    CardOfChanceDeck cardDeck = CardOfChanceDeck.getInstance();
+    CardOfChanceDeck cardDeck;
+
+    {
+        cardDeck = CardOfChanceDeck.getInstance();
+        cardDeck.shuffle();
+    }
+
 
     public ChanceField(int pos, String name) {
         setPos(pos);
@@ -13,8 +19,12 @@ public class ChanceField extends GameField {
 
     public void landedOn(Player player) {
         System.out.println("You landed on a chance field! Draw a card.");
-        cardDeck.draw();
-        type = cardDeck.getType();
+        System.out.println(cardDeck.cards.size());
+        System.out.println(cardDeck.cards.get(0).getTextOfCard());
+        type = cardDeck.cards.get(0).getType();
+        //pu to empty
+        cardDeck.putToEmptyDeck();
+        System.out.println(cardDeck.cards.size());
 
         switch (type) {
             case ("FÆNGSEL"):
@@ -93,6 +103,7 @@ public class ChanceField extends GameField {
             case ("START"):
                 //ryk til start
                 player.setPos(0);
+                System.out.println("Du er nu på " + player.getPos());
                 break;
 
             case ("EFTERSKAT"):
@@ -123,7 +134,7 @@ public class ChanceField extends GameField {
                 //modtag 200 af alle andre spillere
                 break;
         }
-        cardDeck.putToEmptyDeck();
+
 
 
     }

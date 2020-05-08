@@ -49,6 +49,7 @@ public class CardOfChanceDeck {
         cards.add(new Card("BØDE", "De har kørt frem for “Fuld Stop”. Betal kr. 1.000 i bøde."));
         cards.add(new Card("AVL", "Værdien af egen avl fra nyttehaven udgør kr. 200, som De modtager af banken."));
         cards.add(new Card("FØDSELSDAG", "Det er Deres fødselsdag. Modtag af hver medspiller kr. 200."));
+
     }
 
 
@@ -64,8 +65,7 @@ public class CardOfChanceDeck {
 
 
     //uses java collections to shuffle the deck of chance cards.
-    public void shuffle(ArrayList<Card> cards) {
-        this.cards = cards;
+    public void shuffle() {
         Collections.shuffle(cards);
     }
 
@@ -81,7 +81,7 @@ public class CardOfChanceDeck {
 
     //Removes a card from the deck and adds it to the new deck, so the cards don't come in the same order every time.
     public void putToEmptyDeck() {
-        while (!cards.isEmpty()) {
+        if (!cards.isEmpty()) {
             emptyDeck.add(cards.get(0));
             cards.remove(cards.get(0));
         }
