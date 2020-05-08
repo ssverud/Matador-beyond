@@ -12,18 +12,19 @@
       <FlowPane layoutX="121.0" layoutY="198.0" prefHeight="0.0" prefWidth="323.0">
          <children>
             <Label text="1. player " />
-            <TextField prefHeight="27.0" prefWidth="260.0" />
+            <TextField fx:id="player1" prefHeight="27.0" prefWidth="260.0" />
          </children>
       </FlowPane>
       <FlowPane layoutX="121.0" layoutY="242.0" prefHeight="0.0" prefWidth="323.0">
          <children>
             <Label text="2. player " />
-            <TextField prefHeight="27.0" prefWidth="260.0" />
+            <TextField fx:id="player2" prefHeight="27.0" prefWidth="260.0" />
          </children>
       </FlowPane>
-      <ButtonBar layoutX="4.0" layoutY="360.0" prefHeight="40.0" prefWidth="151.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+      <ButtonBar layoutX="4.0" layoutY="360.0" prefHeight="40.0" prefWidth="230.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
         <buttons>
           <Button mnemonicParsing="false" onAction="#startGameButton" prefHeight="27.0" prefWidth="154.0" text="Start Game" />
+            <Button mnemonicParsing="false" onAction="#testButton2" text="test" />
         </buttons>
       </ButtonBar>
    </children>
