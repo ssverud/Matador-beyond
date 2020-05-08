@@ -2,15 +2,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 public class CardOfChanceDeck {
-    String textOfCard;
-    ArrayList<Card> cards;
-    ArrayList<Card> emptyDeck;
+    ArrayList<Card> cards = new ArrayList<Card>();
+    ArrayList<Card> emptyDeck = new ArrayList<Card>();
 
-    //static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
+    private static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
 
-    //Creates the deck as a singleton, so all chancefields uses the same deck
-    //private static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
-    public CardOfChanceDeck() {
+    public static CardOfChanceDeck getInstance(){
+        if(cardOfChanceDeck ==null){
+            cardOfChanceDeck = new CardOfChanceDeck();
+        }
+        return cardOfChanceDeck;
+    }
+
+    private CardOfChanceDeck() {
 
         cards.add(new Card("FÆNGSEL", "Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer “Start”, indkasserer de ikke kr. 4.000."));
         cards.add(new Card("FÆNGSEL", "Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer “Start”, indkasserer de ikke kr. 4.000."));
@@ -48,9 +52,7 @@ public class CardOfChanceDeck {
     }
 
 
-   /* public static CardOfChanceDeck getInstance(){
-        return cardOfChanceDeck;
-    } */
+
 
     private int numberOfDraws = 0;
 
