@@ -11,8 +11,8 @@ public class ChanceField extends GameField {
         setName(name);
     }
 
-   // public void landedOn(Player player) {
-      /*  System.out.println("You landed on a chance field! Draw a card.");
+    public void landedOn(Player player) {
+        System.out.println("You landed on a chance field! Draw a card.");
         cardDeck.draw();
         type = cardDeck.getType();
 
@@ -23,10 +23,19 @@ public class ChanceField extends GameField {
 
             case ("REPERATION"):
                 //Betal 3000 kr
+                player.setMoney(player.getMoney()-3000);
                 break;
 
             case ("AKTIER"):
-                //modtag 1000 kr fra banken
+
+            case ("DYRTIDEN"):
+
+            case ("PRÆMIE"):
+
+            case ("TIPNING"):
+                //modtag 1000 kr
+                //1000 kr fra banken
+                player.setMoney(player.getMoney()+1000);
                 break;
 
             case ("REDERI"):
@@ -35,10 +44,8 @@ public class ChanceField extends GameField {
 
             case ("KONGENSFØDSELSDAG"):
                 //Get out of jail card
-                break;
-
-            case ("PRÆMIE"):
-                //1000 kr fra banken
+                player.setHasGetOutOfJailCard(true);
+                cardDeck.remove(0);
                 break;
 
             case ("VÆRDIG TRÆNGENDE"):
@@ -46,26 +53,24 @@ public class ChanceField extends GameField {
                 break;
 
             case ("PARKERINGSBØDE"):
+
+            case ("CIGARRETTER"):
                 //betal 200 kr
+                player.setMoney(player.getMoney()-200);
                 break;
 
             case ("RYK TILBAGE"):
-                //ryk 3 felter tilbage
+                //ryk 3 felter tilbage, ikke implementeret da man kan rykke baglæns over start
+                //player.setPos(player.getPos()-3);
+                break;
 
             case ("FORSIKRING"):
-                //betal 1000 kr
-                break;
 
-            case ("TIPNING"):
-                //modtag 1000 kr
-                break;
-
-            case ("DYRTIDEN"):
-                //modtag 1000 kr
-                break;
+            case ("BØDE"):
 
             case ("TANDLÆGEREGNING"):
                 //betal 1000 kr
+                player.setMoney(player.getMoney()-1000);
                 break;
 
             case ("FÆRGE"):
@@ -74,10 +79,12 @@ public class ChanceField extends GameField {
 
             case ("KLASSELOTTERIET"):
                 //modtag 500 kroner
+                player.setMoney(player.getMoney()+500);
                 break;
 
             case ("RÅDHUSPLADSEN"):
                 //ryk til rådhuspladsen
+                player.setPos(39);
                 break;
 
             case ("EJENDOMSSKAT"):
@@ -86,14 +93,12 @@ public class ChanceField extends GameField {
 
             case ("START"):
                 //ryk til start
-                break;
-
-            case ("CIGARRETTER"):
-                //betal 200 kr
+                player.setPos(0);
                 break;
 
             case ("EFTERSKAT"):
                 //modtag 3000 kr
+                player.setMoney(player.getMoney()+3000);
                 break;
 
             case ("OLIEPRISER"):
@@ -101,28 +106,27 @@ public class ChanceField extends GameField {
                 break;
 
             case ("GRØNNINGEN"):
-                //ryk til grønningen, modtag penge hvis start klrydses
+                //ryk til grønningen, modtag penge hvis start krydses
+                player.setPos(24);
                 break;
 
             case ("FREDERIKSBERG"):
                 //ryk frem til frederiksberg alle
-                break;
-
-            case ("BØDE"):
-                //betal 1000 kr
+                player.setPos(11);
                 break;
 
             case ("AVL"):
                 //modtag 200 kr
+                player.setMoney(player.getMoney()+200);
                 break;
 
             case ("FØDSELSDAG"):
                 //modtag 200 af alle andre spillere
                 break;
-        } */
+        }
 
 
     }
 
-//}
+}
 

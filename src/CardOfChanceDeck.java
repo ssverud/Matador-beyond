@@ -88,6 +88,11 @@ public class CardOfChanceDeck {
 
     }
 
+    public void remove(int pos){
+
+        cards.remove(pos);
+    }
+
     public void changeDeck() {
         if (cards.isEmpty()) {
             for (int i = 0; i < emptyDeck.size(); i++) {
