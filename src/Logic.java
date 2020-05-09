@@ -141,58 +141,7 @@ public class Logic implements Runnable {
             listOfPlayers.remove(player);
         }
     }
-/*
-    public void checkGameFieldType(GameField gameField) {
 
-        if (gameField.getGameFieldType() == GameField.GameFieldType.START) {
-            System.out.println("Dette er Start feltet. Du starter nu på en ny runde");
-
-        } else if (gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
-
-            //  PropertyField activePropertyField = gameBoard.gameFields.get(activeGameField.getPos());
-            System.out.println("This is a Propertyfield");
-
-            // if (gameBoard.gameFields.get(activeGameField.getPos().isBought()) {
-
-
-            //      playerWhoHasTurn.payRent();
-
-
-            /*    logic.presentBuyOptions(Player player);
-
-                  make new method called something like "presentpropertyfieldoptions"
-                  create a var in propertyField called Player ownedBy, that can be set to the player who buys it
-
-                     in presentpropertyfieldoptions:
-                         Check if the property is already bought
-                             if bought == true
-                                 playerwhohasturn.payrent(getpropertyrent, getownedby)
-                         if bought == false
-                             presentbuy options for field
-
-
-        } else if (gameField.getGameFieldType() == GameField.GameFieldType.FERRYFIELD) {
-            System.out.println("this is a FERRYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        } else if (gameField.getGameFieldType() == GameField.GameFieldType.PRISONFIELD) {
-
-            presentPrisonOptions(playerWhoHasTurn);
-
-            System.out.println("this is a PRISONFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        } else if (gameField.getGameFieldType() == GameField.GameFieldType.TAXFIELD) {
-            presentTaxOptions(playerWhoHasTurn, activeGameField);
-            System.out.println("this is a TAXFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        } else if (gameField.getGameFieldType() == GameField.GameFieldType.PARKINGFIELD) {
-            System.out.println("Dette er et parkingsfelt.");
-        } else if (gameField.getGameFieldType() == GameField.GameFieldType.VISITPRISON) {
-            System.out.println("Du er nu på besøg i fængsel.");
-        } else if (gameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD) {
-            System.out.println("this is a CHANCEFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        } else if (gameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD) {
-            System.out.println("this is a BREWERYFIELD!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-        }
-
-    }
-    */
 
     public void presentPrisonOptions(Player player) {
         System.out.println("You have been put in prison you have two options:");
