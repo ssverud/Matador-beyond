@@ -2,9 +2,14 @@ import java.util.ArrayList;
 
 public class Logic implements Runnable {
 
+
+
     /**
      * Instantiator
      */
+
+
+    ControllerPlayerSetup controllerPlayerSetup = new ControllerPlayerSetup();
     ArrayList<Player> listOfPlayers = new ArrayList<>();
     GameBoard gameBoard = new GameBoard();
     Print print = new Print();
@@ -29,11 +34,13 @@ public class Logic implements Runnable {
 
         System.out.println("How many player are going to play?");
 
-        numberOfPlayers = scanThings.scanNumber(); //Catch exception 0 skal laves
+        System.out.println("??? " + controllerPlayerSetup.getNumberOfPlayersPlaying());
+        numberOfPlayers = 1; //scanThings.scanNumber(); //Catch exception 0 skal laves
 
         System.out.println("Okay you are going to be playing " + numberOfPlayers + " players");
         System.out.println("Lets start creating your chars!");
         createPlayers(numberOfPlayers);
+
     }
 
     public void createPlayers(int numberOfPlayers) {
