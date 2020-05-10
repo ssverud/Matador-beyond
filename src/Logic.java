@@ -30,10 +30,10 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
         System.out.println("printing the gamefield list:");
         print.printGameFields(gameBoard.gameFields);
 
-        System.out.println("How many player are going to play?");
+        //System.out.println("How many player are going to play?");
 
         // getNumberOfPlayersPlaying kommer fra ControllerPlayerSetup via "extendt" øverst i logic klassen
-        System.out.println("??? " + getNumberOfPlayersPlaying());
+        //System.out.println("??? " + getNumberOfPlayersPlaying());
         numberOfPlayers = getNumberOfPlayersPlaying(); //scanThings.scanNumber(); //Catch exception 0 skal laves
 
         System.out.println("Okay you are going to be playing " + getNumberOfPlayersPlaying() + " players");
@@ -43,8 +43,6 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
     }
 
     public void createPlayers2 () {
-
-
 
         Player player = new Player(getPlayerOne());
         listOfPlayers.add(player);
