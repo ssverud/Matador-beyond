@@ -39,7 +39,7 @@ public class ControllerPlayerSetup {
 
     @FXML
     void startGameButton (ActionEvent event) throws IOException {
-        Parent homePageStartGame = FXMLLoader.load(getClass().getResource("fxml files/game.fxml"));
+        Parent homePageStartGame = FXMLLoader.load(getClass().getResource("fxml files/game2.fxml"));
         Scene homePageStartGameScene = new Scene(homePageStartGame);
         Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageWindow.setScene(homePageStartGameScene);
