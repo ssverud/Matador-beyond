@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Logic implements Runnable {
+public class Logic extends ControllerPlayerSetup implements Runnable {
 
 
 
@@ -8,8 +8,6 @@ public class Logic implements Runnable {
      * Instantiator
      */
 
-
-    ControllerPlayerSetup controllerPlayerSetup;
     ArrayList<Player> listOfPlayers = new ArrayList<>();
     GameBoard gameBoard = new GameBoard();
     Print print = new Print();
@@ -26,7 +24,7 @@ public class Logic implements Runnable {
     /**
      * welcomeToTheGame creates our world and creates the players
      */
-    public void welcomeToTheGame() {
+    public void welcomeToTheGame () {
 
         // Print out the gamefield list
         System.out.println("printing the gamefield list:");
@@ -34,15 +32,30 @@ public class Logic implements Runnable {
 
         System.out.println("How many player are going to play?");
 
-        // controllerPlayerSetup.getNumberOfPlayersPlaying() giver værdien null da linje 12 er uden værdier
-        System.out.println("??? " + controllerPlayerSetup.getNumberOfPlayersPlaying());
-        numberOfPlayers = controllerPlayerSetup.getNumberOfPlayersPlaying(); //scanThings.scanNumber(); //Catch exception 0 skal laves
+        // getNumberOfPlayersPlaying kommer fra ControllerPlayerSetup via "extendt" øverst i logic klassen
+        System.out.println("??? " + getNumberOfPlayersPlaying());
+        numberOfPlayers = getNumberOfPlayersPlaying(); //scanThings.scanNumber(); //Catch exception 0 skal laves
 
-        System.out.println("Okay you are going to be playing " + numberOfPlayers + " players");
-        System.out.println("Lets start creating your chars!");
-        createPlayers(numberOfPlayers);
-
+        System.out.println("Okay you are going to be playing " + getNumberOfPlayersPlaying() + " players");
+        //System.out.println("Lets start creating your chars!");
+        // createPlayers(numberOfPlayers);
+        createPlayers2();
     }
+
+    public void createPlayers2 () {
+
+
+
+        Player player = new Player(getPlayerOne());
+        listOfPlayers.add(player);
+        Player player2 = new Player(getPlayerTwo());
+        listOfPlayers.add(player2);
+
+
+        System.out.println("Printing out our list of players:");
+        System.out.println(listOfPlayers);
+    }
+
 
     public void createPlayers(int numberOfPlayers) {
         // for each numberOfPlayers create scanner and create a player

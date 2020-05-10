@@ -7,6 +7,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ComboBox;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 
@@ -16,7 +17,10 @@ import java.io.IOException;
 public class ControllerPlayerSetup {
 
     // global variables
-    int numberOfPlayersPlaying = 5;
+    //
+    static int numberOfPlayersPlaying;
+    static String playerOne;
+    static String playerTwo;
 
     @FXML
     private TextField player1;
@@ -42,7 +46,11 @@ public class ControllerPlayerSetup {
         stageWindow.setScene(homePageStartGameScene);
         stageWindow.show();
 
+        // har lagt 1 til da getSelectedIndex starter fra -1, 0, 1, 2 osv
         setNumberOfPlayersPlaying(comboBox.getSelectionModel().getSelectedIndex() + 1);
+
+        setPlayerOne(player1.getText());
+        setPlayerTwo(player2.getText());
 
         System.out.println("numberOfPlayersPlaying: " + getNumberOfPlayersPlaying() );
 
@@ -56,11 +64,31 @@ public class ControllerPlayerSetup {
     void testButton2 (ActionEvent event) {
         //System.out.println("TEST");
         this.numberOfPlayersPlaying = comboBox.getSelectionModel().getSelectedIndex();
+        this.playerOne = player1.getText();
+        System.out.println(playerOne);
         // har lagt 1 til da getSelectedIndex starter fra -1, 0, 1, 2 osv
         System.out.println(this.numberOfPlayersPlaying + 1 );
     }
 
     // setters and getters
+
+
+    public static String getPlayerTwo() {
+        return playerTwo;
+    }
+
+    public static void setPlayerTwo(String playerTwo) {
+        ControllerPlayerSetup.playerTwo = playerTwo;
+    }
+
+    public static String getPlayerOne() {
+        return playerOne;
+    }
+
+    public static void setPlayerOne(String playerOne) {
+        ControllerPlayerSetup.playerOne = playerOne;
+    }
+
     public int getNumberOfPlayersPlaying() {
         return this.numberOfPlayersPlaying;
     }
