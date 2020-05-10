@@ -16,6 +16,8 @@ import java.io.IOException;
 
 public class ControllerPlayerSetup {
 
+    ControllerStart controllerStart = new ControllerStart();
+
     // global variables
     //
     static int numberOfPlayersPlaying;
@@ -33,9 +35,9 @@ public class ControllerPlayerSetup {
 
     @FXML
     public void initialize() {
-        comboBox.getItems().removeAll(comboBox.getItems());
-        comboBox.getItems().addAll("1", "2", "3", "4", "5", "6");
-        comboBox.getSelectionModel().select("Vælg antal spillere");
+        //comboBox.getItems().removeAll(comboBox.getItems());
+        //comboBox.getItems().addAll("1", "2", "3", "4", "5", "6");
+        //comboBox.getSelectionModel().select("Vælg antal spillere");
     }
 
     @FXML
@@ -47,12 +49,19 @@ public class ControllerPlayerSetup {
         stageWindow.show();
 
         // har lagt 1 til da getSelectedIndex starter fra -1, 0, 1, 2 osv
-        setNumberOfPlayersPlaying(comboBox.getSelectionModel().getSelectedIndex() + 1);
+        // hvis der ikke vælges antal spillere i combobox bliver setNumnerOfPlayersPlaying -1, hvilket er skidt
 
-        setPlayerOne(player1.getText());
-        setPlayerTwo(player2.getText());
+        //setNumberOfPlayersPlaying(comboBox.getSelectionModel().getSelectedIndex() + 1);
 
-        System.out.println("numberOfPlayersPlaying: " + getNumberOfPlayersPlaying() );
+        if(!player1.getText().isBlank()) {
+            setPlayerOne(player1.getText());
+        }
+        if(!player2.getText().isBlank()) {
+            setPlayerTwo(player2.getText());
+        }
+
+
+        //System.out.println("numberOfPlayersPlaying: " + getNumberOfPlayersPlaying() );
 
         Logic logic = new Logic();
         // opretter en ekstra tråd så der ikke kører et uendeligt whileloop der ikke kommer tilbgae til GUI'en
@@ -72,6 +81,14 @@ public class ControllerPlayerSetup {
 
     // setters and getters
 
+    public static String getPlayerOne() {
+        return playerOne;
+    }
+
+    public static void setPlayerOne(String playerOne) {
+        ControllerPlayerSetup.playerOne = playerOne;
+    }
+
 
     public static String getPlayerTwo() {
         return playerTwo;
@@ -81,14 +98,8 @@ public class ControllerPlayerSetup {
         ControllerPlayerSetup.playerTwo = playerTwo;
     }
 
-    public static String getPlayerOne() {
-        return playerOne;
-    }
 
-    public static void setPlayerOne(String playerOne) {
-        ControllerPlayerSetup.playerOne = playerOne;
-    }
-
+    /*
     public int getNumberOfPlayersPlaying() {
         return this.numberOfPlayersPlaying;
     }
@@ -96,4 +107,5 @@ public class ControllerPlayerSetup {
     public void setNumberOfPlayersPlaying(int numberOfPlayersPlaying) {
         this.numberOfPlayersPlaying = numberOfPlayersPlaying;
     }
+    */
 }

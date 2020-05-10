@@ -34,9 +34,9 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
 
         // getNumberOfPlayersPlaying kommer fra ControllerPlayerSetup via "extendt" øverst i logic klassen
         //System.out.println("??? " + getNumberOfPlayersPlaying());
-        numberOfPlayers = getNumberOfPlayersPlaying(); //scanThings.scanNumber(); //Catch exception 0 skal laves
+        //numberOfPlayers = getNumberOfPlayersPlaying();
 
-        System.out.println("Okay you are going to be playing " + getNumberOfPlayersPlaying() + " players");
+        //System.out.println("Okay you are going to be playing " + getNumberOfPlayersPlaying() + " players");
         //System.out.println("Lets start creating your chars!");
         // createPlayers(numberOfPlayers);
         createPlayers2();
@@ -44,14 +44,21 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
 
     public void createPlayers2 () {
 
-        Player player = new Player(getPlayerOne());
-        listOfPlayers.add(player);
-        Player player2 = new Player(getPlayerTwo());
-        listOfPlayers.add(player2);
+        //getPlayerOne kommer fra ControllerPlayerSetup
+
+        if(getPlayerOne() != null) {
+            Player player = new Player(getPlayerOne());
+            listOfPlayers.add(player);
+        }
+        if(getPlayerTwo() != null) {
+            Player player2 = new Player(getPlayerTwo());
+            listOfPlayers.add(player2);
+        }
 
 
         System.out.println("Printing out our list of players:");
         System.out.println(listOfPlayers);
+        System.out.println("number of players: " + listOfPlayers.size());
     }
 
 

@@ -10,7 +10,9 @@
 
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPlayerSetup">
    <children>
-      <ComboBox fx:id="comboBox" prefWidth="150.0" />
+      <!--
+      <ComboBox fx:id="comboBox" prefHeight="27.0" prefWidth="204.0" />
+      -->
       <FlowPane layoutX="121.0" layoutY="198.0" prefHeight="0.0" prefWidth="323.0">
          <children>
             <Label text="1. player " />
