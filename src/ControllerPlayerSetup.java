@@ -27,9 +27,6 @@ public class ControllerPlayerSetup {
     @FXML
     private ComboBox comboBox;
 
-
-
-
     @FXML
     public void initialize() {
         comboBox.getItems().removeAll(comboBox.getItems());
