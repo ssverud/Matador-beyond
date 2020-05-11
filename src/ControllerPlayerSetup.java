@@ -13,6 +13,7 @@ import javafx.scene.control.TextField;
 
 import java.awt.*;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ControllerPlayerSetup {
 
@@ -40,6 +41,8 @@ public class ControllerPlayerSetup {
         //comboBox.getSelectionModel().select("Vælg antal spillere");
     }
 
+
+
     @FXML
     void startGameButton (ActionEvent event) throws IOException {
         Parent homePageStartGame = FXMLLoader.load(getClass().getResource("fxml files/game2.fxml"));
@@ -48,22 +51,13 @@ public class ControllerPlayerSetup {
         stageWindow.setScene(homePageStartGameScene);
         stageWindow.show();
 
-        // har lagt 1 til da getSelectedIndex starter fra -1, 0, 1, 2 osv
-        // hvis der ikke vælges antal spillere i combobox bliver setNumnerOfPlayersPlaying -1, hvilket er skidt
-
-        //setNumberOfPlayersPlaying(comboBox.getSelectionModel().getSelectedIndex() + 1);
-
-        if(!player1.getText().isBlank()) {
-            setPlayerOne(player1.getText());
-        }
-        if(!player2.getText().isBlank()) {
-            setPlayerTwo(player2.getText());
-        }
-
-
-        //System.out.println("numberOfPlayersPlaying: " + getNumberOfPlayersPlaying() );
+        ArrayList<String> players = new ArrayList<String>();
+        players.add(player1.getText());
+        players.add(player2.getText());
 
         Logic logic = new Logic();
+
+        logic.createPlayers(players);
         // opretter en ekstra tråd så der ikke kører et uendeligt whileloop der ikke kommer tilbgae til GUI'en
         new Thread(logic).start();
     }
