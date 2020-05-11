@@ -37,6 +37,9 @@ public class Player {
         money = money - paymentToGetOutOfPrison;
     }
 
+    /**
+     * Køb af grunde og huse
+     */
     public void buyProperty(PropertyField propertyField) {
         int propertyPrice = propertyField.getPrice();
         money = money - propertyPrice;
@@ -47,12 +50,46 @@ public class Player {
         money = money - ferryPrice;
     }
 
+    public void buyBrewery(BreweryField breweryField) {
+        int breweryPrice = breweryField.getPrice();
+        money = money - breweryPrice;
+    }
+
     public void buyHouseOnProperty(PropertyField propertyField){
         int housePrice = propertyField.getHousePrice();
         money = money - housePrice;
-        //
-        //method add house to property.
+        propertyField.setHouses(propertyField.getHouses()+1);
     }
+
+
+    /**
+     * Salg af grunde og huse
+     */
+
+    public void sellProperty(PropertyField propertyField){
+        int propertyPrice = propertyField.getPrice();
+        money += propertyPrice;
+        ownedFields.remove(propertyField);
+    }
+
+    public void sellFerry(FerryField ferryField){
+        int ferryPrice = ferryField.getPrice();
+        money += ferryPrice;
+        ownedFields.remove(ferryField);
+    }
+
+    public void sellBrewery(BreweryField breweryField) {
+        int breweryPrice = breweryField.getPrice();
+        money += breweryPrice;
+        ownedFields.remove(breweryField);
+    }
+
+    public void sellHouseOnProperty(PropertyField propertyField){
+        int housePrice = propertyField.getHousePrice();
+        money += housePrice;
+        propertyField.setHouses(propertyField.getHouses()-1);
+    }
+
 
 
     public void payToBank(int amount) {
