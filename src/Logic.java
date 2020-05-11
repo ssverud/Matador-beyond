@@ -38,13 +38,14 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
 
         //System.out.println("Okay you are going to be playing " + getNumberOfPlayersPlaying() + " players");
         //System.out.println("Lets start creating your chars!");
+
         // createPlayers(numberOfPlayers);
         createPlayers2();
     }
 
     public void createPlayers2 () {
 
-        //getPlayerOne kommer fra ControllerPlayerSetup
+        //getPlayerOne/Two osv kommer fra ControllerPlayerSetup
 
         if(getPlayerOne() != null) {
             Player player = new Player(getPlayerOne());
@@ -54,7 +55,6 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
             Player player2 = new Player(getPlayerTwo());
             listOfPlayers.add(player2);
         }
-
 
         System.out.println("Printing out our list of players:");
         System.out.println(listOfPlayers);
@@ -97,6 +97,7 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
             playerWhoHasTurn = listOfPlayers.get(i);
 
             delay(); // for us to press Enter before loop moves on
+
 
             // Starts the players turn
             playerTurn(playerWhoHasTurn);

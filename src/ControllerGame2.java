@@ -14,6 +14,12 @@ public class ControllerGame2 {
     TextArea textArea1;
 
     @FXML
+    void diceRollButton(ActionEvent event) {
+
+
+    }
+
+    @FXML
     void field1(MouseEvent event) {
         System.out.println("TEST field1");
         textArea1.clear();
