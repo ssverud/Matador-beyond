@@ -66,6 +66,8 @@ public class ControllerPlayerSetup {
 
 
         // opretter en ekstra tråd så der ikke kører et uendeligt whileloop der ikke kommer tilbgae til GUI'en
+        //logic.run();
+
         new Thread(logic).start();
     }
 

@@ -27,7 +27,6 @@ public class ControllerGame2 {
 
     @FXML
     void diceRollButton(ActionEvent event) {
-
         //logic.setGameTurnCounter(logic.getGameTurnCounter() + 1);
         //System.out.println(logic.getGameTurnCounter());
 

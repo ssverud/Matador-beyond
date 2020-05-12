@@ -1,3 +1,5 @@
+import javafx.scene.control.Alert;
+
 import java.util.ArrayList;
 
 public class Logic implements Runnable {
@@ -31,6 +33,7 @@ public class Logic implements Runnable {
 
         // Print out the gamefield list
         System.out.println("printing the gamefield list:");
+
         print.printGameFields(gameBoard.gameFields);
 
         //System.out.println("How many player are going to play?");
@@ -57,7 +60,6 @@ public class Logic implements Runnable {
         }
 
         //getPlayerOne/Two osv kommer fra ControllerPlayerSetup
-
         /*
         if(getPlayerOne() != null) {
             Player player = new Player(getPlayerOne());
@@ -70,8 +72,7 @@ public class Logic implements Runnable {
         */
 
         System.out.println("Printing out our list of players:");
-        System.out.println(listOfPlayers);
-        System.out.println("number of players: " + listOfPlayers.size());
+        System.out.println(listOfPlayers + " number of players: " + listOfPlayers.size());
     }
 
     /*
@@ -107,13 +108,11 @@ public class Logic implements Runnable {
 
         // gameloop
         while (keepPlaying) {
-            //System.out.println("TEST whileloop");
 
-            System.out.println("TEST loop");
             //using temp playertype to track which player has turn
             playerWhoHasTurn = listOfPlayers.get(i);
 
-            //delay(); // for us to press Enter before loop moves on
+            delay(); // for us to press Enter before loop moves on
 
 
             // Starts the players turn
@@ -123,11 +122,7 @@ public class Logic implements Runnable {
             if (i == numberOfPlayers) {
                 i = 0;
             }
-
-            //setPrevGameTurnCounter(getGameTurnCounter());
         }
-
-
     }
 
     public void delay2() {
@@ -139,6 +134,14 @@ public class Logic implements Runnable {
     }
 
     public void playerTurn(Player player) {
+
+        /*
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Information Dialog");
+        alert.setHeaderText("Look, an Information Dialog");
+        alert.setContentText("I have a great message for you!");
+        alert.showAndWait();
+        */
 
         int diceCupRollResult;
         int playerWhoHasTurnPos = 0;
@@ -186,8 +189,6 @@ public class Logic implements Runnable {
         System.out.println("You landed on " + activeGameField.getName());
 
         activeGameField.landedOn(playerWhoHasTurn);
-
-
 
     }
 
