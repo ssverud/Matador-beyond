@@ -4,6 +4,7 @@ public class GameField {
     private int pos;
     private GameFieldType gameFieldType;
     private int price = 0;
+    private PropertyColor propertyColor;
 
     // private Player boughtBy;
 
@@ -38,6 +39,17 @@ public class GameField {
         VISITPRISON,
         CHANCEFIELD,
         BREWERYFIELD
+    }
+
+    enum PropertyColor {
+        BLUE,
+        PINK,
+        GREEN,
+        GREY,
+        RED,
+        WHITE,
+        YELLOW,
+        PURPLE
     }
 
 
@@ -93,6 +105,14 @@ public class GameField {
 
     public void setPrice(int price) {
         this.price = price;
+    }
+
+    public PropertyColor getPropertyColor() {
+        return propertyColor;
+    }
+
+    public void setPropertyColor(PropertyColor propertyColor) {
+        this.propertyColor = propertyColor;
     }
 
     // toString when printing a field you print the name of the field // idk if we need to chance it maybe not
