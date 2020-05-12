@@ -8,8 +8,7 @@ public class PropertyField extends GameField {
 
     ScanThings scanThings = new ScanThings();
 
-
-    public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice) {
+    public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice, PropertyColor propertyColor) {
         setPos(pos);
         setName(name);
         setGameFieldType(GameFieldType.PROPERTYFIELD);
