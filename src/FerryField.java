@@ -1,6 +1,5 @@
 public class FerryField extends GameField {
 
-    private int price;
     private int rentPrice;  // skal laves en udregning et eller adnet sted?
     private int pledgePrice;
     private Player ownedBy = null;
@@ -53,14 +52,6 @@ public class FerryField extends GameField {
 
 
  */
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
 
     public int getRentPrice() {
         return rentPrice;

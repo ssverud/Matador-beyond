@@ -259,6 +259,42 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
         }
     }
 
+    /*
+    public void presentBuyHouseOption(Player player){
+        System.out.println("Would u like to buy a house on any property?");
+        System.out.println("1 - Yes");
+        System.out.println("2 - no");
+        int answer = scanThings.scanNumber();
+
+        if (answer == 1) {
+
+            // INSERT MOETHOD
+            System.out.println("Here is your list of owned fields:");
+            System.out.println(player.ownedFields);
+
+            //presentFieldsYouCanBuyHousesOn; enten kode eller method
+            //if(){}
+
+
+            String selectedField = scanThings.scanString();
+
+            for (int i = 0; i < player.ownedFields.size(); i++) {
+                if (selectedField.equals(player.ownedFields.get(i).getName())) {
+                    if (checkIfPropertyPairExist(selectedField, player) == true) {
+                        player.buyHouseOnProperty(this);
+                        System.out.println("You have bought house on this property");
+                        System.out.println("here are the number of houses on this property: " + this.getHouses());
+                        break;
+                    }
+                }
+            }
+        } else if (answer == 2) {
+            System.out.println("ok do do not want to add any houses to your property at this moment");
+        }
+    }
+    
+     */
+
 
     public void delay() {
         scanThings.scanString();

@@ -40,19 +40,9 @@ public class Player {
     /**
      * Køb af grunde og huse
      */
-    public void buyProperty(PropertyField propertyField) {
-        int propertyPrice = propertyField.getPrice();
-        money = money - propertyPrice;
-    }
-
-    public void buyFerry(FerryField ferryField) {
-        int ferryPrice = ferryField.getPrice();
-        money = money - ferryPrice;
-    }
-
-    public void buyBrewery(BreweryField breweryField) {
-        int breweryPrice = breweryField.getPrice();
-        money = money - breweryPrice;
+    public void buyField(GameField gameField) {
+        money = money - gameField.getPrice();
+        ownedFields.add(gameField);
     }
 
     public void buyHouseOnProperty(PropertyField propertyField){

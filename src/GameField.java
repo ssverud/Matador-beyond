@@ -3,8 +3,9 @@ public class GameField {
     private String type;
     private int pos;
     private GameFieldType gameFieldType;
+    private int price = 0;
 
-   // private Player boughtBy;
+    // private Player boughtBy;
 
 /*
     private boolean isBought;
@@ -84,6 +85,14 @@ public class GameField {
 
     public void setGameFieldType(GameFieldType gameFieldType) {
         this.gameFieldType = gameFieldType;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 
     // toString when printing a field you print the name of the field // idk if we need to chance it maybe not
