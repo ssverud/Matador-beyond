@@ -4,14 +4,21 @@ import javafx.scene.input.DragEvent;
 import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TextArea;
+import javafx.scene.shape.Rectangle;
 
 
 import java.awt.*;
 
+import static javafx.scene.paint.Color.RED;
+
 public class ControllerGame2 {
+
 
     @FXML
     TextArea textArea1;
+
+    @FXML
+    Rectangle field1ID;
 
     @FXML
     void diceRollButton(ActionEvent event) {
@@ -21,14 +28,15 @@ public class ControllerGame2 {
 
     @FXML
     void field1(MouseEvent event) {
-        System.out.println("TEST field1");
+        field1ID.setStroke(RED);
         textArea1.clear();
         textArea1.appendText("TEST  field1");
+
     }
 
     @FXML
     void field2(MouseEvent event) {
-        System.out.println("TEST field2");
+
         textArea1.clear();
         textArea1.appendText("TEST  field2");
     }

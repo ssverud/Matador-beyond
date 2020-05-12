@@ -15,9 +15,9 @@
       </ButtonBar>
       <AnchorPane layoutX="55.0" layoutY="50.0" prefHeight="500.0" prefWidth="600.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="55.0" AnchorPane.topAnchor="50.0">
          <children>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" onMouseEntered="#field1" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="50.0" onMouseEntered="#field2" stroke="BLACK" strokeType="INSIDE" width="50.0" />
-            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="100.0" onMouseEntered="#field3" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <Rectangle fx:id="field1ID" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" onMouseClicked="#field1" stroke="BLACK" strokeType="INSIDE" strokeWidth="5.0" width="50.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="50.0" onMouseClicked="#field2" stroke="BLACK" strokeType="INSIDE" width="50.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="100.0" onMouseClicked="#field3" stroke="BLACK" strokeType="INSIDE" width="50.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="150.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="200.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="50.0" layoutX="250.0" stroke="BLACK" strokeType="INSIDE" width="50.0" />

@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Logic extends ControllerPlayerSetup implements Runnable {
+public class Logic implements Runnable {
 
 
 
@@ -40,13 +40,22 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
         //System.out.println("Lets start creating your chars!");
 
         // createPlayers(numberOfPlayers);
-        createPlayers2();
+        //createPlayers();
     }
 
-    public void createPlayers2 () {
+    public void createPlayers (ArrayList<String> playerNames) {
+
+        for (String s: playerNames) {
+            Player player = new Player(s);
+
+            if (!s.equals("")) {
+                listOfPlayers.add(player);
+            }
+        }
 
         //getPlayerOne/Two osv kommer fra ControllerPlayerSetup
 
+        /*
         if(getPlayerOne() != null) {
             Player player = new Player(getPlayerOne());
             listOfPlayers.add(player);
@@ -55,13 +64,14 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
             Player player2 = new Player(getPlayerTwo());
             listOfPlayers.add(player2);
         }
+        */
 
         System.out.println("Printing out our list of players:");
         System.out.println(listOfPlayers);
         System.out.println("number of players: " + listOfPlayers.size());
     }
 
-
+    /*
     public void createPlayers(int numberOfPlayers) {
         // for each numberOfPlayers create scanner and create a player
         for (int i = 1; i < numberOfPlayers + 1; i++) {
@@ -77,6 +87,8 @@ public class Logic extends ControllerPlayerSetup implements Runnable {
         System.out.println("Printing out our list of players:");
         System.out.println(listOfPlayers);
     }
+
+     */
 
     // kommer fra implements Runable øverst i Logic
     @Override
