@@ -324,7 +324,7 @@ public class Logic implements Runnable {
             System.out.println("ok do do not want to add any houses to your property at this moment");
         }
     }
-    
+
  */
 
     public void findPropertyPairs(ArrayList <GameField> arrayList){
