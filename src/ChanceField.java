@@ -7,6 +7,7 @@ public class ChanceField extends GameField {
     Random random = new Random();
     String type = "chanceField";
     CardOfChanceDeck cardDeck;
+    GameBoard gameboard;
 
     {
         cardDeck = CardOfChanceDeck.getInstance();
@@ -26,6 +27,7 @@ public class ChanceField extends GameField {
         type = cardDeck.cards.get(0).getType();
         cardDeck.putToEmptyDeck();
         System.out.println(cardDeck.cards.size());
+        gameboard = new GameBoard();
 
         switch (type) {
             case ("FÆNGSEL"):
@@ -35,7 +37,7 @@ public class ChanceField extends GameField {
 
             case ("REPERATION"):
                 //Betal 3000 kr
-                player.setMoney(player.getMoney() - 3000);
+                player.payToBank(3000);
                 break;
 
             case ("AKTIER"):
@@ -50,6 +52,16 @@ public class ChanceField extends GameField {
             case ("REDERI"):
                 //Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 //for loop der kører igennem til den rammer et ferryField, som starter forfra hvis den når igennem inden den rammer et
+                for (int i = player.getPos(); i < gameboard.gameFields.size(); i++){
+                    if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD){
+                        player.setPos(i);
+                    }
+                    if (i == gameboard.gameFields.size()){
+                        i = 0;
+                    }
+
+                    //mangler betaling?
+                }
                 break;
 
             case ("KONGENSFØDSELSDAG"):
@@ -69,7 +81,7 @@ public class ChanceField extends GameField {
             case ("CIGARRETTER"):
 
                 //betal 200 kr
-                player.setMoney(player.getMoney() - 200);
+                player.payToBank(200);
                 break;
 
             case ("RYK TILBAGE"):
@@ -90,10 +102,17 @@ public class ChanceField extends GameField {
 
             case ("FÆRGE"):
                 // tag med næste færge, modtag 4000 hvis start paseres
-                /*player.setPos(nærmeste ferry field);
-                if (næsteFerry.pos < player.getPos()){
-                    player.setMoney(player.getMoney()+4000);
-                }*/
+                for (int i = player.getPos(); i < gameboard.gameFields.size(); i++){
+                    if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD){
+                        player.setPos(i);
+                    }
+                    if (i == gameboard.gameFields.size()){
+                        i = 0;
+                    }
+
+
+                }
+
                 break;
 
             case ("KLASSELOTTERIET"):
@@ -123,13 +142,20 @@ public class ChanceField extends GameField {
 
                 }
                 System.out.println("Du har " + sumHouses + " huse, derfor skal du betale " + sumHouses*800 + "kr");
-                player.setMoney(player.getMoney() - (sumHouses * 800));
+                //player.setMoney(player.getMoney() - (sumHouses * 800));
+                player.payToBank(sumHouses*800);
                 System.out.println(player.getMoney());
+
+                //potentielt unødvendigt, kan komme på tale hvis kortet trækkes 2 gange
+                sumHouses = 0;
+                sumList.clear();
+
                 break;
 
             case ("START"):
                 //ryk til start
                 player.setPos(0);
+                //logic bør udbetale pengene automatisk
                 break;
 
             case ("EFTERSKAT"):
@@ -139,7 +165,29 @@ public class ChanceField extends GameField {
 
             case ("OLIEPRISER"):
                 //betal 500 pr hus og 2000 pr hotel
+                System.out.println(player.getMoney());
+                int sumHousesOil = 0;
+                ArrayList<PropertyField> sumListOil = new ArrayList<PropertyField>();
+                for (int i = 0; i < player.ownedFields.size() - 1; i++) {
+                    GameField temp = player.ownedFields.get(i);
+                    //Det næste har noget med casting at gøre, er ikke sikker på hvordan det virker, men det fungerer som det skal
+                    if (temp.getGameFieldType() == GameFieldType.PROPERTYFIELD) {
+                        sumListOil.add((PropertyField) player.ownedFields.get(0));
+                    }
+                }
+                for (int i = 0; i < sumListOil.size() - 1; i++) {
+                    sumHouses = sumHousesOil + sumListOil.get(i).getHouses();
+
+                }
+                System.out.println("Du har " + sumHousesOil + " huse, derfor skal du betale " + sumHousesOil*500 + "kr");
+                player.payToBank(sumHousesOil * 500);
+                System.out.println(player.getMoney());
+
+                //Potentielt unødvendigt, kan komme på tale hvis kortet trækkes 2 gange
+                sumHousesOil = 0;
+                sumListOil.clear();
                 break;
+
 
             case ("GRØNNINGEN"):
                 //ryk til grønningen, modtag penge hvis start krydses
