@@ -30,7 +30,20 @@ public class ControllerPlayerSetup {
     private TextField player2;
 
     @FXML
-    private ComboBox comboBox;
+    private TextField player3;
+
+    @FXML
+    private TextField player4;
+
+    @FXML
+    private TextField player5;
+
+    @FXML
+    private TextField player6;
+
+
+
+
 
     @FXML
     public void initialize() {
@@ -48,6 +61,10 @@ public class ControllerPlayerSetup {
         // tilføjer indtastet i GUI "ControllerPlayerSetup"
         players.add(player1.getText());
         players.add(player2.getText());
+        players.add(player3.getText());
+        players.add(player4.getText());
+        players.add(player5.getText());
+        players.add(player6.getText());
         logic.createPlayers(players);
 
 
@@ -70,14 +87,4 @@ public class ControllerPlayerSetup {
 
         new Thread(logic).start();
     }
-
-
-    // skal slettes når test fasen er færdig
-    @FXML
-    void testButton2 (ActionEvent event) {
-
-    }
-
-    // setters and getters
-
 }

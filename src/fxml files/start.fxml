@@ -6,8 +6,7 @@
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerStart">
    <children>
       <Button layoutX="119.0" layoutY="139.0" mnemonicParsing="false" onAction="#startButton" prefHeight="27.0" prefWidth="363.0" text="Start" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="118.0" />
-      <Button layoutX="119.0" layoutY="287.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="363.0" text="Exit" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="118.0" />
-      <Button layoutX="119.0" layoutY="239.0" mnemonicParsing="false" onAction="#oldStartButton" prefHeight="27.0" prefWidth="363.0" text="Old start" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="118.0" />
+      <Button layoutX="119.0" layoutY="237.0" mnemonicParsing="false" onAction="#exitButton" prefHeight="27.0" prefWidth="363.0" text="Exit" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="118.0" />
       <Button layoutX="119.0" layoutY="189.0" mnemonicParsing="false" onAction="#rulesButton" prefHeight="27.0" prefWidth="363.0" text="Regler" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="118.0" />
    </children>
 </AnchorPane>
