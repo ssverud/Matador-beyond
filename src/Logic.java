@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Logic extends ControllerPlayerSetup implements Runnable {
+public class Logic implements Runnable {
 
 
 
