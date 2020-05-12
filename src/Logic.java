@@ -32,9 +32,9 @@ public class Logic implements Runnable {
     public void welcomeToTheGame () {
 
         // Print out the gamefield list
-        System.out.println("printing the gamefield list:");
+        //System.out.println("printing the gamefield list:");
 
-        print.printGameFields(gameBoard.gameFields);
+        //print.printGameFields(gameBoard.gameFields);
 
         //System.out.println("How many player are going to play?");
 
@@ -71,8 +71,7 @@ public class Logic implements Runnable {
         }
         */
 
-        System.out.println("Printing out our list of players:");
-        System.out.println(listOfPlayers + " number of players: " + listOfPlayers.size());
+        System.out.println("Liste af spillere: + " + listOfPlayers + " Antal: " + listOfPlayers.size());
     }
 
     /*
