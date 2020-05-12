@@ -21,7 +21,7 @@ public class ControllerPlayerSetup {
 
     // global variables
 
-    Logic logic = new Logic();
+
 
     @FXML
     private TextField player1;
@@ -41,18 +41,30 @@ public class ControllerPlayerSetup {
 
     @FXML
     void startGameButton (ActionEvent event) throws IOException {
-        Parent homePageStartGame = FXMLLoader.load(getClass().getResource("fxml files/game2.fxml"));
+
+        // Starter den instance af Logic op der kører logikken resten af spillet
+        Logic logic = new Logic();
+        ArrayList<String> players = new ArrayList<String>();
+        // tilføjer indtastet i GUI "ControllerPlayerSetup"
+        players.add(player1.getText());
+        players.add(player2.getText());
+        logic.createPlayers(players);
+
+
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game2.fxml"));
+
+        Parent homePageStartGame = loader.load();
+        ControllerGame2 controllerGame2 = loader.getController();
+        controllerGame2.logic = logic;
+
+        //Parent homePageStartGame = FXMLLoader.load(getClass().getResource("fxml files/game2.fxml"));
+
         Scene homePageStartGameScene = new Scene(homePageStartGame);
         Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageWindow.setScene(homePageStartGameScene);
         stageWindow.show();
 
 
-        ArrayList<String> players = new ArrayList<String>();
-        players.add(player1.getText());
-        players.add(player2.getText());
-
-        logic.createPlayers(players);
         // opretter en ekstra tråd så der ikke kører et uendeligt whileloop der ikke kommer tilbgae til GUI'en
         new Thread(logic).start();
     }

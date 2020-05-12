@@ -19,6 +19,9 @@ public class Logic implements Runnable {
     Player playerWhoHasTurn;
     int numberOfPlayers;
     int numberOfGameFields = gameBoard.gameFields.size();
+    private int gameTurnCounter = 0;
+    private int prevGameTurnCounter = 0;
+
 
 
     /**
@@ -102,13 +105,15 @@ public class Logic implements Runnable {
 
         int i = 0;
 
-
         // gameloop
         while (keepPlaying) {
+            //System.out.println("TEST whileloop");
+
+            System.out.println("TEST loop");
             //using temp playertype to track which player has turn
             playerWhoHasTurn = listOfPlayers.get(i);
 
-            delay(); // for us to press Enter before loop moves on
+            //delay(); // for us to press Enter before loop moves on
 
 
             // Starts the players turn
@@ -118,7 +123,22 @@ public class Logic implements Runnable {
             if (i == numberOfPlayers) {
                 i = 0;
             }
+
+            //setPrevGameTurnCounter(getGameTurnCounter());
+
+
+
         }
+
+
+    }
+
+    public void delay2() {
+
+    }
+
+    public void delay() {
+        scanThings.scanString();
     }
 
     public void playerTurn(Player player) {
@@ -272,7 +292,19 @@ public class Logic implements Runnable {
     }
 
 
-    public void delay() {
-        scanThings.scanString();
+    public int getGameTurnCounter() {
+        return gameTurnCounter;
+    }
+
+    public void setGameTurnCounter(int gameTurnCounter) {
+        this.gameTurnCounter = gameTurnCounter;
+    }
+
+    public int getPrevGameTurnCounter() {
+        return prevGameTurnCounter;
+    }
+
+    public void setPrevGameTurnCounter(int prevGameTurnCounter) {
+        this.prevGameTurnCounter = prevGameTurnCounter;
     }
 }

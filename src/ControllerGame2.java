@@ -14,15 +14,22 @@ import static javafx.scene.paint.Color.RED;
 public class ControllerGame2 {
 
 
+    public Logic logic;
+
+
+
     @FXML
     TextArea textArea1;
 
     @FXML
     Rectangle field1ID;
 
+
     @FXML
     void diceRollButton(ActionEvent event) {
 
+        //logic.setGameTurnCounter(logic.getGameTurnCounter() + 1);
+        //System.out.println(logic.getGameTurnCounter());
 
     }
 
