@@ -291,7 +291,7 @@ public class Logic implements Runnable {
         }
     }
 
-
+/*
     public void presentBuyHouseOption(Player player){
         System.out.println("Would u like to buy a house on any property?");
         System.out.println("1 - Yes");
@@ -324,6 +324,8 @@ public class Logic implements Runnable {
             System.out.println("ok do do not want to add any houses to your property at this moment");
         }
     }
+    
+ */
 
     public void findPropertyPairs(ArrayList <GameField> arrayList){
         int blue = 0;
