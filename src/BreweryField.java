@@ -1,6 +1,5 @@
 public class BreweryField extends GameField{
 
-    private int price;
     private int rentPrice; // skal laves en udregning et eller adnet sted?
     private int pledgePrice;
 
@@ -12,14 +11,6 @@ public class BreweryField extends GameField{
         this.setRentPrice(rentPrice);
         this.setPledgePrice(pledgePrice);
         setGameFieldType(GameFieldType.BREWERYFIELD);
-    }
-
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
     }
 
     public int getRentPrice() {
