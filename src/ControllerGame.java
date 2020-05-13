@@ -10,6 +10,7 @@ import static javafx.scene.paint.Color.*;
 
 public class ControllerGame {
 
+    Logic logic;
 
     public void initialize() {
 
