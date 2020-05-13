@@ -4,7 +4,7 @@ public class Player {
 
     private String name;
     private int pos = 0;
-    private int money = 30000;
+    private int money = 300000000;
     private boolean inPrison = false;
     private int numberOfFerriesOwned = 0;
     private boolean hasGetOutOfJailCard = false;
