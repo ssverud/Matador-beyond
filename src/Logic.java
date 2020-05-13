@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Logic implements Runnable {
 
 
-
     /**
      * Instantiator
      */
@@ -25,11 +24,10 @@ public class Logic implements Runnable {
     private int prevGameTurnCounter = 0;
 
 
-
     /**
      * welcomeToTheGame creates our world and creates the players
      */
-    public void welcomeToTheGame () {
+    public void welcomeToTheGame() {
 
         // Print out the gamefield list
         //System.out.println("printing the gamefield list:");
@@ -49,9 +47,9 @@ public class Logic implements Runnable {
         //createPlayers();
     }
 
-    public void createPlayers (ArrayList<String> playerNames) {
+    public void createPlayers(ArrayList<String> playerNames) {
 
-        for (String s: playerNames) {
+        for (String s : playerNames) {
             Player player = new Player(s);
 
             if (!s.equals("")) {
@@ -125,7 +123,6 @@ public class Logic implements Runnable {
             //setPrevGameTurnCounter(getGameTurnCounter());
 
 
-
         }
     }
 
@@ -178,7 +175,7 @@ public class Logic implements Runnable {
 
             tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
-           // activeGameField.landedOn(playerWhoHasTurn);
+            // activeGameField.landedOn(playerWhoHasTurn);
 
             if (i < diceCupRollResult - 1) {
                 print.printPassedField(playerWhoHasTurn, tempActiveGameField);
@@ -194,6 +191,7 @@ public class Logic implements Runnable {
 
         activeGameField.landedOn(playerWhoHasTurn);
 
+        presentBuyHouseOption(playerWhoHasTurn);
     }
 
     public void checkPlayerMoney(Player player) {
@@ -294,7 +292,7 @@ public class Logic implements Runnable {
     }
 
 
-    public void presentBuyHouseOption(Player player){
+    public void presentBuyHouseOption(Player player) {
         System.out.println("Would u like to buy a house on any property?");
         System.out.println("1 - Yes");
         System.out.println("2 - no");
@@ -302,33 +300,58 @@ public class Logic implements Runnable {
 
         if (answer == 1) {
 
-            player.ownedFields.add(gameBoard.gameFields.get(1));
-            player.ownedFields.add(gameBoard.gameFields.get(3));
+            boolean wantsToBuyHouse = true;
+
+            while (wantsToBuyHouse == true) {
 
 
-            // INSERT MOETHOD
-            System.out.println("Here is your list of owned fields:");
-            System.out.println(player.ownedFields);
 
-            System.out.println();
-            System.out.println("Here is your list of fields you can buy houses on: ");
-            System.out.println(findPropertyPairs(player.ownedFields));
-
-            PropertyField selectedGameField;
-            String s = scanThings.scanString();
-            ArrayList <GameField> propertyPairs = findPropertyPairs(player.ownedFields);
+        /*
+           // TO TEST STUFF ON THE FIRST 5 GAMEFIELDS, JUST DELETE WHEN YOU DONT WANT TO TEST SHIT ANYMORE :)
+                player.ownedFields.add(gameBoard.gameFields.get(1));
+                player.ownedFields.add(gameBoard.gameFields.get(3));
+                player.ownedFields.add(gameBoard.gameFields.get(6));
+                player.ownedFields.add(gameBoard.gameFields.get(8));
+                player.ownedFields.add(gameBoard.gameFields.get(9));
+        */
 
 
-            for (int i = 0; i < propertyPairs.size(); i++) {
-                if ((s.equals(propertyPairs.get(i).getName()))) {
+                // INSERT MOETHOD
+                System.out.println("Here is your list of owned fields:");
+                System.out.println(player.ownedFields);
 
-                    selectedGameField = (PropertyField) propertyPairs.get(i);
-                    if(selectedGameField.getHouses() < 4) {
-                        player.buyHouseOnProperty(selectedGameField);
-                        System.out.println("You have bought house on " + selectedGameField.getName());
-                        System.out.println("Here are the number of houses on this property: " + selectedGameField.getHouses());
-                        break;
+                ArrayList<GameField> propertyPairs = findPropertyPairs(player.ownedFields);
+                System.out.println();
+                System.out.println("Here is your list of fields you can buy houses on: ");
+                System.out.println(propertyPairs);
+
+                PropertyField selectedGameField;
+                String s = scanThings.scanString();
+
+
+                for (int i = 0; i < propertyPairs.size(); i++) {
+                    if ((s.equals(propertyPairs.get(i).getName()))) {
+
+                        selectedGameField = (PropertyField) propertyPairs.get(i);
+                        if (selectedGameField.getHouses() < 4) {
+                            System.out.println("THIS IS THE RENT PRICE B4: " + selectedGameField.getPrice());
+                            player.buyHouseOnProperty(selectedGameField);
+                            System.out.println("THIS IS THE RENT PRICE after: " + selectedGameField.getPrice());
+                            System.out.println("You have bought house on " + selectedGameField.getName());
+                            System.out.println("Here are the number of houses on this property: " + selectedGameField.getHouses());
+                            break;
+
+                        }
                     }
+                }
+                System.out.println("Would you like to buy another house?");
+                System.out.println("1 = yes");
+                System.out.println("2 = no");
+                int input = scanThings.scanNumber();
+                if (input == 1) {
+                    System.out.println("okay");
+                } else {
+                    wantsToBuyHouse = false;
                 }
             }
         } else if (answer == 2) {
@@ -337,96 +360,108 @@ public class Logic implements Runnable {
     }
 
 
+    public ArrayList<GameField> findPropertyPairs(ArrayList<GameField> arrayList) {
 
-    public ArrayList <GameField> findPropertyPairs(ArrayList <GameField> arrayList){
-
-        ArrayList <GameField> propertiesYouCanBuyHousesOn = new ArrayList<>();
+        ArrayList<GameField> propertiesYouCanBuyHousesOn = new ArrayList<>();
 
         int blue = 0;
         int pink = 0;
         int green = 0;
         int grey = 0;
-        int red = 0 ;
+        int red = 0;
         int white = 0;
         int yellow = 0;
         int purple = 0;
 
         for (int i = 0; i < arrayList.size(); i++) {
 
-            if(arrayList.get(i).getPropertyColor() == GameField.PropertyColor.BLUE){
+            if (arrayList.get(i).getPropertyColor() == GameField.PropertyColor.BLUE) {
                 blue++;
-                if (blue == 2){
+
+                if (blue == 2) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if(arrayList.get(j).getPropertyColor() == GameField.PropertyColor.BLUE){
+
+                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.BLUE)) {
+                           // System.out.println("PropertyAdded to propertiesYouCanBuyHousesOn array");
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }
                 }
-            } else if(arrayList.get(i).getPropertyColor() == GameField.PropertyColor.PINK){
+            } else if (arrayList.get(i).getPropertyColor() == GameField.PropertyColor.PINK) {
                 pink++;
-                if (pink == 3){
+
+                if (pink == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if(arrayList.get(j).getPropertyColor() == GameField.PropertyColor.PINK){
+
+                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.PINK)) {
+                            System.out.println("PropertyAdded");
+
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }
                 }
-            }
-            else if(arrayList.get(i).getPropertyColor() == GameField.PropertyColor.GREEN){
+            } else if (arrayList.get(i).getPropertyColor() == GameField.PropertyColor.GREEN) {
                 green++;
-                if (green == 3){
+                if (green == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if(arrayList.get(j).getPropertyColor() == GameField.PropertyColor.GREEN){
+                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.GREEN)) {
+                            System.out.println("PropertyAdded");
+
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }
                 }
-            }
-            else if(arrayList.get(i).getPropertyColor() == GameField.PropertyColor.GREY){
+            } else if (arrayList.get(i).getPropertyColor() == GameField.PropertyColor.GREY) {
                 grey++;
-                if (grey == 3){
+                if (grey == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if(arrayList.get(j).getPropertyColor() == GameField.PropertyColor.GREY){
+                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.GREY)) {
+                            System.out.println("PropertyAdded");
+
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }
                 }
-            }
-            else if(arrayList.get(i).getPropertyColor() == GameField.PropertyColor.RED){
+            } else if (arrayList.get(i).getPropertyColor() == GameField.PropertyColor.RED) {
                 red++;
-                if (red == 3){
+                if (red == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if(arrayList.get(j).getPropertyColor() == GameField.PropertyColor.RED){
+                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.RED)) {
+                            System.out.println("PropertyAdded");
+
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }
                 }
-            }
-            else if(arrayList.get(i).getPropertyColor() == GameField.PropertyColor.WHITE){
+            } else if (arrayList.get(i).getPropertyColor() == GameField.PropertyColor.WHITE) {
                 white++;
-                if (white == 3){
+                if (white == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if(arrayList.get(j).getPropertyColor() == GameField.PropertyColor.WHITE){
+                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.WHITE)) {
+                            System.out.println("PropertyAdded");
+
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }
                 }
-            }
-            else if(arrayList.get(i).getPropertyColor() == GameField.PropertyColor.YELLOW){
+            } else if (arrayList.get(i).getPropertyColor() == GameField.PropertyColor.YELLOW) {
                 yellow++;
-                if (yellow == 3){
+                if (yellow == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if(arrayList.get(j).getPropertyColor() == GameField.PropertyColor.YELLOW){
+                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.YELLOW)) {
+                            System.out.println("PropertyAdded");
+
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }
                 }
-            }
-            else if(arrayList.get(i).getPropertyColor() == GameField.PropertyColor.PURPLE){
+            } else if (arrayList.get(i).getPropertyColor() == GameField.PropertyColor.PURPLE) {
                 purple++;
-                if (purple == 2){
+                if (purple == 2) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if(arrayList.get(j).getPropertyColor() == GameField.PropertyColor.PURPLE){
+                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.PURPLE)) {
+                            System.out.println("PropertyAdded");
+
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }

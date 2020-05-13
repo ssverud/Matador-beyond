@@ -11,7 +11,7 @@ public class Player {
     private int totalValue = 0;
 
     //Lav arrayliste over owned properties
-    public ArrayList<GameField> ownedFields = new ArrayList<>() ;
+    public ArrayList<GameField> ownedFields = new ArrayList<>();
 
     /**
      * Constructor for player
@@ -45,10 +45,13 @@ public class Player {
         ownedFields.add(gameField);
     }
 
-    public void buyHouseOnProperty(PropertyField propertyField){
+    public void buyHouseOnProperty(PropertyField propertyField) {
         int housePrice = propertyField.getHousePrice();
         money = money - housePrice;
-        propertyField.setHouses(propertyField.getHouses()+1);
+        propertyField.setHouses(propertyField.getHouses() + 1);
+
+        propertyField.setPrice(propertyField.getPrice() * 3);
+
     }
 
 
@@ -56,13 +59,13 @@ public class Player {
      * Salg af grunde og huse
      */
 
-    public void sellProperty(PropertyField propertyField){
+    public void sellProperty(PropertyField propertyField) {
         int propertyPrice = propertyField.getPrice();
         money += propertyPrice;
         ownedFields.remove(propertyField);
     }
 
-    public void sellFerry(FerryField ferryField){
+    public void sellFerry(FerryField ferryField) {
         int ferryPrice = ferryField.getPrice();
         money += ferryPrice;
         ownedFields.remove(ferryField);
@@ -74,19 +77,18 @@ public class Player {
         ownedFields.remove(breweryField);
     }
 
-    public void sellHouseOnProperty(PropertyField propertyField){
+    public void sellHouseOnProperty(PropertyField propertyField) {
         int housePrice = propertyField.getHousePrice();
         money += housePrice;
-        propertyField.setHouses(propertyField.getHouses()-1);
+        propertyField.setHouses(propertyField.getHouses() - 1);
     }
-
 
 
     public void payToBank(int amount) {
         money = money - amount;
     }
 
-    public void updateTotalValue(int amount){
+    public void updateTotalValue(int amount) {
         setTotalValue(getTotalValue() + amount);
     }
 
@@ -134,9 +136,13 @@ public class Player {
         this.hasGetOutOfJailCard = hasGetOutOfJailCard;
     }
 
-    public int getTotalValue() { return totalValue; }
+    public int getTotalValue() {
+        return totalValue;
+    }
 
-    public void setTotalValue(int totalValue) { this.totalValue = totalValue; }
+    public void setTotalValue(int totalValue) {
+        this.totalValue = totalValue;
+    }
 
 
     // toSting - when printing print player name in ' '

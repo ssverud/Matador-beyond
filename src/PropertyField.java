@@ -16,6 +16,7 @@ public class PropertyField extends GameField {
         this.rentPrice = rentPrice;
         this.pledgePrice = pledgePrice;
         this.housePrice = housePrice;
+        this.setPropertyColor(propertyColor);
     }
 
     public PropertyField landedOn(Player player) {
