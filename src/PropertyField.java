@@ -44,6 +44,7 @@ public class PropertyField extends GameField {
                     System.out.println(" player money: " + player.getMoney());
                 } else if (player.getMoney() < getPrice()) {
                     System.out.println("You do not have the funds for this property");
+
                 }
             } else if (answer == 2) {
                 System.out.println("ok you would not like to buy it");

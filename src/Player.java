@@ -61,8 +61,16 @@ public class Player {
 
     public void sellProperty(PropertyField propertyField) {
         int propertyPrice = propertyField.getPrice();
-        money += propertyPrice;
+        propertyField.setOwnedBy(null);
         ownedFields.remove(propertyField);
+        setMoney(money += propertyPrice);
+
+        if(propertyField.getHouses() > 0){
+            for (int i = 0; i < propertyField.getHouses(); i++) {
+                propertyField.setHouses(propertyField.getHouses() - 1);
+                setMoney(money += propertyField.getHousePrice());
+            }
+        }
     }
 
     public void sellFerry(FerryField ferryField) {
@@ -81,6 +89,7 @@ public class Player {
         int housePrice = propertyField.getHousePrice();
         money += housePrice;
         propertyField.setHouses(propertyField.getHouses() - 1);
+        propertyField.setRentPrice(propertyField.getRentPrice() / 3);
     }
 
 

@@ -189,9 +189,16 @@ public class Logic implements Runnable {
 
         System.out.println("You landed on " + activeGameField.getName());
 
-        activeGameField.landedOn(playerWhoHasTurn);
-
+        if (activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD) {
+            System.out.println("Runniong chancefield landedon");
+            activeGameField.landedOn(playerWhoHasTurn, this);
+        } else {
+            System.out.println("Running default landed on");
+            activeGameField.landedOn(playerWhoHasTurn);
+        }
         presentBuyHouseOption(playerWhoHasTurn);
+
+        presentSellHouseOption(playerWhoHasTurn);
     }
 
     public void checkPlayerMoney(Player player) {
@@ -291,6 +298,67 @@ public class Logic implements Runnable {
         }
     }
 
+    public void presentSellPropertyOption(Player player){
+        System.out.println("Would you like to sell a property?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        int answer = scanThings.scanNumber();
+
+        if(answer == 1){
+            System.out.println("These are the properties you own and can sell: ");
+            System.out.println(player.ownedFields);
+
+            GameField chosenProperty;
+            boolean matchFound = false;
+                while(matchFound == false){
+                    String answer2 = scanThings.scanString();
+                    for (int i = 0; i < player.ownedFields.size(); i++) {
+                        if(answer2.equals(player.ownedFields.get(i).getName())){
+                            chosenProperty = player.ownedFields.get(i);
+
+                            player.sellProperty((PropertyField) chosenProperty);
+                            matchFound = true;
+                        }
+                    }
+                }
+            }
+        }
+
+    public void presentSellHouseOption(Player player){
+        ArrayList <GameField> propertiesWithHousesOn = new ArrayList<>();
+
+        for (int i = 0; i < player.ownedFields.size(); i++) {
+            PropertyField propertyField = (PropertyField) player.ownedFields.get(i);
+
+            if(propertyField.getHouses() > 0) {
+                propertiesWithHousesOn.add(propertyField);
+            }
+        }
+        System.out.println("Would you like to sell a house on any property?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        int answer = scanThings.scanNumber();
+
+        if(answer == 1){
+            System.out.println("These are the properties you can sell houses on: ");
+            System.out.println(propertiesWithHousesOn);
+            GameField chosenProperty;
+            boolean matchFound = false;
+            while(matchFound == false){
+                String answer2 = scanThings.scanString();
+                for (int i = 0; i < propertiesWithHousesOn.size(); i++) {
+                    if(answer2.equals(propertiesWithHousesOn.get(i).getName())){
+                        chosenProperty = propertiesWithHousesOn.get(i);
+                        player.sellHouseOnProperty((PropertyField) chosenProperty);
+                        matchFound = true;
+                    }
+                }
+            }
+        }
+        else if (answer == 2){
+            System.out.println("You choose not to sell any houses. ");
+        }
+    }
 
     public void presentBuyHouseOption(Player player) {
         System.out.println("Would u like to buy a house on any property?");
@@ -382,7 +450,7 @@ public class Logic implements Runnable {
                     for (int j = 0; j < arrayList.size(); j++) {
 
                         if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.BLUE)) {
-                           // System.out.println("PropertyAdded to propertiesYouCanBuyHousesOn array");
+                            // System.out.println("PropertyAdded to propertiesYouCanBuyHousesOn array");
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }

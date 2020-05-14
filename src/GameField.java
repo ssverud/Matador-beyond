@@ -1,6 +1,6 @@
 public class GameField {
     private String Name;
-    private String type;
+    //private String type;
     private int pos;
     private GameFieldType gameFieldType;
     private int price = 0;
@@ -59,20 +59,20 @@ public class GameField {
         return this;
     }
 
+    public GameField landedOn(Player player, Logic logic) {
+        System.out.println("HAS NOT BEEN OVERWRITTEN, please fix in the current gamefield - playerPos: " + player.getPos());
+        return this;
+    }
 
 
 
 
-    /**
-     * Getters and setters
-     */
+        /**
+         * Getters and setters
+         */
 
     public String getName() {
         return Name;
-    }
-
-    public String getType() {
-        return type;
     }
 
     public int getPos() {
@@ -81,10 +81,6 @@ public class GameField {
 
     public void setName(String name) {
         Name = name;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public void setPos(int pos) {
