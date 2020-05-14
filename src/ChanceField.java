@@ -30,6 +30,7 @@ public class ChanceField extends GameField {
         System.out.println(cardDeck.cards.size());
         gameboard = new GameBoard();
 
+
         switch (type) {
             case ("FÆNGSEL"):
                 //flyt til fængslet
@@ -54,11 +55,11 @@ public class ChanceField extends GameField {
                 //Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 //for loop der kører igennem til den rammer et ferryField, som starter forfra hvis den når igennem inden den rammer et
                 //Det virker sådan som brættet er lagt ud nu, men ville kunne gå out of bounds hvis der lå et chancefield på sidste plads
-                for (int i = player.getPos()+1; i < gameboard.gameFields.size(); i++){
-                    if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD){
+                for (int i = player.getPos() + 1; i < gameboard.gameFields.size(); i++) {
+                    if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
                         player.setPos(i);
                     }
-                    if (i == gameboard.gameFields.size()){
+                    if (i == gameboard.gameFields.size()) {
                         i = 0;
                     }
 
@@ -108,11 +109,11 @@ public class ChanceField extends GameField {
 
             case ("FÆRGE"):
                 // tag med næste færge, modtag 4000 hvis start paseres
-                for (int i = player.getPos(); i < gameboard.gameFields.size(); i++){
-                    if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD){
+                for (int i = player.getPos(); i < gameboard.gameFields.size(); i++) {
+                    if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
                         player.setPos(i);
                     }
-                    if (i == gameboard.gameFields.size()){
+                    if (i == gameboard.gameFields.size()) {
                         i = 0;
                     }
 
@@ -147,9 +148,9 @@ public class ChanceField extends GameField {
                     sumHouses = sumHouses + sumList.get(i).getHouses();
 
                 }
-                System.out.println("Du har " + sumHouses + " huse, derfor skal du betale " + sumHouses*800 + "kr");
+                System.out.println("Du har " + sumHouses + " huse, derfor skal du betale " + sumHouses * 800 + "kr");
                 //player.setMoney(player.getMoney() - (sumHouses * 800));
-                player.payToBank(sumHouses*800);
+                player.payToBank(sumHouses * 800);
                 System.out.println(player.getMoney());
 
                 //potentielt unødvendigt, kan komme på tale hvis kortet trækkes 2 gange
@@ -185,7 +186,7 @@ public class ChanceField extends GameField {
                     sumHouses = sumHousesOil + sumListOil.get(i).getHouses();
 
                 }
-                System.out.println("Du har " + sumHousesOil + " huse, derfor skal du betale " + sumHousesOil*500 + "kr");
+                System.out.println("Du har " + sumHousesOil + " huse, derfor skal du betale " + sumHousesOil * 500 + "kr");
                 player.payToBank(sumHousesOil * 500);
                 System.out.println(player.getMoney());
 
@@ -214,8 +215,12 @@ public class ChanceField extends GameField {
                 //modtag 200 af alle andre spillere
                 //int players = 0;
                 for (int i = 0; i < logic.listOfPlayers.size(); i++) {
-                   logic.listOfPlayers.get(i).setMoney(player.getMoney()-200);
-                    player.setMoney(player.getMoney()+200);
+                    System.out.println(logic.listOfPlayers.get(i) + " har " + logic.listOfPlayers.get(i).getMoney());
+                    logic.listOfPlayers.get(i).setMoney(logic.listOfPlayers.get(i).getMoney() - 200);
+                    System.out.println(logic.listOfPlayers.get(i) + " har nu " + logic.listOfPlayers.get(i).getMoney());
+
+                    player.setMoney(player.getMoney() + 200);
+                    //System.out.println(player.getMoney());
                 }
                 break;
         }
