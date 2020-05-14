@@ -196,9 +196,11 @@ public class Logic implements Runnable {
             System.out.println("Running default landed on");
             activeGameField.landedOn(playerWhoHasTurn);
         }
+
         presentBuyHouseOption(playerWhoHasTurn);
 
         presentSellHouseOption(playerWhoHasTurn);
+        presentSellPropertyOption(playerWhoHasTurn);
     }
 
     public void checkPlayerMoney(Player player) {
@@ -353,6 +355,17 @@ public class Logic implements Runnable {
                         matchFound = true;
                     }
                 }
+                System.out.println("Cannot find a match. ");
+                System.out.println("Do you still want to sell a house?");
+                System.out.println("1. Yes");
+                System.out.println("2. No");
+                int answer3 = scanThings.scanNumber();
+
+                if(answer3 == 1){
+                    System.out.println("Presenting options again...");
+                } else {
+                    break;
+                }
             }
         }
         else if (answer == 2){
@@ -367,12 +380,9 @@ public class Logic implements Runnable {
         int answer = scanThings.scanNumber();
 
         if (answer == 1) {
-
             boolean wantsToBuyHouse = true;
 
             while (wantsToBuyHouse == true) {
-
-
 
         /*
            // TO TEST STUFF ON THE FIRST 5 GAMEFIELDS, JUST DELETE WHEN YOU DONT WANT TO TEST SHIT ANYMORE :)
@@ -382,7 +392,6 @@ public class Logic implements Runnable {
                 player.ownedFields.add(gameBoard.gameFields.get(8));
                 player.ownedFields.add(gameBoard.gameFields.get(9));
         */
-
 
                 // INSERT MOETHOD
                 System.out.println("Here is your list of owned fields:");

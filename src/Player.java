@@ -49,9 +49,7 @@ public class Player {
         int housePrice = propertyField.getHousePrice();
         money = money - housePrice;
         propertyField.setHouses(propertyField.getHouses() + 1);
-
         propertyField.setPrice(propertyField.getPrice() * 3);
-
     }
 
 

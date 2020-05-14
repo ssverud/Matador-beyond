@@ -15,15 +15,16 @@ public class FerryField extends GameField {
         setGameFieldType(GameFieldType.FERRYFIELD);
     }
 
-/*
-    public void landedOn(Player player) {
+    public FerryField landedOn(Player player) {
         System.out.println("This is a FerryField");
         if (getOwnedBy() != null) {
 
-            rentPrice = (int) Math.pow(rentPrice, getOwnedBy().getNumberOfFerriesOwned());
+            for (int i = 1; i < player.getNumberOfFerriesOwned(); i++) {
+                rentPrice = rentPrice * 2;
+            }
 
             player.payRent(rentPrice, getOwnedBy());
-            System.out.println("you paied " + (int) Math.pow(rentPrice, getOwnedBy().getNumberOfFerriesOwned()) + " to " + getOwnedBy());
+            System.out.println("you paied " + rentPrice + " to " + getOwnedBy());
         } else if (getOwnedBy() == null) {
             System.out.println("This Ferry is not bought");
             System.out.println("Would you like to buy it? - Press 1 or 2");
@@ -34,7 +35,7 @@ public class FerryField extends GameField {
             if (answer == 1) {
                 System.out.println(" player money: " + player.getMoney());
                 if (player.getMoney() > getPrice()) {
-                    player.buyFerry(this);
+                    player.buyField(this);
                     setOwnedBy(player);
                     System.out.println("This Ferry is now owned by: " + getOwnedBy());
 
@@ -48,10 +49,8 @@ public class FerryField extends GameField {
                 System.out.println("ok you would not like to buy it");
             }
         }
+        return this;
     }
-
-
- */
 
     public int getRentPrice() {
         return rentPrice;
