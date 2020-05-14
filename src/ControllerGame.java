@@ -4,7 +4,6 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.shape.Circle;
 import javafx.scene.shape.Line;
-
 import static java.lang.StrictMath.min;
 import static javafx.scene.paint.Color.*;
 
@@ -18,47 +17,33 @@ public class ControllerGame {
 
     public void drawLine () {
 
-        // code der gentager sig selv flere gange, skal fikses
+        // code repeating (1 of 3), not good
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
         double diameter = min(width, hight);
 
         int degrees = 0;
 
-        // tegner 39 linjer med 9 grader imellem hver linje
+        // draws 40 lines with 9 degrees in between every line
         for(int i = 0 ; i < 40 ; i++) {
-            //              centerX   +  radius                        + convertering fra radion til grader
+            //              center    +  radius                           * converting from radion to degrees
             double endX = (width / 2) + (diameter / 2) * Math.sin(degrees * (Math.PI / 180));
             double endY = (hight / 2) + (diameter / 2) * Math.cos(degrees * (Math.PI / 180));
             degrees = degrees + 9;
 
+            // has added -1 to endX and endY. Otherwise the endpoint of the line "puches" the
+            // GUI window a little bit bitter for every activation of drawLine()
             Line line = new Line(width / 2, hight / 2, endX - 1, endY - 1 );
             line.setFill(BLACK);
 
-            /*
-            System.out.print((diameter / 2));
-            System.out.print(" : ");
-            System.out.println((diameter / 2));
-
-            System.out.print(Math.sin(degrees * (Math.PI / 180)));
-            System.out.print(" : ");
-            System.out.println(Math.cos(degrees * (Math.PI / 180)));
-
-            System.out.print((diameter / 2) * Math.sin(degrees * (Math.PI / 180)));
-            System.out.print(" : ");
-            System.out.println((diameter / 2) * Math.cos(degrees * (Math.PI / 180)));
-            */
-
-
-            // tilføjer den nye linje til øverste AnchorPane i scene builder træet
+            // adds the new line to the AnchorPane container
             anchorpane.getChildren().add(line);
         }
-
     }
 
     public void drawCircle () {
 
-        // code der gentager sig selv flere gange, skal fikses
+        // code repeating (2 of 3), not good
         double width =  anchorpane.getWidth();
         double hight = anchorpane.getHeight();
         double diameter = min(hight, width);
@@ -67,7 +52,7 @@ public class ControllerGame {
 
         outerCircle.setFill(BLUE);
 
-        // tilføjer den nye circle til øverste AnchorPane i scene builder træet
+        // adds the new circle to the AnchorPane container
         anchorpane.getChildren().add(outerCircle);
 
         /*
@@ -76,22 +61,25 @@ public class ControllerGame {
         System.out.println(hight);
         */
 
+        // creates innerCircle with 20 precent reduction in diameter
         Circle innerCircle = new Circle(width / 2, hight / 2, diameter / 2 - diameter * 0.2);
+        // adds the new circle to the AnchorPane container
         anchorpane.getChildren().add(innerCircle);
     }
 
-        double tempFieldsMoved = 0.5;
-        // distance from board edge
-        int playerDistFromEdge = 15;
+        double tempFieldsMoved = 0.5; // starts with half the width of a field
+        int playerDistFromEdge = 15; // distance from edge of the outerCircle
+        int degreesPlaerMove = 9; // 360 degrees / 40 fields
     public void movePlayer() {
 
-        // code der gentager sig selv flere gange, skal fikses
+        // code repeating (3 of 3), not good
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
         double diameter = min(hight, width) - playerDistFromEdge;
 
-        double endX = (width / 2) + (diameter / 2) * Math.sin((tempFieldsMoved * 9) * (Math.PI / 180));
-        double endY = (hight / 2) + (diameter / 2) * Math.cos((tempFieldsMoved * 9) * (Math.PI / 180));
+        //              center        radius                                                        * converting from radion to degrees
+        double endX = (width / 2) + (diameter / 2) * Math.sin((tempFieldsMoved * degreesPlaerMove ) * (Math.PI / 180));
+        double endY = (hight / 2) + (diameter / 2) * Math.cos((tempFieldsMoved * degreesPlaerMove) * (Math.PI / 180));
 
         tempFieldsMoved = tempFieldsMoved + 1;
 
@@ -99,15 +87,17 @@ public class ControllerGame {
         circle.setFill(RED);
         anchorpane.getChildren().add(circle);
 
+        /*
         System.out.print(width);
         System.out.print(" : ");
         System.out.println(hight);
+        */
     }
 
 
     @FXML
     private AnchorPane anchorpane;
-
+    
     @FXML
     void movePlayerTestButton (ActionEvent event) {
         anchorpane.getChildren().clear();
@@ -116,23 +106,11 @@ public class ControllerGame {
         movePlayer();
     }
 
-
     @FXML
     void resizeButton(ActionEvent event) {
         anchorpane.getChildren().clear();
         drawCircle();
         drawLine();
-
-    }
-
-    @FXML
-    void startGameButton(ActionEvent event) {
-        Logic logic = new Logic();
-        // logic.welcomeToTheGame(); flyttet til run() i Logic
-        // logic.startGame(); omdøbt til run() i Logic
-
-        // opretter en ekstra tråd så der ikke kører et uendeligt whileloop der ikke kommer tilbgae til GUI'en
-        new Thread(logic).start();
     }
 
     @FXML
@@ -140,7 +118,5 @@ public class ControllerGame {
         System.out.println("EXIT");
         Platform.exit();
     }
-
-
 }
 

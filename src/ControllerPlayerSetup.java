@@ -1,23 +1,19 @@
-import javafx.application.Platform;
-
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ComboBox;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.scene.control.TextField;
-
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
+import javafx.application.Platform;
+import javafx.scene.control.ComboBox;
+import javafx.scene.text.Text;
+import java.awt.*;
 
 public class ControllerPlayerSetup {
-
-    ControllerStart controllerStart = new ControllerStart();
 
     // global variables
     @FXML
@@ -38,12 +34,9 @@ public class ControllerPlayerSetup {
     @FXML
     private TextField player6;
 
-
-
-
-
     @FXML
     public void initialize() {
+        // creates comboBox
         //comboBox.getItems().removeAll(comboBox.getItems());
         //comboBox.getItems().addAll("1", "2", "3", "4", "5", "6");
         //comboBox.getSelectionModel().select("Vælg antal spillere");
@@ -52,10 +45,11 @@ public class ControllerPlayerSetup {
     @FXML
     void startGameButtonV2 (ActionEvent event) throws IOException {
 
-        // Starter den instance af Logic op der kører logikken resten af spillet
+        // creates the instance of logic that runs the main code of the game
         Logic logic = new Logic();
+
         ArrayList<String> players = new ArrayList<String>();
-        // tilføjer indtastet i GUI "ControllerPlayerSetup"
+        // adds the player names from the playerSetup GUI to the Logic class
         players.add(player1.getText());
         players.add(player2.getText());
         players.add(player3.getText());
@@ -67,31 +61,29 @@ public class ControllerPlayerSetup {
 
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game2.fxml"));
 
+        // allows acces to the Logic class in ControllerGame2
         Parent homePageStartGame = loader.load();
         ControllerGame2 controllerGame2 = loader.getController();
         controllerGame2.logic = logic;
 
-        //Parent homePageStartGame = FXMLLoader.load(getClass().getResource("fxml files/game2.fxml"));
-
+        // loads the game2 window
         Scene homePageStartGameScene = new Scene(homePageStartGame);
         Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageWindow.setScene(homePageStartGameScene);
         stageWindow.show();
 
-
-        // opretter en ekstra tråd så der ikke kører et uendeligt whileloop der ikke kommer tilbgae til GUI'en
-        //logic.run();
-
+        // starts a new thread so the GUI window "start" kan run independently from the Logic class
         new Thread(logic).start();
     }
 
     @FXML
     void startGameButtonV1 (ActionEvent event) throws IOException {
 
-        // Starter den instance af Logic op der kører logikken resten af spillet
+        // creates the instance of logic that runs the main code of the game
         Logic logic = new Logic();
         ArrayList<String> players = new ArrayList<String>();
-        // tilføjer indtastet i GUI "ControllerPlayerSetup"
+
+        // adds the player names from the playerSetup GUI to the Logic class
         players.add(player1.getText());
         players.add(player2.getText());
         players.add(player3.getText());
@@ -100,26 +92,20 @@ public class ControllerPlayerSetup {
         players.add(player6.getText());
         logic.createPlayers(players);
 
-
         FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game.fxml"));
 
+        // allows acces to the Logic class in ControllerGame
         Parent homePageStartGame = loader.load();
         ControllerGame controllerGame = loader.getController();
         controllerGame.logic = logic;
 
-        //Parent homePageStartGame = FXMLLoader.load(getClass().getResource("fxml files/game2.fxml"));
-
+        // loads the game window
         Scene homePageStartGameScene = new Scene(homePageStartGame);
         Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageWindow.setScene(homePageStartGameScene);
         stageWindow.show();
 
-
-        // opretter en ekstra tråd så der ikke kører et uendeligt whileloop der ikke kommer tilbgae til GUI'en
-        //logic.run();
-
+        // starts a new thread so the GUI window "start" kan run independently from the Logic class
         new Thread(logic).start();
     }
-
-
 }
