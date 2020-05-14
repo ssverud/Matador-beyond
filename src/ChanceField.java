@@ -52,7 +52,8 @@ public class ChanceField extends GameField {
             case ("REDERI"):
                 //Ryk brikken frem til det nærmeste rederi og betal ejeren to gange den leje, han ellers er berettiget til. Hvis selskabet ikke ejes af nogen kan De købe det af banken.
                 //for loop der kører igennem til den rammer et ferryField, som starter forfra hvis den når igennem inden den rammer et
-                for (int i = player.getPos(); i < gameboard.gameFields.size(); i++){
+                //Det virker sådan som brættet er lagt ud nu, men ville kunne gå out of bounds hvis der lå et chancefield på sidste plads
+                for (int i = player.getPos()+1; i < gameboard.gameFields.size(); i++){
                     if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD){
                         player.setPos(i);
                     }
@@ -86,6 +87,9 @@ public class ChanceField extends GameField {
 
             case ("RYK TILBAGE"):
                 //ryk 3 felter tilbage.
+
+                //Check om det er det første chancefield, da man kan rykke baglæns over start,
+                //og dermed gå outofbounds
                 if (player.getPos() == 2) {
                     player.setPos(39);
                 } else
@@ -97,7 +101,8 @@ public class ChanceField extends GameField {
             case ("TANDLÆGEREGNING"):
 
                 //betal 1000 kr
-                player.setMoney(player.getMoney() - 1000);
+                player.payToBank(1000);
+                //player.setMoney(player.getMoney() - 1000);
                 break;
 
             case ("FÆRGE"):
