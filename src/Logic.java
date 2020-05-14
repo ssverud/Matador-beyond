@@ -1,3 +1,4 @@
+import javafx.beans.property.Property;
 import javafx.scene.control.Alert;
 
 import java.util.ArrayList;
@@ -192,6 +193,8 @@ public class Logic implements Runnable {
         activeGameField.landedOn(playerWhoHasTurn);
 
         presentBuyHouseOption(playerWhoHasTurn);
+
+        presentSellHouseOption(playerWhoHasTurn);
     }
 
     public void checkPlayerMoney(Player player) {
@@ -291,6 +294,67 @@ public class Logic implements Runnable {
         }
     }
 
+    public void presentSellPropertyOption(Player player){
+        System.out.println("Would you like to sell a property?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        int answer = scanThings.scanNumber();
+
+        if(answer == 1){
+            System.out.println("These are the properties you own and can sell: ");
+            System.out.println(player.ownedFields);
+
+            GameField chosenProperty;
+            boolean matchFound = false;
+                while(matchFound == false){
+                    String answer2 = scanThings.scanString();
+                    for (int i = 0; i < player.ownedFields.size(); i++) {
+                        if(answer2.equals(player.ownedFields.get(i).getName())){
+                            chosenProperty = player.ownedFields.get(i);
+
+                            player.sellProperty((PropertyField) chosenProperty);
+                            matchFound = true;
+                        }
+                    }
+                }
+            }
+        }
+
+    public void presentSellHouseOption(Player player){
+        ArrayList <GameField> propertiesWithHousesOn = new ArrayList<>();
+
+        for (int i = 0; i < player.ownedFields.size(); i++) {
+            PropertyField propertyField = (PropertyField) player.ownedFields.get(i);
+
+            if(propertyField.getHouses() > 0) {
+                propertiesWithHousesOn.add(propertyField);
+            }
+        }
+        System.out.println("Would you like to sell a house on any property?");
+        System.out.println("1. Yes");
+        System.out.println("2. No");
+        int answer = scanThings.scanNumber();
+
+        if(answer == 1){
+            System.out.println("These are the properties you can sell houses on: ");
+            System.out.println(propertiesWithHousesOn);
+            GameField chosenProperty;
+            boolean matchFound = false;
+            while(matchFound == false){
+                String answer2 = scanThings.scanString();
+                for (int i = 0; i < propertiesWithHousesOn.size(); i++) {
+                    if(answer2.equals(propertiesWithHousesOn.get(i).getName())){
+                        chosenProperty = propertiesWithHousesOn.get(i);
+                        player.sellHouseOnProperty((PropertyField) chosenProperty);
+                        matchFound = true;
+                    }
+                }
+            }
+        }
+        else if (answer == 2){
+            System.out.println("You choose not to sell any houses. ");
+        }
+    }
 
     public void presentBuyHouseOption(Player player) {
         System.out.println("Would u like to buy a house on any property?");
