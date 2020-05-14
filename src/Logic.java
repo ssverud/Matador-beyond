@@ -31,7 +31,6 @@ public class Logic implements Runnable {
 
         // Print out the gamefield list
         //System.out.println("printing the gamefield list:");
-
         //print.printGameFields(gameBoard.gameFields);
 
         //System.out.println("How many player are going to play?");
@@ -56,18 +55,6 @@ public class Logic implements Runnable {
                 listOfPlayers.add(player);
             }
         }
-
-        //getPlayerOne/Two osv kommer fra ControllerPlayerSetup
-        /*
-        if(getPlayerOne() != null) {
-            Player player = new Player(getPlayerOne());
-            listOfPlayers.add(player);
-        }
-        if(getPlayerTwo() != null) {
-            Player player2 = new Player(getPlayerTwo());
-            listOfPlayers.add(player2);
-        }
-        */
 
         System.out.println("Liste af spillere: + " + listOfPlayers + " Antal: " + listOfPlayers.size());
     }
@@ -106,7 +93,7 @@ public class Logic implements Runnable {
         // gameloop
         while (keepPlaying) {
 
-            //using temp playertype to track which player has turn
+            // using temp playertype to track which player has turn
             playerWhoHasTurn = listOfPlayers.get(i);
 
             delay(); // for us to press Enter before loop moves on
@@ -119,10 +106,6 @@ public class Logic implements Runnable {
             if (i == numberOfPlayers) {
                 i = 0;
             }
-
-            //setPrevGameTurnCounter(getGameTurnCounter());
-
-
         }
     }
 
