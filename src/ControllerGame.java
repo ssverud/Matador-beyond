@@ -97,7 +97,7 @@ public class ControllerGame {
 
     @FXML
     private AnchorPane anchorpane;
-    
+
     @FXML
     void movePlayerTestButton (ActionEvent event) {
         anchorpane.getChildren().clear();
