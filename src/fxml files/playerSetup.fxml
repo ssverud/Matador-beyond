@@ -6,9 +6,15 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ControllerPlayerSetup">
    <children>
+      <Label layoutX="176.0" layoutY="106.0" text="Opret spillere">
+         <font>
+            <Font size="39.0" />
+         </font>
+      </Label>
       <!--
       <ComboBox fx:id="comboBox" prefHeight="27.0" prefWidth="204.0" />
       -->

@@ -1,4 +1,3 @@
-import javafx.beans.property.Property;
 import javafx.scene.control.Alert;
 
 import java.util.ArrayList;
@@ -190,8 +189,13 @@ public class Logic implements Runnable {
 
         System.out.println("You landed on " + activeGameField.getName());
 
-        activeGameField.landedOn(playerWhoHasTurn);
-
+        if (activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD) {
+            System.out.println("Runniong chancefield landedon");
+            activeGameField.landedOn(playerWhoHasTurn, this);
+        } else {
+            System.out.println("Running default landed on");
+            activeGameField.landedOn(playerWhoHasTurn);
+        }
         presentBuyHouseOption(playerWhoHasTurn);
 
         presentSellHouseOption(playerWhoHasTurn);
@@ -446,7 +450,7 @@ public class Logic implements Runnable {
                     for (int j = 0; j < arrayList.size(); j++) {
 
                         if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.BLUE)) {
-                           // System.out.println("PropertyAdded to propertiesYouCanBuyHousesOn array");
+                            // System.out.println("PropertyAdded to propertiesYouCanBuyHousesOn array");
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
                     }
