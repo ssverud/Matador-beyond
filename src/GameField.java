@@ -5,6 +5,8 @@ public class GameField {
     private GameFieldType gameFieldType;
     private int price = 0;
     private PropertyColor propertyColor;
+    private Player ownedBy = null;
+
 
     // private Player boughtBy;
 
@@ -109,6 +111,14 @@ public class GameField {
 
     public void setPropertyColor(PropertyColor propertyColor) {
         this.propertyColor = propertyColor;
+    }
+
+    public Player getOwnedBy() {
+        return ownedBy;
+    }
+
+    public void setOwnedBy(Player ownedBy) {
+        this.ownedBy = ownedBy;
     }
 
     // toString when printing a field you print the name of the field // idk if we need to chance it maybe not

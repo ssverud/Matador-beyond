@@ -109,14 +109,6 @@ public class PropertyField extends GameField {
         this.housePrice = housePrice;
     }
 
-    public Player getOwnedBy() {
-        return ownedBy;
-    }
-
-    public void setOwnedBy(Player ownedBy) {
-        this.ownedBy = ownedBy;
-    }
-
     public int getHouses() {
         return houses;
     }

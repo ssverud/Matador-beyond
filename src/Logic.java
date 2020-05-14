@@ -301,7 +301,7 @@ public class Logic implements Runnable {
                         if(answer2.equals(player.ownedFields.get(i).getName())){
                             chosenProperty = player.ownedFields.get(i);
 
-                            player.sellProperty((PropertyField) chosenProperty);
+                            player.sellField( chosenProperty);
                             matchFound = true;
                         }
                     }
@@ -313,10 +313,12 @@ public class Logic implements Runnable {
         ArrayList <GameField> propertiesWithHousesOn = new ArrayList<>();
 
         for (int i = 0; i < player.ownedFields.size(); i++) {
-            PropertyField propertyField = (PropertyField) player.ownedFields.get(i);
+            if(player.ownedFields.get(i).getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD){
+                PropertyField propertyField = (PropertyField) player.ownedFields.get(i);
 
-            if(propertyField.getHouses() > 0) {
-                propertiesWithHousesOn.add(propertyField);
+                if(propertyField.getHouses() > 0) {
+                    propertiesWithHousesOn.add(propertyField);
+                }
             }
         }
         System.out.println("Would you like to sell a house on any property?");
@@ -336,7 +338,12 @@ public class Logic implements Runnable {
                         chosenProperty = propertiesWithHousesOn.get(i);
                         player.sellHouseOnProperty((PropertyField) chosenProperty);
                         matchFound = true;
+                        System.out.println("Match found");
                     }
+                }
+                if(matchFound == true){
+                    System.out.println("Breaking out of while loop - skipping cannot find match");
+                    break;
                 }
                 System.out.println("Cannot find a match. ");
                 System.out.println("Do you still want to sell a house?");
@@ -367,14 +374,15 @@ public class Logic implements Runnable {
 
             while (wantsToBuyHouse == true) {
 
-        /*
+
            // TO TEST STUFF ON THE FIRST 5 GAMEFIELDS, JUST DELETE WHEN YOU DONT WANT TO TEST SHIT ANYMORE :)
                 player.ownedFields.add(gameBoard.gameFields.get(1));
                 player.ownedFields.add(gameBoard.gameFields.get(3));
                 player.ownedFields.add(gameBoard.gameFields.get(6));
                 player.ownedFields.add(gameBoard.gameFields.get(8));
                 player.ownedFields.add(gameBoard.gameFields.get(9));
-        */
+                player.ownedFields.add(gameBoard.gameFields.get(5));
+
 
                 // INSERT MOETHOD
                 System.out.println("Here is your list of owned fields:");
@@ -441,7 +449,7 @@ public class Logic implements Runnable {
                 if (blue == 2) {
                     for (int j = 0; j < arrayList.size(); j++) {
 
-                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.BLUE)) {
+                        if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.BLUE) {
                             // System.out.println("PropertyAdded to propertiesYouCanBuyHousesOn array");
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -453,7 +461,7 @@ public class Logic implements Runnable {
                 if (pink == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
 
-                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.PINK)) {
+                        if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.PINK) {
                             System.out.println("PropertyAdded");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
@@ -464,7 +472,7 @@ public class Logic implements Runnable {
                 green++;
                 if (green == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.GREEN)) {
+                        if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.GREEN) {
                             System.out.println("PropertyAdded");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
@@ -475,7 +483,7 @@ public class Logic implements Runnable {
                 grey++;
                 if (grey == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.GREY)) {
+                        if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.GREY) {
                             System.out.println("PropertyAdded");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
@@ -486,7 +494,7 @@ public class Logic implements Runnable {
                 red++;
                 if (red == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.RED)) {
+                        if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.RED) {
                             System.out.println("PropertyAdded");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
@@ -497,7 +505,7 @@ public class Logic implements Runnable {
                 white++;
                 if (white == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.WHITE)) {
+                        if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.WHITE) {
                             System.out.println("PropertyAdded");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
@@ -508,7 +516,7 @@ public class Logic implements Runnable {
                 yellow++;
                 if (yellow == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.YELLOW)) {
+                        if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.YELLOW) {
                             System.out.println("PropertyAdded");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
@@ -519,7 +527,7 @@ public class Logic implements Runnable {
                 purple++;
                 if (purple == 2) {
                     for (int j = 0; j < arrayList.size(); j++) {
-                        if (arrayList.get(j).getPropertyColor().equals(GameField.PropertyColor.PURPLE)) {
+                        if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.PURPLE) {
                             System.out.println("PropertyAdded");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));

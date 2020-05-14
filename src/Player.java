@@ -57,30 +57,21 @@ public class Player {
      * Salg af grunde og huse
      */
 
-    public void sellProperty(PropertyField propertyField) {
-        int propertyPrice = propertyField.getPrice();
-        propertyField.setOwnedBy(null);
-        ownedFields.remove(propertyField);
-        setMoney(money += propertyPrice);
+    public void sellField(GameField gameField){
+        int gameFieldPrice = gameField.getPrice();
+        gameField.setOwnedBy(null);
+        ownedFields.remove(gameField);
+        setMoney(money += gameFieldPrice);
 
-        if(propertyField.getHouses() > 0){
-            for (int i = 0; i < propertyField.getHouses(); i++) {
-                propertyField.setHouses(propertyField.getHouses() - 1);
-                setMoney(money += propertyField.getHousePrice());
+        if(gameField.getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD){
+            PropertyField propertyField = (PropertyField) gameField;
+            if( propertyField.getHouses() > 0){
+                for (int i = 0; i < propertyField.getHouses(); i++) {
+                    propertyField.setHouses(propertyField.getHouses() - 1);
+                    setMoney(money += propertyField.getHousePrice());
+                }
             }
         }
-    }
-
-    public void sellFerry(FerryField ferryField) {
-        int ferryPrice = ferryField.getPrice();
-        money += ferryPrice;
-        ownedFields.remove(ferryField);
-    }
-
-    public void sellBrewery(BreweryField breweryField) {
-        int breweryPrice = breweryField.getPrice();
-        money += breweryPrice;
-        ownedFields.remove(breweryField);
     }
 
     public void sellHouseOnProperty(PropertyField propertyField) {
