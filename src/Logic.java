@@ -167,6 +167,7 @@ public class Logic implements Runnable {
                 if (prisonOptionPick == 3) {
                     playerWhoHasTurn.useGetOutOfJailCard();
                     System.out.println("You have used your Get Out Of Jail card!");
+                    CardOfChanceDeck.getInstance().emptyDeck.add( new Card("KONGENS FØDSELSDAG", "I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares, indtil De får brug for det, eller De kan sælge det."));
                 }
             }
         }
