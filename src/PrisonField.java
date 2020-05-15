@@ -5,4 +5,11 @@ public class PrisonField extends GameField {
         setName(name);
         setGameFieldType(GameFieldType.PRISONFIELD);
     }
+
+    public PrisonField landedOn(Player player){
+        player.setInPrison(true);
+        System.out.println("You have been put in prison!");
+
+        return this;
+    }
 }

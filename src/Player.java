@@ -7,10 +7,13 @@ public class Player {
     private String name;
     private int pos = 0;
     private int money = 6500;
+    //prison
     private boolean inPrison = false;
+    private int turnsInPrison = 0;
+    private boolean hasGetOutOfJailCard = false;
+    //fields and values
     private int numberOfFerriesOwned = 0;
     private int numberOfBreweriesOwned = 0;
-    private boolean hasGetOutOfJailCard = false;
     private int totalValue = 0;
 
     //Lav arrayliste over owned properties
@@ -24,20 +27,25 @@ public class Player {
         this.name = name;
     }
 
-    // Pay rent
     public void payRent(int amount, Player player) {
+        money = money - amount;
+        player.setMoney(player.getMoney() + amount);
+        System.out.println("You are paying " + player.getName() + " rent amount of " + amount + ".");
     }
 
-    // Use get out of jail card
     public void useGetOutOfJailCard() {
-        //use free from jail method
         setHasGetOutOfJailCard(false);
-
+        setTurnsInPrison(0);
+        setInPrison(false);
+        setPos(10);
     }
 
     public void outOfPrisonWithMoney() {
         int paymentToGetOutOfPrison = 1000;
         money = money - paymentToGetOutOfPrison;
+        setTurnsInPrison(0);
+        setInPrison(false);
+        setPos(10);
     }
 
     /**
@@ -174,12 +182,17 @@ public class Player {
         this.numberOfBreweriesOwned = numberOfBreweriesOwned;
     }
 
+    public int getTurnsInPrison() {
+        return turnsInPrison;
+    }
+
+    public void setTurnsInPrison(int turnsInPrison) {
+        this.turnsInPrison = turnsInPrison;
+    }
 
     // toSting - when printing print player name in ' '
     @Override
     public String toString() {
         return "'" + name + "'";
     }
-
-
 }
