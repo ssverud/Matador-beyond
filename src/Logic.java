@@ -20,14 +20,10 @@ public class Logic implements Runnable {
     Player playerWhoHasTurn;
     int numberOfPlayers;
     int numberOfGameFields = gameBoard.gameFields.size();
-    private int gameTurnCounter = 0;
-    private int prevGameTurnCounter = 0;
     int diceCupRollResult;
 
 
-    /**
-     * welcomeToTheGame creates our world and creates the players
-     */
+    // code used before the GUI playerSetup
     public void welcomeToTheGame() {
 
         // Print out the gamefield list
@@ -60,6 +56,7 @@ public class Logic implements Runnable {
     }
 
     /*
+    // old version of createPlayers
     public void createPlayers(int numberOfPlayers) {
         // for each numberOfPlayers create scanner and create a player
         for (int i = 1; i < numberOfPlayers + 1; i++) {
@@ -75,10 +72,9 @@ public class Logic implements Runnable {
         System.out.println("Printing out our list of players:");
         System.out.println(listOfPlayers);
     }
+    */
 
-     */
-
-    // coming from implements Runable in the beginning of Logic
+    // connected to implements Runable in the beginning of Logic
     @Override
     public void run() {
 
@@ -120,6 +116,9 @@ public class Logic implements Runnable {
     public void playerTurn(Player player) {
 
         /*
+        // approach to try to replace our Scanner delay system in terminal with
+        // alert boxes in the GUI
+
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Information Dialog");
         alert.setHeaderText("Look, an Information Dialog");
@@ -149,7 +148,7 @@ public class Logic implements Runnable {
             playerWhoHasTurnPos = playerWhoHasTurnPos + 1;
             playerWhoHasTurn.setPos(playerWhoHasTurnPos);
 
-            // Checking if player is out of bounce, is so go back to start
+            // Checking if player is out of bounce, if so go back to start
             if (playerWhoHasTurnPos > numberOfGameFields - 1) {
                 playerWhoHasTurnPos = 0;
                 System.out.println("we set playerwhohasturnpos = 0");
@@ -162,7 +161,6 @@ public class Logic implements Runnable {
             tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
             // activeGameField.landedOn(playerWhoHasTurn);
-
             if (i < diceCupRollResult - 1) {
                 print.printPassedField(playerWhoHasTurn, tempActiveGameField);
             }
@@ -173,11 +171,11 @@ public class Logic implements Runnable {
         }
         activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
-        System.out.println("You landed on " + activeGameField.getName());
+        System.out.println("Du landede på " + activeGameField.getName());
 
         if ((activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD)
                 ||(activeGameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD)) {
-            System.out.println("Runniong chancefield landedon");
+            System.out.println("Running chancefield landedOn()");
             activeGameField.landedOn(playerWhoHasTurn, this);
         } else {
             System.out.println("Running default landed on");
@@ -477,21 +475,5 @@ public class Logic implements Runnable {
             }
         }
         return propertiesYouCanBuyHousesOn;
-    }
-
-    public int getGameTurnCounter() {
-        return gameTurnCounter;
-    }
-
-    public void setGameTurnCounter(int gameTurnCounter) {
-        this.gameTurnCounter = gameTurnCounter;
-    }
-
-    public int getPrevGameTurnCounter() {
-        return prevGameTurnCounter;
-    }
-
-    public void setPrevGameTurnCounter(int prevGameTurnCounter) {
-        this.prevGameTurnCounter = prevGameTurnCounter;
     }
 }
