@@ -1,128 +1,82 @@
+import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
-
-import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class ChanceFieldTest {
+
+
     Logic logic = new Logic();
-    GameBoard gameBoard = new GameBoard();
+    GameBoard gb = new GameBoard();
     Player p1 = new Player("P1");
-    Player p2 = new Player("P2");
+    Player p2 =new Player("P2");
     Player p3 = new Player("P3");
+    ChanceField cf = new ChanceField(0 );
 
-
-    @Test
-    void landedOn() {
-        p1.setMoney(10000);
-        p2.setMoney(10000);
-        p3.setMoney(10000);
-
+    public void setup(Player player){
         logic.listOfPlayers.add(p1);
         logic.listOfPlayers.add(p2);
         logic.listOfPlayers.add(p3);
-        /*
-        CardOfChanceDeck.getInstance().cards.clear();
-        CardOfChanceDeck.getInstance().cards.add(new Card("FØDSELSDAG", "Det er Deres fødselsdag. Modtag af hver medspiller kr. 200."));
-        */
-        logic.playerWhoHasTurn = p1;
-        p1.setPos(2);
-        logic.activeGameField = gameBoard.gameFields.get(p1.getPos());
+
+        p1.setMoney(10000);
+        p2.setMoney(10000);
+        p3.setMoney(10000);
+    }
 
 
-        logic.activeGameField.landedOn(p1, logic);
-        switch (CardOfChanceDeck.getInstance().cards.get(0).getType()) {
-            case ("FÆNGSEL"):
-                assertTrue(p1.isInPrison());
-                break;
+    @Test
+    @Disabled
 
-            case ("REPERATION"):
-                assertTrue(p1.getMoney() == 7000);
-                break;
+    void reperation() {
+        setup(p1);
+        cf.reperation(p1);
+        assertEquals(7000, p1.getMoney());
+    }
 
-            case ("AKTIER"):
-            case ("DYRTIDEN"):
-            case ("PRÆMIE"):
-            case ("TIPNING"):
-                System.out.println(CardOfChanceDeck.getInstance().cards.get(0).getTextOfCard());
-                assertEquals(11000, p1.getMoney());
+    @Test
+    void prison() {
+        setup(p1);
+        cf.prison(p1);
+        assertTrue(p1.isInPrison() == true);
+    }
 
-                break;
+    @Test
+    void bankRewardTest() {
+        setup(p1);
+        cf.bankReward(p1, 200);
+        assertEquals(10200, p1.getMoney());
+    }
 
-            case ("REDERI"):
+    @Test
+    void moveToFerry() {
+    }
 
-                break;
+    @Test
+    void kingsBirthday() {
+        setup(p1);
+        cf.kingsBirthday(p1);
+        assertTrue(p1.isHasGetOutOfJailCard() == true);
+    }
 
-            case ("KONGENSFØDSELSDAG"):
+    @Test
+    void matadorLegat() {
+    }
 
-                break;
+    @Test
+    void moveBack() {
 
-            case ("VÆRDIG TRÆNGENDE"):
+    }
 
-                break;
+    @Test
+    void ferryTrip() {
+    }
 
-            case ("PARKERINGSBØDE"):
-            case ("CIGARRETTER"):
+    @Test
+    void propertyTax() {
+    }
 
-                break;
-
-            case ("RYK TILBAGE"):
-
-                break;
-
-            case ("FORSIKRING"):
-            case ("BØDE"):
-            case ("TANDLÆGEREGNING"):
-
-                break;
-
-            case ("FÆRGE"):
-
-                break;
-
-            case ("KLASSELOTTERIET"):
-
-                break;
-
-            case ("RÅDHUSPLADSEN"):
-
-                break;
-
-            case ("EJENDOMSSKAT"):
-
-                break;
-
-            case ("START"):
-
-                break;
-
-            case ("EFTERSKAT"):
-                assertEquals(13000, p1.getMoney());
-                break;
-
-            case ("OLIEPRISER"):
-
-                break;
-
-
-            case ("GRØNNINGEN"):
-
-                break;
-
-            case ("FREDERIKSBERG"):
-
-                break;
-
-
-            case ("AVL"):
-                assertEquals(10200, p1.getMoney());
-                break;
-
-
-            case ("FØDSELSDAG"):
-                assertTrue(p1.getMoney() == 10600 && p2.getMoney() == 9800 && p3.getMoney() == 9800);
-                break;
-        }
-
+    @Test
+    void playerBirthday() {
     }
 }
