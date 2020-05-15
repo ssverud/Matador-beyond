@@ -23,7 +23,9 @@ public class Logic implements Runnable {
     int diceCupRollResult;
 
 
-    // code used before the GUI playerSetup
+    /**
+     * welcomeToTheGame creates our world and creates the players
+     */
     public void welcomeToTheGame() {
 
         // Print out the gamefield list
@@ -105,10 +107,6 @@ public class Logic implements Runnable {
         }
     }
 
-    public void delay2() {
-
-    }
-
     public void delay() {
         scanThings.scanString();
     }
@@ -135,18 +133,57 @@ public class Logic implements Runnable {
 
         diceCupRollResult = gameBoard.diceCup.shakeDiceCup();
 
-        //TEST AF LANDEDON METHODS - SLET SENERE
-        //diceCupRollResult = 4;
+        if (playerWhoHasTurn.getTurnsInPrison() == 3) {
+            System.out.println("Because you have been in prison for 3 turns. You are now forced to pay 1000 to get out!");
+            playerWhoHasTurn.outOfPrisonWithMoney();
+        }
+
+        if (playerWhoHasTurn.isInPrison() == true) {
+            System.out.println("YOU ARE IN PRISON! To get out you have to do one of the following: ");
+            System.out.println("1. Roll the same number of eyes. (You have 3 turns to get same number of eyes)");
+            System.out.println("2. Pay 1000 before you roll.");
+
+            if (playerWhoHasTurn.isHasGetOutOfJailCard() == true) {
+                System.out.println("3. Use Get Out Of Jail card.");
+            }
+
+            int prisonOptionPick = scanThings.scanNumber();
+
+            if (prisonOptionPick == 1) {
+
+                System.out.println("You rolled on the first die: " + gameBoard.diceCup.dice1Result);
+                System.out.println("You rolled on the second die: " + gameBoard.diceCup.dice2Result);
+
+                if (gameBoard.diceCup.dice1Result == gameBoard.diceCup.dice2Result) {
+                    System.out.println("Congratulations! You have rolled same number of eyes. You get out of jail!");
+                    player.setInPrison(false);
+                } else {
+                    playerWhoHasTurn.setTurnsInPrison(playerWhoHasTurn.getTurnsInPrison() + 1);
+                }
+            } else if (prisonOptionPick == 2) {
+                playerWhoHasTurn.outOfPrisonWithMoney();
+            }
+            if (playerWhoHasTurn.isHasGetOutOfJailCard() == true) {
+                if (prisonOptionPick == 3) {
+                    playerWhoHasTurn.useGetOutOfJailCard();
+                    System.out.println("You have used your Get Out Of Jail card!");
+                }
+            }
+        }
+        if (playerWhoHasTurn.isInPrison() == false) {
+
+            //TEST AF LANDEDON METHODS - SLET SENERE
+            //diceCupRollResult = 30;
 
 
-        // Loop for player move (Move 1 field per iteration)
-        for (int i = 0; i < diceCupRollResult; i++) {
+            // Loop for player move (Move 1 field per iteration)
+            for (int i = 0; i < diceCupRollResult; i++) {
 
-            playerWhoHasTurnPos = playerWhoHasTurn.getPos();
-            playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
+                playerWhoHasTurnPos = playerWhoHasTurn.getPos();
+                playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
 
-            playerWhoHasTurnPos = playerWhoHasTurnPos + 1;
-            playerWhoHasTurn.setPos(playerWhoHasTurnPos);
+                playerWhoHasTurnPos = playerWhoHasTurnPos + 1;
+                playerWhoHasTurn.setPos(playerWhoHasTurnPos);
 
             // Checking if player is out of bounce, if so go back to start
             if (playerWhoHasTurnPos > numberOfGameFields - 1) {
@@ -154,22 +191,22 @@ public class Logic implements Runnable {
                 System.out.println("we set playerwhohasturnpos = 0");
 
 
-                playerWhoHasTurnMoney = playerWhoHasTurnMoney + 4000;
-                System.out.println("4000 has been added to the player for passing start");
-            }
+                    playerWhoHasTurnMoney = playerWhoHasTurnMoney + 4000;
+                    System.out.println("4000 has been added to the player for passing start");
+                }
 
-            tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
+                tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
             // activeGameField.landedOn(playerWhoHasTurn);
             if (i < diceCupRollResult - 1) {
                 print.printPassedField(playerWhoHasTurn, tempActiveGameField);
             }
 
-            playerWhoHasTurn.setPos(playerWhoHasTurnPos);
-            playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
-            checkPlayerMoney(playerWhoHasTurn);
-        }
-        activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
+                playerWhoHasTurn.setPos(playerWhoHasTurnPos);
+                playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
+                checkPlayerMoney(playerWhoHasTurn);
+            }
+            activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
         System.out.println("Du landede på " + activeGameField.getName());
 
@@ -182,11 +219,14 @@ public class Logic implements Runnable {
             activeGameField.landedOn(playerWhoHasTurn);
         }
 
-        presentBuyHouseOption(playerWhoHasTurn);
+            if(playerWhoHasTurn.isInPrison() == false) {
+                presentBuyHouseOption(playerWhoHasTurn);
 
-        presentSellHouseOption(playerWhoHasTurn);
-        presentSellPropertyOption(playerWhoHasTurn);
-        playerWhoHasTurn.updateTotalValue();
+                presentSellHouseOption(playerWhoHasTurn);
+                presentSellPropertyOption(playerWhoHasTurn);
+            }
+            playerWhoHasTurn.updateTotalValue();
+        }
     }
 
     public void checkPlayerMoney(Player player) {
@@ -195,7 +235,6 @@ public class Logic implements Runnable {
             listOfPlayers.remove(player);
         }
     }
-
 
     public void presentPrisonOptions(Player player) {
         System.out.println("You have been put in prison you have two options:");
@@ -221,40 +260,40 @@ public class Logic implements Runnable {
         }
     }
 
-    public void presentSellPropertyOption(Player player){
+    public void presentSellPropertyOption(Player player) {
         System.out.println("Would you like to sell a property?");
         System.out.println("1. Yes");
         System.out.println("2. No");
         int answer = scanThings.scanNumber();
 
-        if(answer == 1){
+        if (answer == 1) {
             System.out.println("These are the properties you own and can sell: ");
             System.out.println(player.ownedFields);
 
             GameField chosenProperty;
             boolean matchFound = false;
-                while(matchFound == false){
-                    String answer2 = scanThings.scanString();
-                    for (int i = 0; i < player.ownedFields.size(); i++) {
-                        if(answer2.equals(player.ownedFields.get(i).getName())){
-                            chosenProperty = player.ownedFields.get(i);
+            while (matchFound == false) {
+                String answer2 = scanThings.scanString();
+                for (int i = 0; i < player.ownedFields.size(); i++) {
+                    if (answer2.equals(player.ownedFields.get(i).getName())) {
+                        chosenProperty = player.ownedFields.get(i);
 
-                            player.sellField( chosenProperty);
-                            matchFound = true;
-                        }
+                        player.sellField(chosenProperty);
+                        matchFound = true;
                     }
                 }
             }
         }
+    }
 
-    public void presentSellHouseOption(Player player){
-        ArrayList <GameField> propertiesWithHousesOn = new ArrayList<>();
+    public void presentSellHouseOption(Player player) {
+        ArrayList<GameField> propertiesWithHousesOn = new ArrayList<>();
 
         for (int i = 0; i < player.ownedFields.size(); i++) {
-            if(player.ownedFields.get(i).getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD){
+            if (player.ownedFields.get(i).getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD) {
                 PropertyField propertyField = (PropertyField) player.ownedFields.get(i);
 
-                if(propertyField.getHouses() > 0) {
+                if (propertyField.getHouses() > 0) {
                     propertiesWithHousesOn.add(propertyField);
                 }
             }
@@ -264,22 +303,22 @@ public class Logic implements Runnable {
         System.out.println("2. No");
         int answer = scanThings.scanNumber();
 
-        if(answer == 1){
+        if (answer == 1) {
             System.out.println("These are the properties you can sell houses on: ");
             System.out.println(propertiesWithHousesOn);
             GameField chosenProperty;
             boolean matchFound = false;
-            while(matchFound == false){
+            while (matchFound == false) {
                 String answer2 = scanThings.scanString();
                 for (int i = 0; i < propertiesWithHousesOn.size(); i++) {
-                    if(answer2.equals(propertiesWithHousesOn.get(i).getName())){
+                    if (answer2.equals(propertiesWithHousesOn.get(i).getName())) {
                         chosenProperty = propertiesWithHousesOn.get(i);
                         player.sellHouseOnProperty((PropertyField) chosenProperty);
                         matchFound = true;
                         System.out.println("Match found");
                     }
                 }
-                if(matchFound == true){
+                if (matchFound == true) {
                     System.out.println("Breaking out of while loop - skipping cannot find match");
                     break;
                 }
@@ -289,14 +328,13 @@ public class Logic implements Runnable {
                 System.out.println("2. No");
                 int answer3 = scanThings.scanNumber();
 
-                if(answer3 == 1){
+                if (answer3 == 1) {
                     System.out.println("Presenting options again...");
                 } else {
                     break;
                 }
             }
-        }
-        else if (answer == 2){
+        } else if (answer == 2) {
             System.out.println("You choose not to sell any houses. ");
         }
     }
@@ -313,7 +351,7 @@ public class Logic implements Runnable {
             while (wantsToBuyHouse == true) {
 
 
-           // TO TEST STUFF ON THE FIRST 5 GAMEFIELDS, JUST DELETE WHEN YOU DONT WANT TO TEST SHIT ANYMORE :)
+                // TO TEST STUFF ON THE FIRST 5 GAMEFIELDS, JUST DELETE WHEN YOU DONT WANT TO TEST SHIT ANYMORE :)
                 player.ownedFields.add(gameBoard.gameFields.get(1));
                 player.ownedFields.add(gameBoard.gameFields.get(3));
                 player.ownedFields.add(gameBoard.gameFields.get(6));

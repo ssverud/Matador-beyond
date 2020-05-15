@@ -3,6 +3,8 @@ public class DiceCup {
     // creating two dice for our cup
     Dice dice1 = new Dice();
     Dice dice2 = new Dice();
+    int dice1Result;
+    int dice2Result;
 
     /**
      * Constructor for our DiceCup
@@ -14,8 +16,8 @@ public class DiceCup {
     // shake cup method
     public int shakeDiceCup() {
 
-        int dice1Result = dice1.roll();
-        int dice2Result = dice2.roll();
+        dice1Result = dice1.roll();
+        dice2Result = dice2.roll();
         int result = dice1Result + dice2Result;
 
         System.out.println("Din 1. terning slog: " + dice1Result);
