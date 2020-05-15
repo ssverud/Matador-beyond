@@ -50,30 +50,33 @@ public class ControllerPlayerSetup {
 
         ArrayList<String> players = new ArrayList<String>();
         // adds the player names from the playerSetup GUI to the Logic class
-        players.add(player1.getText());
-        players.add(player2.getText());
-        players.add(player3.getText());
-        players.add(player4.getText());
-        players.add(player5.getText());
-        players.add(player6.getText());
+        if(!player1.getText().equals("")) players.add(player1.getText());
+        if(!player2.getText().equals("")) players.add(player2.getText());
+        if(!player3.getText().equals("")) players.add(player3.getText());
+        if(!player4.getText().equals("")) players.add(player4.getText());
+        if(!player5.getText().equals("")) players.add(player5.getText());
+        if(!player6.getText().equals("")) players.add(player6.getText());
         logic.createPlayers(players);
 
+        // if a minimum of 1 player name is put into the GUI playerSetup, move on to load game window
+        if(players.size() > 0) {
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game2.fxml"));
 
-        // allows acces to the Logic class in ControllerGame2
-        Parent homePageStartGame = loader.load();
-        ControllerGame2 controllerGame2 = loader.getController();
-        controllerGame2.logic = logic;
+            // allows acces to the Logic class in ControllerGame2
+            Parent homePageStartGame = loader.load();
+            ControllerGame2 controllerGame2 = loader.getController();
+            controllerGame2.logic = logic;
 
-        // loads the game2 window
-        Scene homePageStartGameScene = new Scene(homePageStartGame);
-        Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stageWindow.setScene(homePageStartGameScene);
-        stageWindow.show();
+            // loads the game2 window
+            Scene homePageStartGameScene = new Scene(homePageStartGame);
+            Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stageWindow.setScene(homePageStartGameScene);
+            stageWindow.show();
 
-        // starts a new thread so the GUI window "start" kan run independently from the Logic class
-        new Thread(logic).start();
+            // starts a new thread so the GUI window "start" kan run independently from the Logic class
+            new Thread(logic).start();
+        }
     }
 
     @FXML
@@ -84,28 +87,32 @@ public class ControllerPlayerSetup {
         ArrayList<String> players = new ArrayList<String>();
 
         // adds the player names from the playerSetup GUI to the Logic class
-        players.add(player1.getText());
-        players.add(player2.getText());
-        players.add(player3.getText());
-        players.add(player4.getText());
-        players.add(player5.getText());
-        players.add(player6.getText());
+        if(!player1.getText().equals("")) players.add(player1.getText());
+        if(!player2.getText().equals("")) players.add(player2.getText());
+        if(!player3.getText().equals("")) players.add(player3.getText());
+        if(!player4.getText().equals("")) players.add(player4.getText());
+        if(!player5.getText().equals("")) players.add(player5.getText());
+        if(!player6.getText().equals("")) players.add(player6.getText());
         logic.createPlayers(players);
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game.fxml"));
+        // if a minimum of 1 player name is put into the GUI playerSetup, move on to load game window
+        if(players.size() > 0 ) {
 
-        // allows acces to the Logic class in ControllerGame
-        Parent homePageStartGame = loader.load();
-        ControllerGame controllerGame = loader.getController();
-        controllerGame.logic = logic;
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game.fxml"));
 
-        // loads the game window
-        Scene homePageStartGameScene = new Scene(homePageStartGame);
-        Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stageWindow.setScene(homePageStartGameScene);
-        stageWindow.show();
+            // allows acces to the Logic class in ControllerGame
+            Parent homePageStartGame = loader.load();
+            ControllerGame controllerGame = loader.getController();
+            controllerGame.logic = logic;
 
-        // starts a new thread so the GUI window "start" kan run independently from the Logic class
-        new Thread(logic).start();
+            // loads the game window
+            Scene homePageStartGameScene = new Scene(homePageStartGame);
+            Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stageWindow.setScene(homePageStartGameScene);
+            stageWindow.show();
+
+            // starts a new thread so the GUI window "start" kan run independently from the Logic class
+            new Thread(logic).start();
+        }
     }
 }

@@ -55,8 +55,7 @@ public class Logic implements Runnable {
                 listOfPlayers.add(player);
             }
         }
-
-        System.out.println("Liste af spillere: + " + listOfPlayers + " Antal: " + listOfPlayers.size());
+        System.out.println("Liste af spillere: " + listOfPlayers + " Antal: " + listOfPlayers.size());
     }
 
     /*
@@ -78,7 +77,7 @@ public class Logic implements Runnable {
 
      */
 
-    // kommer fra implements Runable øverst i Logic
+    // coming from implements Runable in the beginning of Logic
     @Override
     public void run() {
 
