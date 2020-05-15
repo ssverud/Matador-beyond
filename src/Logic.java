@@ -22,6 +22,7 @@ public class Logic implements Runnable {
     int numberOfGameFields = gameBoard.gameFields.size();
     private int gameTurnCounter = 0;
     private int prevGameTurnCounter = 0;
+    int diceCupRollResult;
 
 
     /**
@@ -127,7 +128,6 @@ public class Logic implements Runnable {
         alert.showAndWait();
         */
 
-        int diceCupRollResult;
         int playerWhoHasTurnPos = 0;
         int playerWhoHasTurnMoney;
 
@@ -136,6 +136,10 @@ public class Logic implements Runnable {
         print.printPlayerTurnSplit(playerWhoHasTurn);
 
         diceCupRollResult = gameBoard.diceCup.shakeDiceCup();
+
+        //TEST AF LANDEDON METHODS - SLET SENERE
+        //diceCupRollResult = 4;
+
 
         // Loop for player move (Move 1 field per iteration)
         for (int i = 0; i < diceCupRollResult; i++) {
@@ -172,7 +176,8 @@ public class Logic implements Runnable {
 
         System.out.println("You landed on " + activeGameField.getName());
 
-        if (activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD) {
+        if ((activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD)
+                ||(activeGameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD)) {
             System.out.println("Runniong chancefield landedon");
             activeGameField.landedOn(playerWhoHasTurn, this);
         } else {
@@ -184,6 +189,7 @@ public class Logic implements Runnable {
 
         presentSellHouseOption(playerWhoHasTurn);
         presentSellPropertyOption(playerWhoHasTurn);
+        playerWhoHasTurn.updateTotalValue();
     }
 
     public void checkPlayerMoney(Player player) {
@@ -215,71 +221,6 @@ public class Logic implements Runnable {
                     System.out.println("you missed");
                 }
             }
-        }
-    }
-
-    public void presentTaxOptions(Player player, GameField gameField) {
-        //int playerWhoHasTurnMoney = playerWhoHasTurn.getMoney();
-
-        /*
-                        udrregning af værdier: kontanter, huse, trykte pris af: propertyfield, breweryfield og ferryfield
-
-                        int tax;
-                        int percentage = 10;
-                        int totalValues = playerWhoHasTurnMoney +  houseBuildingPrice(for all buildings) +
-                        propertyFieldPrice + breweryFieldPrice + ferryFieldPrice;
-
-                        tax = totalValues/percentage;
-                        system.out.println("Du betaler: " + tax + " i indkomstskat"):
-
-                        playerWhoHasTurn.setMoney(playerWhoHasTurnMoney - tax);
-
-
-                         */
-
-        if (gameField.getPos() == 4) {
-            System.out.println("Vælg 1: at betale kr. 4000. Eller 2: at betale 10% af dine samlede værdier. Hvad vælger du?");
-            int taxChoice = scanThings.scanNumber();
-
-            int tax;
-            int percentage = 10;
-            int totalPlayerValues;
-            int propertyValues = 0;
-
-            /*
-            switch (taxChoice) {
-                case 1:
-                    player.setMoney(player.getMoney() - 4000);
-                    System.out.println("Kr. 4000 er blevet fratrukket din konto.");
-                    break;
-                case 2:
-
-                    for (int i = 0; i < player.ownedProperties.size(); i++) {
-
-                        propertyValues += player.ownedProperties(i).getPrice();
-                        if(player.ownedProperties(i).hasHouse){
-
-                            for (int j = 0; j < player.ownedProperties(i).house.size(); j++) {
-                                        propertyValues += player.ownedProperties(i).house.getHousePrice();
-                            }
-                        }
-                    }
-                    //hvis breweryfield og ferryfield ikke hører inde under property field lav yderligere for loop for dem
-
-                    totalPlayerValues = player.getMoney() + propertyValues;
-                    tax = totalPlayerValues / percentage;
-
-                    System.out.println("Du betaler: " + tax + " i indkomstsskat!");
-                    player.setMoney(player.getMoney() - tax);
-                    break;
-            }
-
-             */
-
-        }
-        if (gameField.getPos() == 38) {
-            System.out.println("Betal kr. 2000 i ekstraordinær statsskat.");
-            playerWhoHasTurn.setMoney(player.getMoney() - 2000);
         }
     }
 

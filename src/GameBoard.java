@@ -33,7 +33,7 @@ public class GameBoard {
         gameFields.add(new PropertyField(9, "Allégade", 2400, 150, 1000, 1200, PropertyField.PropertyColor.PINK));
         gameFields.add(new VisitPrisonField(10, "Besøg i fængsel"));
         gameFields.add(new PropertyField(11, "Frederiksberg Alle", 2800, 200, 2000, 1400, PropertyField.PropertyColor.GREEN));
-        gameFields.add(new BreweryField(12, "Tuborg", 3000, 500, 1500));
+        gameFields.add(new BreweryField(12, "Tuborg", 3000, 100, 1500));
         gameFields.add(new PropertyField(13, "Bülowsvej", 2800, 200, 2000, 1400, PropertyField.PropertyColor.GREEN));
         gameFields.add(new PropertyField(14, "Gammel Kongevej", 3200, 250, 2000, 1500, PropertyField.PropertyColor.GREEN));
         gameFields.add(new FerryField(15, "DSB-Rederierne: Kalundborg-Århus", 4000, 500, 2000));
@@ -49,7 +49,7 @@ public class GameBoard {
         gameFields.add(new FerryField(25, "DFDS-Seaways", 4000, 500, 2000));
         gameFields.add(new PropertyField(26, "Bredgade", 5200, 450, 3000, 2600, PropertyField.PropertyColor.WHITE));
         gameFields.add(new PropertyField(27, "Kongens Nytorv", 5200, 450, 3000, 2600, PropertyField.PropertyColor.WHITE));
-        gameFields.add(new BreweryField(28, "Coca Cola", 3000, 500, 1500));
+        gameFields.add(new BreweryField(28, "Coca Cola", 3000, 100, 1500));
         gameFields.add(new PropertyField(29, "Østergade", 5600, 500, 3000, 2800, PropertyField.PropertyColor.WHITE));
         gameFields.add(new PrisonField(30, "De fængsles"));
         gameFields.add(new PropertyField(31, "Amagertorv", 6000, 550, 4000, 3000, PropertyField.PropertyColor.YELLOW));

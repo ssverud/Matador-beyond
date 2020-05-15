@@ -1,12 +1,15 @@
+import javafx.beans.property.Property;
+
 import java.util.ArrayList;
 
 public class Player {
 
     private String name;
     private int pos = 0;
-    private int money = 300000000;
+    private int money = 6500;
     private boolean inPrison = false;
     private int numberOfFerriesOwned = 0;
+    private int numberOfBreweriesOwned = 0;
     private boolean hasGetOutOfJailCard = false;
     private int totalValue = 0;
 
@@ -86,8 +89,21 @@ public class Player {
         money = money - amount;
     }
 
-    public void updateTotalValue(int amount) {
-        setTotalValue(getTotalValue() + amount);
+    public int updateTotalValue() {
+
+        int valueOfOwnedFields = 0;
+        totalValue = money + valueOfOwnedFields;
+
+        for (int i = 0; i < ownedFields.size(); i++) {
+            valueOfOwnedFields += ownedFields.get(i).getPrice();
+
+            if(ownedFields.get(i).getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD){
+                PropertyField propertyField = (PropertyField) ownedFields.get(i);
+
+                totalValue += propertyField.getHousePrice() * propertyField.getHouses();
+            }
+        }
+        return totalValue;
     }
 
     /**
@@ -142,13 +158,6 @@ public class Player {
         this.totalValue = totalValue;
     }
 
-
-    // toSting - when printing print player name in ' '
-    @Override
-    public String toString() {
-        return "'" + name + "'";
-    }
-
     public int getNumberOfFerriesOwned() {
         return numberOfFerriesOwned;
     }
@@ -156,4 +165,21 @@ public class Player {
     public void setNumberOfFerriesOwned(int numberOfFerriesOwned) {
         this.numberOfFerriesOwned = numberOfFerriesOwned;
     }
+
+    public int getNumberOfBreweriesOwned() {
+        return numberOfBreweriesOwned;
+    }
+
+    public void setNumberOfBreweriesOwned(int numberOfBreweriesOwned) {
+        this.numberOfBreweriesOwned = numberOfBreweriesOwned;
+    }
+
+
+    // toSting - when printing print player name in ' '
+    @Override
+    public String toString() {
+        return "'" + name + "'";
+    }
+
+
 }

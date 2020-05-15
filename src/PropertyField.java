@@ -39,7 +39,6 @@ public class PropertyField extends GameField {
                     System.out.println("this property is now owned by: " + ownedBy);
 
 
-                    player.updateTotalValue(getPrice());
                     System.out.println("This is " + player.getName() + "s total value: " + player.getTotalValue());
                     System.out.println(" player money: " + player.getMoney());
                 } else if (player.getMoney() < getPrice()) {
