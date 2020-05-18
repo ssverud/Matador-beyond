@@ -34,7 +34,7 @@ public class BreweryField extends GameField{
 
             int answer = scanThings.scanNumber();
             if (answer == 1) {
-                System.out.println(" player money: " + player.getMoney());
+                System.out.println("Spillers valuta heholdning: " + player.getMoney());
                 if (player.getMoney() > getPrice()) {
                     player.buyField(this);
                     setOwnedBy(player);

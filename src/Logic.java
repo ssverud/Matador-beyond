@@ -209,7 +209,7 @@ public class Logic implements Runnable {
             }
             activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
-        System.out.println("Du landede på " + activeGameField.getName());
+        System.out.println("De landede på " + activeGameField.getName());
 
         if ((activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD)
                 ||(activeGameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD)) {
