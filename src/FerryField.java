@@ -26,7 +26,7 @@ public class FerryField extends GameField {
             player.payRent(rentPrice, getOwnedBy());
             System.out.println("De betalte " + rentPrice + " til " + getOwnedBy());
         } else if (getOwnedBy() == null) {
-            System.out.println("Dette Færge er ikke købt af nogen");
+            System.out.println("Denne Færge er ikke købt af nogen");
             System.out.println("Vil de gerne købe den? - tast 1 eller 2 og tryk ENTER");
             System.out.println("1. Ja");
             System.out.println("2. Nej");

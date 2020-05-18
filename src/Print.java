@@ -15,7 +15,7 @@ public class Print {
     }
 
     public void printPassedField(Player player, GameField gameField) {
-        System.out.println(player.getName() + " Du har passeret " + gameField.getName());
+        System.out.println("De har passeret " + gameField.getName());
     }
 
     public void printGameFields(ArrayList list ){
