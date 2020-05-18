@@ -17,8 +17,6 @@ public class ControllerRules {
         Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stageWindow.setScene(homePageStartScene);
         stageWindow.show();
-        System.out.println("go to start");
-
     }
 
 }

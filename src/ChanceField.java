@@ -48,7 +48,7 @@ public class ChanceField extends GameField {
                 i = 0;
             }
 
-            //mangler betaling?
+            // missing payment?
         }
     }
 
@@ -84,13 +84,13 @@ public class ChanceField extends GameField {
     }
 
     public void propertyTax(Player player){
-        //betal 800 kr pr hus, 2300 per hotel
+        // pay 800 kr. pr house, 2300 pr. hotel
         System.out.println(player.getMoney());
         int sumHouses = 0;
         ArrayList<PropertyField> sumList = new ArrayList<PropertyField>();
         for (int i = 0; i < player.ownedFields.size() - 1; i++) {
             GameField temp = player.ownedFields.get(i);
-            //Det næste har noget med casting at gøre, er ikke sikker på hvordan det virker, men det fungerer som det skal
+            // the next has to do with casting. Not sure how it works, but it works like it should
             if (temp.getGameFieldType() == GameFieldType.PROPERTYFIELD) {
                 sumList.add((PropertyField) player.ownedFields.get(0));
             }
@@ -104,7 +104,7 @@ public class ChanceField extends GameField {
         player.payToBank(sumHouses * 800);
         System.out.println(player.getMoney());
 
-        //potentielt unødvendigt, kan komme på tale hvis kortet trækkes 2 gange
+        // potentialy unnecessary. Should maybe be used if the card is pulled twice
         sumHouses = 0;
         sumList.clear();
 
@@ -155,7 +155,7 @@ public class ChanceField extends GameField {
         //player.setMoney(10000);
         gameboard = new GameBoard();
         ChanceField cf = new ChanceField(player.getPos());
-        System.out.println("You landed on a chance field! Draw a card.");
+        System.out.println("De har landet på 'Prøv lykken'. Træk et kort");
         System.out.println(cardDeck.cards.size());
         System.out.println(cardDeck.cards.get(0).getTextOfCard());
         type = cardDeck.cards.get(0).getType();

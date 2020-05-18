@@ -21,12 +21,12 @@ public class ScanThings {
         String input = keyboardInput.nextLine();
         input = input.toUpperCase();
 
-        if (input.substring(0, 1).equals("Y")) {
-            return "Yes";
+        if (input.substring(0, 1).equals("J")) {
+            return "Ja";
         } else if (input.substring(0, 1).equals("N")) {
-            return "No";
+            return "Nej";
         } else {
-            System.out.println("Did not understand your input, enter yes or no");
+            System.out.println("Forstod ikke deres input. Tas Ja eller Nej");
         }
         return scanYesNo();
     }
@@ -37,7 +37,7 @@ public class ScanThings {
         try {
             return keyboardInput.nextInt();
         } catch (InputMismatchException e) {
-            System.err.println("This is not an int, you need to input an int");
+            System.err.println("Dette er ikke et heltal. De skal indtaste et heltal.");
             keyboardInput.next();
         }
         return scanNumber();

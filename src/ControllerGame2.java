@@ -33,14 +33,12 @@ public class ControllerGame2 {
 
     @FXML
     void field2(MouseEvent event) {
-
         textArea1.clear();
         textArea1.appendText("TEST  field2");
     }
 
     @FXML
     void field3(MouseEvent event) {
-        System.out.println("TEST field3");
         textArea1.clear();
         textArea1.appendText("TEST  field3");
     }
