@@ -39,12 +39,12 @@ public class ChanceField extends GameField {
         player.setMoney(player.getMoney()+amount);
     }
 
-    public void moveToFerry(Player player){
-        for (int i = player.getPos() + 1; i < gameboard.gameFields.size(); i++) {
-            if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
+    public void moveToFerry(Player player, Logic logic){
+        for (int i = player.getPos() + 1; i < logic.gameBoard.gameFields.size(); i++) {
+            if (logic.gameBoard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
                 player.setPos(i);
             }
-            if (i == gameboard.gameFields.size()) {
+            if (i == logic.gameBoard.gameFields.size()) {
                 i = 0;
             }
 
@@ -92,10 +92,10 @@ public class ChanceField extends GameField {
             GameField temp = player.ownedFields.get(i);
             // the next has to do with casting. Not sure how it works, but it works like it should
             if (temp.getGameFieldType() == GameFieldType.PROPERTYFIELD) {
-                sumList.add((PropertyField) player.ownedFields.get(0));
+                sumList.add((PropertyField) player.ownedFields.get(i));
             }
         }
-        for (int i = 0; i < sumList.size() - 1; i++) {
+        for (int i = 0; i < sumList.size(); i++) {
             sumHouses = sumHouses + sumList.get(i).getHouses();
 
         }
@@ -153,7 +153,7 @@ public class ChanceField extends GameField {
 
         //for (int j = 0; j<cardDeck.cards.size()-1; j++) {  //BLEV BRUGT TIL TESTEN, er efterladt for en sikkerheds skyld
         //player.setMoney(10000);
-        gameboard = new GameBoard();
+        //gameboard = new GameBoard();
         ChanceField cf = new ChanceField(player.getPos());
         System.out.println("De har landet på 'Prøv lykken'. Træk et kort");
         System.out.println(cardDeck.cards.size());
@@ -188,7 +188,7 @@ public class ChanceField extends GameField {
                 //for loop der kører igennem til den rammer et ferryField, som starter forfra hvis den når igennem inden den rammer et
                 //Det virker sådan som brættet er lagt ud nu, men ville kunne gå out of bounds hvis der lå et chancefield på sidste plads
 
-                cf.moveToFerry(player);
+                cf.moveToFerry(player, logic);
                 break;
 
             case ("KONGENSFØDSELSDAG"):

@@ -52,6 +52,9 @@ class ChanceFieldTest {
 
     @Test
     void moveToFerry() {
+        setup(p1);
+        cf.moveToFerry(p1, logic);
+        assertTrue(logic.gameBoard.gameFields.get(p1.getPos()).getGameFieldType() == GameField.GameFieldType.FERRYFIELD);
     }
 
     @Test
@@ -80,6 +83,12 @@ class ChanceFieldTest {
 
     @Test
     void propertyTax() {
+        setup(p1);
+        p1.buyField((logic.gameBoard.gameFields.get(1))); // costs 1200
+        p1.buyField((logic.gameBoard.gameFields.get(3))); //costs 1200
+        p1.buyHouseOnProperty((PropertyField) p1.ownedFields.get(0));
+        cf.propertyTax(p1);
+        assertEquals(6200, p1.getMoney());
     }
 
     @Test
