@@ -8,7 +8,7 @@ public class PrisonField extends GameField {
 
     public PrisonField landedOn(Player player){
         player.setInPrison(true);
-        System.out.println("You have been put in prison!");
+        System.out.println("De er blevet sat i Fængsel!");
 
         return this;
     }

@@ -134,28 +134,28 @@ public class Logic implements Runnable {
         diceCupRollResult = gameBoard.diceCup.shakeDiceCup();
 
         if (playerWhoHasTurn.getTurnsInPrison() == 3) {
-            System.out.println("Because you have been in prison for 3 turns. You are now forced to pay 1000 to get out!");
+            System.out.println("Da De har været i Fængsel i 3 omgange skal De betale 1000 kr. for at blive sat fri");
             playerWhoHasTurn.outOfPrisonWithMoney();
         }
 
         if (playerWhoHasTurn.isInPrison() == true) {
-            System.out.println("YOU ARE IN PRISON! To get out you have to do one of the following: ");
-            System.out.println("1. Roll the same number of eyes. (You have 3 turns to get same number of eyes)");
-            System.out.println("2. Pay 1000 before you roll.");
+            System.out.println("De er i Fængsel! For at blive sat fri skal De vælge en af følgende: ");
+            System.out.println("1. Slå det samme antal øjne på begge terninger. De har 3 forsøg");
+            System.out.println("2. Betal 1000 kr. før De kasterne terningerne.");
 
             if (playerWhoHasTurn.isHasGetOutOfJailCard() == true) {
-                System.out.println("3. Use Get Out Of Jail card.");
+                System.out.println("3. Brug 'Slip-ud-af-fængler' kort");
             }
 
             int prisonOptionPick = scanThings.scanNumber();
 
             if (prisonOptionPick == 1) {
 
-                System.out.println("You rolled on the first die: " + gameBoard.diceCup.dice1Result);
-                System.out.println("You rolled on the second die: " + gameBoard.diceCup.dice2Result);
+                System.out.println("Deres første terning slog: " + gameBoard.diceCup.dice1Result);
+                System.out.println("Deres anden terning slog: " + gameBoard.diceCup.dice2Result);
 
                 if (gameBoard.diceCup.dice1Result == gameBoard.diceCup.dice2Result) {
-                    System.out.println("Congratulations! You have rolled same number of eyes. You get out of jail!");
+                    System.out.println("Tillykke! De har kastet to ens terninger. De slippes fra af Fængsel");
                     player.setInPrison(false);
                 } else {
                     playerWhoHasTurn.setTurnsInPrison(playerWhoHasTurn.getTurnsInPrison() + 1);
@@ -166,7 +166,7 @@ public class Logic implements Runnable {
             if (playerWhoHasTurn.isHasGetOutOfJailCard() == true) {
                 if (prisonOptionPick == 3) {
                     playerWhoHasTurn.useGetOutOfJailCard();
-                    System.out.println("You have used your Get Out Of Jail card!");
+                    System.out.println("De har brugt Deres 'slip-ud-af-fængsel' kort");
                     CardOfChanceDeck.getInstance().emptyDeck.add( new Card("KONGENS FØDSELSDAG", "I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares, indtil De får brug for det, eller De kan sælge det."));
                 }
             }
@@ -193,7 +193,7 @@ public class Logic implements Runnable {
 
 
                     playerWhoHasTurnMoney = playerWhoHasTurnMoney + 4000;
-                    System.out.println("4000 has been added to the player for passing start");
+                    System.out.println("4000 kr. er blevet tilføjet til spillerens valutabeholdning ved passering af 'Start'");
                 }
 
                 tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
@@ -238,9 +238,9 @@ public class Logic implements Runnable {
     }
 
     public void presentPrisonOptions(Player player) {
-        System.out.println("You have been put in prison you have two options:");
-        System.out.println("1. pay yourself out with 2000");
-        System.out.println("2. Try to roll yourself out by hitting 2 of the same number of eyes");
+        System.out.println("De er blevet sat i 'Fængsel'. De har to muligheder: ");
+        System.out.println("1. Betal 2000 kr. for at blive sat fri.");
+        System.out.println("2. Kast to ens terninger.");
         int chosenOption = scanThings.scanNumber();
         if (chosenOption == 1) {
             player.setMoney(player.getMoney() - 2000);
@@ -252,23 +252,23 @@ public class Logic implements Runnable {
                 int dice2NumberOfEyes = gameBoard.diceCup.dice2.getNumberOfEyes();
 
                 if (dice1NumberOfEyes == dice2NumberOfEyes) {
-                    System.out.println("you hit 2 of the same number of eyes, you are free");
+                    System.out.println("De har kastet to ens terninger. De er sat fri.");
                     break;
                 } else if (dice1NumberOfEyes != dice2NumberOfEyes) {
-                    System.out.println("you missed");
+                    System.out.println("Desværre! De fik ikke to ens terninger.");
                 }
             }
         }
     }
 
     public void presentSellPropertyOption(Player player) {
-        System.out.println("Would you like to sell a property?");
-        System.out.println("1. Yes");
-        System.out.println("2. No");
+        System.out.println("Ønsker De at sænge en ejendom?");
+        System.out.println("1. Ja");
+        System.out.println("2. Nej");
         int answer = scanThings.scanNumber();
 
         if (answer == 1) {
-            System.out.println("These are the properties you own and can sell: ");
+            System.out.println("Her er de ejendomme De ejer og kan sælge: ");
             System.out.println(player.ownedFields);
 
             GameField chosenProperty;
@@ -299,13 +299,13 @@ public class Logic implements Runnable {
                 }
             }
         }
-        System.out.println("Would you like to sell a house on any property?");
-        System.out.println("1. Yes");
-        System.out.println("2. No");
+        System.out.println("Ønsker De at sælge et hus? Tas 1 eller 2 og tryk ENTER!");
+        System.out.println("1. Ja");
+        System.out.println("2. Nej");
         int answer = scanThings.scanNumber();
 
         if (answer == 1) {
-            System.out.println("These are the properties you can sell houses on: ");
+            System.out.println("Her er de grunde De kan sælge huse på: ");
             System.out.println(propertiesWithHousesOn);
             GameField chosenProperty;
             boolean matchFound = false;
@@ -316,34 +316,34 @@ public class Logic implements Runnable {
                         chosenProperty = propertiesWithHousesOn.get(i);
                         player.sellHouseOnProperty((PropertyField) chosenProperty);
                         matchFound = true;
-                        System.out.println("Match found");
+                        System.out.println("Match fundet");
                     }
                 }
                 if (matchFound == true) {
                     System.out.println("Breaking out of while loop - skipping cannot find match");
                     break;
                 }
-                System.out.println("Cannot find a match. ");
-                System.out.println("Do you still want to sell a house?");
-                System.out.println("1. Yes");
-                System.out.println("2. No");
+                System.out.println("Kan ikke finde et match. ");
+                System.out.println("Ønsker de stadig at sælge et hus? Tast 1 eller 2 og tryk ENTER!");
+                System.out.println("1. Ja");
+                System.out.println("2. Nej");
                 int answer3 = scanThings.scanNumber();
 
                 if (answer3 == 1) {
-                    System.out.println("Presenting options again...");
+                    System.out.println("Vis muligheder igen... ");
                 } else {
                     break;
                 }
             }
         } else if (answer == 2) {
-            System.out.println("You choose not to sell any houses. ");
+            System.out.println("De valgte at ikke sælge noget hus. ");
         }
     }
 
     public void presentBuyHouseOption(Player player) {
-        System.out.println("Would u like to buy a house on any property?");
-        System.out.println("1 - Yes");
-        System.out.println("2 - no");
+        System.out.println("Ønsker de at købe huse? Tast 1 eller 2 og tryk ENTER!");
+        System.out.println("1. Ja");
+        System.out.println("2. Nej");
         int answer = scanThings.scanNumber();
 
         if (answer == 1) {
@@ -351,7 +351,7 @@ public class Logic implements Runnable {
 
             while (wantsToBuyHouse == true) {
 
-
+                /*
                 // TO TEST STUFF ON THE FIRST 5 GAMEFIELDS, JUST DELETE WHEN YOU DONT WANT TO TEST SHIT ANYMORE :)
                 player.ownedFields.add(gameBoard.gameFields.get(1));
                 player.ownedFields.add(gameBoard.gameFields.get(3));
@@ -359,15 +359,15 @@ public class Logic implements Runnable {
                 player.ownedFields.add(gameBoard.gameFields.get(8));
                 player.ownedFields.add(gameBoard.gameFields.get(9));
                 player.ownedFields.add(gameBoard.gameFields.get(5));
-
+                */
 
                 // INSERT MOETHOD
-                System.out.println("Here is your list of owned fields:");
+                System.out.println("Her er en liste med de grunde De ejer: ");
                 System.out.println(player.ownedFields);
 
                 ArrayList<GameField> propertyPairs = findPropertyPairs(player.ownedFields);
                 System.out.println();
-                System.out.println("Here is your list of fields you can buy houses on: ");
+                System.out.println("Her er en liste af grunde De kan købe huse på: ");
                 System.out.println(propertyPairs);
 
                 PropertyField selectedGameField;
@@ -379,19 +379,19 @@ public class Logic implements Runnable {
 
                         selectedGameField = (PropertyField) propertyPairs.get(i);
                         if (selectedGameField.getHouses() < 4) {
-                            System.out.println("THIS IS THE RENT PRICE B4: " + selectedGameField.getPrice());
+                            System.out.println("Her er prisen for leje før: " + selectedGameField.getPrice());
                             player.buyHouseOnProperty(selectedGameField);
-                            System.out.println("THIS IS THE RENT PRICE after: " + selectedGameField.getPrice());
-                            System.out.println("You have bought house on " + selectedGameField.getName());
-                            System.out.println("Here are the number of houses on this property: " + selectedGameField.getHouses());
+                            System.out.println("Her er prisen for leje efter: " + selectedGameField.getPrice());
+                            System.out.println("De har købt huse på: " + selectedGameField.getName());
+                            System.out.println("Antal huse på denne grund: " + selectedGameField.getHouses());
                             break;
 
                         }
                     }
                 }
-                System.out.println("Would you like to buy another house?");
-                System.out.println("1 = yes");
-                System.out.println("2 = no");
+                System.out.println("Ønsker De at købe flere huse? Tast 1 eller 2 og tryk ENTER!");
+                System.out.println("1. Ja");
+                System.out.println("2. Nej");
                 int input = scanThings.scanNumber();
                 if (input == 1) {
                     System.out.println("okay");
@@ -400,7 +400,7 @@ public class Logic implements Runnable {
                 }
             }
         } else if (answer == 2) {
-            System.out.println("ok you do not want to add any houses to your property at this moment");
+            System.out.println("Ok De ønsker ikke at købe huse til Deres grunde");
         }
     }
 
@@ -439,7 +439,7 @@ public class Logic implements Runnable {
                     for (int j = 0; j < arrayList.size(); j++) {
 
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.PINK) {
-                            System.out.println("PropertyAdded");
+                            System.out.println("Grund tilføjet.");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -450,7 +450,7 @@ public class Logic implements Runnable {
                 if (green == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.GREEN) {
-                            System.out.println("PropertyAdded");
+                            System.out.println("Grund tilføjet.");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -461,7 +461,7 @@ public class Logic implements Runnable {
                 if (grey == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.GREY) {
-                            System.out.println("PropertyAdded");
+                            System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -472,7 +472,7 @@ public class Logic implements Runnable {
                 if (red == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.RED) {
-                            System.out.println("PropertyAdded");
+                            System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -483,7 +483,7 @@ public class Logic implements Runnable {
                 if (white == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.WHITE) {
-                            System.out.println("PropertyAdded");
+                            System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -494,7 +494,7 @@ public class Logic implements Runnable {
                 if (yellow == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.YELLOW) {
-                            System.out.println("PropertyAdded");
+                            System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -505,7 +505,7 @@ public class Logic implements Runnable {
                 if (purple == 2) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.PURPLE) {
-                            System.out.println("PropertyAdded");
+                            System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }

@@ -1,7 +1,7 @@
 public class BreweryField extends GameField{
 
     ScanThings scanThings = new ScanThings();
-    private int rentPrice; // skal laves en udregning et eller adnet sted?
+    private int rentPrice; // should be made into a calculation somewhere?
     private int pledgePrice;
 
     public BreweryField(int pos, String name, int price, int rentPrice, int pledgePrice) {
@@ -14,7 +14,7 @@ public class BreweryField extends GameField{
     }
 
     public BreweryField landedOn(Player player, Logic logic) {
-        System.out.println("This is a Breweryfield");
+        System.out.println("Dette er et Bryggerifeldt");
         if (getOwnedBy() != null) {
 
             //rentPrices
@@ -25,12 +25,12 @@ public class BreweryField extends GameField{
             }
 
             player.payRent(rentPrice, getOwnedBy());
-            System.out.println("you paid " + rentPrice + " to " + getOwnedBy());
+            System.out.println("du betalte " + rentPrice + " til " + getOwnedBy());
         } else if (getOwnedBy() == null) {
-            System.out.println("This Brewery is not bought");
-            System.out.println("Would you like to buy it? - Press 1 or 2");
-            System.out.println("1. Yes");
-            System.out.println("2. No");
+            System.out.println("Dette Brygeri er ikke købt");
+            System.out.println("Vil du gerne købe det? - Skriv 1 eller 2 og tryk ENTER");
+            System.out.println("1. Ja");
+            System.out.println("2. Nej");
 
             int answer = scanThings.scanNumber();
             if (answer == 1) {
@@ -38,15 +38,15 @@ public class BreweryField extends GameField{
                 if (player.getMoney() > getPrice()) {
                     player.buyField(this);
                     setOwnedBy(player);
-                    System.out.println("This Brewery is now owned by: " + getOwnedBy());
+                    System.out.println("Dette Brygeri er ejet af: " + getOwnedBy());
 
-                    System.out.println("This is " + player.getName() + "s total value: " + player.getTotalValue());
-                    System.out.println(" player money: " + player.getMoney());
+                    System.out.println(player.getName() + "samlede værdier i valuta og ejendomme: " + player.getTotalValue());
+                    System.out.println(" Spillers valuta: " + player.getMoney());
                 } else if (player.getMoney() < getPrice()) {
-                    System.out.println("You do not have the funds for this property");
+                    System.out.println("Du ejer ikke valuta nok til at købe denne ejendom");
                 }
             } else if (answer == 2) {
-                System.out.println("ok you would not like to buy it");
+                System.out.println("Ok du ønsker ikke at købe det");
             }
         }
         return this;

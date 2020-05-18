@@ -6,7 +6,7 @@ public class Player {
 
     private String name;
     private int pos = 0;
-    private int money = 6500;
+    private int money = 30000;
     //prison
     private boolean inPrison = false;
     private int turnsInPrison = 0;
@@ -30,7 +30,7 @@ public class Player {
     public void payRent(int amount, Player player) {
         money = money - amount;
         player.setMoney(player.getMoney() + amount);
-        System.out.println("You are paying " + player.getName() + " rent amount of " + amount + ".");
+        System.out.println("De skal betale leje til " + player.getName() + ". Beløbet er " + amount + ".");
     }
 
     public void useGetOutOfJailCard() {
