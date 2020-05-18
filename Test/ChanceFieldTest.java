@@ -24,10 +24,12 @@ class ChanceFieldTest {
         p3.setMoney(10000);
     }
 
+    @Test
+    void gbTest(){
+        assertFalse(logic.gameBoard.gameFields.isEmpty());
+    }
 
     @Test
-    @Disabled
-
     void reperation() {
         setup(p1);
         cf.reperation(p1);
@@ -70,6 +72,10 @@ class ChanceFieldTest {
 
     @Test
     void ferryTrip() {
+        setup(p1);
+        p1.setPos(5);
+        cf.ferryTrip(p1, logic);
+        assertTrue(logic.gameBoard.gameFields.get(p1.getPos()).getGameFieldType() == GameField.GameFieldType.FERRYFIELD);
     }
 
     @Test
@@ -79,4 +85,5 @@ class ChanceFieldTest {
     @Test
     void playerBirthday() {
     }
+
 }

@@ -8,6 +8,7 @@ public class ChanceField extends GameField {
     String type = "chanceField";
     CardOfChanceDeck cardDeck;
     GameBoard gameboard;
+    Logic logic;
 
     {
         cardDeck = CardOfChanceDeck.getInstance();
@@ -69,12 +70,12 @@ public class ChanceField extends GameField {
             player.setPos(player.getPos() - 3);
     }
 
-    public void ferryTrip(Player player){
-        for (int i = player.getPos(); i < gameboard.gameFields.size(); i++) {
-            if (gameboard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
+    public void ferryTrip(Player player, Logic logic){
+        for (int i = player.getPos(); i < logic.gameBoard.gameFields.size(); i++) {
+            if (logic.gameBoard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
                 player.setPos(i);
             }
-            if (i == gameboard.gameFields.size()) {
+            if (i == logic.gameBoard.gameFields.size()) {
                 i = 0;
             }
 
@@ -224,7 +225,7 @@ public class ChanceField extends GameField {
 
             case ("FÆRGE"):
                 // tag med næste færge, modtag 4000 hvis start paseres
-                cf.ferryTrip(player);
+                cf.ferryTrip(player, logic);
                 break;
 
             case ("KLASSELOTTERIET"):
