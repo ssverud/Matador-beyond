@@ -99,5 +99,4 @@ class ChanceFieldTest {
         assertEquals(9800, p2.getMoney());
         assertEquals(9800, p3.getMoney());
     }
-
 }
