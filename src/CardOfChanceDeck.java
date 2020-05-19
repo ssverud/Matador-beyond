@@ -7,6 +7,9 @@ public class CardOfChanceDeck {
 
     private static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
 
+    /**
+     * Constructor for the full deck with cards.
+     */
     public static CardOfChanceDeck getInstance(){
         if(cardOfChanceDeck ==null){
             cardOfChanceDeck = new CardOfChanceDeck();
@@ -14,6 +17,7 @@ public class CardOfChanceDeck {
         return cardOfChanceDeck;
     }
 
+    // list of cards in a deck
     private CardOfChanceDeck() {
 
         cards.add(new Card("FÆNGSEL", "Gå i fængsel. Ryk direkte til fængslet. Selv om De passerer “Start”, indkasserer de ikke kr. 4.000."));
@@ -51,18 +55,6 @@ public class CardOfChanceDeck {
         cards.add(new Card("FØDSELSDAG", "Det er Deres fødselsdag. Modtag af hver medspiller kr. 200."));
 
     }
-
-
-
-
-    private int numberOfDraws = 0;
-
-
-
-    /**
-     * Constructor for the full deck with cards.
-     */
-
 
     //uses java collections to shuffle the deck of chance cards.
     public void shuffle() {

@@ -4,6 +4,7 @@ public class BreweryField extends GameField{
     private int rentPrice;
     private int pledgePrice;
 
+    // constructor
     public BreweryField(int pos, String name, int price, int rentPrice, int pledgePrice) {
         setPos(pos);
         setName(name);
@@ -13,6 +14,7 @@ public class BreweryField extends GameField{
         setGameFieldType(GameFieldType.BREWERYFIELD);
     }
 
+    // overwitten landedon method
     public BreweryField landedOn(Player player, Logic logic) {
         System.out.println("Dette er et Bryggerifeldt");
         if (getOwnedBy() != null) {
@@ -34,7 +36,7 @@ public class BreweryField extends GameField{
 
             int answer = scanThings.scanNumber();
             if (answer == 1) {
-                System.out.println("Spillers valuta heholdning: " + player.getMoney());
+                System.out.println("Spillers valuta beholdning: " + player.getMoney());
                 if (player.getMoney() > getPrice()) {
                     player.buyField(this);
                     setOwnedBy(player);
