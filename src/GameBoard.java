@@ -5,9 +5,12 @@ public class GameBoard {
     /**
      * Instantiator
      */
-    ArrayList<GameField> gameFields = new ArrayList<>(); // array of gameFields
 
-    DiceCup diceCup = new DiceCup(); // creating our diceCup
+    // array of gameFields
+    ArrayList<GameField> gameFields = new ArrayList<>();
+
+    // creating our diceCup
+    DiceCup diceCup = new DiceCup();
 
     /**
      * Constructor for GameBoard

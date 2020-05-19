@@ -2,28 +2,28 @@ import java.util.Random;
 
 public class Dice {
 
-    private int numberOfEyes = 6;
-
     Random random = new Random();
+
+    private int maxNumberOfEyes = 6;
 
     /**
      * Constructor for our dice
      */
-    public Dice() {
 
+    public Dice() {
     }
 
     // roll method
     public int roll() {
-       int result = random.nextInt(numberOfEyes) + 1;
+       int result = random.nextInt(maxNumberOfEyes) + 1;
        return result;
     }
 
-    public int getNumberOfEyes() {
-        return numberOfEyes;
+    public int getMaxNumberOfEyes() {
+        return maxNumberOfEyes;
     }
 
-    public void setNumberOfEyes(int numberOfEyes) {
-        this.numberOfEyes = numberOfEyes;
+    public void setMaxNumberOfEyes(int maxNumberOfEyes) {
+        this.maxNumberOfEyes = maxNumberOfEyes;
     }
 }

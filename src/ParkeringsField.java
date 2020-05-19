@@ -1,5 +1,6 @@
 public class ParkeringsField extends GameField {
 
+    // Constructor
     public ParkeringsField(int pos, String name) {
         setPos(pos);
         setName(name);

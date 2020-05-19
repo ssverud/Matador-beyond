@@ -1,5 +1,6 @@
 public class VisitPrisonField extends GameField {
 
+    // Constructor
     public VisitPrisonField(int pos, String name) {
         setPos(pos);
         setName(name);

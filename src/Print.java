@@ -1,6 +1,7 @@
 
 public class Print {
 
+    // Constructor
     public Print() {
 
     }

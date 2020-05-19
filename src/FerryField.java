@@ -6,6 +6,7 @@ public class FerryField extends GameField {
 
     ScanThings scanThings = new ScanThings();
 
+    // Constructor
     public FerryField(int pos, String name, int price, int rentPrice, int pledgePrice) {
         setPos(pos);
         setName(name);

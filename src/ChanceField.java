@@ -12,14 +12,10 @@ public class ChanceField extends GameField {
         cardDeck.shuffle();
     }
 
+    // Constructor
     public ChanceField(int pos, String name) {
         setPos(pos);
         setName(name);
-        setGameFieldType(GameFieldType.CHANCEFIELD);
-    }
-
-    public ChanceField(int pos){
-        setPos(pos);
         setGameFieldType(GameFieldType.CHANCEFIELD);
     }
 
@@ -142,7 +138,7 @@ public class ChanceField extends GameField {
 
 
     public GameField landedOn(Player player, Logic logic) {
-        ChanceField cf = new ChanceField(player.getPos());
+        //ChanceField cf = new ChanceField(player.getPos());
         System.out.println("De har landet på 'Prøv lykken'. Træk et kort");
         System.out.println(cardDeck.cards.size());
         System.out.println(cardDeck.cards.get(0).getTextOfCard());
@@ -153,12 +149,12 @@ public class ChanceField extends GameField {
         switch (type) {
             case ("FÆNGSEL"):
                 //flyt til fængslet
-               cf.prison(player);
+               prison(player);
                 break;
 
             case ("REPERATION"):
                 //Betal 3000 kr
-                cf.reperation(player);
+                reperation(player);
                 break;
 
             case ("AKTIER"):
@@ -167,7 +163,7 @@ public class ChanceField extends GameField {
             case ("TIPNING"):
 
                 //modtag 1000 kr
-                cf.bankReward(player, 1000);
+                bankReward(player, 1000);
                 break;
 
             case ("REDERI"):
@@ -175,17 +171,17 @@ public class ChanceField extends GameField {
                 //for loop der kører igennem til den rammer et ferryField, som starter forfra hvis den når igennem inden den rammer et
                 //Det virker sådan som brættet er lagt ud nu, men ville kunne gå out of bounds hvis der lå et chancefield på sidste plads
 
-                cf.moveToFerry(player, logic);
+                moveToFerry(player, logic);
                 break;
 
             case ("KONGENSFØDSELSDAG"):
 
-                cf.kingsBirthday(player);
+                kingsBirthday(player);
                 break;
 
             case ("VÆRDIG TRÆNGENDE"):
                 //et eller andet bullshit
-                cf.matadorLegat(player);
+                matadorLegat(player);
                 break;
 
             case ("PARKERINGSBØDE"):
@@ -196,7 +192,7 @@ public class ChanceField extends GameField {
                 break;
 
             case ("RYK TILBAGE"):
-                cf.moveBack(player);
+                moveBack(player);
                 break;
 
             case ("FORSIKRING"):
@@ -212,12 +208,12 @@ public class ChanceField extends GameField {
 
             case ("FÆRGE"):
                 // tag med næste færge, modtag 4000 hvis start paseres
-                cf.ferryTrip(player, logic);
+                ferryTrip(player, logic);
                 break;
 
             case ("KLASSELOTTERIET"):
                 //modtag 500 kroner
-                cf.bankReward(player, 500);
+                bankReward(player, 500);
                 break;
 
             case ("RÅDHUSPLADSEN"):
@@ -228,7 +224,7 @@ public class ChanceField extends GameField {
             case ("EJENDOMSSKAT"):
                 //betal 800 kr pr hus, 2300 per hotel
 
-                cf.propertyTax(player);
+                propertyTax(player);
                 break;
 
             case ("START"):
@@ -239,7 +235,7 @@ public class ChanceField extends GameField {
 
             case ("EFTERSKAT"):
                 //modtag 3000 kr
-                cf.bankReward(player, 3000);
+                bankReward(player, 3000);
                 break;
 
            /* case ("OLIEPRISER"):
@@ -263,14 +259,14 @@ public class ChanceField extends GameField {
 
             case ("AVL"):
                 //modtag 200 kr
-                cf.bankReward(player, 200);
+                bankReward(player, 200);
                 break;
 
             case ("FØDSELSDAG"):
                 //modtag 200 af alle andre spillere
                 //int players = 0;
 
-                cf.playerBirthday(player, logic);
+                playerBirthday(player, logic);
                 break;
         }
         return null;
