@@ -1,5 +1,6 @@
 public class StartField extends GameField {
 
+    // Constructor
     public StartField(int pos, String name) {
         setPos(pos);
         setName(name);

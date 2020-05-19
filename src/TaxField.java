@@ -2,6 +2,7 @@ public class TaxField extends GameField {
 
     ScanThings scanThings = new ScanThings();
 
+    // Constructor
     public TaxField(int pos, String name) {
         setPos(pos);
         setName(name);

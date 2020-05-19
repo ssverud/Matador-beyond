@@ -2,15 +2,15 @@ import java.util.Random;
 
 public class Dice {
 
-    private int maxNumberOfEyes = 6;
-
     Random random = new Random();
+
+    private int maxNumberOfEyes = 6;
 
     /**
      * Constructor for our dice
      */
-    public Dice() {
 
+    public Dice() {
     }
 
     // roll method

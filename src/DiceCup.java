@@ -9,8 +9,8 @@ public class DiceCup {
     /**
      * Constructor for our DiceCup
      */
-    public DiceCup() {
 
+    public DiceCup() {
     }
 
     // shake cup method

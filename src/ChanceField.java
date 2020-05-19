@@ -12,7 +12,7 @@ public class ChanceField extends GameField {
         cardDeck.shuffle();
     }
 
-    // constructor
+    // Constructor
     public ChanceField(int pos, String name) {
         setPos(pos);
         setName(name);

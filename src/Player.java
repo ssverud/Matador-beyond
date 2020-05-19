@@ -95,6 +95,7 @@ public class Player {
         money = money - amount;
     }
 
+    // totalValue is everything the player owns including everything + money
     public int updateTotalValue() {
 
         int valueOfOwnedFields = 0;
