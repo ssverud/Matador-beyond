@@ -19,6 +19,7 @@ public class GameField {
         BREWERYFIELD
     }
 
+    // types of propertyFields
     enum PropertyColor {
         BLUE,
         PINK,

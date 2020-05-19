@@ -4,7 +4,7 @@ public class BreweryField extends GameField{
     private int rentPrice;
     private int pledgePrice;
 
-    // constructor
+    // Constructor
     public BreweryField(int pos, String name, int price, int rentPrice, int pledgePrice) {
         setPos(pos);
         setName(name);

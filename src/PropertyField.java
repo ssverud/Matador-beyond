@@ -8,6 +8,7 @@ public class PropertyField extends GameField {
 
     ScanThings scanThings = new ScanThings();
 
+    // Constructor
     public PropertyField(int pos, String name, int price, int rentPrice, int pledgePrice, int housePrice, PropertyColor propertyColor) {
         setPos(pos);
         setName(name);
@@ -32,7 +33,7 @@ public class PropertyField extends GameField {
 
             int answer = scanThings.scanNumber();
             if (answer == 1) {
-                System.out.println("Spillerens valuta er " + player.getMoney());
+                System.out.println("Deres valuta er " + player.getMoney());
                 if (player.getMoney() > getPrice()) {
                     player.buyField(this);
                     setOwnedBy(player);
@@ -40,7 +41,7 @@ public class PropertyField extends GameField {
 
 
                     System.out.println(player.getName() + " samlede værdier af valuta og grunde er " + player.getTotalValue());
-                    System.out.println("Spillerens valuta er " + player.getMoney());
+                    System.out.println("Deres valuta er " + player.getMoney());
                 } else if (player.getMoney() < getPrice()) {
                     System.out.println("De har ikke nok valuta til at købe denne grund.");
 

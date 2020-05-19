@@ -1,5 +1,6 @@
 public class PrisonField extends GameField {
 
+    // Constructor
     public PrisonField(int pos, String name) {
         setPos(pos);
         setName(name);

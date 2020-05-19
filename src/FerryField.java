@@ -6,7 +6,7 @@ public class FerryField extends GameField {
 
     ScanThings scanThings = new ScanThings();
 
-    // constructor
+    // Constructor
     public FerryField(int pos, String name, int price, int rentPrice, int pledgePrice) {
         setPos(pos);
         setName(name);
@@ -34,16 +34,16 @@ public class FerryField extends GameField {
 
             int answer = scanThings.scanNumber();
             if (answer == 1) {
-                System.out.println("Spillerens samlede valuta: " + player.getMoney());
+                System.out.println("Deres samlede valuta er: " + player.getMoney());
                 if (player.getMoney() > getPrice()) {
                     player.buyField(this);
                     setOwnedBy(player);
                     System.out.println("Denne Færge er nu ejet af: " + getOwnedBy());
 
-                    System.out.println(player.getName() + "ejer en samlet værdi af valute + ejendomme på: " + player.getTotalValue());
-                    System.out.println("Spillerens samlede valuta: " + player.getMoney());
+                    System.out.println("Deres samlede værdi af valute plus ejendomme er: " + player.getTotalValue());
+                    System.out.println("Deres samlede valuta er: " + player.getMoney());
                 } else if (player.getMoney() < getPrice()) {
-                    System.out.println("De har ikke valuta nok til at købe denne ejendom");
+                    System.out.println("De har ikke valuta nok til at købe denne grund.");
                 }
             } else if (answer == 2) {
                 System.out.println("Ok De ønsker ikke at købe den");

@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class ScanThings {
 
+    // Constructor
     public ScanThings() {
 
     }

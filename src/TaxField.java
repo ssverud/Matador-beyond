@@ -2,6 +2,7 @@ public class TaxField extends GameField {
 
     ScanThings scanThings = new ScanThings();
 
+    // Constructor
     public TaxField(int pos, String name) {
         setPos(pos);
         setName(name);
@@ -23,13 +24,13 @@ public class TaxField extends GameField {
             switch (taxChoice) {
                 case 1:
                     player.setMoney(player.getMoney() - 4000);
-                    System.out.println("Kr. 4000 er blevet fratrukket Deres konto.");
+                    System.out.println("4000 kr. er blevet fratrukket Deres konto.");
                     break;
                 case 2:
 
                     tax = player.updateTotalValue() / percentage;
 
-                    System.out.println("Du betaler: " + tax + " i indkomstsskat!");
+                    System.out.println("De skal betale: " + tax + " i indkomstsskat!");
                     player.setMoney(player.getMoney() - tax);
                     break;
             }
