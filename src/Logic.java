@@ -195,13 +195,13 @@ public class Logic implements Runnable {
     }
 
     public void presentSellPropertyOption(Player player) {
-        System.out.println("Ønsker De at sælge en ejendom?");
+        System.out.println("Ønsker De at sælge en grund?");
         System.out.println("1. Ja");
         System.out.println("2. Nej");
         int answer = scanThings.scanNumber();
 
         if (answer == 1) {
-            System.out.println("Her er de ejendomme De ejer og kan sælge: ");
+            System.out.println("Her er de grunde De ejer og kan sælge: ");
             System.out.println(player.ownedFields);
 
             GameField chosenProperty;
