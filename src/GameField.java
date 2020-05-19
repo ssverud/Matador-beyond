@@ -1,34 +1,10 @@
 public class GameField {
     private String Name;
-    //private String type;
     private int pos;
     private GameFieldType gameFieldType;
     private int price = 0;
     private PropertyColor propertyColor;
     private Player ownedBy = null;
-
-
-    // private Player boughtBy;
-
-/*
-    private boolean isBought;
-
-    public boolean isBought() {
-        return isBought;
-    }
-
-    public void setBought(boolean bought) {
-        isBought = bought;
-    }
-
-    public Player getBoughtBy() {
-        return boughtBy;
-    }
-
-    public void setBoughtBy(Player boughtBy) {
-        this.boughtBy = boughtBy;
-    }
-    */
 
     // types of gameFields
     enum GameFieldType {
@@ -54,7 +30,6 @@ public class GameField {
         PURPLE
     }
 
-
     // meant to be overwritten
     public GameField landedOn(Player player) {
         System.out.println("HAS NOT BEEN OVERWRITTEN, please fix in the current gamefield - playerPos: " + player.getPos());
@@ -65,9 +40,6 @@ public class GameField {
         System.out.println("HAS NOT BEEN OVERWRITTEN, please fix in the current gamefield - playerPos: " + player.getPos());
         return this;
     }
-
-
-
 
         /**
          * Getters and setters

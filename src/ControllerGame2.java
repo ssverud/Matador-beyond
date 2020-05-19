@@ -3,10 +3,6 @@ import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.control.TextArea;
 import javafx.scene.shape.Rectangle;
-import javafx.scene.input.DragEvent;
-import javafx.scene.input.MouseDragEvent;
-import java.awt.*;
-
 import static javafx.scene.paint.Color.RED;
 
 public class ControllerGame2 {
