@@ -11,7 +11,7 @@ class ChanceFieldTest {
     Player p3 = new Player("P3");
     ChanceField cf = new ChanceField(0 );
 
-    public void setup(Player player){
+    public void setup(){
         logic.listOfPlayers.add(p1);
         logic.listOfPlayers.add(p2);
         logic.listOfPlayers.add(p3);
@@ -28,35 +28,35 @@ class ChanceFieldTest {
 
     @Test
     void reperation() {
-        setup(p1);
+        setup();
         cf.reperation(p1);
         assertEquals(7000, p1.getMoney());
     }
 
     @Test
     void prison() {
-        setup(p1);
+        setup();
         cf.prison(p1);
         assertTrue(p1.isInPrison() == true);
     }
 
     @Test
     void bankRewardTest() {
-        setup(p1);
+        setup();
         cf.bankReward(p1, 200);
         assertEquals(10200, p1.getMoney());
     }
 
     @Test
     void moveToFerry() {
-        setup(p1);
+        setup();
         cf.moveToFerry(p1, logic);
         assertTrue(logic.gameBoard.gameFields.get(p1.getPos()).getGameFieldType() == GameField.GameFieldType.FERRYFIELD);
     }
 
     @Test
     void kingsBirthday() {
-        setup(p1);
+        setup();
         cf.kingsBirthday(p1);
         assertTrue(p1.isHasGetOutOfJailCard() == true);
     }
@@ -72,7 +72,7 @@ class ChanceFieldTest {
 
     @Test
     void ferryTrip() {
-        setup(p1);
+        setup();
         p1.setPos(5);
         cf.ferryTrip(p1, logic);
         assertTrue(logic.gameBoard.gameFields.get(p1.getPos()).getGameFieldType() == GameField.GameFieldType.FERRYFIELD);
@@ -80,7 +80,7 @@ class ChanceFieldTest {
 
     @Test
     void propertyTax() {
-        setup(p1);
+        setup();
         p1.buyField((logic.gameBoard.gameFields.get(1))); // costs 1200
         p1.buyField((logic.gameBoard.gameFields.get(3))); //costs 1200
         p1.buyHouseOnProperty((PropertyField) p1.ownedFields.get(0));
@@ -90,9 +90,7 @@ class ChanceFieldTest {
 
     @Test
     void playerBirthday() {
-        setup(p1);
-        setup(p2);
-        setup(p3);
+        setup();
 
         cf.playerBirthday(p1, logic);
         assertEquals(10400, p1.getMoney());

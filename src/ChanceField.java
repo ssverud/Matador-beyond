@@ -130,16 +130,15 @@ public class ChanceField extends GameField {
     }
     */
 
+    //POTENTIEL BUG: Hvis spilleren selv har under 200 kr i banken kan han gå bankeret, da han selv for trullet pengene først.
     public void playerBirthday(Player player, Logic logic){
         for (int i = 0; i < logic.listOfPlayers.size(); i++) {
             System.out.println(logic.listOfPlayers.get(i) + " har " + logic.listOfPlayers.get(i).getMoney());
-            logic.listOfPlayers.get(i).setMoney(logic.listOfPlayers.get(i).getMoney() - 200);
+            logic.listOfPlayers.get(i).payToBank(200);
             System.out.println(logic.listOfPlayers.get(i) + " har nu " + logic.listOfPlayers.get(i).getMoney());
-
-            player.setMoney(player.getMoney() + 200);
         }
+        bankReward(player, 200*logic.listOfPlayers.size());
     }
-
 
     public GameField landedOn(Player player, Logic logic) {
         //ChanceField cf = new ChanceField(player.getPos());
