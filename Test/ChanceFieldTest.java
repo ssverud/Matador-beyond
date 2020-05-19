@@ -9,7 +9,7 @@ class ChanceFieldTest {
     Player p1 = new Player("P1");
     Player p2 =new Player("P2");
     Player p3 = new Player("P3");
-    ChanceField cf = new ChanceField(0 );
+    ChanceField cf = new ChanceField(0,"Prøv Lykken" );
 
     public void setup(){
         logic.listOfPlayers.add(p1);
@@ -63,10 +63,28 @@ class ChanceFieldTest {
 
     @Test
     void matadorLegat() {
+        setup();
+        cf.matadorLegat(p1);
+        p1.updateTotalValue();
+        assertEquals(50000, p1.getMoney());
+
+        p1.setMoney(20000);
+        p1.updateTotalValue();
+        cf.matadorLegat(p1);
+        assertEquals(20000, p1.getMoney());
     }
 
     @Test
     void moveBack() {
+        setup();
+        p1.setPos(3);
+        cf.moveBack(p1);
+        assertEquals(0, p1.getPos());
+        assertTrue(logic.gameBoard.gameFields.get(p1.getPos()).getName() == "START");
+
+        p1.setPos(2);
+        cf.moveBack(p1);
+        assertTrue(logic.gameBoard.gameFields.get(p1.getPos()).getName() == "Rådhuspladsen");
 
     }
 
