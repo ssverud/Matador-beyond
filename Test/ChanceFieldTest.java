@@ -90,6 +90,13 @@ class ChanceFieldTest {
 
     @Test
     void playerBirthday() {
-    }
+        setup(p1);
+        setup(p2);
+        setup(p3);
 
+        cf.playerBirthday(p1, logic);
+        assertEquals(10400, p1.getMoney());
+        assertEquals(9800, p2.getMoney());
+        assertEquals(9800, p3.getMoney());
+    }
 }
