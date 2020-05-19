@@ -1,18 +1,11 @@
-import java.awt.*;
-import java.lang.reflect.Array;
-import java.lang.reflect.Field;
 import java.util.ArrayList;
 
-
 public class GameBoard {
-    int numberOfFields = 41;
 
     /**
      * Instantiator
      */
     ArrayList<GameField> gameFields = new ArrayList<>(); // array of gameFields
-
-
 
     DiceCup diceCup = new DiceCup(); // creating our diceCup
 
@@ -61,17 +54,5 @@ public class GameBoard {
         gameFields.add(new PropertyField(37, "Frederiksborggade", 7000, 700, 4000, 3500, PropertyField.PropertyColor.PURPLE));
         gameFields.add(new TaxField(38, "Ekstraordinær statsskat"));
         gameFields.add(new PropertyField(39, "Rådhuspladsen", 8000, 1000, 4000, 4000, PropertyField.PropertyColor.PURPLE));
-    }
-
-
-
-    public void playRecursive(GameField gamefield) {
-
-    }
-
-    //not sure if well use this 17/4
-    public void setAndPlayPlayerPos(Player player) {
-        gameFields.get(player.getPos());
-
     }
 }

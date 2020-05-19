@@ -1,9 +1,6 @@
-import javafx.scene.control.Alert;
-
 import java.util.ArrayList;
 
 public class Logic implements Runnable {
-
 
     /**
      * Instantiator
@@ -18,7 +15,6 @@ public class Logic implements Runnable {
     GameField activeGameField;
     GameField tempActiveGameField;
     Player playerWhoHasTurn;
-    int numberOfPlayers;
     int numberOfGameFields = gameBoard.gameFields.size();
     int diceCupRollResult;
 
@@ -26,23 +22,9 @@ public class Logic implements Runnable {
     /**
      * welcomeToTheGame creates our world and creates the players
      */
+
     public void welcomeToTheGame() {
 
-        // Print out the gamefield list
-        //System.out.println("printing the gamefield list:");
-        //print.printGameFields(gameBoard.gameFields);
-
-        //System.out.println("How many player are going to play?");
-
-        // getNumberOfPlayersPlaying kommer fra ControllerPlayerSetup via "extendt" øverst i logic klassen
-        //System.out.println("??? " + getNumberOfPlayersPlaying());
-        //numberOfPlayers = getNumberOfPlayersPlaying();
-
-        //System.out.println("Okay you are going to be playing " + getNumberOfPlayersPlaying() + " players");
-        //System.out.println("Lets start creating your chars!");
-
-        // createPlayers(numberOfPlayers);
-        //createPlayers();
     }
 
     public void createPlayers(ArrayList<String> playerNames) {
@@ -56,25 +38,6 @@ public class Logic implements Runnable {
         }
         System.out.println("Liste af spillere: " + listOfPlayers + " Antal: " + listOfPlayers.size());
     }
-
-    /*
-    // old version of createPlayers
-    public void createPlayers(int numberOfPlayers) {
-        // for each numberOfPlayers create scanner and create a player
-        for (int i = 1; i < numberOfPlayers + 1; i++) {
-            System.out.println("What is the name of the " + i + ". player?");
-            // Scans name, create player,
-            // add player to listOfPlayers,
-            // print out the player
-            String nameOfPlayer = scanThings.scanString();
-            Player player = new Player(nameOfPlayer);
-            listOfPlayers.add(player);
-            System.out.println("Okay the name of  the " + i + ". player is: " + nameOfPlayer);
-        }
-        System.out.println("Printing out our list of players:");
-        System.out.println(listOfPlayers);
-    }
-    */
 
     // connected to implements Runable in the beginning of Logic
     @Override
@@ -113,17 +76,6 @@ public class Logic implements Runnable {
 
     public void playerTurn(Player player) {
 
-        /*
-        // approach to try to replace our Scanner delay system in terminal with
-        // alert boxes in the GUI
-
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        alert.setTitle("Information Dialog");
-        alert.setHeaderText("Look, an Information Dialog");
-        alert.setContentText("I have a great message for you!");
-        alert.showAndWait();
-        */
-
         int playerWhoHasTurnPos = 0;
         int playerWhoHasTurnMoney;
 
@@ -139,43 +91,13 @@ public class Logic implements Runnable {
         }
 
         if (playerWhoHasTurn.isInPrison() == true) {
-            System.out.println("De er i Fængsel! For at blive sat fri skal De vælge en af følgende: ");
-            System.out.println("1. Slå det samme antal øjne på begge terninger. De har 3 forsøg");
-            System.out.println("2. Betal 1000 kr. før De kasterne terningerne.");
+            presentPrisonOptions(playerWhoHasTurn);
 
-            if (playerWhoHasTurn.isHasGetOutOfJailCard() == true) {
-                System.out.println("3. Brug 'Slip-ud-af-fængler' kort");
-            }
-
-            int prisonOptionPick = scanThings.scanNumber();
-
-            if (prisonOptionPick == 1) {
-
-                System.out.println("Deres første terning slog: " + gameBoard.diceCup.dice1Result);
-                System.out.println("Deres anden terning slog: " + gameBoard.diceCup.dice2Result);
-
-                if (gameBoard.diceCup.dice1Result == gameBoard.diceCup.dice2Result) {
-                    System.out.println("Tillykke! De har kastet to ens terninger. De slippes fra af Fængsel");
-                    player.setInPrison(false);
-                } else {
-                    playerWhoHasTurn.setTurnsInPrison(playerWhoHasTurn.getTurnsInPrison() + 1);
-                }
-            } else if (prisonOptionPick == 2) {
-                playerWhoHasTurn.outOfPrisonWithMoney();
-            }
-            if (playerWhoHasTurn.isHasGetOutOfJailCard() == true) {
-                if (prisonOptionPick == 3) {
-                    playerWhoHasTurn.useGetOutOfJailCard();
-                    System.out.println("De har brugt Deres 'slip-ud-af-fængsel' kort");
-                    CardOfChanceDeck.getInstance().emptyDeck.add( new Card("KONGENS FØDSELSDAG", "I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares, indtil De får brug for det, eller De kan sælge det."));
-                }
-            }
         }
         if (playerWhoHasTurn.isInPrison() == false) {
 
             //TEST AF LANDEDON METHODS - SLET SENERE
             //diceCupRollResult = 30;
-
 
             // Loop for player move (Move 1 field per iteration)
             for (int i = 0; i < diceCupRollResult; i++) {
@@ -198,11 +120,9 @@ public class Logic implements Runnable {
 
                 tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
-            // activeGameField.landedOn(playerWhoHasTurn);
             if (i < diceCupRollResult - 1) {
                 print.printPassedField(playerWhoHasTurn, tempActiveGameField);
             }
-
                 playerWhoHasTurn.setPos(playerWhoHasTurnPos);
                 playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
                 checkPlayerMoney(playerWhoHasTurn);
@@ -238,31 +158,41 @@ public class Logic implements Runnable {
     }
 
     public void presentPrisonOptions(Player player) {
-        System.out.println("De er blevet sat i 'Fængsel'. De har to muligheder: ");
-        System.out.println("1. Betal 2000 kr. for at blive sat fri.");
-        System.out.println("2. Kast to ens terninger.");
-        int chosenOption = scanThings.scanNumber();
-        if (chosenOption == 1) {
-            player.setMoney(player.getMoney() - 2000);
-        } else if (chosenOption == 2) {
+        System.out.println("De er i Fængsel! For at blive sat fri skal De vælge en af følgende: ");
+        System.out.println("1. Slå det samme antal øjne på begge terninger. De har 3 ture");
+        System.out.println("2. Betal 1000 kr. før De kaster terningerne.");
 
-            for (int i = 0; i < 3; i++) {
-                gameBoard.diceCup.shakeDiceCup();
-                int dice1NumberOfEyes = gameBoard.diceCup.dice1.getNumberOfEyes();
-                int dice2NumberOfEyes = gameBoard.diceCup.dice2.getNumberOfEyes();
+        if (playerWhoHasTurn.isHasGetOutOfJailCard() == true) {
+            System.out.println("3. Brug 'Slip-ud-af-fængsel' kort");
+        }
 
-                if (dice1NumberOfEyes == dice2NumberOfEyes) {
-                    System.out.println("De har kastet to ens terninger. De er sat fri.");
-                    break;
-                } else if (dice1NumberOfEyes != dice2NumberOfEyes) {
-                    System.out.println("Desværre! De fik ikke to ens terninger.");
-                }
+        int prisonOptionPick = scanThings.scanNumber();
+
+        if (prisonOptionPick == 1) {
+
+            System.out.println("Deres første terning slog: " + gameBoard.diceCup.dice1Result);
+            System.out.println("Deres anden terning slog: " + gameBoard.diceCup.dice2Result);
+
+            if (gameBoard.diceCup.dice1Result == gameBoard.diceCup.dice2Result) {
+                System.out.println("Tillykke! De har kastet to ens terninger. De slippes ud af Fængsel");
+                player.setInPrison(false);
+            } else {
+                playerWhoHasTurn.setTurnsInPrison(playerWhoHasTurn.getTurnsInPrison() + 1);
+            }
+        } else if (prisonOptionPick == 2) {
+            playerWhoHasTurn.outOfPrisonWithMoney();
+        }
+        if (playerWhoHasTurn.isHasGetOutOfJailCard() == true) {
+            if (prisonOptionPick == 3) {
+                playerWhoHasTurn.useGetOutOfJailCard();
+                System.out.println("De har brugt Deres 'slip-ud-af-fængsel' kort");
+                CardOfChanceDeck.getInstance().emptyDeck.add(new Card("KONGENS FØDSELSDAG", "I anledning af kongens fødselsdag benådes De herved for fængsel. Dette kort kan opbevares, indtil De får brug for det, eller De kan sælge det."));
             }
         }
     }
 
     public void presentSellPropertyOption(Player player) {
-        System.out.println("Ønsker De at sænge en ejendom?");
+        System.out.println("Ønsker De at sælge en ejendom?");
         System.out.println("1. Ja");
         System.out.println("2. Nej");
         int answer = scanThings.scanNumber();
@@ -299,7 +229,7 @@ public class Logic implements Runnable {
                 }
             }
         }
-        System.out.println("Ønsker De at sælge et hus? Tas 1 eller 2 og tryk ENTER!");
+        System.out.println("Ønsker De at sælge et hus? Tast 1 eller 2 og tryk ENTER!");
         System.out.println("1. Ja");
         System.out.println("2. Nej");
         int answer = scanThings.scanNumber();

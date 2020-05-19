@@ -1,7 +1,7 @@
 public class BreweryField extends GameField{
 
     ScanThings scanThings = new ScanThings();
-    private int rentPrice; // should be made into a calculation somewhere?
+    private int rentPrice;
     private int pledgePrice;
 
     public BreweryField(int pos, String name, int price, int rentPrice, int pledgePrice) {

@@ -1,5 +1,3 @@
-import javafx.beans.property.Property;
-
 import java.util.ArrayList;
 
 public class Player {

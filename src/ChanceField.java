@@ -4,17 +4,13 @@ import java.util.Random;
 
 public class ChanceField extends GameField {
 
-    Random random = new Random();
     String type = "chanceField";
     CardOfChanceDeck cardDeck;
-    GameBoard gameboard;
-    Logic logic;
 
     {
         cardDeck = CardOfChanceDeck.getInstance();
         cardDeck.shuffle();
     }
-
 
     public ChanceField(int pos, String name) {
         setPos(pos);
@@ -47,7 +43,6 @@ public class ChanceField extends GameField {
             if (i == logic.gameBoard.gameFields.size()) {
                 i = 0;
             }
-
             // missing payment?
         }
     }
@@ -78,8 +73,6 @@ public class ChanceField extends GameField {
             if (i == logic.gameBoard.gameFields.size()) {
                 i = 0;
             }
-
-
         }
     }
 
@@ -100,7 +93,7 @@ public class ChanceField extends GameField {
 
         }
         System.out.println("Du har " + sumHouses + " huse, derfor skal du betale " + sumHouses * 800 + "kr");
-        //player.setMoney(player.getMoney() - (sumHouses * 800));
+        // player.setMoney(player.getMoney() - (sumHouses * 800));
         player.payToBank(sumHouses * 800);
         System.out.println(player.getMoney());
 
@@ -144,16 +137,11 @@ public class ChanceField extends GameField {
             System.out.println(logic.listOfPlayers.get(i) + " har nu " + logic.listOfPlayers.get(i).getMoney());
 
             player.setMoney(player.getMoney() + 200);
-            //System.out.println(player.getMoney());
         }
     }
 
 
     public GameField landedOn(Player player, Logic logic) {
-
-        //for (int j = 0; j<cardDeck.cards.size()-1; j++) {  //BLEV BRUGT TIL TESTEN, er efterladt for en sikkerheds skyld
-        //player.setMoney(10000);
-        //gameboard = new GameBoard();
         ChanceField cf = new ChanceField(player.getPos());
         System.out.println("De har landet på 'Prøv lykken'. Træk et kort");
         System.out.println(cardDeck.cards.size());
@@ -161,7 +149,6 @@ public class ChanceField extends GameField {
         type = cardDeck.cards.get(0).getType();
         cardDeck.putToEmptyDeck();
         System.out.println(cardDeck.cards.size());
-
 
         switch (type) {
             case ("FÆNGSEL"):
@@ -286,8 +273,6 @@ public class ChanceField extends GameField {
                 cf.playerBirthday(player, logic);
                 break;
         }
-
-       // }
         return null;
     }
 

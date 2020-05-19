@@ -8,10 +8,6 @@ import javafx.stage.Stage;
 import javafx.scene.control.TextField;
 import java.io.IOException;
 import java.util.ArrayList;
-import javafx.application.Platform;
-import javafx.scene.control.ComboBox;
-import javafx.scene.text.Text;
-import java.awt.*;
 
 public class ControllerPlayerSetup {
 
@@ -36,10 +32,7 @@ public class ControllerPlayerSetup {
 
     @FXML
     public void initialize() {
-        // creates comboBox
-        //comboBox.getItems().removeAll(comboBox.getItems());
-        //comboBox.getItems().addAll("1", "2", "3", "4", "5", "6");
-        //comboBox.getSelectionModel().select("Vælg antal spillere");
+
     }
 
     @FXML

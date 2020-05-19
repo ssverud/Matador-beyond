@@ -52,34 +52,6 @@ public class PropertyField extends GameField {
         return this;
     }
 
-
-    public boolean checkIfPropertyPairExist(String propertyName, Player player) {
-        if (propertyName.equals("Rødovrevej") || propertyName.equals("Hvidovrevej")) {
-            if (player.ownedFields.contains("Rødovrevej")) {
-                if (player.ownedFields.contains("Hvidovrevej")) {
-                    return true;
-                }
-            }
-        }
-
-        if (propertyName.equals("Roskildevej") || propertyName.equals("Valby Langgade") || propertyName.equals("Allégade")) {
-            if (player.ownedFields.contains("Roskildevej")) {
-                if (player.ownedFields.contains("Valby Langgade")) {
-                    if (player.ownedFields.contains("Allégade")) {
-                        return true;
-                    }
-                }
-            }
-        }
-        return false;
-    }
-
-    public boolean checkIfPropertyPairExistTest(PropertyField propertyField, Player player) {
-        if(player.ownedFields.contains(propertyField)){}
-        return false;
-    }
-
-
     /**
      * Getters and setters
      */

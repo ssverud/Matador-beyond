@@ -17,7 +17,7 @@ public class ControllerGame {
 
     public void drawLine () {
 
-        // code repeating (1 of 3), not good
+        // code repeating (1 of 3)
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
         double diameter = min(width, hight);
@@ -43,7 +43,7 @@ public class ControllerGame {
 
     public void drawCircle () {
 
-        // code repeating (2 of 3), not good
+        // code repeating (2 of 3)
         double width =  anchorpane.getWidth();
         double hight = anchorpane.getHeight();
         double diameter = min(hight, width);
@@ -54,12 +54,6 @@ public class ControllerGame {
 
         // adds the new circle to the AnchorPane container
         anchorpane.getChildren().add(outerCircle);
-
-        /*
-        System.out.print(width);
-        System.out.print(" : ");
-        System.out.println(hight);
-        */
 
         // creates innerCircle with 20 precent reduction in diameter
         Circle innerCircle = new Circle(width / 2, hight / 2, diameter / 2 - diameter * 0.2);
@@ -72,7 +66,7 @@ public class ControllerGame {
         int degreesPlaerMove = 9; // 360 degrees / 40 fields
     public void movePlayer() {
 
-        // code repeating (3 of 3), not good
+        // code repeating (3 of 3)
         double width = anchorpane.getWidth();
         double hight = anchorpane.getHeight();
         double diameter = min(hight, width) - playerDistFromEdge;
@@ -86,12 +80,6 @@ public class ControllerGame {
         Circle circle = new Circle(endX, endY , 5);
         circle.setFill(RED);
         anchorpane.getChildren().add(circle);
-
-        /*
-        System.out.print(width);
-        System.out.print(" : ");
-        System.out.println(hight);
-        */
     }
 
 
