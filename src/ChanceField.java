@@ -216,7 +216,7 @@ public class ChanceField extends GameField {
                 propertyTax(player, 500);
 
                 break;
-                
+
             case ("GRØNNINGEN"):
                 //ryk til grønningen, modtag penge hvis start krydses
                 player.setPos(24);
