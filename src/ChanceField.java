@@ -89,7 +89,6 @@ public class ChanceField extends GameField {
         }
         for (int i = 0; i < sumList.size(); i++) {
             sumHouses = sumHouses + sumList.get(i).getHouses();
-
         }
         System.out.println("Du har " + sumHouses + " huse, derfor skal du betale " + sumHouses * amount + "kr");
         // player.setMoney(player.getMoney() - (sumHouses * 800));
@@ -217,10 +216,7 @@ public class ChanceField extends GameField {
                 propertyTax(player, 500);
 
                 break;
-
-
-
-
+                
             case ("GRØNNINGEN"):
                 //ryk til grønningen, modtag penge hvis start krydses
                 player.setPos(24);
@@ -245,6 +241,4 @@ public class ChanceField extends GameField {
         }
         return null;
     }
-
 }
-
