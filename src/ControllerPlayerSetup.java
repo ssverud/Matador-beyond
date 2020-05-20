@@ -54,12 +54,12 @@ public class ControllerPlayerSetup {
         // if a minimum of 1 player name is put into the GUI playerSetup, move on to load game window
         if(players.size() > 0) {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/gameRectangle.fxml"));
 
             // allows acces to the Logic class in ControllerGame2
             Parent homePageStartGame = loader.load();
-            ControllerGame2 controllerGame2 = loader.getController();
-            controllerGame2.logic = logic;
+            ControllerGameRectangle controllerGameRectangle = loader.getController();
+            controllerGameRectangle.logic = logic;
 
             // loads the game2 window
             Scene homePageStartGameScene = new Scene(homePageStartGame);
@@ -91,12 +91,12 @@ public class ControllerPlayerSetup {
         // if a minimum of 1 player name is put into the GUI playerSetup, move on to load game window
         if(players.size() > 0 ) {
 
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/game.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/gameCircle.fxml"));
 
             // allows acces to the Logic class in ControllerGame
             Parent homePageStartGame = loader.load();
-            ControllerGame controllerGame = loader.getController();
-            controllerGame.logic = logic;
+            ControllerGameCircle controllerGameCircle = loader.getController();
+            controllerGameCircle.logic = logic;
 
             // loads the game window
             Scene homePageStartGameScene = new Scene(homePageStartGame);
