@@ -99,10 +99,16 @@ public class Player {
     public int updateTotalValue() {
 
         int valueOfOwnedFields = 0;
-        totalValue = money + valueOfOwnedFields;
+        //totalValue = money + valueOfOwnedFields;
 
         for (int i = 0; i < ownedFields.size(); i++) {
-            valueOfOwnedFields += ownedFields.get(i).getPrice();
+            //System.out.println("TEST");
+            //System.out.println(ownedFields.size());
+            //System.out.println(ownedFields.get(i).getPrice());
+            valueOfOwnedFields = valueOfOwnedFields + ownedFields.get(i).getPrice();
+            //System.out.println(valueOfOwnedFields);
+            //System.out.println("T: " + totalValue);
+
 
             if(ownedFields.get(i).getGameFieldType() == GameField.GameFieldType.PROPERTYFIELD){
                 PropertyField propertyField = (PropertyField) ownedFields.get(i);
@@ -110,6 +116,7 @@ public class Player {
                 totalValue += propertyField.getHousePrice() * propertyField.getHouses();
             }
         }
+        totalValue = money + valueOfOwnedFields;
         return totalValue;
     }
 

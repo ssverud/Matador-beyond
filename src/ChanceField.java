@@ -1,6 +1,4 @@
 import java.util.ArrayList;
-import java.util.Random;
-
 
 public class ChanceField extends GameField {
 
@@ -113,11 +111,11 @@ public class ChanceField extends GameField {
     public GameField landedOn(Player player, Logic logic) {
         //ChanceField cf = new ChanceField(player.getPos());
         System.out.println("De har landet på 'Prøv lykken'. Træk et kort");
-        System.out.println(cardDeck.cards.size());
+        //System.out.println(cardDeck.cards.size());
         System.out.println(cardDeck.cards.get(0).getTextOfCard());
         type = cardDeck.cards.get(0).getType();
         cardDeck.putToEmptyDeck();
-        System.out.println(cardDeck.cards.size());
+        //System.out.println(cardDeck.cards.size());
 
         switch (type) {
             case ("FÆNGSEL"):

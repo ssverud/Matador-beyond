@@ -4,7 +4,7 @@ public class PropertyField extends GameField {
     private int houses = 0;
     private int pledgePrice;
     private int housePrice;
-    private Player ownedBy = null;
+    //private Player ownedBy = null;
 
     ScanThings scanThings = new ScanThings();
 
@@ -22,11 +22,11 @@ public class PropertyField extends GameField {
 
     public PropertyField landedOn(Player player) {
         System.out.println("Dette er en husgrund.");
-        if (ownedBy != null) {
-            player.payRent(rentPrice, ownedBy);
-            System.out.println("De betalte " + rentPrice + " til " + ownedBy);
-        } else if (ownedBy == null) {
-            System.out.println("Denne grund er ikke købt.");
+        if (getOwnedBy() != null) {
+            player.payRent(rentPrice, getOwnedBy());
+            System.out.println("De betalte " + rentPrice + " til " + getOwnedBy());
+        } else if (getOwnedBy() == null) {
+            System.out.println("Denne grund er ikke købt. Den koster " + getPrice() + " kr.");
             System.out.println("Ønsker de at købe grunden? - Tast 1 eller 2 og tryk ENTER!");
             System.out.println("1. Ja");
             System.out.println("2. Nej");
@@ -37,17 +37,19 @@ public class PropertyField extends GameField {
                 if (player.getMoney() > getPrice()) {
                     player.buyField(this);
                     setOwnedBy(player);
-                    System.out.println("Denne grund er nu ejet af: " + ownedBy);
+                    System.out.println("Denne grund er nu ejet af: " + getOwnedBy());
 
+                    // har tilføjet denne linje
+                    player.updateTotalValue();
 
-                    System.out.println(player.getName() + " samlede værdier af valuta og grunde er " + player.getTotalValue());
+                    System.out.println("Deres samlede værdier af valuta og grunde er " + player.getTotalValue());
                     System.out.println("Deres valuta er " + player.getMoney());
                 } else if (player.getMoney() < getPrice()) {
                     System.out.println("De har ikke nok valuta til at købe denne grund.");
 
                 }
             } else if (answer == 2) {
-                System.out.println("Ok ønsker De at ønsker ikke at købe denne grund.");
+                System.out.println("Ok De ønsker ikke at købe denne grund.");
             }
         }
         return this;
