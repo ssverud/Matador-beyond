@@ -5,7 +5,7 @@ class ChanceFieldTest {
 
 
     Logic logic = new Logic();
-    GameBoard gb = new GameBoard();
+    //GameBoard gb = new GameBoard();
     Player p1 = new Player("P1");
     Player p2 =new Player("P2");
     Player p3 = new Player("P3");
@@ -102,7 +102,7 @@ class ChanceFieldTest {
         p1.buyField((logic.gameBoard.gameFields.get(1))); // costs 1200
         p1.buyField((logic.gameBoard.gameFields.get(3))); //costs 1200
         p1.buyHouseOnProperty((PropertyField) p1.ownedFields.get(0));
-        cf.propertyTax(p1);
+        cf.propertyTax(p1,500);
         assertEquals(6200, p1.getMoney());
     }
 

@@ -31,6 +31,7 @@ public class ChanceField extends GameField {
         player.setMoney(player.getMoney()+amount);
     }
 
+    //Skal testes i spillet, er ikke sikker på om den virker som planlagt
     public void moveToFerry(Player player, Logic logic){
         for (int i = player.getPos() + 1; i < logic.gameBoard.gameFields.size(); i++) {
             if (logic.gameBoard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
@@ -61,6 +62,7 @@ public class ChanceField extends GameField {
             player.setPos(player.getPos() - 3);
     }
 
+    //skal også testes i spillet
     public void ferryTrip(Player player, Logic logic){
         for (int i = player.getPos(); i < logic.gameBoard.gameFields.size(); i++) {
             if (logic.gameBoard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
@@ -72,8 +74,9 @@ public class ChanceField extends GameField {
         }
     }
 
-    public void propertyTax(Player player){
+    public void propertyTax(Player player, int amount){
         // pay 800 kr. pr house, 2300 pr. hotel
+        amount= 800;
         System.out.println(player.getMoney());
         int sumHouses = 0;
         ArrayList<PropertyField> sumList = new ArrayList<PropertyField>();
@@ -88,43 +91,15 @@ public class ChanceField extends GameField {
             sumHouses = sumHouses + sumList.get(i).getHouses();
 
         }
-        System.out.println("Du har " + sumHouses + " huse, derfor skal du betale " + sumHouses * 800 + "kr");
+        System.out.println("Du har " + sumHouses + " huse, derfor skal du betale " + sumHouses * amount + "kr");
         // player.setMoney(player.getMoney() - (sumHouses * 800));
-        player.payToBank(sumHouses * 800);
+        player.payToBank(sumHouses * amount);
         System.out.println(player.getMoney());
 
         // potentialy unnecessary. Should maybe be used if the card is pulled twice
         sumHouses = 0;
         sumList.clear();
-
     }
-
-    /* Er køterfucked indtil videre
-    public void oilPrices(Player player){
-        //betal 500 pr hus og 2000 pr hotel
-        System.out.println(player.getMoney());
-        int sumHousesOil = 0;
-        ArrayList<PropertyField> sumListOil = new ArrayList<PropertyField>();
-        for (int i = 0; i < player.ownedFields.size() - 1; i++) {
-            GameField temp = player.ownedFields.get(i);
-            //Det næste har noget med casting at gøre, er ikke sikker på hvordan det virker, men det fungerer som det skal
-            if (temp.getGameFieldType() == GameFieldType.PROPERTYFIELD) {
-                sumListOil.add((PropertyField) player.ownedFields.get(0));
-            }
-        }
-        for (int i = 0; i < sumListOil.size() - 1; i++) {
-            int sumHouses = sumHousesOil + sumListOil.get(i).getHouses();
-
-        }
-        System.out.println("Du har " + sumHousesOil + " huse, derfor skal du betale " + sumHousesOil * 500 + "kr");
-        player.payToBank(sumHousesOil * 500);
-        System.out.println(player.getMoney());
-
-        //Potentielt unødvendigt, kan komme på tale hvis kortet trækkes 2 gange
-        sumHousesOil = 0;
-        sumListOil.clear();
-    }
-    */
 
     //POTENTIEL BUG: Hvis spilleren selv har under 200 kr i banken kan han gå bankeret, da han selv for trullet pengene først.
     public void playerBirthday(Player player, Logic logic){
@@ -223,7 +198,7 @@ public class ChanceField extends GameField {
             case ("EJENDOMSSKAT"):
                 //betal 800 kr pr hus, 2300 per hotel
 
-                propertyTax(player);
+                propertyTax(player, 800);
                 break;
 
             case ("START"):
@@ -237,13 +212,13 @@ public class ChanceField extends GameField {
                 bankReward(player, 3000);
                 break;
 
-           /* case ("OLIEPRISER"):
+            case ("OLIEPRISER"):
 
-                cf.oilPrices(player);
+                propertyTax(player, 500);
 
                 break;
 
-            */
+
 
 
             case ("GRØNNINGEN"):
