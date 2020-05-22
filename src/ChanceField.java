@@ -76,7 +76,6 @@ public class ChanceField extends GameField {
 
     public void propertyTax(Player player, int amount){
         // pay 800 kr. pr house, 2300 pr. hotel
-        amount= 800;
         System.out.println(player.getMoney());
         int sumHouses = 0;
         ArrayList<PropertyField> sumList = new ArrayList<PropertyField>();
@@ -110,7 +109,7 @@ public class ChanceField extends GameField {
         bankReward(player, 200*logic.listOfPlayers.size());
     }
 
-    public GameField landedOn(Player player, Logic logic) {
+    public ChanceField landedOn(Player player, Logic logic) {
         //ChanceField cf = new ChanceField(player.getPos());
         System.out.println("De har landet på 'Prøv lykken'. Træk et kort");
         System.out.println(cardDeck.cards.size());

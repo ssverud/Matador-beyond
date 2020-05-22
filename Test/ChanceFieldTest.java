@@ -103,7 +103,7 @@ class ChanceFieldTest {
         p1.buyField((logic.gameBoard.gameFields.get(3))); //costs 1200
         p1.buyHouseOnProperty((PropertyField) p1.ownedFields.get(0));
         cf.propertyTax(p1,500);
-        assertEquals(6200, p1.getMoney());
+        assertEquals(6500, p1.getMoney());
     }
 
     @Test
