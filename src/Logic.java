@@ -123,13 +123,13 @@ public class Logic implements Runnable {
                 }
 
                 tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
+                checkPlayerMoney(playerWhoHasTurn);
 
             if (i < diceCupRollResult - 1) {
                 print.printPassedField(playerWhoHasTurn, tempActiveGameField);
             }
                 playerWhoHasTurn.setPos(playerWhoHasTurnPos);
                 playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
-                checkPlayerMoney(playerWhoHasTurn);
             }
             activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
