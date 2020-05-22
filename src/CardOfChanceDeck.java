@@ -40,7 +40,7 @@ public class CardOfChanceDeck {
         cards.add(new Card("TIPNING", "De havde en række med elleve rigtige i tipning. Modtag kr. 1.000."));
         cards.add(new Card("DYRTIDEN", "Grundet dyrtiden har De fået gageforhøjelse. Modtag kr. 1.000."));
         cards.add(new Card("TANDLÆGEREGNING", "De har modtaget Deres tandlægeregning. Betal kr. 2.000."));
-        cards.add(new Card("FÆRGE", "Tag med den nærmest færge - Flyt brikken frem, og hvis De passerer “Start”, inkassér da kr. 4.000."));
+        cards.add(new Card("FÆRGE", "Ryk til den nærmeste færge - Flyt brikken frem, og hvis De passerer “Start”, inkassér da kr. 4.000."));
         cards.add(new Card("KLASSELOTTERIET", "De har vundet i Klasselotteriet. Modtag kr. 500."));
         cards.add(new Card("RÅDHUSPLADSEN", "Tag ind på Rådhuspladsen."));
         cards.add(new Card("EJENDOMSSKAT", "Ejendomsskatterne er steget, ekstraudgifterne er: kr. 800 pr. hus, kr. 2.300 pr. hotel."));

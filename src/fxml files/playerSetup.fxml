@@ -54,10 +54,10 @@
             <TextField fx:id="player6" prefHeight="27.0" prefWidth="260.0" />
          </children>
       </FlowPane>
-      <ButtonBar layoutY="560.0" prefHeight="40.0" prefWidth="334.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
+      <ButtonBar layoutY="560.0" prefHeight="40.0" prefWidth="390.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0">
         <buttons>
-            <Button mnemonicParsing="false" onAction="#startGameButtonV1" prefHeight="27.0" prefWidth="184.0" text="Start Game V1" />
-          <Button mnemonicParsing="false" onAction="#startGameButtonV2" prefHeight="27.0" prefWidth="154.0" text="Start Game V2" />
+            <Button mnemonicParsing="false" onAction="#startGameButtonV1" prefHeight="27.0" prefWidth="184.0" text="Start Game V1 Circle" />
+          <Button mnemonicParsing="false" onAction="#startGameButtonV2" prefHeight="27.0" prefWidth="154.0" text="Start Game V2 Rectangle" />
         </buttons>
       </ButtonBar>
    </children>

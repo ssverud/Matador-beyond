@@ -59,6 +59,10 @@ public class Logic implements Runnable {
 
             delay(); // for us to press Enter before loop moves on
 
+            // Udkommenter IF YOU WANT TO TEST with just one player
+            if(numberOfPlayers == 1) {
+                System.out.println(listOfPlayers.get(0) + " har vundet spillet - Tillykke");
+            }
 
             // Starts the players turn
             playerTurn(playerWhoHasTurn);
@@ -66,9 +70,6 @@ public class Logic implements Runnable {
             i++;
             if (i == numberOfPlayers) {
                 i = 0;
-            }
-            if(numberOfPlayers == 1) {
-                System.out.println(listOfPlayers.get(0) + " har vundet spillet - Tillykke");
             }
         }
     }

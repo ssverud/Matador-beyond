@@ -5,7 +5,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.shape.Rectangle;
 import static javafx.scene.paint.Color.RED;
 
-public class ControllerGame2 {
+public class ControllerGameRectangle {
 
     public Logic logic;
 
