@@ -137,7 +137,7 @@ public class Logic implements Runnable {
 
         if ((activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD)
                 ||(activeGameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD)) {
-         //   System.out.println("Running chancefield landedOn()");
+         //   System.out.println("Running chancefield or brewery landedOn()");
             activeGameField.landedOn(playerWhoHasTurn, this);
         } else {
          //   System.out.println("Running default landed on");
