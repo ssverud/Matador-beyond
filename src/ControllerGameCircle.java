@@ -63,7 +63,7 @@ public class ControllerGameCircle {
 
         double tempFieldsMoved = 0.5; // starts with half the width of a field
         int playerDistFromEdge = 15; // distance from edge of the outerCircle
-        int degreesPlaerMove = 9; // 360 degrees / 40 fields
+        int degreesPlayerMove = 9; // 360 degrees / 40 fields
     public void movePlayer() {
 
         // code repeating (3 of 3)
@@ -72,8 +72,8 @@ public class ControllerGameCircle {
         double diameter = min(hight, width) - playerDistFromEdge;
 
         //              center        radius                                                        * converting from radion to degrees
-        double endX = (width / 2) + (diameter / 2) * Math.sin((tempFieldsMoved * degreesPlaerMove ) * (Math.PI / 180));
-        double endY = (hight / 2) + (diameter / 2) * Math.cos((tempFieldsMoved * degreesPlaerMove) * (Math.PI / 180));
+        double endX = (width / 2) + (diameter / 2) * Math.sin((tempFieldsMoved * degreesPlayerMove ) * (Math.PI / 180));
+        double endY = (hight / 2) + (diameter / 2) * Math.cos((tempFieldsMoved * degreesPlayerMove) * (Math.PI / 180));
 
         tempFieldsMoved = tempFieldsMoved + 1;
 

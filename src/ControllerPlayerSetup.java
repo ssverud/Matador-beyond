@@ -56,12 +56,12 @@ public class ControllerPlayerSetup {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/gameRectangle.fxml"));
 
-            // allows acces to the Logic class in ControllerGame2
+            // allows acces to the Logic class in ControllerGameRectangle
             Parent homePageStartGame = loader.load();
             ControllerGameRectangle controllerGameRectangle = loader.getController();
             controllerGameRectangle.logic = logic;
 
-            // loads the game2 window
+            // loads the gameRectangle window
             Scene homePageStartGameScene = new Scene(homePageStartGame);
             Stage stageWindow = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stageWindow.setScene(homePageStartGameScene);
