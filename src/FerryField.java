@@ -2,7 +2,7 @@ public class FerryField extends GameField {
 
     private int rentPrice;
     private int pledgePrice;
-    private Player ownedBy = null;
+    //private Player ownedBy = null;
 
     ScanThings scanThings = new ScanThings();
 
@@ -68,11 +68,9 @@ public class FerryField extends GameField {
         this.pledgePrice = pledgePrice;
     }
 
-    public Player getOwnedBy() {
-        return ownedBy;
-    }
+    /*
+    public Player getOwnedBy() { return ownedBy; }
 
-    public void setOwnedBy(Player ownedBy) {
-        this.ownedBy = ownedBy;
-    }
+    public void setOwnedBy(Player ownedBy) {this.ownedBy = ownedBy;}
+    */
 }
