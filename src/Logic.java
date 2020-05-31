@@ -76,7 +76,7 @@ public class Logic implements Runnable {
 
     // method to press enter before each turn
     public void delay() {
-        System.out.println("Press enter to continue");
+        System.out.println("Tryk ENTER for at fortsætte");
         scanThings.scanString();
     }
 
