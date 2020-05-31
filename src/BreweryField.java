@@ -42,8 +42,8 @@ public class BreweryField extends GameField{
                     setOwnedBy(player);
                     System.out.println("Dette Brygeri er ejet af: " + getOwnedBy());
 
-                    System.out.println(player.getName() + "samlede værdier i valuta og ejendomme: " + player.getTotalValue());
-                    System.out.println(" Spillers valuta: " + player.getMoney());
+                    System.out.println(player.getName() + " samlede værdier i valuta og ejendomme: " + player.getTotalValue());
+                    System.out.println("Spillers valuta: " + player.getMoney());
                 } else if (player.getMoney() < getPrice()) {
                     System.out.println("Du ejer ikke valuta nok til at købe denne ejendom");
                 }
