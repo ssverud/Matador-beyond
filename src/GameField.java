@@ -1,4 +1,4 @@
-public class GameField {
+public abstract class GameField {
     private String Name;
     private int pos;
     private GameFieldType gameFieldType;
