@@ -7,7 +7,7 @@ public class VisitPrisonField extends GameField {
         setGameFieldType(GameFieldType.VISITPRISON);
     }
 
-    public VisitPrisonField landedOn(Player player){
+    public VisitPrisonField landedOn(Player player, Logic logic){
         System.out.println("De er landet på: "+ this.getName());
         return this;
     }

@@ -137,24 +137,20 @@ public class Logic implements Runnable {
 
             System.out.println("De landede på " + activeGameField.getName());
 
-            if ((activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD) ||
-                    (activeGameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD)) {
-                //   System.out.println("Running chancefield or brewery landedOn()");
-                activeGameField.landedOn(playerWhoHasTurn, this);
-            } else {
-                //   System.out.println("Running default landed on");
-                activeGameField.landedOn(playerWhoHasTurn);
-            }
 
-            if (playerWhoHasTurn.isInPrison() == false) {
-                presentBuyHouseOption(playerWhoHasTurn);
-
-                presentSellHouseOption(playerWhoHasTurn);
-                presentSellPropertyOption(playerWhoHasTurn);
-            }
-            playerWhoHasTurn.updateTotalValue();
+            activeGameField.landedOn(playerWhoHasTurn, this);
+        
         }
+
+        if (playerWhoHasTurn.isInPrison() == false) {
+            presentBuyHouseOption(playerWhoHasTurn);
+
+            presentSellHouseOption(playerWhoHasTurn);
+            presentSellPropertyOption(playerWhoHasTurn);
+        }
+        playerWhoHasTurn.updateTotalValue();
     }
+
 
     public void checkPlayerMoney(Player player) {
 

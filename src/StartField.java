@@ -7,7 +7,7 @@ public class StartField extends GameField {
         setGameFieldType(GameFieldType.START);
     }
 
-    public StartField landedOn(Player player){
+    public StartField landedOn(Player player, Logic logic){
         System.out.println("De har landet på: "+ this.getName());
         return this;
     }
