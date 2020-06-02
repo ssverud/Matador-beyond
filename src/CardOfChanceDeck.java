@@ -87,6 +87,7 @@ public class CardOfChanceDeck {
     public void changeDeck() {
         if (cards.isEmpty()) {
             cards.addAll(emptyDeck);
+            CardOfChanceDeck.getInstance().shuffle();
         }
         emptyDeck.clear();
     }
