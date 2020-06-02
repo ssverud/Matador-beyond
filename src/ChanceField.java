@@ -79,7 +79,6 @@ public class ChanceField extends GameField {
         ArrayList<PropertyField> sumList = new ArrayList<PropertyField>();
         for (int i = 0; i < player.ownedFields.size() - 1; i++) {
             GameField temp = player.ownedFields.get(i);
-            // the next has to do with casting. Not sure how it works, but it works like it should
             if (temp.getGameFieldType() == GameFieldType.PROPERTYFIELD) {
                 sumList.add((PropertyField) player.ownedFields.get(i));
             }
