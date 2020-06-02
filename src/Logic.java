@@ -132,12 +132,13 @@ public class Logic implements Runnable {
                 playerWhoHasTurn.setPos(playerWhoHasTurnPos);
                 playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
             }
+
             activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
             System.out.println("De landede på " + activeGameField.getName());
 
-            if ((activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD)
-                    || (activeGameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD)) {
+            if ((activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD) ||
+                    (activeGameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD)) {
                 //   System.out.println("Running chancefield or brewery landedOn()");
                 activeGameField.landedOn(playerWhoHasTurn, this);
             } else {
