@@ -31,9 +31,10 @@ public class ChanceField extends GameField {
 
     //Skal testes i spillet, er ikke sikker på om den virker som planlagt
     public void moveToFerry(Player player, Logic logic) {
-        for (int i = player.getPos() + 1; i < logic.gameBoard.gameFields.size(); i++) {
+        for (int i = player.getPos(); i < logic.gameBoard.gameFields.size(); i++) {
             if (logic.gameBoard.gameFields.get(i).getGameFieldType() == GameFieldType.FERRYFIELD) {
                 player.setPos(i);
+                return;
             }
             if (i == logic.gameBoard.gameFields.size()) {
                 i = 0;
@@ -111,7 +112,7 @@ public class ChanceField extends GameField {
         //ChanceField cf = new ChanceField(player.getPos());
         System.out.println("De har landet på 'Prøv lykken'. Træk et kort");
         //System.out.println(cardDeck.cards.size());
-        if (!cardDeck.cards.isEmpty()) {
+        if (cardDeck.cards.isEmpty()) {
             cardDeck.changeDeck();
         } else {
             System.out.println(cardDeck.draw());
@@ -241,6 +242,6 @@ public class ChanceField extends GameField {
             }
 
         }
-        return null;
+        return this;
     }
 }
