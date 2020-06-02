@@ -10,8 +10,8 @@ public class CardOfChanceDeck {
     /**
      * Constructor for the full deck with cards.
      */
-    public static CardOfChanceDeck getInstance(){
-        if(cardOfChanceDeck ==null){
+    public static CardOfChanceDeck getInstance() {
+        if (cardOfChanceDeck == null) {
             cardOfChanceDeck = new CardOfChanceDeck();
         }
         return cardOfChanceDeck;
@@ -65,10 +65,9 @@ public class CardOfChanceDeck {
         return cards.get(0).getTextOfCard();
     }
 
-    public String getType(){
+    public String getType() {
         return cards.get(0).getType();
     }
-
 
 
     //Removes a card from the deck and adds it to the new deck, so the cards don't come in the same order every time.
@@ -80,17 +79,15 @@ public class CardOfChanceDeck {
 
     }
 
-    public void remove(int pos){
+    public void remove(int pos) {
 
         cards.remove(pos);
     }
 
     public void changeDeck() {
         if (cards.isEmpty()) {
-            for (int i = 0; i < emptyDeck.size(); i++) {
-                cards.add(emptyDeck.get(i));
-                emptyDeck.clear();
-            }
+            cards.addAll(emptyDeck);
         }
+        emptyDeck.clear();
     }
 }

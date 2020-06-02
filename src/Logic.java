@@ -139,7 +139,7 @@ public class Logic implements Runnable {
 
 
             activeGameField.landedOn(playerWhoHasTurn, this);
-        
+
         }
 
         if (playerWhoHasTurn.isInPrison() == false) {
