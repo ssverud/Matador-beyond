@@ -7,7 +7,7 @@ public class ParkeringsField extends GameField {
         setGameFieldType(GameFieldType.PARKINGFIELD);
     }
 
-    public ParkeringsField landedOn(Player player){
+    public ParkeringsField landedOn(Player player, Logic logic){
         System.out.println("De er landet på "+ this.getName());
         return this;
     }

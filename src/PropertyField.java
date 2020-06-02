@@ -20,7 +20,7 @@ public class PropertyField extends GameField {
         this.setPropertyColor(propertyColor);
     }
 
-    public PropertyField landedOn(Player player) {
+    public PropertyField landedOn(Player player, Logic logic) {
         System.out.println("Dette er en husgrund.");
         if (getOwnedBy() != null) {
             player.payRent(rentPrice, getOwnedBy());

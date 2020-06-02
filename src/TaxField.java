@@ -9,7 +9,7 @@ public class TaxField extends GameField {
         setGameFieldType(GameFieldType.TAXFIELD);
     }
 
-    public TaxField landedOn(Player player) {
+    public TaxField landedOn(Player player, Logic logic) {
         System.out.println("De skal betale skat!");
 
         if (player.getPos() == 4) {

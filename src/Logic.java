@@ -60,7 +60,7 @@ public class Logic implements Runnable {
             delay(); // for us to press Enter before loop moves on
 
             // Udkommenter IF YOU WANT TO TEST with just one player
-            if(numberOfPlayers == 1) {
+            if (numberOfPlayers == 1) {
                 System.out.println(listOfPlayers.get(0) + " har vundet spillet - Tillykke");
             }
 
@@ -76,6 +76,7 @@ public class Logic implements Runnable {
 
     // method to press enter before each turn
     public void delay() {
+        System.out.println("Tryk ENTER for at fortsætte");
         scanThings.scanString();
     }
 
@@ -113,10 +114,10 @@ public class Logic implements Runnable {
                 playerWhoHasTurnPos = playerWhoHasTurnPos + 1;
                 playerWhoHasTurn.setPos(playerWhoHasTurnPos);
 
-            // Checking if player is out of bounce, if so go back to start
-            if (playerWhoHasTurnPos > numberOfGameFields - 1) {
-                playerWhoHasTurnPos = 0;
-             //   System.out.println("we set playerwhohasturnpos = 0");
+                // Checking if player is out of bounce, if so go back to start
+                if (playerWhoHasTurnPos > numberOfGameFields - 1) {
+                    playerWhoHasTurnPos = 0;
+                    //   System.out.println("we set playerwhohasturnpos = 0");
 
                     playerWhoHasTurnMoney = playerWhoHasTurnMoney + 4000;
                     System.out.println("4000 kr. er blevet tilføjet til spillerens valutabeholdning ved passering af 'Start'");
@@ -125,34 +126,31 @@ public class Logic implements Runnable {
                 tempActiveGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
                 checkPlayerMoney(playerWhoHasTurn);
 
-            if (i < diceCupRollResult - 1) {
-                print.printPassedField(playerWhoHasTurn, tempActiveGameField);
-            }
+                if (i < diceCupRollResult - 1) {
+                    print.printPassedField(playerWhoHasTurn, tempActiveGameField);
+                }
                 playerWhoHasTurn.setPos(playerWhoHasTurnPos);
                 playerWhoHasTurn.setMoney(playerWhoHasTurnMoney);
             }
+
             activeGameField = gameBoard.gameFields.get(playerWhoHasTurnPos);
 
-        System.out.println("De landede på " + activeGameField.getName());
+            System.out.println("De landede på " + activeGameField.getName());
 
-        if ((activeGameField.getGameFieldType() == GameField.GameFieldType.CHANCEFIELD)
-                ||(activeGameField.getGameFieldType() == GameField.GameFieldType.BREWERYFIELD)) {
-         //   System.out.println("Running chancefield or brewery landedOn()");
+
             activeGameField.landedOn(playerWhoHasTurn, this);
-        } else {
-         //   System.out.println("Running default landed on");
-            activeGameField.landedOn(playerWhoHasTurn);
+
         }
 
-            if(playerWhoHasTurn.isInPrison() == false) {
-                presentBuyHouseOption(playerWhoHasTurn);
+        if (playerWhoHasTurn.isInPrison() == false) {
+            presentBuyHouseOption(playerWhoHasTurn);
 
-                presentSellHouseOption(playerWhoHasTurn);
-                presentSellPropertyOption(playerWhoHasTurn);
-            }
-            playerWhoHasTurn.updateTotalValue();
+            presentSellHouseOption(playerWhoHasTurn);
+            presentSellPropertyOption(playerWhoHasTurn);
         }
+        playerWhoHasTurn.updateTotalValue();
     }
+
 
     public void checkPlayerMoney(Player player) {
 
@@ -255,7 +253,7 @@ public class Logic implements Runnable {
                     }
                 }
                 if (matchFound == true) {
-                 //   System.out.println("Breaking out of while loop - skipping cannot find match");
+                    //   System.out.println("Breaking out of while loop - skipping cannot find match");
                     break;
                 }
                 System.out.println("Kan ikke finde et match. ");
@@ -375,7 +373,7 @@ public class Logic implements Runnable {
                     for (int j = 0; j < arrayList.size(); j++) {
 
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.PINK) {
-                          //  System.out.println("Grund tilføjet.");
+                            //  System.out.println("Grund tilføjet.");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -386,7 +384,7 @@ public class Logic implements Runnable {
                 if (green == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.GREEN) {
-                         //   System.out.println("Grund tilføjet.");
+                            //   System.out.println("Grund tilføjet.");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -397,7 +395,7 @@ public class Logic implements Runnable {
                 if (grey == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.GREY) {
-                           // System.out.println("Grund tilføjet");
+                            // System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -408,7 +406,7 @@ public class Logic implements Runnable {
                 if (red == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.RED) {
-                           // System.out.println("Grund tilføjet");
+                            // System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -419,7 +417,7 @@ public class Logic implements Runnable {
                 if (white == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.WHITE) {
-                         //   System.out.println("Grund tilføjet");
+                            //   System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -430,7 +428,7 @@ public class Logic implements Runnable {
                 if (yellow == 3) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.YELLOW) {
-                           // System.out.println("Grund tilføjet");
+                            // System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }
@@ -441,7 +439,7 @@ public class Logic implements Runnable {
                 if (purple == 2) {
                     for (int j = 0; j < arrayList.size(); j++) {
                         if (arrayList.get(j).getPropertyColor() == GameField.PropertyColor.PURPLE) {
-                        //    System.out.println("Grund tilføjet");
+                            //    System.out.println("Grund tilføjet");
 
                             propertiesYouCanBuyHousesOn.add(arrayList.get(j));
                         }

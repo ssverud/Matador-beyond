@@ -1,4 +1,4 @@
-public class GameField {
+public abstract class GameField {
     private String Name;
     private int pos;
     private GameFieldType gameFieldType;
@@ -32,10 +32,10 @@ public class GameField {
     }
 
     // meant to be overwritten
-    public GameField landedOn(Player player) {
-        System.out.println("HAS NOT BEEN OVERWRITTEN, please fix in the current gamefield - playerPos: " + player.getPos());
-        return this;
-    }
+   // public GameField landedOn(Player player) {
+    //    System.out.println("HAS NOT BEEN OVERWRITTEN, please fix in the current gamefield - playerPos: " + player.getPos());
+   //     return this;
+  //  }
 
     public GameField landedOn(Player player, Logic logic) {
         System.out.println("HAS NOT BEEN OVERWRITTEN, please fix in the current gamefield - playerPos: " + player.getPos());

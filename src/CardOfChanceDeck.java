@@ -8,8 +8,8 @@ public class CardOfChanceDeck {
     private static CardOfChanceDeck cardOfChanceDeck = new CardOfChanceDeck();
 
 
-    public static CardOfChanceDeck getInstance(){
-        if(cardOfChanceDeck ==null){
+    public static CardOfChanceDeck getInstance() {
+        if (cardOfChanceDeck == null) {
             cardOfChanceDeck = new CardOfChanceDeck();
         }
         return cardOfChanceDeck;
@@ -87,10 +87,9 @@ public class CardOfChanceDeck {
 
     public void changeDeck() {
         if (cards.isEmpty()) {
-            for (int i = 0; i < emptyDeck.size(); i++) {
-                cards.add(emptyDeck.get(i));
-                emptyDeck.clear();
-            }
+            cards.addAll(emptyDeck);
+            CardOfChanceDeck.getInstance().shuffle();
         }
+        emptyDeck.clear();
     }
 }

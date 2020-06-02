@@ -16,7 +16,7 @@ public class FerryField extends GameField {
         setGameFieldType(GameFieldType.FERRYFIELD);
     }
 
-    public FerryField landedOn(Player player) {
+    public FerryField landedOn(Player player, Logic logic) {
         System.out.println("Dette er et Færgefelt");
         if (getOwnedBy() != null) {
 
