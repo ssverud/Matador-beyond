@@ -52,7 +52,7 @@ public class ControllerPlayerSetup {
         logic.createPlayers(players);
 
         // if a minimum of 1 player name is put into the GUI playerSetup, move on to load game window
-        if(players.size() > 0) {
+        if(players.size() > 1) {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/gameRectangle.fxml"));
 
@@ -88,8 +88,13 @@ public class ControllerPlayerSetup {
         if(!player6.getText().equals("")) players.add(player6.getText());
         logic.createPlayers(players);
 
+        if(players.size() < 2) {
+
+            
+        }
+
         // if a minimum of 1 player name is put into the GUI playerSetup, move on to load game window
-        if(players.size() > 0 ) {
+        if(players.size() > 1 ) {
 
             FXMLLoader loader = new FXMLLoader(getClass().getResource("fxml files/gameCircle.fxml"));
 
